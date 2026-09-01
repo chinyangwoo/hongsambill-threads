@@ -216,7 +216,7 @@ def refresh_token_if_needed():
     last = meta.get("refreshed_at")
     if last:
         days = (datetime.now(timezone.utc) - datetime.fromisoformat(last)).days
-        if days < 40:
+        if days < 20:
             return None  # 아직 갱신 불필요
 
     try:
