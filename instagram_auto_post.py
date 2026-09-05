@@ -322,6 +322,22 @@ def post_to_instagram(caption, image_urls):
     return res["id"]
 
 
+def post_fixed_comment(media_id, text):
+    """게시 직후 첫 댓글로 예약 안내 등록 (고정/핀은 API 미지원 → 첫 댓글이 맨 위에 노출)"""
+    if not text:
+        return None
+    try:
+        res = http_json(f"{IG_API}/{media_id}/comments", {
+            "message": text,
+            "access_token": ACCESS_TOKEN,
+        })
+        print(f"💬 고정 댓글 등록 완료: {res.get('id')}")
+        return res.get("id")
+    except Exception as e:
+        print(f"⚠️ 댓글 등록 실패 (게시는 완료됨): {e}")
+        return None
+
+
 # ─────────────────────────────────────────────
 # 5. 토큰 자동 갱신 (60일 만료 → 40일마다 갱신)
 # ─────────────────────────────────────────────
@@ -405,6 +421,8 @@ def main():
 
     post_id = post_to_instagram(caption, urls)
     print(f"🚀 게시 완료! media id = {post_id}")
+    time.sleep(5)
+    post_fixed_comment(post_id, cfg.get("fixed_comment", ""))
 
     log["count"] += 1
     log["posts"].append({
