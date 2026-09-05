@@ -49,7 +49,7 @@ CACHE_KEEP_DAYS = 3             # 이 기간 지난 캐시는 자동 삭제
 TOPICS_FILE = "instagram_topics.json"
 LOG_FILE = "instagram_posted_log.json"
 TOKEN_FILE = ".ig_token_meta.json"
-MAX_CAPTION_LEN = 900           # 인스타 한도 2,200자. 가독성 위해 900자 내로
+MAX_CAPTION_LEN = 1100          # 인스타 한도 2,200자. 가독성 위해 1,100자 내로 (해시태그 포함)
 IMAGE_COUNT = 3                 # 캐러셀 장수 (인스타 캐러셀 2~10장)
 MAX_SIDE = 1440                 # 인스타 권장 가로 1080~1440px
 MIN_RATIO, MAX_RATIO = 0.8, 1.91   # 인스타 허용 비율 4:5 ~ 1.91:1
@@ -117,8 +117,9 @@ def generate_caption(topic, cfg, log):
    · "같이 갈 사람 태그" · "저장해두고 가을에 꺼내보기" · "밸런스 게임: 스파 먼저 vs 등산 먼저"
    · "진안 가본 사람 꿀팁 댓글로" · "이런 여행 좋아하는 사람 손"
 6) 빈 줄
-7) 해시태그 10~15개: 반드시 {' '.join(cfg['hashtags'])} 를 포함하고,
-   주제에 맞는 태그를 추가 (예: #호캉스 #국내여행 #힐링여행 #등산스타그램 #가을여행)
+7) 해시태그: 아래 고정 태그를 빠짐없이 모두 넣고, 주제에 맞는 태그 3~5개를 추가 (총 25개 이내)
+   고정 태그: {' '.join(cfg['hashtags'])}
+   추가 예시: #호캉스 #국내여행 #힐링여행 #등산스타그램 #가을여행 #강아지와여행
 
 말투:
 - 친구에게 추천하듯 친근한 반말 (스레드보다 살짝 차분·감성적)
