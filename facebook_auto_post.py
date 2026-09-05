@@ -124,9 +124,13 @@ def ensure_permanent_token():
 
     expires = info.get("expires_at", 0)
     if expires == 0:
-        return  # 이미 영구 토큰
+        return  # 영구 토큰
+    days_left = (expires - time.time()) / 86400
+    if days_left > 30:
+        print(f"🔑 토큰 유효 (만료까지 {days_left:.0f}일)")
+        return  # 아직 여유 있음
 
-    print(f"🔄 단기 토큰 감지 (만료 {datetime.fromtimestamp(expires, KST):%m-%d %H:%M}) → 영구 토큰으로 변환")
+    print(f"🔄 토큰 만료 임박 ({datetime.fromtimestamp(expires, KST):%m-%d %H:%M}) → 장기 토큰으로 갱신")
     long_tok = http_json(
         f"{FB_API}/oauth/access_token?grant_type=fb_exchange_token"
         f"&client_id={APP_ID}&client_secret={APP_SECRET}&fb_exchange_token={ACCESS_TOKEN}"
