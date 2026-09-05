@@ -110,7 +110,7 @@ def update_github_secret(name, value):
 
 def ensure_permanent_token():
     """토큰에 만료가 있으면 장기 토큰으로 교환 → 페이지 토큰 확보 → Secrets 저장"""
-    global ACCESS_TOKEN
+    global ACCESS_TOKEN, PAGE_ID
     if not APP_SECRET:
         return
     try:
@@ -122,11 +122,20 @@ def ensure_permanent_token():
         print(f"⚠️ 토큰 검사 실패: {e}")
         return
 
+    scopes = info.get("scopes", [])
+    print(f"🔑 토큰 종류={info.get('type')} 권한={scopes}")
+    need = {"pages_manage_posts", "pages_read_engagement"}
+    if info.get("type") in ("USER", "PAGE") and not need.issubset(set(scopes)):
+        raise RuntimeError(
+            f"토큰에 게시 권한이 없습니다. 그래프 API 탐색기에서 '권한 추가'로 "
+            f"{sorted(need)} 를 체크한 뒤 토큰을 다시 생성하세요. (현재 권한: {scopes})"
+        )
+
     expires = info.get("expires_at", 0)
-    if expires == 0:
-        return  # 영구 토큰
-    days_left = (expires - time.time()) / 86400
-    if days_left > 30:
+    if expires == 0 and info.get("type") == "PAGE":
+        return  # 영구 페이지 토큰
+    days_left = (expires - time.time()) / 86400 if expires else 999
+    if days_left > 30 and info.get("type") == "PAGE":
         print(f"🔑 토큰 유효 (만료까지 {days_left:.0f}일)")
         return  # 아직 여유 있음
 
@@ -136,10 +145,18 @@ def ensure_permanent_token():
         f"&client_id={APP_ID}&client_secret={APP_SECRET}&fb_exchange_token={ACCESS_TOKEN}"
     )["access_token"]
 
-    # 사용자 토큰이면 페이지 토큰으로, 페이지 토큰이면 그대로
+    # 사용자 토큰이면 → 관리 중인 페이지 목록에서 페이지 토큰 추출 (영구)
     if info.get("type") == "USER":
-        page = http_json(f"{FB_API}/{PAGE_ID}?fields=access_token&access_token={long_tok}")
-        long_tok = page["access_token"]
+        acc = http_json(f"{FB_API}/me/accounts?fields=id,name,access_token&access_token={long_tok}")
+        pages = acc.get("data", [])
+        print(f"   관리 페이지: {[(p['id'], p['name']) for p in pages]}")
+        match = [p for p in pages if p["id"] == PAGE_ID] or pages
+        if not match:
+            raise RuntimeError("이 계정이 관리하는 페이지가 없습니다 (pages_show_list 권한 확인).")
+        long_tok = match[0]["access_token"]
+        if match[0]["id"] != PAGE_ID:
+            print(f"   ⚠️ FB_PAGE_ID({PAGE_ID}) 와 달라 첫 페이지 {match[0]['id']} 사용")
+            PAGE_ID = match[0]["id"]
 
     check = http_json(
         f"{FB_API}/debug_token?input_token={long_tok}&access_token={APP_ID}|{APP_SECRET}"
