@@ -44,7 +44,7 @@ CACHE_DIR = "fb_cache"
 CACHE_KEEP_DAYS = 3
 TOPICS_FILE = "facebook_topics.json"
 LOG_FILE = "facebook_posted_log.json"
-MAX_TEXT_LEN = 700
+MAX_TEXT_LEN = 850
 IMAGE_COUNT = 3
 MAX_SIDE = 1600
 MIN_RATIO, MAX_RATIO = 0.6, 2.0     # 페이스북은 비율 제한이 느슨함
@@ -207,7 +207,8 @@ def generate_post(topic, cfg, log):
 4) 빈 줄
 5) 마무리: 부드러운 참여 유도 한 문장 (예: "가족과 함께 가고 싶은 분은 댓글로 태그해 주세요", "다녀오신 분들의 팁도 댓글로 나눠 주세요")
 6) 빈 줄
-7) 해시태그 3~5개: {' '.join(cfg['hashtags'])} 중심으로
+7) 해시태그: 아래 고정 태그를 빠짐없이 모두 마지막 줄에 넣기
+   {' '.join(cfg['hashtags'])}
 
 말투:
 - 정중한 존댓말 (~합니다, ~해요 혼용 가능), 과장·유행어 없음
