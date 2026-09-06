@@ -1,0 +1,54 @@
+# 저장 위치: .github/workflows/seongsu_instagram.yml
+# 성수주조장 인스타그램 — 하루 2회, 한국시간 11:00 (점심·주말 계획) / 18:30 (퇴근 직후)
+# 홍삼빌 스레드(08:00/12:30/19:00)·인스타(09:00/13:30/20:00) 시간표와 겹치지 않게 배치
+name: 성수주조장 인스타그램 자동 포스팅
+
+on:
+  schedule:
+    - cron: "0 2 * * *"     # KST 11:00
+    - cron: "30 9 * * *"    # KST 18:30
+  workflow_dispatch:        # Actions 탭에서 수동 실행 버튼
+    inputs:
+      dry_run:
+        description: "1 = 캡션만 생성하고 게시하지 않음 (테스트)"
+        default: "0"
+
+# 같은 저장소에 홍삼빌 워크플로가 있으면 커밋 충돌 방지를 위해 같은 그룹으로 직렬화
+concurrency:
+  group: auto-post-commit
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install pynacl pillow
+
+      - name: 성수주조장 인스타그램 게시
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SEONGSU_INSTAGRAM_ACCESS_TOKEN: ${{ secrets.SEONGSU_INSTAGRAM_ACCESS_TOKEN }}
+          SEONGSU_INSTAGRAM_USER_ID: ${{ secrets.SEONGSU_INSTAGRAM_USER_ID }}
+          GDRIVE_API_KEY: ${{ secrets.GDRIVE_API_KEY }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          DRY_RUN: ${{ github.event.inputs.dry_run || '0' }}
+        run: python seongsu_instagram_auto_post.py
+
+      - name: 게시 기록 저장
+        if: always()
+        run: |
+          git config user.name "auto-post-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add -A seongsu_ig_cache seongsu_instagram_posted_log.json .seongsu_ig_token_meta.json 2>/dev/null || true
+          git diff --cached --quiet || git commit -m "성수주조장 인스타 게시 기록 $(date -u +'%Y-%m-%d %H:%M')"
+          git pull --rebase origin ${{ github.ref_name }} || true
+          git push || true
