@@ -1,0 +1,555 @@
+# -*- coding: utf-8 -*-
+"""
+성수주조장 인스타그램 완전 자동 포스팅 앱 (딸기막걸리 판매 CTA 최우선)
+=====================================================================
+홍삼빌호텔 instagram_auto_post.py 와 동일한 구조. 파일명·환경변수·캐시 폴더에
+'seongsu_' 접두어를 붙여 같은 저장소에 넣어도 충돌하지 않습니다.
+
+동작 순서 (하루 2회, KST 11:00 / 18:30):
+  1. 요일별 테마 + 회차 순환으로 이번 글의 주제·CTA 유형 결정
+     (구매 CTA 는 최소 2회에 1회 강제, 같은 CTA 연속 금지)
+  2. Claude API 로 캡션 생성 (훅 15자 이내 + 본문 + CTA 단독 마지막 줄 + 해시태그 15~20개)
+  3. 생성 결과 자동 검수: 브랜드 해시태그 보충, 30개 초과 제거, 길이 제한, 링크 문자열 제거
+  4. Google Drive 폴더에서 랜덤 3장 (최근 4회 사용한 사진 제외) → 인스타 규격 JPG 변환
+  5. 변환 JPG 를 seongsu_ig_cache/ 에 커밋 → 공개 URL 확보
+  6. Instagram API 캐러셀(3장) 게시 → 첫 댓글에 구매 링크 고정 등록
+  7. seongsu_instagram_posted_log.json 에 기록 → 다음 회차 중복 방지
+  8. 토큰 발급 40일 경과 시 자동 갱신 (60일 만료)
+
+필요한 환경변수 (GitHub Secrets):
+  ANTHROPIC_API_KEY                 : Claude API 키 (홍삼빌과 공용 가능)
+  SEONGSU_INSTAGRAM_ACCESS_TOKEN    : 성수주조장 인스타 장기 토큰 (60일, 자동 갱신)
+  SEONGSU_INSTAGRAM_USER_ID         : 성수주조장 인스타 비즈니스 계정 ID (숫자)
+  GDRIVE_API_KEY                    : Google Drive API 키 (홍삼빌과 공용 가능)
+  GH_PAT                            : (선택) 갱신 토큰을 Secrets 에 자동 저장
+  GITHUB_REPOSITORY / GITHUB_REF_NAME : Actions 자동 주입
+
+Drive 폴더 ID, 구매 링크, 주제, CTA 풀은 seongsu_instagram_topics.json 에서 관리.
+"""
+
+import io
+import json
+import os
+import random
+import re
+import subprocess
+import sys
+import time
+import urllib.error
+import urllib.parse
+import urllib.request
+from datetime import datetime, timezone, timedelta
+
+from PIL import Image, ImageOps
+
+# ─────────────────────────────────────────────
+# 설정
+# ─────────────────────────────────────────────
+IG_API = "https://graph.instagram.com/v21.0"
+DRIVE_API = "https://www.googleapis.com/drive/v3"
+CACHE_DIR = "seongsu_ig_cache"
+CACHE_KEEP_DAYS = 3
+TOPICS_FILE = "seongsu_instagram_topics.json"
+LOG_FILE = "seongsu_instagram_posted_log.json"
+TOKEN_FILE = ".seongsu_ig_token_meta.json"
+SECRET_NAME = "SEONGSU_INSTAGRAM_ACCESS_TOKEN"
+
+MAX_CAPTION_LEN = 1000          # 인스타 한도 2,200자. 판매 캡션은 짧을수록 좋음 (해시태그 포함)
+MAX_HASHTAGS = 30               # 인스타 한도 30개 (초과 시 게시 실패)
+IMAGE_COUNT = 3                 # 캐러셀 장수
+EXCLUDE_RECENT_POSTS = 4        # 최근 N회 게시에 쓴 사진은 이번 회차 제외
+MAX_SIDE = 1440
+MIN_RATIO, MAX_RATIO = 0.8, 1.91
+KST = timezone(timedelta(hours=9))
+CLAUDE_MODEL = "claude-sonnet-5"
+
+ANTHROPIC_API_KEY = os.environ["ANTHROPIC_API_KEY"]
+ACCESS_TOKEN = os.environ["SEONGSU_INSTAGRAM_ACCESS_TOKEN"]
+USER_ID = os.environ["SEONGSU_INSTAGRAM_USER_ID"]
+GDRIVE_API_KEY = os.environ["GDRIVE_API_KEY"]
+REPO = os.environ.get("GITHUB_REPOSITORY", "")
+BRANCH = os.environ.get("GITHUB_REF_NAME", "main")
+DRY_RUN = os.environ.get("DRY_RUN") == "1"   # 1 이면 캡션만 생성하고 게시하지 않음
+
+
+def http_json(url, data=None, method=None):
+    if data is not None and not isinstance(data, bytes):
+        data = urllib.parse.urlencode(data).encode()
+    req = urllib.request.Request(url, data=data, method=method)
+    try:
+        with urllib.request.urlopen(req, timeout=60) as res:
+            return json.loads(res.read().decode())
+    except urllib.error.HTTPError as e:
+        body = e.read().decode(errors="replace")
+        raise RuntimeError(f"HTTP {e.code} 오류: {url.split('?')[0]}\n응답: {body}") from e
+
+
+# ─────────────────────────────────────────────
+# 1. 주제 · 슬롯 · CTA 선택
+# ─────────────────────────────────────────────
+def load_log():
+    if os.path.exists(LOG_FILE):
+        with open(LOG_FILE, encoding="utf-8") as f:
+            return json.load(f)
+    return {"count": 0, "posts": []}
+
+
+def load_cfg():
+    with open(TOPICS_FILE, encoding="utf-8") as f:
+        return json.load(f)
+
+
+def current_slot():
+    """오전(~15시) 발행 = AM: 밝은 제품컷·정보 / 이후 = PM: 무드·라이프스타일"""
+    return "AM" if datetime.now(KST).hour < 15 else "PM"
+
+
+def pick_topic(cfg, log):
+    topics = cfg["topics"]
+    return topics[log["count"] % len(topics)]
+
+
+def pick_cta(cfg, log):
+    """
+    CTA 전략 (판매 최우선):
+      - 구매 CTA 는 최소 2회에 1회 (직전 글이 구매 CTA 가 아니면 이번은 무조건 구매)
+      - 같은 CTA 유형 연속 금지
+      - 나머지는 선물DM > 저장 > 태그 > 공유 > 댓글 순 가중치
+    """
+    pool = cfg["cta_pool"]
+    last = log["posts"][-1]["cta_type"] if log["posts"] else None
+    if last != "구매":
+        cta_type = "구매"
+    else:
+        weighted = ["선물DM"] * 3 + ["저장"] * 3 + ["태그"] * 2 + ["공유"] * 2 + ["댓글"] * 1
+        cta_type = random.choice([c for c in weighted if c != last and c in pool])
+    return cta_type, random.choice(pool[cta_type])
+
+
+# ─────────────────────────────────────────────
+# 2. Claude 로 캡션 생성
+# ─────────────────────────────────────────────
+def call_claude(system, user, max_tokens=1200):
+    body = json.dumps({
+        "model": CLAUDE_MODEL,
+        "max_tokens": max_tokens,
+        "system": system,
+        "messages": [{"role": "user", "content": user}],
+    }).encode()
+    req = urllib.request.Request(
+        "https://api.anthropic.com/v1/messages",
+        data=body,
+        headers={
+            "Content-Type": "application/json",
+            "x-api-key": ANTHROPIC_API_KEY,
+            "anthropic-version": "2023-06-01",
+        },
+    )
+    with urllib.request.urlopen(req, timeout=120) as res:
+        data = json.loads(res.read().decode())
+    return "".join(b["text"] for b in data["content"] if b["type"] == "text").strip()
+
+
+def generate_caption(topic, slot, cta_type, cta_text, cfg, log):
+    recent = [p["text"] for p in log["posts"][-8:]]
+    recent_block = "\n---\n".join(recent) if recent else "(없음)"
+    weekday = datetime.now(KST).weekday()
+    theme = cfg["weekly_theme"][str(weekday)]
+    slot_guide = (
+        "오전 발행: 밝고 가벼운 톤, 제품·정보·원료 중심. 점심/주말 계획을 세우는 사람에게."
+        if slot == "AM" else
+        "저녁 발행: 퇴근 후·홈파티·혼술 무드. 지금 당장 한 잔 하고 싶게."
+    )
+
+    system = f"""당신은 '{cfg['brand_name']}'(1925년 창업, 전북 진안, 100년 전통 양조장)의 인스타그램 콘텐츠 에디터입니다.
+주력상품 {cfg['product_name']}을 실제로 '팔기 위한' 캡션을 씁니다. 목표는 좋아요가 아니라 구매·저장·DM 입니다.
+
+브랜드 정보:
+{cfg['brand_info']}
+
+타겟: 20~30대. 트렌디하지만 가볍고 솔직한 톤. 광고 티 나는 문장은 즉시 이탈시킵니다.
+"전통주"보다 "요즘 술", "감성 술", "선물하기 좋은 술"의 맥락으로 접근합니다.
+
+캡션 구조 (반드시 이 순서):
+1) 첫 줄 = 훅. 15자 이내. '더보기'를 누르게 만드는 질문·반전·공감 문장. 브랜드명·제품명으로 시작 금지.
+   좋은 예: "막걸리인데 왜 딸기우유 맛이 나죠" / "퇴근하고 이거 한 잔이면 끝"
+   나쁜 예: "100년 전통의 프리미엄 딸기막걸리를 소개합니다!"
+2) 빈 줄
+3) 본문 3~6줄. 한 줄에 한 문장, 문장은 25자 이내 권장. 줄바꿈으로 호흡.
+   맛은 구체적 감각으로: "달달함" 대신 "첫 입은 딸기, 끝은 은은한 쌀 향".
+   아래 중 하나 이상을 자연스럽게 녹일 것:
+   - 순간(퇴근 후 / 주말 낮술 / 홈파티 / 선물 / 캠핑 / 비 오는 날)
+   - 스토리(100년 양조장, 진안 마령면, 3대째, 국산 딸기, 2025 대한민국주류대상 대상)
+   - 정보(6도, 750ml, 페어링 음식, 차갑게 마시는 법, 냉장 보관)
+4) 빈 줄
+5) CTA 한 줄 — 반드시 아래 문장을 거의 그대로, 캡션 마지막 문장으로 단독 배치:
+   "{cta_text}"
+   CTA 는 이 한 개만. 다른 유도 문장을 섞지 마세요. 명령형 대신 제안형.
+6) 빈 줄 두 개
+7) 해시태그 15~20개, 한 줄에 공백으로 나열:
+   - 브랜드 고정 5개 (반드시 전부): {' '.join(cfg['hashtags_brand'])}
+   - 대중 태그 5~7개 (여기서 선택): {' '.join(cfg['hashtags_general'])}
+   - 컨텍스트 태그 5~8개: 이번 글 주제에 맞게 (예: #퇴근후 #홈파티 #선물추천 #캠핑술 #낮술 #집들이선물 #금요일밤)
+
+말투: ~요 체로 통일 (존댓말·반말 혼용 금지). 친한 친구가 DM 보내듯 부드럽게.
+이모지 2~4개, 문장 끝이나 줄 시작에만.
+전체 길이 공백 포함 {MAX_CAPTION_LEN}자 이내 (해시태그 포함).
+
+절대 금지:
+- URL·링크 주소를 캡션에 쓰지 말 것 (인스타 캡션은 링크가 안 눌림. 링크는 첫 댓글·프로필에 있음)
+- 과장 효능("건강에 좋다", "숙취 없다"), 경쟁사 언급, 미성년 관련 표현, "!!!" 남발
+- 가격 언급, 할인 언급 (실제와 다를 수 있음)
+- 최근 게시글과 비슷한 훅·소재·문장 반복
+- 캡션 외의 설명·따옴표·머리말·"[캡션]" 같은 라벨 출력 금지. 캡션 본문만 출력."""
+
+    user = f"""발행 슬롯: {slot} — {slot_guide}
+오늘 요일 테마: {theme}
+이번 글 주제: {topic}
+CTA 유형: {cta_type} / CTA 문장: "{cta_text}"
+
+최근 게시글 (훅·소재·표현이 겹치지 않게):
+{recent_block}
+
+위 조건으로 인스타그램 캡션 본문만 출력해 주세요."""
+
+    return call_claude(system, user)
+
+
+# ─────────────────────────────────────────────
+# 3. 캡션 자동 검수 (게시 실패·품질 저하 방지)
+# ─────────────────────────────────────────────
+HASHTAG_RE = re.compile(r"#[^\s#]+")
+URL_RE = re.compile(r"https?://\S+|www\.\S+|smartstore\.naver\.com\S*", re.I)
+
+
+def sanitize_caption(text, cfg):
+    # 모델이 붙였을 수 있는 라벨·따옴표·코드펜스 제거
+    text = text.strip().strip("`").strip()
+    text = re.sub(r"^\[?캡션\]?\s*[:：]?\s*", "", text).strip()
+    text = text.strip('"“”').strip()
+    # 캡션 안의 링크 제거 (링크는 첫 댓글로). 링크만 있던 줄은 통째로 삭제
+    lines = []
+    for ln in text.split("\n"):
+        if URL_RE.search(ln):
+            ln = URL_RE.sub("", ln).strip(" :→-")
+            if len(ln) < 4:
+                continue
+        lines.append(ln.rstrip())
+    text = "\n".join(lines)
+
+    tags = HASHTAG_RE.findall(text)
+    body = HASHTAG_RE.sub("", text).strip().strip('"“”').strip()
+    body = re.sub(r"\n{3,}", "\n\n", body)
+
+    # 브랜드 고정 태그 보충 (중복 제거, 순서 유지)
+    seen, ordered = set(), []
+    for t in cfg["hashtags_brand"] + tags:
+        if t not in seen:
+            seen.add(t)
+            ordered.append(t)
+    if len(ordered) < 12:                     # 너무 적으면 대중 태그로 보충
+        for t in cfg["hashtags_general"]:
+            if t not in seen and len(ordered) < 15:
+                seen.add(t)
+                ordered.append(t)
+    ordered = ordered[:MAX_HASHTAGS]
+
+    caption = f"{body}\n\n\n{' '.join(ordered)}"
+    if len(caption) > 2190:
+        caption = caption[:2190]
+    return caption
+
+
+# ─────────────────────────────────────────────
+# 4. Google Drive 랜덤 3장 → JPG 변환 → 공개 URL
+# ─────────────────────────────────────────────
+def list_drive_images(folder_id):
+    q = f"'{folder_id}' in parents and trashed = false and mimeType contains 'image/'"
+    files, token = [], None
+    while True:
+        params = {
+            "q": q, "fields": "nextPageToken,files(id,name,mimeType,size)",
+            "pageSize": 1000, "key": GDRIVE_API_KEY,
+        }
+        if token:
+            params["pageToken"] = token
+        res = http_json(f"{DRIVE_API}/files?{urllib.parse.urlencode(params)}")
+        files += res.get("files", [])
+        token = res.get("nextPageToken")
+        if not token:
+            break
+    return files
+
+
+def download_drive_file(file_id):
+    url = f"{DRIVE_API}/files/{file_id}?alt=media&key={GDRIVE_API_KEY}"
+    with urllib.request.urlopen(url, timeout=120) as res:
+        return res.read()
+
+
+def to_instagram_jpg(raw_bytes):
+    img = Image.open(io.BytesIO(raw_bytes))
+    img = ImageOps.exif_transpose(img)
+    if img.mode in ("RGBA", "LA", "P"):
+        bg = Image.new("RGB", img.size, (255, 255, 255))
+        rgba = img.convert("RGBA")
+        bg.paste(rgba, mask=rgba.split()[-1])
+        img = bg
+    else:
+        img = img.convert("RGB")
+
+    w, h = img.size
+    ratio = w / h
+    if ratio < MIN_RATIO:
+        new_h = int(w / MIN_RATIO)
+        top = (h - new_h) // 2
+        img = img.crop((0, top, w, top + new_h))
+    elif ratio > MAX_RATIO:
+        new_w = int(h * MAX_RATIO)
+        left = (w - new_w) // 2
+        img = img.crop((left, 0, left + new_w, h))
+
+    img.thumbnail((MAX_SIDE, MAX_SIDE))
+    out = io.BytesIO()
+    img.save(out, "JPEG", quality=88, optimize=True)
+    return out.getvalue()
+
+
+def prune_cache():
+    if not os.path.isdir(CACHE_DIR):
+        return
+    cutoff = time.time() - CACHE_KEEP_DAYS * 86400
+    for f in os.listdir(CACHE_DIR):
+        p = os.path.join(CACHE_DIR, f)
+        if os.path.isfile(p) and os.path.getmtime(p) < cutoff:
+            os.remove(p)
+
+
+def git_push_cache(names):
+    def git(*args):
+        subprocess.run(["git", *args], check=True)
+    git("config", "user.name", "auto-post-bot")
+    git("config", "user.email", "bot@users.noreply.github.com")
+    git("add", "-A", CACHE_DIR)
+    if subprocess.run(["git", "diff", "--cached", "--quiet"]).returncode != 0:
+        git("commit", "-m", f"{CACHE_DIR}: {', '.join(names)}")
+        git("pull", "--rebase", "origin", BRANCH)
+        git("push", "origin", f"HEAD:{BRANCH}")
+    time.sleep(10)
+
+
+def pick_images(cfg, log):
+    files = list_drive_images(cfg["drive_folder_id"])
+    if len(files) < IMAGE_COUNT:
+        raise RuntimeError(
+            f"Drive 폴더에 이미지가 {len(files)}장뿐입니다 (최소 {IMAGE_COUNT}장). "
+            "폴더가 '링크가 있는 모든 사용자' 로 공유되어 있는지, drive_folder_id 가 맞는지 확인하세요."
+        )
+
+    # 최근 N회에 쓴 사진은 제외 (사진이 충분할 때만)
+    recent_names = {n for p in log["posts"][-EXCLUDE_RECENT_POSTS:] for n in p.get("images", [])}
+    fresh = [f for f in files if f["name"] not in recent_names]
+    candidates = fresh if len(fresh) >= IMAGE_COUNT else files
+    chosen = random.sample(candidates, IMAGE_COUNT)
+
+    os.makedirs(CACHE_DIR, exist_ok=True)
+    prune_cache()
+    stamp = datetime.now(KST).strftime("%Y%m%d_%H%M")
+    names, urls = [], []
+    for i, f in enumerate(chosen, 1):
+        jpg = to_instagram_jpg(download_drive_file(f["id"]))
+        name = f"{stamp}_{i}.jpg"
+        with open(os.path.join(CACHE_DIR, name), "wb") as fp:
+            fp.write(jpg)
+        names.append(name)
+        urls.append(f"https://raw.githubusercontent.com/{REPO}/{BRANCH}/{CACHE_DIR}/{name}")
+        print(f"   {f['name']} → {name} ({len(jpg)//1024} KB)")
+
+    git_push_cache(names)
+    return [f["name"] for f in chosen], urls
+
+
+# ─────────────────────────────────────────────
+# 5. Instagram 캐러셀 게시 + 첫 댓글(구매 링크)
+# ─────────────────────────────────────────────
+def wait_container(container_id, max_wait=180):
+    waited = 0
+    while waited < max_wait:
+        res = http_json(
+            f"{IG_API}/{container_id}?fields=status_code,status&access_token={ACCESS_TOKEN}"
+        )
+        code = res.get("status_code")
+        if code == "FINISHED":
+            return
+        if code in ("ERROR", "EXPIRED"):
+            raise RuntimeError(f"컨테이너 처리 실패: {res}")
+        time.sleep(5)
+        waited += 5
+    raise RuntimeError("컨테이너 처리 시간 초과 (이미지 용량/비율 확인 필요)")
+
+
+def post_to_instagram(caption, image_urls):
+    child_ids = []
+    for url in image_urls:
+        res = http_json(f"{IG_API}/{USER_ID}/media", {
+            "image_url": url,
+            "is_carousel_item": "true",
+            "access_token": ACCESS_TOKEN,
+        })
+        child_ids.append(res["id"])
+        time.sleep(2)
+    for cid in child_ids:
+        wait_container(cid)
+
+    res = http_json(f"{IG_API}/{USER_ID}/media", {
+        "media_type": "CAROUSEL",
+        "children": ",".join(child_ids),
+        "caption": caption,
+        "access_token": ACCESS_TOKEN,
+    })
+    creation_id = res["id"]
+    wait_container(creation_id)
+
+    res = http_json(f"{IG_API}/{USER_ID}/media_publish", {
+        "creation_id": creation_id,
+        "access_token": ACCESS_TOKEN,
+    })
+    return res["id"]
+
+
+def post_fixed_comment(media_id, text):
+    """첫 댓글 = 구매 링크. 캡션 링크는 안 눌리므로 판매 전환의 핵심 경로."""
+    if not text:
+        return None
+    for attempt in range(3):
+        try:
+            res = http_json(f"{IG_API}/{media_id}/comments", {
+                "message": text,
+                "access_token": ACCESS_TOKEN,
+            })
+            print(f"💬 구매 링크 댓글 등록 완료: {res.get('id')}")
+            return res.get("id")
+        except Exception as e:
+            print(f"⚠️ 댓글 등록 실패 ({attempt+1}/3): {e}")
+            time.sleep(10)
+    print("⚠️ 댓글 3회 실패 — 게시는 완료됨. 구매 링크 댓글을 수동으로 달아주세요.")
+    return None
+
+
+# ─────────────────────────────────────────────
+# 6. 토큰 자동 갱신
+# ─────────────────────────────────────────────
+def refresh_token_if_needed():
+    meta = {}
+    if os.path.exists(TOKEN_FILE):
+        with open(TOKEN_FILE, encoding="utf-8") as f:
+            meta = json.load(f)
+    last = meta.get("refreshed_at")
+    if last:
+        days = (datetime.now(timezone.utc) - datetime.fromisoformat(last)).days
+        if days < 40:
+            return None
+    try:
+        res = http_json(
+            "https://graph.instagram.com/refresh_access_token"
+            f"?grant_type=ig_refresh_token&access_token={ACCESS_TOKEN}"
+        )
+        new_token = res["access_token"]
+        with open(TOKEN_FILE, "w", encoding="utf-8") as f:
+            json.dump({"refreshed_at": datetime.now(timezone.utc).isoformat()}, f)
+        print("🔄 인스타 토큰이 갱신되었습니다.")
+        return new_token
+    except Exception as e:
+        print(f"⚠️ 토큰 갱신 실패 (다음 실행에서 재시도): {e}")
+        return None
+
+
+def update_github_secret(new_token):
+    pat = os.environ.get("GH_PAT")
+    if not pat or not new_token:
+        if new_token:
+            print(f"⚠️ GH_PAT 미설정: Secrets 의 {SECRET_NAME} 을 수동 교체해 주세요.")
+        return
+    try:
+        from base64 import b64encode
+        from nacl import encoding, public
+
+        def gh_api(path, method="GET", body=None):
+            req = urllib.request.Request(
+                f"https://api.github.com{path}",
+                data=json.dumps(body).encode() if body else None,
+                method=method,
+                headers={
+                    "Authorization": f"Bearer {pat}",
+                    "Accept": "application/vnd.github+json",
+                },
+            )
+            with urllib.request.urlopen(req, timeout=30) as res:
+                raw = res.read().decode()
+                return json.loads(raw) if raw else {}
+
+        key = gh_api(f"/repos/{REPO}/actions/secrets/public-key")
+        pk = public.PublicKey(key["key"].encode(), encoding.Base64Encoder())
+        sealed = public.SealedBox(pk).encrypt(new_token.encode())
+        gh_api(
+            f"/repos/{REPO}/actions/secrets/{SECRET_NAME}",
+            method="PUT",
+            body={"encrypted_value": b64encode(sealed).decode(), "key_id": key["key_id"]},
+        )
+        print("✅ 새 토큰이 GitHub Secrets 에 자동 저장되었습니다.")
+    except Exception as e:
+        print(f"⚠️ Secrets 자동 저장 실패, 수동 교체 필요: {e}")
+
+
+# ─────────────────────────────────────────────
+# 메인
+# ─────────────────────────────────────────────
+def main():
+    log = load_log()
+    cfg = load_cfg()
+    slot = current_slot()
+    topic = pick_topic(cfg, log)
+    cta_type, cta_text = pick_cta(cfg, log)
+    print(f"📌 회차 {log['count']+1} | 슬롯 {slot} | 주제: {topic}")
+    print(f"🎯 CTA: [{cta_type}] {cta_text}")
+
+    raw = generate_caption(topic, slot, cta_type, cta_text, cfg, log)
+    caption = sanitize_caption(raw, cfg)
+    print(f"✍️ 캡션 ({len(caption)}자, 해시태그 {len(HASHTAG_RE.findall(caption))}개):\n{caption}\n")
+
+    if DRY_RUN:
+        print("🧪 DRY_RUN=1 → 게시하지 않고 종료")
+        return
+
+    print("🖼️ Drive 에서 이미지 추출·변환 중...")
+    chosen, urls = pick_images(cfg, log)
+    print(f"🖼️ 선택된 이미지: {chosen}")
+
+    post_id = post_to_instagram(caption, urls)
+    print(f"🚀 게시 완료! media id = {post_id}")
+    time.sleep(5)
+    post_fixed_comment(post_id, cfg.get("fixed_comment", ""))
+
+    log["count"] += 1
+    log["posts"].append({
+        "at": datetime.now(KST).strftime("%Y-%m-%d %H:%M"),
+        "slot": slot,
+        "topic": topic,
+        "cta_type": cta_type,
+        "text": caption,
+        "images": chosen,
+        "post_id": post_id,
+    })
+    log["posts"] = log["posts"][-30:]
+    with open(LOG_FILE, "w", encoding="utf-8") as f:
+        json.dump(log, f, ensure_ascii=False, indent=2)
+
+    update_github_secret(refresh_token_if_needed())
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except Exception as e:
+        print(f"❌ 실행 실패: {e}", file=sys.stderr)
+        sys.exit(1)
