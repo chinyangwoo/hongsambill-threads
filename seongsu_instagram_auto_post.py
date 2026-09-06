@@ -9,7 +9,7 @@
   1. 요일별 테마 + 회차 순환으로 이번 글의 주제·CTA 유형 결정
      (구매 CTA 는 최소 2회에 1회 강제, 같은 CTA 연속 금지)
   2. Claude API 로 캡션 생성 (훅 15자 이내 + 본문 + CTA 단독 마지막 줄 + 해시태그 15~20개)
-  3. 생성 결과 자동 검수: 브랜드 해시태그 보충, 30개 초과 제거, 길이 제한, 링크 문자열 제거
+  3. 생성 결과 자동 검수: 문단 정리, 브랜드 해시태그 보충, 30개 초과 제거, 링크 문자열 제거
   4. Google Drive 폴더에서 랜덤 3장 (최근 4회 사용한 사진 제외) → 인스타 규격 JPG 변환
   5. 변환 JPG 를 seongsu_ig_cache/ 에 커밋 → 공개 URL 확보
   6. Instagram API 캐러셀(3장) 게시 → 첫 댓글에 구매 링크 고정 등록
@@ -175,7 +175,19 @@ def generate_caption(topic, slot, cta_type, cta_text, cfg, log):
    좋은 예: "막걸리인데 왜 딸기우유 맛이 나죠" / "퇴근하고 이거 한 잔이면 끝"
    나쁜 예: "100년 전통의 프리미엄 딸기막걸리를 소개합니다!"
 2) 빈 줄
-3) 본문 3~6줄. 한 줄에 한 문장, 문장은 25자 이내 권장. 줄바꿈으로 호흡.
+3) 본문 = 문단 2~3개. 각 문단은 2~4줄, 한 줄에 한 문장(25자 이내 권장).
+   ★ 줄바꿈 규칙 (반드시 지킬 것):
+     - 문단 '안'의 문장들은 그냥 줄바꿈(엔터 1번)으로만 구분합니다. 문장마다 빈 줄을 넣지 마세요.
+     - 빈 줄(엔터 2번)은 '문단과 문단 사이'에만 넣습니다.
+     - 즉 본문 전체에서 빈 줄은 1~2개뿐입니다. 모든 문장을 빈 줄로 떼어놓으면 글이 세로로 길어져 이탈합니다.
+   올바른 예:
+     흔들어서 한 입 마시면
+     진짜 딸기우유인가 싶어요
+     근데 끝에 남는 건 은은한 쌀 향
+     (빈 줄)
+     진안 마령면 물로 빚고
+     국산 딸기 그대로 넣어서
+     자연스러운 단맛이 나요
    맛은 구체적 감각으로: "달달함" 대신 "첫 입은 딸기, 끝은 은은한 쌀 향".
    아래 중 하나 이상을 자연스럽게 녹일 것:
    - 순간(퇴근 후 / 주말 낮술 / 홈파티 / 선물 / 캠핑 / 비 오는 날)
@@ -220,6 +232,25 @@ CTA 유형: {cta_type} / CTA 문장: "{cta_text}"
 # ─────────────────────────────────────────────
 HASHTAG_RE = re.compile(r"#[^\s#]+")
 URL_RE = re.compile(r"https?://\S+|www\.\S+|smartstore\.naver\.com\S*", re.I)
+MAX_BODY_PARAGRAPHS = 3      # 훅·CTA 를 뺀 본문 문단 최대 개수
+
+
+def tidy_paragraphs(body):
+    """
+    가독성 보정: 모델이 모든 문장을 빈 줄로 떼어놓으면 글이 세로로 길어져 이탈합니다.
+    훅(첫 덩어리)과 CTA(마지막 덩어리)는 그대로 두고,
+    가운데 덩어리가 너무 많으면 균등하게 묶어 문단 2~3개로 만듭니다.
+    (문단 안 문장은 줄바꿈 1번, 문단 사이만 빈 줄)
+    """
+    blocks = [b.strip() for b in re.split(r"\n\s*\n", body) if b.strip()]
+    if len(blocks) <= 2:
+        return "\n\n".join(blocks)
+
+    hook, cta, middle = blocks[0], blocks[-1], blocks[1:-1]
+    if len(middle) > MAX_BODY_PARAGRAPHS:
+        size = -(-len(middle) // MAX_BODY_PARAGRAPHS)      # 올림 나눗셈
+        middle = ["\n".join(middle[i:i + size]) for i in range(0, len(middle), size)]
+    return "\n\n".join([hook, *middle, cta])
 
 
 def sanitize_caption(text, cfg):
@@ -239,7 +270,9 @@ def sanitize_caption(text, cfg):
 
     tags = HASHTAG_RE.findall(text)
     body = HASHTAG_RE.sub("", text).strip().strip('"“”').strip()
+    body = re.sub(r"[ \t]+\n", "\n", body)
     body = re.sub(r"\n{3,}", "\n\n", body)
+    body = tidy_paragraphs(body)
 
     # 브랜드 고정 태그 보충 (중복 제거, 순서 유지)
     seen, ordered = set(), []
