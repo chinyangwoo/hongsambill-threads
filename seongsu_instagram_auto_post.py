@@ -56,6 +56,7 @@ SECRET_NAME = "SEONGSU_INSTAGRAM_ACCESS_TOKEN"
 
 MAX_CAPTION_LEN = 1000          # 인스타 한도 2,200자. 판매 캡션은 짧을수록 좋음 (해시태그 포함)
 MAX_HASHTAGS = 30               # 인스타 한도 30개 (초과 시 게시 실패)
+LOCAL_IMAGE_DIR = "images_sungsu"    # 저장소 안 사진 폴더 (Drive 폴더와 함께 랜덤 추출)
 IMAGE_COUNT = 3                 # 캐러셀 장수
 EXCLUDE_RECENT_POSTS = 4        # 최근 N회 게시에 쓴 사진은 이번 회차 제외
 MAX_SIDE = 1440
@@ -371,8 +372,30 @@ def git_push_cache(names):
     time.sleep(10)
 
 
+def list_local_images():
+    """GitHub 저장소 안 images_sungsu/ 폴더의 사진 목록 (Drive 폴더와 함께 사용)"""
+    if not os.path.isdir(LOCAL_IMAGE_DIR):
+        return []
+    return [
+        {"id": None, "name": f, "local_path": os.path.join(LOCAL_IMAGE_DIR, f)}
+        for f in sorted(os.listdir(LOCAL_IMAGE_DIR))
+        if os.path.splitext(f)[1].lower() in (".png", ".jpg", ".jpeg")
+    ]
+
+
+def read_image_bytes(f):
+    if f.get("local_path"):
+        with open(f["local_path"], "rb") as fp:
+            return fp.read()
+    return download_drive_file(f["id"])
+
+
 def pick_images(cfg, log):
-    files = list_drive_images(cfg["drive_folder_id"])
+    files = list_local_images()
+    try:
+        files += list_drive_images(cfg["drive_folder_id"])
+    except Exception as e:
+        print(f"[warn] Drive 목록 조회 실패, 저장소 사진만 사용: {e}")
     if len(files) < IMAGE_COUNT:
         raise RuntimeError(
             f"Drive 폴더에 이미지가 {len(files)}장뿐입니다 (최소 {IMAGE_COUNT}장). "
@@ -390,7 +413,7 @@ def pick_images(cfg, log):
     stamp = datetime.now(KST).strftime("%Y%m%d_%H%M")
     names, urls = [], []
     for i, f in enumerate(chosen, 1):
-        jpg = to_instagram_jpg(download_drive_file(f["id"]))
+        jpg = to_instagram_jpg(read_image_bytes(f))
         name = f"{stamp}_{i}.jpg"
         with open(os.path.join(CACHE_DIR, name), "wb") as fp:
             fp.write(jpg)
