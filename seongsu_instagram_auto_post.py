@@ -671,6 +671,8 @@ def main():
     print(f"🎞️ 게시 형식: {fmt}")
 
     raw = generate_caption(topic, slot, cta_type, cta_text, cfg, log, fmt)
+    if DRY_RUN:
+        print(f"📝 모델 원문 ({len(raw)}자):\n{raw}\n")
     caption = sanitize_caption(raw, cfg)
     print(f"✍️ 캡션 ({len(caption)}자, 해시태그 {len(HASHTAG_RE.findall(caption))}개):\n{caption}\n")
 
