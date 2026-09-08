@@ -155,7 +155,12 @@ def call_claude(system, user, max_tokens=1200):
     )
     with urllib.request.urlopen(req, timeout=120) as res:
         data = json.loads(res.read().decode())
-    return "".join(b["text"] for b in data["content"] if b["type"] == "text").strip()
+    text = "".join(b.get("text", "") for b in data.get("content", []) if b.get("type") == "text").strip()
+    if not text:
+        meta = {k: data.get(k) for k in ("stop_reason", "model", "usage")}
+        types = [b.get("type") for b in data.get("content", [])]
+        print(f"⚠️ Claude 응답이 비어 있음: content types={types} meta={meta}")
+    return text
 
 
 def generate_caption(topic, slot, cta_type, cta_text, cfg, log, fmt="캐러셀"):
@@ -243,7 +248,13 @@ CTA 유형: {cta_type} / CTA 문장: "{cta_text}"
 
 위 조건으로 인스타그램 캡션 본문만 출력해 주세요."""
 
-    return call_claude(system, user)
+    for attempt in range(3):
+        text = call_claude(system, user)
+        if len(HASHTAG_RE.sub("", text).strip()) >= 30:
+            return text
+        print(f"⚠️ 캐션 생성 결과가 비어 있거나 너무 짧음 ({attempt + 1}/3) → 재시도")
+        time.sleep(5)
+    raise RuntimeError("캐션 생성 3회 실패: 모델이 본문을 돌려주지 않았습니다. 게시를 중단합니다.")
 
 
 # ─────────────────────────────────────────────
@@ -674,6 +685,8 @@ def main():
     if DRY_RUN:
         print(f"📝 모델 원문 ({len(raw)}자):\n{raw}\n")
     caption = sanitize_caption(raw, cfg)
+    if len(HASHTAG_RE.sub("", caption).strip()) < 30:
+        raise RuntimeError("캐션 본문이 비어 있어 게시를 중단합니다 (해시태그만 있는 글 방지).")
     print(f"✍️ 캡션 ({len(caption)}자, 해시태그 {len(HASHTAG_RE.findall(caption))}개):\n{caption}\n")
 
     print(f"🖼️ {LOCAL_IMAGE_DIR}/ 에서 이미지 추출·변환 중... ({fmt})")
