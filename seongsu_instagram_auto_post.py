@@ -32,6 +32,7 @@ import json
 import os
 import random
 import re
+import shutil
 import subprocess
 import sys
 import time
@@ -61,6 +62,12 @@ IMAGE_COUNT = 3                 # 캐러셀 장수
 EXCLUDE_RECENT_POSTS = 4        # 최근 N회 게시에 쓴 사진은 이번 회차 제외
 MAX_SIDE = 1440
 MIN_RATIO, MAX_RATIO = 0.8, 1.91
+
+# 릴스(슬라이드 영상) 설정 — 하루 2회 중 REELS_SLOT 회차는 사진 캐러셀 대신 릴스로 게시
+REELS_SLOT = "PM"                 # "AM" | "PM" | "" (빈 문자열이면 릴스 사용 안 함)
+REELS_IMAGE_COUNT = 4             # 릴스에 쓸 사진 장수
+REELS_SEC_PER_IMAGE = 2.0         # 사진 1장당 노출 초 (4장 × 2초 = 8초)
+REELS_W, REELS_H = 1080, 1920     # 릴스 규격 9:16
 KST = timezone(timedelta(hours=9))
 CLAUDE_MODEL = "claude-sonnet-5"
 
@@ -151,7 +158,7 @@ def call_claude(system, user, max_tokens=1200):
     return "".join(b["text"] for b in data["content"] if b["type"] == "text").strip()
 
 
-def generate_caption(topic, slot, cta_type, cta_text, cfg, log):
+def generate_caption(topic, slot, cta_type, cta_text, cfg, log, fmt="캐러셀"):
     recent = [p["text"] for p in log["posts"][-8:]]
     recent_block = "\n---\n".join(recent) if recent else "(없음)"
     weekday = datetime.now(KST).weekday()
@@ -172,7 +179,11 @@ def generate_caption(topic, slot, cta_type, cta_text, cfg, log):
 "전통주"보다 "요즘 술", "감성 술", "선물하기 좋은 술"의 맥락으로 접근합니다.
 
 캡션 구조 (반드시 이 순서):
-1) 첫 줄 = 훅. 15자 이내. '더보기'를 누르게 만드는 질문·반전·공감 문장. 브랜드명·제품명으로 시작 금지.
+1) 첫 줄 = 훅. 15자 이내. 인스타는 첫 줄만 보이고 나머지는 '더보기'에 숨습니다. 첫 줄이 조회수를 결정합니다.
+   아래 훅 유형 중 하나를 골라 쓰되, 최근 게시글에서 쓴 유형은 피할 것:
+   ① 반전 ("막걸리인데 딸기우유 맛")  ② 숫자·구체 ("6도인데 혼자 한 병 비움")  ③ 질문 ("술 못 마시는 친구 뭐 줘요?")
+   ④ 상황·공감 ("퇴근하고 이거 한 잔이면 끝")  ⑤ 경고·반어 ("이거 선물하면 답례 옵니다")
+   훅에 브랜드명·제품명·'소개합니다'·느낌표 금지. 읽는 순간 '왜?'가 떠오르게. 훅만 따로 읽어도 궁금해야 합니다.
    좋은 예: "막걸리인데 왜 딸기우유 맛이 나죠" / "퇴근하고 이거 한 잔이면 끝"
    나쁜 예: "100년 전통의 프리미엄 딸기막걸리를 소개합니다!"
 2) 빈 줄
@@ -190,6 +201,7 @@ def generate_caption(topic, slot, cta_type, cta_text, cfg, log):
      국산 딸기 그대로 넣어서
      자연스러운 단맛이 나요
    맛은 구체적 감각으로: "달달함" 대신 "첫 입은 딸기, 끝은 은은한 쌀 향".
+본문 마지막 문장은 독자에게 던지는 짧은 질문 1개 (예: "여러분은 어떤 안주랑 드세요?"). CTA 와 별개로 댓글을 부르는 장치입니다.
    아래 중 하나 이상을 자연스럽게 녹일 것:
    - 순간(퇴근 후 / 주말 낮술 / 홈파티 / 선물 / 캠핑 / 비 오는 날)
    - 스토리(100년 양조장, 진안 마령면, 3대째, 국산 딸기, 2025 대한민국주류대상 대상)
@@ -215,7 +227,13 @@ def generate_caption(topic, slot, cta_type, cta_text, cfg, log):
 - 최근 게시글과 비슷한 훅·소재·문장 반복
 - 캡션 외의 설명·따옴표·머리말·"[캡션]" 같은 라벨 출력 금지. 캡션 본문만 출력."""
 
+    fmt_guide = (
+        "릴스(8초 슬라이드 영상). 캡션은 본문 문단 1~2개로 더 짧게. 훅은 영상 첫 화면 위에서 읽히는 한 문장."
+        if fmt == "릴스" else
+        "사진 캐러셀 3장. 본문 문단 2~3개."
+    )
     user = f"""발행 슬롯: {slot} — {slot_guide}
+게시 형식: {fmt} — {fmt_guide}
 오늘 요일 테마: {theme}
 이번 글 주제: {topic}
 CTA 유형: {cta_type} / CTA 문장: "{cta_text}"
@@ -360,6 +378,9 @@ def prune_cache():
 
 
 def git_push_cache(names):
+    if DRY_RUN:
+        print("🧪 DRY_RUN → 캐시 커밋/푸시 생략")
+        return
     def git(*args):
         subprocess.run(["git", *args], check=True)
     git("config", "user.name", "auto-post-bot")
@@ -388,6 +409,67 @@ def read_image_bytes(f):
         with open(f["local_path"], "rb") as fp:
             return fp.read()
     return download_drive_file(f["id"])
+
+
+# ─────────────────────────────────────────────
+# 4-b. 릴스: 사진 4장 → 9:16 프레임 → 8초 슬라이드 MP4 (ffmpeg)
+# ─────────────────────────────────────────────
+def to_reels_frame(raw_bytes):
+    """사진을 1080x1920 릴스 프레임으로: 흐린 배경 + 원본 비율 유지한 사진을 가운데 배치"""
+    from PIL import ImageFilter
+    img = ImageOps.exif_transpose(Image.open(io.BytesIO(raw_bytes))).convert("RGB")
+    bg = ImageOps.fit(img, (REELS_W, REELS_H), Image.LANCZOS).filter(ImageFilter.GaussianBlur(28))
+    fg = img.copy()
+    fg.thumbnail((REELS_W - 80, REELS_H - 400), Image.LANCZOS)
+    bg.paste(fg, ((REELS_W - fg.width) // 2, (REELS_H - fg.height) // 2))
+    return bg
+
+
+def build_reels_video(frames, out_path):
+    """프레임 이미지 목록 → 슬라이드 MP4. 장당 REELS_SEC_PER_IMAGE 초, H.264 + 무음 AAC (인스타 릴스 규격)"""
+    tmp = os.path.join(CACHE_DIR, "_reel_frames")
+    shutil.rmtree(tmp, ignore_errors=True)
+    os.makedirs(tmp, exist_ok=True)
+    list_path = os.path.join(tmp, "list.txt")
+    with open(list_path, "w", encoding="utf-8") as fp:
+        for i, fr in enumerate(frames):
+            fr.save(os.path.join(tmp, f"f{i}.jpg"), "JPEG", quality=92)
+            fp.write(f"file 'f{i}.jpg'\nduration {REELS_SEC_PER_IMAGE}\n")
+        fp.write(f"file 'f{len(frames) - 1}.jpg'\n")   # concat demuxer: 마지막 프레임 유지용
+    cmd = [
+        "ffmpeg", "-y", "-loglevel", "error",
+        "-f", "concat", "-safe", "0", "-i", list_path,
+        "-f", "lavfi", "-i", "anullsrc=channel_layout=stereo:sample_rate=44100",
+        "-shortest", "-r", "30",
+        "-vf", f"scale={REELS_W}:{REELS_H},format=yuv420p",
+        "-c:v", "libx264", "-preset", "medium", "-crf", "20",
+        "-c:a", "aac", "-b:a", "96k", "-movflags", "+faststart",
+        out_path,
+    ]
+    subprocess.run(cmd, check=True)
+    shutil.rmtree(tmp, ignore_errors=True)
+
+
+def pick_reels_images(cfg, log):
+    files = list_local_images()
+    if len(files) < REELS_IMAGE_COUNT:
+        raise RuntimeError(f"{LOCAL_IMAGE_DIR}/ 폴더에 이미지가 {len(files)}장뿐입니다 (릴스 최소 {REELS_IMAGE_COUNT}장).")
+    recent_names = {n for p in log["posts"][-EXCLUDE_RECENT_POSTS:] for n in p.get("images", [])}
+    fresh = [f for f in files if f["name"] not in recent_names]
+    candidates = fresh if len(fresh) >= REELS_IMAGE_COUNT else files
+    chosen = random.sample(candidates, REELS_IMAGE_COUNT)
+
+    os.makedirs(CACHE_DIR, exist_ok=True)
+    prune_cache()
+    stamp = datetime.now(KST).strftime("%Y%m%d_%H%M")
+    frames = [to_reels_frame(read_image_bytes(f)) for f in chosen]
+    name = f"{stamp}_reel.mp4"
+    out = os.path.join(CACHE_DIR, name)
+    build_reels_video(frames, out)
+    print(f"  🎬 릴스 생성: {name} ({os.path.getsize(out) // 1024} KB, {len(frames)}장 × {REELS_SEC_PER_IMAGE}초)")
+    git_push_cache([name])
+    url = f"https://raw.githubusercontent.com/{REPO}/{BRANCH}/{CACHE_DIR}/{name}"
+    return [f["name"] for f in chosen], [url]
 
 
 def pick_images(cfg, log):
@@ -461,6 +543,25 @@ def post_to_instagram(caption, image_urls):
     })
     creation_id = res["id"]
     wait_container(creation_id)
+
+    res = http_json(f"{IG_API}/{USER_ID}/media_publish", {
+        "creation_id": creation_id,
+        "access_token": ACCESS_TOKEN,
+    })
+    return res["id"]
+
+
+def post_reel_to_instagram(caption, video_url):
+    """릴스 게시: 영상 컨테이너 생성 → 처리 대기(최대 10분) → 발행. share_to_feed 로 피드에도 노출."""
+    res = http_json(f"{IG_API}/{USER_ID}/media", {
+        "media_type": "REELS",
+        "video_url": video_url,
+        "caption": caption,
+        "share_to_feed": "true",
+        "access_token": ACCESS_TOKEN,
+    })
+    creation_id = res["id"]
+    wait_container(creation_id, max_wait=600)
 
     res = http_json(f"{IG_API}/{USER_ID}/media_publish", {
         "creation_id": creation_id,
@@ -565,19 +666,29 @@ def main():
     print(f"📌 회차 {log['count']+1} | 슬롯 {slot} | 주제: {topic}")
     print(f"🎯 CTA: [{cta_type}] {cta_text}")
 
-    raw = generate_caption(topic, slot, cta_type, cta_text, cfg, log)
+    is_reel = bool(REELS_SLOT) and slot == REELS_SLOT
+    fmt = "릴스" if is_reel else "캐러셀"
+    print(f"🎞️ 게시 형식: {fmt}")
+
+    raw = generate_caption(topic, slot, cta_type, cta_text, cfg, log, fmt)
     caption = sanitize_caption(raw, cfg)
     print(f"✍️ 캡션 ({len(caption)}자, 해시태그 {len(HASHTAG_RE.findall(caption))}개):\n{caption}\n")
 
-    if DRY_RUN:
-        print("🧪 DRY_RUN=1 → 게시하지 않고 종료")
-        return
-
-    print("🖼️ Drive 에서 이미지 추출·변환 중...")
-    chosen, urls = pick_images(cfg, log)
+    print(f"🖼️ {LOCAL_IMAGE_DIR}/ 에서 이미지 추출·변환 중... ({fmt})")
+    if is_reel:
+        chosen, urls = pick_reels_images(cfg, log)
+    else:
+        chosen, urls = pick_images(cfg, log)
     print(f"🖼️ 선택된 이미지: {chosen}")
 
-    post_id = post_to_instagram(caption, urls)
+    if DRY_RUN:
+        print("🧪 DRY_RUN=1 → 게시하지 않고 종료 (캡션·미디어 변환까지만 검증)")
+        return
+
+    if is_reel:
+        post_id = post_reel_to_instagram(caption, urls[0])
+    else:
+        post_id = post_to_instagram(caption, urls)
     print(f"🚀 게시 완료! media id = {post_id}")
     time.sleep(5)
     post_fixed_comment(post_id, cfg.get("fixed_comment", ""))
@@ -590,6 +701,7 @@ def main():
         "cta_type": cta_type,
         "text": caption,
         "images": chosen,
+        "format": "reel" if is_reel else "carousel",
         "post_id": post_id,
     })
     log["posts"] = log["posts"][-30:]
