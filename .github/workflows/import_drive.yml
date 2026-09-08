@@ -1,0 +1,43 @@
+name: import-drive
+on:
+  push:
+    paths:
+      - ".github/workflows/import_drive.yml"
+  workflow_dispatch:
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: download drive photos into images_sungsu
+        env:
+          GDRIVE_API_KEY: ${{ secrets.GDRIVE_API_KEY }}
+        run: |
+          python3 - <<'PY'
+          import json, os, re, urllib.parse, urllib.request
+          key = os.environ["GDRIVE_API_KEY"]
+          cfg = json.load(open("seongsu_instagram_topics.json", encoding="utf-8"))
+          folder = cfg["drive_folder_id"]
+          q = f"'{folder}' in parents and trashed = false and mimeType contains 'image/'"
+          params = {"q": q, "fields": "files(id,name,mimeType)", "pageSize": 1000, "key": key}
+          res = json.load(urllib.request.urlopen("https://www.googleapis.com/drive/v3/files?" + urllib.parse.urlencode(params)))
+          os.makedirs("images_sungsu", exist_ok=True)
+          n = 0
+          for f in res.get("files", []):
+              base, ext = os.path.splitext(f["name"])
+              ext = ext.lower() if ext.lower() in (".png", ".jpg", ".jpeg") else (".jpg" if "jpeg" in f["mimeType"] else ".png")
+              safe = re.sub(r"[^A-Za-z0-9_\-]+", "_", base).strip("_")
+              out = os.path.join("images_sungsu", f"drive_{safe}{ext}")
+              data = urllib.request.urlopen(f"https://www.googleapis.com/drive/v3/files/{f['id']}?alt=media&key={key}", timeout=120).read()
+              open(out, "wb").write(data)
+              n += 1
+              print(out, len(data))
+          print("downloaded", n)
+          PY
+          git config user.name github-actions
+          git config user.email actions@github.com
+          git add images_sungsu
+          git commit -m "Drive 사진 19장을 images_sungsu/로 이관"
+          git push
