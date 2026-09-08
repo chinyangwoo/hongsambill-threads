@@ -137,7 +137,8 @@ def pick_cta(cfg, log):
 # ─────────────────────────────────────────────
 # 2. Claude 로 캡션 생성
 # ─────────────────────────────────────────────
-def call_claude(system, user, max_tokens=1200):
+def call_claude(system, user, max_tokens=4000):
+    # claude-sonnet-5 는 답변 전에 생각(thinking) 토큰을 쓰므로 여유를 크게 잡음 (1200 이면 본문이 잘림)
     body = json.dumps({
         "model": CLAUDE_MODEL,
         "max_tokens": max_tokens,
