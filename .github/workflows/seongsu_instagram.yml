@@ -36,6 +36,9 @@ jobs:
 
       - run: pip install pynacl pillow
 
+      - name: ffmpeg 설치 (릴스 슬라이드 영상 생성용)
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+
       - name: 성수주조장 인스타그램 게시
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
