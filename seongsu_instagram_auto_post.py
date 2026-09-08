@@ -391,14 +391,10 @@ def read_image_bytes(f):
 
 
 def pick_images(cfg, log):
-    files = list_local_images()
-    try:
-        files += list_drive_images(cfg["drive_folder_id"])
-    except Exception as e:
-        print(f"[warn] Drive 목록 조회 실패, 저장소 사진만 사용: {e}")
+    files = list_local_images()   # GitHub 저장소 images_sungsu/ 폴더만 사용 (Drive 미사용)
     if len(files) < IMAGE_COUNT:
         raise RuntimeError(
-            f"Drive 폴더에 이미지가 {len(files)}장뿐입니다 (최소 {IMAGE_COUNT}장). "
+            f"{LOCAL_IMAGE_DIR}/ 폴더에 이미지가 {len(files)}장뿐입니다 (최소 {IMAGE_COUNT}장). "
             "폴더가 '링크가 있는 모든 사용자' 로 공유되어 있는지, drive_folder_id 가 맞는지 확인하세요."
         )
 
