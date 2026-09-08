@@ -1,0 +1,9 @@
+file 'f0.jpg'
+duration 2.0
+file 'f1.jpg'
+duration 2.0
+file 'f2.jpg'
+duration 2.0
+file 'f3.jpg'
+duration 2.0
+file 'f3.jpg'
