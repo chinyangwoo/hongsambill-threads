@@ -1,0 +1,29 @@
+name: fix-images
+on:
+  push:
+    paths:
+      - ".github/workflows/fix_images.yml"
+  workflow_dispatch:
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: split sungsu photos and restore hotel photos
+        run: |
+          set -e
+          BASE=c0b32ff
+          mkdir -p images_sungsu
+          for f in $(git diff --name-only $BASE HEAD -- images | grep -E '^images/[0-9]+\.(png|jpg|jpeg)$'); do
+            git mv -f "$f" "images_sungsu/$(basename "$f")"
+          done
+          git checkout $BASE -- images
+          git config user.name github-actions
+          git config user.email actions@github.com
+          git add -A
+          git commit -m "성수주조장 사진을 images_sungsu/로 분리하고 호텔 사진 복원"
+          git push
