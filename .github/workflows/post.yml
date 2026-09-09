@@ -6,10 +6,14 @@ on:
     - cron: "0 23 * * *"   # 오전 08:00 KST
     - cron: "30 3 * * *"   # 낮 12:30 KST
     - cron: "0 10 * * *"   # 저녁 19:00 KST
-  workflow_dispatch: {}     # 수동 실행 버튼 (테스트용)
+  workflow_dispatch: {}    # 수동 실행 버튼 (테스트용)
 
 permissions:
-  contents: write           # posted_log.json 커밋용
+  contents: write          # posted_log.json 커밋용
+
+concurrency:
+  group: threads-post      # 같은 워크플로가 동시에 2개 돌지 않도록 줄 세우기
+  cancel-in-progress: false
 
 jobs:
   post:
@@ -40,4 +44,10 @@ jobs:
           git config user.email "bot@users.noreply.github.com"
           git add posted_log.json .token_meta.json || true
           git diff --cached --quiet || git commit -m "🤖 포스팅 기록 업데이트"
-          git push
+          # 다른 워크플로(인스타·페이스북 등)가 먼저 커밋했어도 밀리지 않도록
+          # 최신 내용을 먼저 받아온 뒤(pull --rebase) 푸시, 실패하면 최대 5번 재시도
+          for i in 1 2 3 4 5; do
+            git pull --rebase origin main && git push && break
+            echo "푸시 실패 ($i/5) — 10초 후 재시도"
+            sleep 10
+          done
