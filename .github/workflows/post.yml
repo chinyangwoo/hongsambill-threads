@@ -11,8 +11,10 @@ on:
 permissions:
   contents: write          # posted_log.json 커밋용
 
+# 인스타·페이스북·성수주조장 워크플로와 같은 그룹으로 묶어
+# 저장소에 기록을 저장하는 작업이 한 번에 하나씩만 돌도록 줄 세우기
 concurrency:
-  group: threads-post      # 같은 워크플로가 동시에 2개 돌지 않도록 줄 세우기
+  group: auto-post-commit
   cancel-in-progress: false
 
 jobs:
@@ -44,7 +46,7 @@ jobs:
           git config user.email "bot@users.noreply.github.com"
           git add posted_log.json .token_meta.json || true
           git diff --cached --quiet || git commit -m "🤖 포스팅 기록 업데이트"
-          # 다른 워크플로(인스타·페이스북 등)가 먼저 커밋했어도 밀리지 않도록
+          # 다른 워크플로가 먼저 커밋했어도 밀리지 않도록
           # 최신 내용을 먼저 받아온 뒤(pull --rebase) 푸시, 실패하면 최대 5번 재시도
           for i in 1 2 3 4 5; do
             git pull --rebase origin main && git push && break
