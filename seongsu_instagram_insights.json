@@ -19,7 +19,7 @@
     "reach": 73,
     "saved": 0,
     "shares": 1,
-    "fetched_at": "2026-09-10 14:31"
+    "fetched_at": "2026-09-10 19:22"
   },
   "18037451456823719": {
     "at": "2026-09-06 15:21",
@@ -37,11 +37,11 @@
     "media_type": "FEED",
     "likes": 13,
     "comments": 1,
-    "views": 337,
-    "reach": 123,
+    "views": 341,
+    "reach": 126,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-10 14:31"
+    "fetched_at": "2026-09-10 19:22"
   },
   "18563588785077555": {
     "at": "2026-09-06 22:03",
@@ -59,11 +59,11 @@
     "media_type": "FEED",
     "likes": 18,
     "comments": 2,
-    "views": 259,
-    "reach": 108,
+    "views": 267,
+    "reach": 109,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-10 14:31"
+    "fetched_at": "2026-09-10 19:22"
   },
   "18097066874065913": {
     "at": "2026-09-07 22:28",
@@ -81,11 +81,11 @@
     "media_type": "FEED",
     "likes": 10,
     "comments": 2,
-    "views": 137,
-    "reach": 56,
+    "views": 141,
+    "reach": 57,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-10 14:31"
+    "fetched_at": "2026-09-10 19:22"
   },
   "18118916654291129": {
     "at": "2026-09-08 21:06",
@@ -101,13 +101,13 @@
     ],
     "permalink": "https://www.instagram.com/p/DdBpa5knNDW/",
     "media_type": "FEED",
-    "likes": 10,
+    "likes": 11,
     "comments": 1,
-    "views": 130,
-    "reach": 51,
+    "views": 135,
+    "reach": 54,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-10 14:31"
+    "fetched_at": "2026-09-10 19:22"
   },
   "18115673678082784": {
     "at": "2026-09-09 16:19",
@@ -124,13 +124,13 @@
     ],
     "permalink": "https://www.instagram.com/reel/DdDtV-0lDp2/",
     "media_type": "REELS",
-    "likes": 2,
+    "likes": 3,
     "comments": 1,
-    "views": 54,
-    "reach": 30,
+    "views": 58,
+    "reach": 33,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-10 14:31"
+    "fetched_at": "2026-09-10 19:22"
   },
   "18332810674258202": {
     "at": "2026-09-09 22:25",
@@ -147,12 +147,12 @@
     ],
     "permalink": "https://www.instagram.com/reel/DdEXLXtlP-2/",
     "media_type": "REELS",
-    "likes": 4,
+    "likes": 5,
     "comments": 1,
-    "views": 23,
-    "reach": 18,
+    "views": 30,
+    "reach": 23,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-10 14:31"
+    "fetched_at": "2026-09-10 19:22"
   }
 }
