@@ -13,13 +13,13 @@
     ],
     "permalink": "https://www.instagram.com/p/Dc72hY6CJxt/",
     "media_type": "FEED",
-    "likes": 8,
+    "likes": 9,
     "comments": 3,
-    "views": 174,
-    "reach": 70,
+    "views": 177,
+    "reach": 73,
     "saved": 0,
     "shares": 1,
-    "fetched_at": "2026-09-09 14:40"
+    "fetched_at": "2026-09-10 14:31"
   },
   "18037451456823719": {
     "at": "2026-09-06 15:21",
@@ -35,13 +35,13 @@
     ],
     "permalink": "https://www.instagram.com/p/Dc74R8eHLhD/",
     "media_type": "FEED",
-    "likes": 12,
+    "likes": 13,
     "comments": 1,
-    "views": 335,
+    "views": 337,
     "reach": 123,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-09 14:40"
+    "fetched_at": "2026-09-10 14:31"
   },
   "18563588785077555": {
     "at": "2026-09-06 22:03",
@@ -59,11 +59,11 @@
     "media_type": "FEED",
     "likes": 18,
     "comments": 2,
-    "views": 249,
-    "reach": 103,
+    "views": 259,
+    "reach": 108,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-09 14:40"
+    "fetched_at": "2026-09-10 14:31"
   },
   "18097066874065913": {
     "at": "2026-09-07 22:28",
@@ -79,13 +79,13 @@
     ],
     "permalink": "https://www.instagram.com/p/Dc_N-zLkTZf/",
     "media_type": "FEED",
-    "likes": 9,
+    "likes": 10,
     "comments": 2,
-    "views": 133,
-    "reach": 54,
+    "views": 137,
+    "reach": 56,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-09 14:40"
+    "fetched_at": "2026-09-10 14:31"
   },
   "18118916654291129": {
     "at": "2026-09-08 21:06",
@@ -101,12 +101,58 @@
     ],
     "permalink": "https://www.instagram.com/p/DdBpa5knNDW/",
     "media_type": "FEED",
-    "likes": 7,
+    "likes": 10,
     "comments": 1,
-    "views": 98,
-    "reach": 42,
+    "views": 130,
+    "reach": 51,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-09 14:40"
+    "fetched_at": "2026-09-10 14:31"
+  },
+  "18115673678082784": {
+    "at": "2026-09-09 16:19",
+    "slot": "PM",
+    "format": "reel",
+    "cta_type": "태그",
+    "topic": "100년 양조장의 3대째 이야기: 1925년 진안 마령면에서 시작된 술",
+    "hook": "1925년, 그 술 아직도 팔아요",
+    "images": [
+      "drive_makgeolli_traditional_vibe_1776768819386.png",
+      "62.png",
+      "95.png",
+      "100.png"
+    ],
+    "permalink": "https://www.instagram.com/reel/DdDtV-0lDp2/",
+    "media_type": "REELS",
+    "likes": 2,
+    "comments": 1,
+    "views": 54,
+    "reach": 30,
+    "saved": 0,
+    "shares": 0,
+    "fetched_at": "2026-09-10 14:31"
+  },
+  "18332810674258202": {
+    "at": "2026-09-09 22:25",
+    "slot": "PM",
+    "format": "reel",
+    "cta_type": "구매",
+    "topic": "진안 상수원의 물과 국산 딸기·쌀, 원료가 다르면 맛이 다르다",
+    "hook": "왜 하필 진안 물일까요",
+    "images": [
+      "33.png",
+      "50.png",
+      "82.png",
+      "19.png"
+    ],
+    "permalink": "https://www.instagram.com/reel/DdEXLXtlP-2/",
+    "media_type": "REELS",
+    "likes": 4,
+    "comments": 1,
+    "views": 23,
+    "reach": 18,
+    "saved": 0,
+    "shares": 0,
+    "fetched_at": "2026-09-10 14:31"
   }
 }
