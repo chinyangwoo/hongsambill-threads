@@ -1,13 +1,20 @@
 # -*- coding: utf-8 -*-
 """
-홍삼빌호텔 페이스북 페이지 완전 자동 포스팅 앱  (2026-09-07 수정판)
+홍삼빌호텔 페이스북 페이지 완전 자동 포스팅 앱  (2026-09-10 수정판)
 ================================================
-수정 내용:
+이번 수정 내용 (2026-09-10 실패 대응):
+  - max_tokens 1200 → 4000 : 글이 다 써지기 전에 잘려서 본문이 비던 문제 해결
+  - Claude 응답이 잘렸을 때(stop_reason=max_tokens) 잘린 JSON 을 복구해서 읽음
+  - 재시도할 때마다 요청문이 계속 길어지던 문제 수정 (매번 원본 + 이번 지적사항만)
+  - 잘렸을 경우 재시도 시 "더 짧게 쓰라"는 지시 자동 추가
+  - Claude API 일시 오류 시 자동 1회 재접속
+  - pages_manage_engagement 권한이 없으면 경고 출력 (첫 댓글 등록에 필요)
+  - 본문 길이 안내 문구를 실제 검사 기준(200~480자)과 일치시킴
+
+이전 수정 내용:
   - 페이지 ID 를 토큰으로 자동 확인 (/me) → Secrets 의 FB_PAGE_ID 가 틀려도 동작
   - Claude 가 빈 글을 돌려주면 재시도, 빈 글은 절대 게시하지 않음
   - 글쓰기 규칙을 '홍삼빌호텔 페이스북 지침' 으로 교체
-    (45~65세 독자, 존댓말, 패턴 A~E 순환, 요일 주제, CTA 에 예약번호 1661-3889 필수,
-     바베큐는 장소 제공으로만, 홍삼 효능 표현 금지, 이모지 3개 이하)
   - 생성 결과를 코드가 검증하고 불합격이면 고쳐서 재생성 (최대 3회)
 
 필요한 환경변수 (GitHub Secrets):
@@ -41,6 +48,7 @@ MAX_SIDE = 1600
 MIN_RATIO, MAX_RATIO = 0.6, 2.0
 KST = timezone(timedelta(hours=9))
 CLAUDE_MODEL = os.environ.get("CLAUDE_MODEL", "claude-sonnet-5")
+MAX_TOKENS = int(os.environ.get("CLAUDE_MAX_TOKENS", "4000"))  # ★ 1200 → 4000
 
 ANTHROPIC_API_KEY = os.environ["ANTHROPIC_API_KEY"]
 PAGE_ID = os.environ["FB_PAGE_ID"]
@@ -121,6 +129,8 @@ SYSTEM_PROMPT = """# 역할
 
 # 출력 형식 (코드가 파싱한다. 이 JSON 하나만 출력하고 다른 말·코드블록 표시를 덧붙이지 마라)
 {{"pattern": "A|B|C|D|E", "theme": "요일 주제명", "message": "본문 전체 (해시태그 포함, 줄바꿈은 \\n)"}}
+- 설명·인사·사고 과정을 앞뒤에 붙이지 말고, 여는 중괄호로 시작해 닫는 중괄호로 끝내라.
+- 본문은 해시태그 포함 500자를 넘기지 마라.
 
 # 자체 점검
 □ 존댓말 완결문장 □ 금지 신조어 없음 □ 이모지 3개 이하 □ 첫 두 줄에 매력+장소
@@ -214,6 +224,9 @@ def ensure_permanent_token():
             f"토큰에 게시 권한이 없습니다. 그래프 API 탐색기에서 '권한 추가'로 "
             f"{sorted(need)} 를 체크한 뒤 토큰을 다시 생성하세요. (현재 권한: {scopes})"
         )
+    # 첫 댓글(예약번호) 등록에는 pages_manage_engagement 가 추가로 필요합니다.
+    if "pages_manage_engagement" not in scopes:
+        print("⚠️ 권한 pages_manage_engagement 없음 → 본문은 게시되지만 첫 댓글 등록이 실패할 수 있습니다.")
 
     expires = info.get("expires_at", 0)
     if expires == 0 and info.get("type") == "PAGE":
@@ -273,33 +286,97 @@ def current_slot(now):
 # 2. Claude 로 글 생성 + 검증
 # ─────────────────────────────────────────────
 def call_claude(system, user):
+    """Claude 호출. (본문 텍스트, stop_reason) 을 돌려준다."""
     body = json.dumps({
         "model": CLAUDE_MODEL,
-        "max_tokens": 1200,
+        "max_tokens": MAX_TOKENS,
         "system": system,
         "messages": [{"role": "user", "content": user}],
     }).encode()
-    req = urllib.request.Request(
-        "https://api.anthropic.com/v1/messages", data=body,
-        headers={"Content-Type": "application/json", "x-api-key": ANTHROPIC_API_KEY,
-                 "anthropic-version": "2023-06-01"},
-    )
-    with urllib.request.urlopen(req, timeout=120) as res:
-        data = json.loads(res.read().decode())
-    text = "".join(b.get("text", "") for b in data.get("content", []) if b.get("type") == "text").strip()
+
+    data = None
+    for net_try in (1, 2):
+        req = urllib.request.Request(
+            "https://api.anthropic.com/v1/messages", data=body,
+            headers={"Content-Type": "application/json", "x-api-key": ANTHROPIC_API_KEY,
+                     "anthropic-version": "2023-06-01"},
+        )
+        try:
+            with urllib.request.urlopen(req, timeout=120) as res:
+                data = json.loads(res.read().decode())
+            break
+        except Exception as e:
+            print(f"⚠️ Claude 호출 실패({net_try}/2): {e}")
+            if net_try == 2:
+                return "", "api_error"
+            time.sleep(5)
+
+    blocks = data.get("content", []) if data else []
+    text = "".join(b.get("text", "") for b in blocks if b.get("type") == "text").strip()
+    stop = (data or {}).get("stop_reason")
+    usage = (data or {}).get("usage", {})
+
     if not text:
-        print(f"⚠️ Claude 응답이 비어 있음 (stop_reason={data.get('stop_reason')})")
-    return text
+        print(f"⚠️ Claude 응답에 본문이 없음 "
+              f"(stop_reason={stop}, 블록={[b.get('type') for b in blocks]}, usage={usage})")
+    elif stop == "max_tokens":
+        print(f"⚠️ 응답이 max_tokens({MAX_TOKENS})에서 잘렸습니다. 복구를 시도합니다.")
+    return text, stop
+
+
+def _repair_truncated_json(fragment):
+    """중간에 잘린 JSON 을 닫아서 읽어 본다. 실패하면 None."""
+    s = fragment.find("{")
+    if s < 0:
+        return None
+    frag = fragment[s:].rstrip()
+    while frag.endswith("\\"):          # 끊긴 이스케이프 문자 제거
+        frag = frag[:-1]
+    in_str, esc, depth = False, False, 0
+    for ch in frag:
+        if esc:
+            esc = False
+            continue
+        if ch == "\\":
+            esc = True
+            continue
+        if ch == '"':
+            in_str = not in_str
+            continue
+        if not in_str:
+            if ch == "{":
+                depth += 1
+            elif ch == "}":
+                depth -= 1
+    if in_str:
+        frag += '"'
+    if depth > 0:
+        frag += "}" * depth
+    try:
+        return json.loads(frag, strict=False)
+    except Exception:
+        return None
 
 
 def parse_json(text):
-    if text.startswith("```"):
-        text = text.strip("`")
-        text = text.split("\n", 1)[1] if "\n" in text else text
-    s, e = text.find("{"), text.rfind("}")
-    if s < 0 or e < 0:
-        raise ValueError("JSON 을 찾을 수 없음")
-    return json.loads(text[s:e + 1])
+    if not text:
+        raise ValueError("응답이 비어 있음")
+    t = text.strip()
+    if t.startswith("```"):
+        t = t.split("\n", 1)[1] if "\n" in t else t[3:]
+        if t.rstrip().endswith("```"):
+            t = t.rstrip()[:-3]
+    s, e = t.find("{"), t.rfind("}")
+    if s >= 0 and e > s:
+        try:
+            return json.loads(t[s:e + 1], strict=False)
+        except Exception:
+            pass
+    repaired = _repair_truncated_json(t)
+    if repaired is not None:
+        print("🩹 잘린 JSON 을 복구해서 읽었습니다.")
+        return repaired
+    raise ValueError("JSON 을 찾을 수 없음")
 
 
 def validate(post, prev_pattern, prev_cta):
@@ -311,7 +388,7 @@ def validate(post, prev_pattern, prev_cta):
     if RESERVATION_NO not in msg:
         problems.append(f"예약번호 {RESERVATION_NO} 없음")
     if not (200 <= len(body) <= 480):
-        problems.append(f"본문 길이 {len(body)}자 (250~400자로)")
+        problems.append(f"본문 길이 {len(body)}자 (해시태그 제외 200~480자 안으로)")
     if sum(msg.count(e) for e in EMOJIS) > 3:
         problems.append("이모지 3개 초과")
     for w in BANNED:
@@ -330,7 +407,6 @@ def validate(post, prev_pattern, prev_cta):
         problems.append("pattern 은 A~E 중 하나")
     elif post.get("pattern") == prev_pattern:
         problems.append(f"직전 글과 같은 패턴 {prev_pattern} → 다른 패턴으로")
-    last_para = msg.strip().split("\n\n")[-2] if len(msg.strip().split("\n\n")) >= 2 else ""
     if prev_cta and prev_cta[:25] and prev_cta[:25] in msg:
         problems.append("직전 글과 같은 CTA 문장 → 다른 문장으로")
     return problems
@@ -353,7 +429,7 @@ def generate_post(cfg, log, topic, now):
     recent_texts = "\n---\n".join(p["text"] for p in posts[-3:]) or "(없음)"
 
     system = SYSTEM_PROMPT.format(brand_info=cfg["brand_info"])
-    user = f"""오늘 날짜: {now:%Y-%m-%d} ({'월화수목금토일'[now.weekday()]}요일) {now:%H:%M}
+    base_user = f"""오늘 날짜: {now:%Y-%m-%d} ({'월화수목금토일'[now.weekday()]}요일) {now:%H:%M}
 발행 시간대(slot): {slot}
 오늘 요일 주제: {theme}
 참고 소재(선택): {topic}
@@ -368,27 +444,36 @@ def generate_post(cfg, log, topic, now):
 위 조건으로 게시글 1개를 JSON 으로만 출력하세요."""
 
     last_problems = []
+    feedback = ""
     for attempt in range(1, 4):
-        text = call_claude(system, user)
+        text, stop = call_claude(system, base_user + feedback)
         try:
             post = parse_json(text) if text else {}
         except Exception as e:
             post = {}
             print(f"⚠️ JSON 파싱 실패: {e}\n{text[:300]}")
+
         problems = validate(post, prev_pattern, prev_cta)
         if not problems:
             post["slot"] = slot
             post.setdefault("theme", theme)
             return post
+
         last_problems = problems
         print(f"⚠️ {attempt}회차 검증 실패: {problems}")
-        user += "\n\n[재작성 요청] 다음 문제를 고쳐서 JSON 만 다시 출력: " + "; ".join(problems)
+
+        # 이번 회차 지적사항만 붙인다 (요청문이 계속 길어지지 않도록 매번 새로 구성)
+        feedback = "\n\n[재작성 요청] 다음 문제를 고쳐서 JSON 만 다시 출력: " + "; ".join(problems)
+        if stop == "max_tokens" or not text:
+            feedback += ("\n글이 길어 잘렸습니다. 본문을 해시태그 포함 450자 이내로 더 짧게 쓰고, "
+                         "설명 없이 여는 중괄호로 시작해 닫는 중괄호로 끝내세요.")
         time.sleep(2)
+
     raise RuntimeError(f"게시글 생성 3회 실패, 게시하지 않음: {last_problems}")
 
 
 # ─────────────────────────────────────────────
-# 3. Drive 이미지 → JPG → 공개 URL  (기존과 동일)
+# 3. Drive 이미지 → JPG → 공개 URL
 # ─────────────────────────────────────────────
 def list_drive_images(folder_id):
     q = f"'{folder_id}' in parents and trashed = false and mimeType contains 'image/'"
@@ -511,6 +596,7 @@ def post_fixed_comment(post_id, text):
         return res.get("id")
     except Exception as e:
         print(f"⚠️ 댓글 등록 실패 (게시는 완료됨): {e}")
+        print("   → pages_manage_engagement 권한이 필요할 수 있습니다.")
         return None
 
 
