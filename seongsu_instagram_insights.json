@@ -15,11 +15,11 @@
     "media_type": "FEED",
     "likes": 9,
     "comments": 3,
-    "views": 177,
-    "reach": 73,
+    "views": 181,
+    "reach": 74,
     "saved": 0,
     "shares": 1,
-    "fetched_at": "2026-09-10 19:22"
+    "fetched_at": "2026-09-11 14:34"
   },
   "18037451456823719": {
     "at": "2026-09-06 15:21",
@@ -37,11 +37,11 @@
     "media_type": "FEED",
     "likes": 13,
     "comments": 1,
-    "views": 341,
-    "reach": 126,
+    "views": 352,
+    "reach": 130,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-10 19:22"
+    "fetched_at": "2026-09-11 14:34"
   },
   "18563588785077555": {
     "at": "2026-09-06 22:03",
@@ -57,13 +57,13 @@
     ],
     "permalink": "https://www.instagram.com/p/Dc8mV1bFqZn/",
     "media_type": "FEED",
-    "likes": 18,
+    "likes": 20,
     "comments": 2,
-    "views": 267,
-    "reach": 109,
+    "views": 317,
+    "reach": 127,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-10 19:22"
+    "fetched_at": "2026-09-11 14:34"
   },
   "18097066874065913": {
     "at": "2026-09-07 22:28",
@@ -79,13 +79,13 @@
     ],
     "permalink": "https://www.instagram.com/p/Dc_N-zLkTZf/",
     "media_type": "FEED",
-    "likes": 10,
+    "likes": 11,
     "comments": 2,
-    "views": 141,
-    "reach": 57,
+    "views": 150,
+    "reach": 60,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-10 19:22"
+    "fetched_at": "2026-09-11 14:34"
   },
   "18118916654291129": {
     "at": "2026-09-08 21:06",
@@ -103,11 +103,11 @@
     "media_type": "FEED",
     "likes": 11,
     "comments": 1,
-    "views": 135,
-    "reach": 54,
+    "views": 156,
+    "reach": 58,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-10 19:22"
+    "fetched_at": "2026-09-11 14:34"
   },
   "18115673678082784": {
     "at": "2026-09-09 16:19",
@@ -126,11 +126,11 @@
     "media_type": "REELS",
     "likes": 3,
     "comments": 1,
-    "views": 58,
-    "reach": 33,
+    "views": 63,
+    "reach": 37,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-10 19:22"
+    "fetched_at": "2026-09-11 14:34"
   },
   "18332810674258202": {
     "at": "2026-09-09 22:25",
@@ -147,12 +147,81 @@
     ],
     "permalink": "https://www.instagram.com/reel/DdEXLXtlP-2/",
     "media_type": "REELS",
-    "likes": 5,
+    "likes": 6,
     "comments": 1,
-    "views": 30,
-    "reach": 23,
+    "views": 37,
+    "reach": 26,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-10 19:22"
+    "fetched_at": "2026-09-11 14:34"
+  },
+  "17951207730036618": {
+    "at": "2026-09-10 16:15",
+    "slot": "PM",
+    "format": "reel",
+    "cta_type": "선물DM",
+    "topic": "술 잘 못 마시는 친구도 한 잔 더 찾는 이유 (달지만 끝이 깔끔)",
+    "hook": "술 약한 친구가 자꾸 리필해요",
+    "images": [
+      "12.png",
+      "16.png",
+      "drive_strawberry_rice_wine_2.png",
+      "59.png"
+    ],
+    "permalink": "https://www.instagram.com/reel/DdGRp5BDNdx/",
+    "media_type": "REELS",
+    "likes": 3,
+    "comments": 1,
+    "views": 41,
+    "reach": 24,
+    "saved": 0,
+    "shares": 0,
+    "fetched_at": "2026-09-11 14:34"
+  },
+  "18098566769145066": {
+    "at": "2026-09-10 19:25",
+    "slot": "PM",
+    "format": "reel",
+    "cta_type": "구매",
+    "topic": "주말 낮 피크닉·캠핑 가방에 딸기막걸리 한 병 넣어야 하는 이유",
+    "hook": "캠핑 가방에 뭐부터 넣어요",
+    "images": [
+      "72.png",
+      "88.png",
+      "drive_strawberry_rice_wine_2.jpg",
+      "drive_strawberry_rice_wine_4.jpg"
+    ],
+    "permalink": "https://www.instagram.com/reel/DdGnXV3lKjz/",
+    "media_type": "REELS",
+    "likes": 2,
+    "comments": 1,
+    "views": 43,
+    "reach": 25,
+    "saved": 0,
+    "shares": 0,
+    "fetched_at": "2026-09-11 14:34"
+  },
+  "17981874189092939": {
+    "at": "2026-09-10 22:20",
+    "slot": "PM",
+    "format": "reel",
+    "cta_type": "댓글",
+    "topic": "생일·기념일 선물로 '술 선물' 고민될 때 — 핑크색 병이 답인 이유",
+    "hook": "포장지보다 병 색이 더 중요해요",
+    "images": [
+      "26.png",
+      "drive_makgeolli_pouring_vibe_1776768789958.png",
+      "22.png",
+      "89.png"
+    ],
+    "permalink": "https://www.instagram.com/reel/DdG7eEqlB1s/",
+    "media_type": "REELS",
+    "likes": 0,
+    "comments": 1,
+    "views": 30,
+    "reach": 20,
+    "saved": 0,
+    "shares": 0,
+    "fetched_at": "2026-09-11 14:34"
   }
 }
