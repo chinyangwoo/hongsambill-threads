@@ -47,6 +47,7 @@ jobs:
           GDRIVE_API_KEY: ${{ secrets.GDRIVE_API_KEY }}
           GH_PAT: ${{ secrets.GH_PAT }}
           DRY_RUN: ${{ github.event.inputs.dry_run || '0' }}
+          SLOT: ${{ (github.event.schedule == '47 1 * * *' && 'AM') || (github.event.schedule == '47 8 * * *' && 'PM') || '' }}
         run: python seongsu_instagram_auto_post.py
 
       - name: 게시 기록 저장
