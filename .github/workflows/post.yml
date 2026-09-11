@@ -3,6 +3,62 @@ name: 스레드 자동 포스팅
 on:
   schedule:
     # KST 기준 하루 3회 (GitHub cron 은 UTC 기준)
+    # 정각·30분은 전 세계 작업이 몰려 예약이 몇 시간씩 밀리므로 애매한 분으로 배치
+    - cron: "13 23 * * *"  # 오전 08:13 KST
+    - cron: "37 3 * * *"   # 낮 12:37 KST
+    - cron: "13 10 * * *"  # 저녁 19:13 KST
+  workflow_dispatch: {}    # 수동 실행 버튼 (테스트용)
+
+permissions:
+  contents: write          # posted_log.json 커밋용
+
+# 인스타·페이스북·성수주조장 워크플로와 같은 그룹으로 묶어
+# 저장소에 기록을 저장하는 작업이 한 번에 하나씩만 돌도록 줄 세우기
+concurrency:
+  group: auto-post-commit
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 저장소 체크아웃
+        uses: actions/checkout@v4
+
+      - name: Python 설치
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 의존성 설치
+        run: pip install pynacl
+
+      - name: 스레드 포스팅 실행
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+          THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: python threads_auto_post.py
+
+      - name: 포스팅 기록 저장
+        run: |
+          git config user.name "threads-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add posted_log.json .token_meta.json || true
+          git diff --cached --quiet || git commit -m "🤖 포스팅 기록 업데이트"
+          # 다른 워크플로가 먼저 커밋했어도 밀리지 않도록
+          # 최신 내용을 먼저 받아온 뒤(pull --rebase) 푸시, 실패하면 최대 5번 재시도
+          for i in 1 2 3 4 5; do
+            git pull --rebase origin main && git push && break
+            echo "푸시 실패 ($i/5) — 10초 후 재시도"
+            sleep 10
+          done
+name: 스레드 자동 포스팅
+
+on:
+  schedule:
+    # KST 기준 하루 3회 (GitHub cron 은 UTC 기준)
     - cron: "0 23 * * *"   # 오전 08:00 KST
     - cron: "30 3 * * *"   # 낮 12:30 KST
     - cron: "0 10 * * *"   # 저녁 19:00 KST
