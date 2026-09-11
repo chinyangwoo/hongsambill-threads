@@ -1,15 +1,15 @@
 # 저장 위치: .github/workflows/seongsu_instagram.yml
 # 성수주조장 인스타그램 — 하루 2회 (2026-09-08 변경)
-#   · 매일 KST 11:00  ← 점심 전 AM 슬롯
-#   · 매일 KST 18:00  ← 퇴근 무렵 PM 슬롯
-# (cron 은 UTC 기준: KST − 9시간 → 02:00 / 09:00)
+#   · 매일 KST 10:47  ← 점심 전 AM 슬롯 (정시 혼잡 회피)
+#   · 매일 KST 17:47  ← 퇴근 무렵 PM 슬롯 (정시 혼잡 회피)
+# (cron 은 UTC 기준: KST − 9시간 → 01:47 / 08:47)
 # 홍삼빌 스레드(08:00/12:30/19:00)·인스타(09:00/13:30/20:00) 시간표와 겹치지 않게 배치
 name: 성수주조장 인스타그램 자동 포스팅
 
 on:
   schedule:
-    - cron: "0 2 * * *"           # 매일 KST 11:00 (UTC 02:00)
-    - cron: "0 9 * * *"           # 매일 KST 18:00 (UTC 09:00)
+    - cron: "47 1 * * *" # 매일 KST 10:47 (UTC 01:47) — AM 슬롯
+    - cron: "47 8 * * *" # 매일 KST 17:47 (UTC 08:47) — PM 슬롯
   workflow_dispatch:        # Actions 탭에서 수동 실행 버튼
     inputs:
       dry_run:
@@ -18,7 +18,7 @@ on:
 
 # 같은 저장소에 홍삼빌 워크플로가 있으면 커밋 충돌 방지를 위해 같은 그룹으로 직렬화
 concurrency:
-  group: auto-post-commit
+  group: auto-post-commit-seongsu-ig
   cancel-in-progress: false
 
 permissions:
@@ -56,5 +56,7 @@ jobs:
           git config user.email "bot@users.noreply.github.com"
           git add -A seongsu_ig_cache seongsu_instagram_posted_log.json .seongsu_ig_token_meta.json 2>/dev/null || true
           git diff --cached --quiet || git commit -m "성수주조장 인스타 게시 기록 $(date -u +'%Y-%m-%d %H:%M')"
-          git pull --rebase origin ${{ github.ref_name }} || true
-          git push || true
+          for i in 1 2 3 4 5; do
+            git pull --rebase origin ${{ github.ref_name }} || true
+            git push && break || sleep $((RANDOM % 15 + 5))
+          done
