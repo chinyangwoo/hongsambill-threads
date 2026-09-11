@@ -5,7 +5,7 @@
 홍삼빌호텔 instagram_auto_post.py 와 동일한 구조. 파일명·환경변수·캐시 폴더에
 'seongsu_' 접두어를 붙여 같은 저장소에 넣어도 충돌하지 않습니다.
 
-동작 순서 (하루 2회, KST 11:00 / 18:30):
+동작 순서 (하루 2회, KST 10:47 / 17:47 — 슬롯은 워크플로 SLOT 환경변수로 고정):
   1. 요일별 테마 + 회차 순환으로 이번 글의 주제·CTA 유형 결정
      (구매 CTA 는 최소 2회에 1회 강제, 같은 CTA 연속 금지)
   2. Claude API 로 캡션 생성 (훅 15자 이내 + 본문 + CTA 단독 마지막 줄 + 해시태그 15~20개)
@@ -108,7 +108,13 @@ def load_cfg():
 
 
 def current_slot():
-    """오전(~15시) 발행 = AM: 밝은 제품컷·정보 / 이후 = PM: 무드·라이프스타일"""
+    """발행 슬롯 결정.
+    1순위: 워크플로가 cron별로 넘긴 SLOT 환경변수(AM/PM) — 실행이 지연돼도 슬롯이 안 바뀜
+    2순위: 시간 추정(수동 실행 등 SLOT이 없을 때) — 오전(~15시)=AM, 이후=PM
+    AM: 밝은 제품컷·정보 / PM: 무드·라이프스타일"""
+    env_slot = (os.environ.get("SLOT") or "").strip().upper()
+    if env_slot in ("AM", "PM"):
+        return env_slot
     return "AM" if datetime.now(KST).hour < 15 else "PM"
 
 
