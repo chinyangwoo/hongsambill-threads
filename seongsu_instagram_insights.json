@@ -15,11 +15,11 @@
     "media_type": "FEED",
     "likes": 9,
     "comments": 3,
-    "views": 181,
+    "views": 182,
     "reach": 74,
     "saved": 0,
     "shares": 1,
-    "fetched_at": "2026-09-11 14:34"
+    "fetched_at": "2026-09-12 14:19"
   },
   "18037451456823719": {
     "at": "2026-09-06 15:21",
@@ -35,13 +35,13 @@
     ],
     "permalink": "https://www.instagram.com/p/Dc74R8eHLhD/",
     "media_type": "FEED",
-    "likes": 13,
+    "likes": 14,
     "comments": 1,
-    "views": 352,
-    "reach": 130,
+    "views": 354,
+    "reach": 131,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-11 14:34"
+    "fetched_at": "2026-09-12 14:19"
   },
   "18563588785077555": {
     "at": "2026-09-06 22:03",
@@ -57,13 +57,13 @@
     ],
     "permalink": "https://www.instagram.com/p/Dc8mV1bFqZn/",
     "media_type": "FEED",
-    "likes": 20,
+    "likes": 21,
     "comments": 2,
-    "views": 317,
-    "reach": 127,
+    "views": 331,
+    "reach": 137,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-11 14:34"
+    "fetched_at": "2026-09-12 14:19"
   },
   "18097066874065913": {
     "at": "2026-09-07 22:28",
@@ -81,11 +81,11 @@
     "media_type": "FEED",
     "likes": 11,
     "comments": 2,
-    "views": 150,
-    "reach": 60,
+    "views": 157,
+    "reach": 61,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-11 14:34"
+    "fetched_at": "2026-09-12 14:19"
   },
   "18118916654291129": {
     "at": "2026-09-08 21:06",
@@ -103,11 +103,11 @@
     "media_type": "FEED",
     "likes": 11,
     "comments": 1,
-    "views": 156,
-    "reach": 58,
+    "views": 167,
+    "reach": 64,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-11 14:34"
+    "fetched_at": "2026-09-12 14:19"
   },
   "18115673678082784": {
     "at": "2026-09-09 16:19",
@@ -130,7 +130,7 @@
     "reach": 37,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-11 14:34"
+    "fetched_at": "2026-09-12 14:19"
   },
   "18332810674258202": {
     "at": "2026-09-09 22:25",
@@ -149,11 +149,11 @@
     "media_type": "REELS",
     "likes": 6,
     "comments": 1,
-    "views": 37,
-    "reach": 26,
+    "views": 39,
+    "reach": 29,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-11 14:34"
+    "fetched_at": "2026-09-12 14:19"
   },
   "17951207730036618": {
     "at": "2026-09-10 16:15",
@@ -172,11 +172,11 @@
     "media_type": "REELS",
     "likes": 3,
     "comments": 1,
-    "views": 41,
-    "reach": 24,
+    "views": 51,
+    "reach": 28,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-11 14:34"
+    "fetched_at": "2026-09-12 14:19"
   },
   "18098566769145066": {
     "at": "2026-09-10 19:25",
@@ -195,11 +195,11 @@
     "media_type": "REELS",
     "likes": 2,
     "comments": 1,
-    "views": 43,
-    "reach": 25,
+    "views": 51,
+    "reach": 29,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-11 14:34"
+    "fetched_at": "2026-09-12 14:19"
   },
   "17981874189092939": {
     "at": "2026-09-10 22:20",
@@ -218,10 +218,33 @@
     "media_type": "REELS",
     "likes": 0,
     "comments": 1,
-    "views": 30,
-    "reach": 20,
+    "views": 35,
+    "reach": 24,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-11 14:34"
+    "fetched_at": "2026-09-12 14:19"
+  },
+  "18229782946323038": {
+    "at": "2026-09-11 22:03",
+    "slot": "PM",
+    "format": "reel",
+    "cta_type": "구매",
+    "topic": "부모님·어른 선물로도 되는 막걸리: 100년 양조장 + 수상 이력",
+    "hook": "드리면 계속 생각나실 걸요",
+    "images": [
+      "78.png",
+      "91.png",
+      "drive_03_preparation.png",
+      "42.png"
+    ],
+    "permalink": "https://www.instagram.com/reel/DdJeOvMAS6f/",
+    "media_type": "REELS",
+    "likes": 2,
+    "comments": 1,
+    "views": 28,
+    "reach": 19,
+    "saved": 0,
+    "shares": 0,
+    "fetched_at": "2026-09-12 14:19"
   }
 }
