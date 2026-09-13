@@ -19,7 +19,7 @@
     "reach": 74,
     "saved": 0,
     "shares": 1,
-    "fetched_at": "2026-09-12 14:19"
+    "fetched_at": "2026-09-13 14:36"
   },
   "18037451456823719": {
     "at": "2026-09-06 15:21",
@@ -37,11 +37,11 @@
     "media_type": "FEED",
     "likes": 14,
     "comments": 1,
-    "views": 354,
-    "reach": 131,
+    "views": 365,
+    "reach": 134,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-12 14:19"
+    "fetched_at": "2026-09-13 14:36"
   },
   "18563588785077555": {
     "at": "2026-09-06 22:03",
@@ -59,11 +59,11 @@
     "media_type": "FEED",
     "likes": 21,
     "comments": 2,
-    "views": 331,
-    "reach": 137,
+    "views": 335,
+    "reach": 141,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-12 14:19"
+    "fetched_at": "2026-09-13 14:36"
   },
   "18097066874065913": {
     "at": "2026-09-07 22:28",
@@ -81,11 +81,11 @@
     "media_type": "FEED",
     "likes": 11,
     "comments": 2,
-    "views": 157,
-    "reach": 61,
+    "views": 159,
+    "reach": 63,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-12 14:19"
+    "fetched_at": "2026-09-13 14:36"
   },
   "18118916654291129": {
     "at": "2026-09-08 21:06",
@@ -103,11 +103,11 @@
     "media_type": "FEED",
     "likes": 11,
     "comments": 1,
-    "views": 167,
-    "reach": 64,
+    "views": 174,
+    "reach": 69,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-12 14:19"
+    "fetched_at": "2026-09-13 14:36"
   },
   "18115673678082784": {
     "at": "2026-09-09 16:19",
@@ -126,11 +126,11 @@
     "media_type": "REELS",
     "likes": 3,
     "comments": 1,
-    "views": 63,
-    "reach": 37,
+    "views": 64,
+    "reach": 38,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-12 14:19"
+    "fetched_at": "2026-09-13 14:36"
   },
   "18332810674258202": {
     "at": "2026-09-09 22:25",
@@ -149,11 +149,11 @@
     "media_type": "REELS",
     "likes": 6,
     "comments": 1,
-    "views": 39,
-    "reach": 29,
+    "views": 40,
+    "reach": 30,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-12 14:19"
+    "fetched_at": "2026-09-13 14:36"
   },
   "17951207730036618": {
     "at": "2026-09-10 16:15",
@@ -172,11 +172,11 @@
     "media_type": "REELS",
     "likes": 3,
     "comments": 1,
-    "views": 51,
-    "reach": 28,
+    "views": 52,
+    "reach": 29,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-12 14:19"
+    "fetched_at": "2026-09-13 14:36"
   },
   "18098566769145066": {
     "at": "2026-09-10 19:25",
@@ -195,11 +195,11 @@
     "media_type": "REELS",
     "likes": 2,
     "comments": 1,
-    "views": 51,
+    "views": 52,
     "reach": 29,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-12 14:19"
+    "fetched_at": "2026-09-13 14:36"
   },
   "17981874189092939": {
     "at": "2026-09-10 22:20",
@@ -219,10 +219,10 @@
     "likes": 0,
     "comments": 1,
     "views": 35,
-    "reach": 24,
+    "reach": 25,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-12 14:19"
+    "fetched_at": "2026-09-13 14:36"
   },
   "18229782946323038": {
     "at": "2026-09-11 22:03",
@@ -241,10 +241,55 @@
     "media_type": "REELS",
     "likes": 2,
     "comments": 1,
-    "views": 28,
-    "reach": 19,
+    "views": 34,
+    "reach": 23,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-12 14:19"
+    "fetched_at": "2026-09-13 14:36"
+  },
+  "17987852957859816": {
+    "at": "2026-09-12 15:34",
+    "slot": "AM",
+    "format": "carousel",
+    "cta_type": "선물DM",
+    "topic": "홈파티 테이블 위에 놓으면 사진 예쁘게 나오는 술",
+    "hook": "6도인데 사진발은 미쳤어요",
+    "images": [
+      "43.png",
+      "37.png",
+      "14.png"
+    ],
+    "permalink": "https://www.instagram.com/p/DdLWkRrkXxY/",
+    "media_type": "FEED",
+    "likes": 6,
+    "comments": 1,
+    "views": 214,
+    "reach": 91,
+    "saved": 0,
+    "shares": 0,
+    "fetched_at": "2026-09-13 14:36"
+  },
+  "17913997845265790": {
+    "at": "2026-09-12 21:24",
+    "slot": "PM",
+    "format": "reel",
+    "cta_type": "구매",
+    "topic": "비 오는 날 파전 대신, 딸기막걸리에 어울리는 요즘 안주",
+    "hook": "비 오는 날 파전 대신 이거",
+    "images": [
+      "61.png",
+      "95.png",
+      "54.png",
+      "56.png"
+    ],
+    "permalink": "https://www.instagram.com/reel/DdL-oc3jLwm/",
+    "media_type": "REELS",
+    "likes": 3,
+    "comments": 1,
+    "views": 40,
+    "reach": 28,
+    "saved": 0,
+    "shares": 0,
+    "fetched_at": "2026-09-13 14:36"
   }
 }
