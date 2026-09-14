@@ -15,11 +15,11 @@
     "media_type": "FEED",
     "likes": 9,
     "comments": 3,
-    "views": 182,
-    "reach": 74,
+    "views": 184,
+    "reach": 75,
     "saved": 0,
     "shares": 1,
-    "fetched_at": "2026-09-13 14:36"
+    "fetched_at": "2026-09-14 14:41"
   },
   "18037451456823719": {
     "at": "2026-09-06 15:21",
@@ -37,11 +37,11 @@
     "media_type": "FEED",
     "likes": 14,
     "comments": 1,
-    "views": 365,
-    "reach": 134,
+    "views": 367,
+    "reach": 135,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-13 14:36"
+    "fetched_at": "2026-09-14 14:41"
   },
   "18563588785077555": {
     "at": "2026-09-06 22:03",
@@ -59,11 +59,11 @@
     "media_type": "FEED",
     "likes": 21,
     "comments": 2,
-    "views": 335,
-    "reach": 141,
+    "views": 344,
+    "reach": 146,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-13 14:36"
+    "fetched_at": "2026-09-14 14:41"
   },
   "18097066874065913": {
     "at": "2026-09-07 22:28",
@@ -81,11 +81,11 @@
     "media_type": "FEED",
     "likes": 11,
     "comments": 2,
-    "views": 159,
-    "reach": 63,
+    "views": 162,
+    "reach": 65,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-13 14:36"
+    "fetched_at": "2026-09-14 14:41"
   },
   "18118916654291129": {
     "at": "2026-09-08 21:06",
@@ -103,11 +103,11 @@
     "media_type": "FEED",
     "likes": 11,
     "comments": 1,
-    "views": 174,
-    "reach": 69,
+    "views": 177,
+    "reach": 71,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-13 14:36"
+    "fetched_at": "2026-09-14 14:41"
   },
   "18115673678082784": {
     "at": "2026-09-09 16:19",
@@ -130,7 +130,7 @@
     "reach": 38,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-13 14:36"
+    "fetched_at": "2026-09-14 14:41"
   },
   "18332810674258202": {
     "at": "2026-09-09 22:25",
@@ -149,11 +149,11 @@
     "media_type": "REELS",
     "likes": 6,
     "comments": 1,
-    "views": 40,
-    "reach": 30,
+    "views": 42,
+    "reach": 31,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-13 14:36"
+    "fetched_at": "2026-09-14 14:41"
   },
   "17951207730036618": {
     "at": "2026-09-10 16:15",
@@ -172,11 +172,11 @@
     "media_type": "REELS",
     "likes": 3,
     "comments": 1,
-    "views": 52,
-    "reach": 29,
+    "views": 53,
+    "reach": 30,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-13 14:36"
+    "fetched_at": "2026-09-14 14:41"
   },
   "18098566769145066": {
     "at": "2026-09-10 19:25",
@@ -195,11 +195,11 @@
     "media_type": "REELS",
     "likes": 2,
     "comments": 1,
-    "views": 52,
-    "reach": 29,
+    "views": 56,
+    "reach": 32,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-13 14:36"
+    "fetched_at": "2026-09-14 14:41"
   },
   "17981874189092939": {
     "at": "2026-09-10 22:20",
@@ -222,7 +222,7 @@
     "reach": 25,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-13 14:36"
+    "fetched_at": "2026-09-14 14:41"
   },
   "18229782946323038": {
     "at": "2026-09-11 22:03",
@@ -241,11 +241,11 @@
     "media_type": "REELS",
     "likes": 2,
     "comments": 1,
-    "views": 34,
-    "reach": 23,
+    "views": 39,
+    "reach": 25,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-13 14:36"
+    "fetched_at": "2026-09-14 14:41"
   },
   "17987852957859816": {
     "at": "2026-09-12 15:34",
@@ -261,13 +261,13 @@
     ],
     "permalink": "https://www.instagram.com/p/DdLWkRrkXxY/",
     "media_type": "FEED",
-    "likes": 6,
+    "likes": 11,
     "comments": 1,
-    "views": 214,
-    "reach": 91,
+    "views": 285,
+    "reach": 118,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-13 14:36"
+    "fetched_at": "2026-09-14 14:41"
   },
   "17913997845265790": {
     "at": "2026-09-12 21:24",
@@ -284,12 +284,57 @@
     ],
     "permalink": "https://www.instagram.com/reel/DdL-oc3jLwm/",
     "media_type": "REELS",
-    "likes": 3,
+    "likes": 4,
     "comments": 1,
-    "views": 40,
-    "reach": 28,
+    "views": 44,
+    "reach": 30,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-13 14:36"
+    "fetched_at": "2026-09-14 14:41"
+  },
+  "18464192923185778": {
+    "at": "2026-09-13 15:49",
+    "slot": "AM",
+    "format": "carousel",
+    "cta_type": "선물DM",
+    "topic": "뉴욕 미슐랭 레스토랑과 런던 해러즈에 들어간 진안 시골 막걸리 (주 1회 이하)",
+    "hook": "이 시골술이 뉴욕까지 갔어요",
+    "images": [
+      "86.png",
+      "87.png",
+      "16.png"
+    ],
+    "permalink": "https://www.instagram.com/p/DdN9GJHloLK/",
+    "media_type": "FEED",
+    "likes": 5,
+    "comments": 1,
+    "views": 83,
+    "reach": 35,
+    "saved": 0,
+    "shares": 0,
+    "fetched_at": "2026-09-14 14:41"
+  },
+  "18023817005913330": {
+    "at": "2026-09-13 22:30",
+    "slot": "PM",
+    "format": "reel",
+    "cta_type": "구매",
+    "topic": "냉장고에 한 병 있으면 생기는 일 — 보관법과 유통기한 팁",
+    "hook": "냉장고에 넣어두면 사라져요",
+    "images": [
+      "33.png",
+      "36.png",
+      "35.png",
+      "44.png"
+    ],
+    "permalink": "https://www.instagram.com/reel/DdOq6e0gamJ/",
+    "media_type": "REELS",
+    "likes": 2,
+    "comments": 1,
+    "views": 36,
+    "reach": 17,
+    "saved": 0,
+    "shares": 0,
+    "fetched_at": "2026-09-14 14:41"
   }
 }
