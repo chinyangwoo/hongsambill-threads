@@ -2,14 +2,14 @@
 # 성수주조장 인스타그램 — 하루 2회 (2026-09-08 변경)
 #   · 매일 KST 10:47  ← 점심 전 AM 슬롯 (정시 혼잡 회피)
 #   · 매일 KST 17:47  ← 퇴근 무렵 PM 슬롯 (정시 혼잡 회피)
-# (cron 은 UTC 기준: KST − 9시간 → 01:47 / 08:47)
+# (cron 은 UTC 기준: KST − 9시간 → 22:47 / 05:47)
 # 홍삼빌 스레드(08:00/12:30/19:00)·인스타(09:00/13:30/20:00) 시간표와 겹치지 않게 배치
 name: 성수주조장 인스타그램 자동 포스팅
 
 on:
   schedule:
-    - cron: "47 1 * * *" # 매일 KST 10:47 (UTC 01:47) — AM 슬롯
-    - cron: "47 8 * * *" # 매일 KST 17:47 (UTC 08:47) — PM 슬롯
+    - cron: "47 22 * * *" # 매일 KST 07:47 (UTC 22:47) — AM 슬롯
+    - cron: "47 5 * * *" # 매일 KST 14:47 (UTC 05:47) — PM 슬롯
   workflow_dispatch:        # Actions 탭에서 수동 실행 버튼
     inputs:
       dry_run:
@@ -47,7 +47,7 @@ jobs:
           GDRIVE_API_KEY: ${{ secrets.GDRIVE_API_KEY }}
           GH_PAT: ${{ secrets.GH_PAT }}
           DRY_RUN: ${{ github.event.inputs.dry_run || '0' }}
-          SLOT: ${{ (github.event.schedule == '47 1 * * *' && 'AM') || (github.event.schedule == '47 8 * * *' && 'PM') || '' }}
+          SLOT: ${{ (github.event.schedule == '47 22 * * *' && 'AM') || (github.event.schedule == '47 5 * * *' && 'PM') || '' }}
         run: python seongsu_instagram_auto_post.py
 
       - name: 게시 기록 저장
