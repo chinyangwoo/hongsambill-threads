@@ -1,12 +1,12 @@
 # 저장 위치: .github/workflows/facebook.yml
-# 한국시간 10:23 / 20:23 하루 2회 (페이스북은 1~2회가 적정)
+# 한국시간 07:23 / 17:23 하루 2회 (페이스북은 1~2회가 적정)
 name: 페이스북 자동 포스팅
 
 on:
   schedule:
     # 정각·30분은 GitHub 예약 지연이 심해 애매한 분으로 배치
-    - cron: "23 1 * * *"   # KST 10:23
-    - cron: "23 11 * * *"  # KST 20:23
+    - cron: "23 22 * * *"   # KST 07:23
+    - cron: "23 8 * * *"  # KST 17:23
   workflow_dispatch:
 
 concurrency:
