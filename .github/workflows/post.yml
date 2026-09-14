@@ -4,9 +4,9 @@ on:
   schedule:
     # KST 기준 하루 3회 (GitHub cron 은 UTC 기준)
     # 정각·30분은 전 세계 작업이 몰려 예약이 몇 시간씩 밀리므로 애매한 분으로 배치
-    - cron: "13 23 * * *"  # 오전 08:13 KST
-    - cron: "37 3 * * *"   # 낮 12:37 KST
-    - cron: "13 10 * * *"  # 저녁 19:13 KST
+    - cron: "13 20 * * *"  # 새벽 05:13 KST
+    - cron: "37 0 * * *"   # 오전 09:37 KST
+    - cron: "13 7 * * *"  # 오후 16:13 KST
   workflow_dispatch: {}    # 수동 실행 버튼 (테스트용)
 
 permissions:
