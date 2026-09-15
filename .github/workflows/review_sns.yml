@@ -1,0 +1,77 @@
+# 저장 위치: .github/workflows/review_sns.yml
+# 구글 리뷰 1건을 스레드·인스타그램·페이스북에 동시 게시 (수동 실행 전용, 예약 없음)
+name: 구글 리뷰 → SNS 게시
+
+on:
+  workflow_dispatch:
+    inputs:
+      review_text:
+        description: "구글 리뷰 본문 (필수)"
+        required: true
+        type: string
+      reviewer_label:
+        description: "작성자 표기 (실명 금지)"
+        required: false
+        default: "한 손님"
+        type: string
+      platforms:
+        description: "게시할 플랫폼"
+        required: false
+        default: "all"
+        type: choice
+        options:
+          - all
+          - threads
+          - instagram
+          - facebook
+      stars:
+        description: "별점 (선택, 예: 5 / 4.5 — 4점 미만이면 게시하지 않음)"
+        required: false
+        default: ""
+        type: string
+
+# 다른 자동 포스팅 워크플로와 같은 그룹으로 묶어 커밋 충돌 방지
+concurrency:
+  group: auto-post-commit
+  cancel-in-progress: false
+
+permissions:
+  contents: write          # review_sns_cache/, review_sns_log.json 커밋용
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install pillow
+
+      - name: 리뷰 SNS 게시
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+          THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          FB_PAGE_ACCESS_TOKEN: ${{ secrets.FB_PAGE_ACCESS_TOKEN }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          REVIEW_TEXT: ${{ inputs.review_text }}
+          REVIEWER_LABEL: ${{ inputs.reviewer_label }}
+          PLATFORMS: ${{ inputs.platforms }}
+          STARS: ${{ inputs.stars }}
+        run: python review_to_sns.py
+
+      - name: 게시 기록 저장
+        if: always()
+        run: |
+          git config user.name "auto-post-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add -A review_sns_cache review_sns_log.json 2>/dev/null || true
+          git diff --cached --quiet || git commit -m "리뷰 SNS 게시 기록 $(date -u +'%Y-%m-%d %H:%M')"
+          git pull --rebase origin ${{ github.ref_name }} || true
+          git push || true
