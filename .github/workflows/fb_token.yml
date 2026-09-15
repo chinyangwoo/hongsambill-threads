@@ -1,0 +1,37 @@
+# 저장 위치: .github/workflows/fb_token.yml
+# 페이스북 토큰을 새로 받았을 때 붙여넣기만 하면 영구 페이지 토큰으로 변환해
+# GitHub Secrets(FB_PAGE_ACCESS_TOKEN)에 자동 저장하는 도우미. 수동 실행 전용.
+name: 페이스북 토큰 교체
+
+on:
+  workflow_dispatch:
+    inputs:
+      fb_token:
+        description: "페이스북 승인 후 주소창의 전체 URL(또는 토큰)을 그대로 붙여넣으세요"
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install pillow pynacl
+
+      - name: 토큰 변환·저장
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          FB_APP_SECRET: ${{ secrets.FB_APP_SECRET }}
+          GDRIVE_API_KEY: ${{ secrets.GDRIVE_API_KEY }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          FB_TOKEN_INPUT: ${{ inputs.fb_token }}
+        run: python fb_token_update.py
