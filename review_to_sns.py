@@ -5,7 +5,8 @@
 workflow_dispatch 수동 실행 전용. 예약 실행 없음.
 
 동작 순서:
-  1. review_text 해시를 review_sns_log.json 과 대조 → 이미 게시했으면 중단
+  1. review_text 해시를 review_sns_log.json 과 대조 → 해시+플랫폼 조합으로 판정,
+     이미 성공 게시한 플랫폼만 건너뛰고 아직 안 된 플랫폼은 게시 (전부 게시됐으면 중단)
   2. Claude API 1회 호출로 스레드·인스타·페이스북 3개 글을 JSON 으로 한 번에 생성
      (검증 불합격 시 지적사항을 붙여 최대 3회 재생성 — 기존 스크립트와 동일 패턴)
   3. images/ 폴더에서 랜덤 3장 선택 → 인스타 규격 JPG 변환 → review_sns_cache/ 커밋
@@ -151,6 +152,18 @@ def load_log():
     log.setdefault("count", 0)
     log.setdefault("posts", [])
     return log
+
+
+def already_posted_platforms(log, h):
+    """이 리뷰(해시)로 이미 '성공' 게시된 플랫폼 집합. 실패했던 플랫폼은 재시도 대상."""
+    done = set()
+    for p in log["posts"]:
+        if p.get("hash") != h:
+            continue
+        for name, r in (p.get("results") or {}).items():
+            if r.get("ok"):
+                done.add(name)
+    return done
 
 
 # ─────────────────────────────────────────────
@@ -599,13 +612,18 @@ def main():
         print(f"⏭️ 별점 {stars}점 (< {MIN_STARS}) 이라 게시하지 않습니다.")
         return
 
-    # 1) 중복 검사
+    # 1) 중복 검사 (해시 + 플랫폼 조합) — 이미 성공 게시한 플랫폼만 건너뛴다
     h = review_hash(REVIEW_TEXT)
     log = load_log()
-    dup = next((p for p in log["posts"] if p.get("hash") == h), None)
-    if dup:
-        print(f"⏭️ 이미 게시한 리뷰입니다 ({dup.get('at')}) — 중단합니다.")
+    done = already_posted_platforms(log, h)
+    skipped = [p for p in platforms if p in done]
+    platforms = [p for p in platforms if p not in done]
+    if skipped:
+        print(f"⏭️ 이 리뷰로 이미 게시된 플랫폼 건너뜀: {skipped}")
+    if not platforms:
+        print("⏭️ 요청한 모든 플랫폼에 이미 게시된 리뷰입니다 — 중단합니다.")
         return
+    print(f"▶️ 이번에 게시할 플랫폼: {platforms}")
 
     # 2) Claude 1회 호출로 3개 글 생성 (불합격 시 재생성)
     posts = generate_posts(stars)
