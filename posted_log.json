@@ -1,5 +1,5 @@
 {
-  "count": 50,
+  "count": 51,
   "posts": [
     {
       "at": "2026-09-02 01:43",
@@ -545,7 +545,7 @@
       ],
       "post_id": "17897910024386792",
       "views": 50,
-      "views_final": false
+      "views_final": true
     },
     {
       "at": "2026-09-15 21:41",
@@ -592,7 +592,7 @@
         "70.png"
       ],
       "post_id": "18166845283481941",
-      "views": 15,
+      "views": 16,
       "views_final": false
     },
     {
@@ -608,7 +608,7 @@
         "maisan_portrait_real.png"
       ],
       "post_id": "17940065844096806",
-      "views": 19,
+      "views": 20,
       "views_final": false
     },
     {
@@ -624,7 +624,7 @@
         "11_digital_detox.png"
       ],
       "post_id": "18197824612380653",
-      "views": 26,
+      "views": 27,
       "views_final": false
     },
     {
@@ -640,7 +640,7 @@
         "maisan_hero.png"
       ],
       "post_id": "17955221013018243",
-      "views": 27,
+      "views": 32,
       "views_final": false
     },
     {
@@ -656,7 +656,7 @@
         "57.png"
       ],
       "post_id": "18130861927668442",
-      "views": 22,
+      "views": 27,
       "views_final": false
     },
     {
@@ -672,7 +672,7 @@
         "33.png"
       ],
       "post_id": "17949414558293949",
-      "views": 15,
+      "views": 16,
       "views_final": false
     },
     {
@@ -688,6 +688,22 @@
         "13_burnout_recovery.png"
       ],
       "post_id": "18108143606145509",
+      "views": 3,
+      "views_final": false
+    },
+    {
+      "at": "2026-09-18 21:14",
+      "topic": "총지배견 천둥이(허스키)의 오늘 하루 일상",
+      "hook": "fail",
+      "cta": "내 판단이 맞는지 의견 물어보기",
+      "text": "아침에 로비에서 나 혼자 착각한 거 하나 있음\n\n천둥이가 로비에 가만히 앉아있길래 그냥 쉬는 줄 알았는데 알고보니 출근 루틴이었음. 직원분 말로는 아침 8시쯤 로비랑 조식장 앞 한바퀴 순찰 돌고 자기 자리로 옴. 낮엔 체크인 짐 옆에서 냄새 맡고 오후엔 테라스서 낮잠, 저녁 되면 다시 로비 출근. 거의 하루 스케줄이 총지배인 급이라 직원인지 손님인지 헷갈릴 정도임 ㅋㅋ\n이거 순찰 도는 거 맞는 듯한데 그냥 산책인지 아는 사람 있으면 말해줘 🐾\n#홍삼빌호텔 #진안여행 #마이산",
+      "len": 267,
+      "images": [
+        "57.png",
+        "55.png",
+        "sauna.png"
+      ],
+      "post_id": "17968854255171711",
       "views": null,
       "views_final": false
     }
