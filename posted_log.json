@@ -1,5 +1,5 @@
 {
-  "count": 54,
+  "count": 55,
   "posts": [
     {
       "at": "2026-09-02 01:43",
@@ -609,7 +609,7 @@
       ],
       "post_id": "17940065844096806",
       "views": 20,
-      "views_final": false
+      "views_final": true
     },
     {
       "at": "2026-09-17 07:58",
@@ -736,7 +736,7 @@
         "breakfast.png"
       ],
       "post_id": "18129865606707099",
-      "views": 16,
+      "views": 22,
       "views_final": false
     },
     {
@@ -752,6 +752,22 @@
         "89.png"
       ],
       "post_id": "18114946775070109",
+      "views": 27,
+      "views_final": false
+    },
+    {
+      "at": "2026-09-20 07:21",
+      "topic": "커플·가족 손님들이 진안을 다시 찾는 이유",
+      "hook": "fail",
+      "cta": "더 좋은 정보 아는 사람 댓글로 부르기",
+      "text": "",
+      "len": 0,
+      "images": [
+        "hotel.png",
+        "73.png",
+        "59.png"
+      ],
+      "post_id": "18094729025408739",
       "views": null,
       "views_final": false
     }
