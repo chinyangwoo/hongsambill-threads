@@ -1,0 +1,65 @@
+# 저장 위치: .github/workflows/google_reviews_fetch.yml
+# 구글 비즈니스 프로필 API 로 새 리뷰를 자동 수집 → review_to_sns.py 로 3개 SNS 게시
+# 매일 1회, 1회 실행당 최대 1건. 수동 실행 시 mode 로 테스트(list)·기준선(baseline) 가능
+name: 구글 리뷰 자동 수집 → SNS 게시
+
+on:
+  schedule:
+    - cron: "47 10 * * *"    # 매일 19:47 KST (정각 혼잡 회피)
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "post=새 리뷰 1건 게시 / list=조회만(테스트) / baseline=기존 리뷰를 처리완료로만 기록"
+        required: false
+        default: "list"
+        type: choice
+        options:
+          - list
+          - post
+          - baseline
+
+# 다른 자동 포스팅 워크플로와 같은 그룹 → 저장소 커밋 충돌 방지
+concurrency:
+  group: auto-post-commit
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-and-post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install pillow
+
+      - name: 리뷰 수집 및 게시
+        env:
+          MODE: ${{ inputs.mode || 'post' }}          # 예약 실행은 항상 post
+          GBP_CLIENT_ID: ${{ secrets.GBP_CLIENT_ID }}
+          GBP_CLIENT_SECRET: ${{ secrets.GBP_CLIENT_SECRET }}
+          GBP_REFRESH_TOKEN: ${{ secrets.GBP_REFRESH_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+          THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          FB_PAGE_ACCESS_TOKEN: ${{ secrets.FB_PAGE_ACCESS_TOKEN }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: python fetch_google_reviews.py
+
+      - name: 기록 저장
+        if: always()
+        run: |
+          git config user.name "auto-post-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add -A google_reviews_seen.json review_sns_cache review_sns_log.json 2>/dev/null || true
+          git diff --cached --quiet || git commit -m "구글 리뷰 자동수집 기록 $(date -u +'%Y-%m-%d %H:%M')"
+          git pull --rebase origin ${{ github.ref_name }} || true
+          git push || true
