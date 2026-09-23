@@ -648,7 +648,8 @@ AI가 인용하는 글의 조건: 질문에 첫 문장이 바로 답하고, 사�
 - slug: 영문 소문자·하이픈 3~6단어 (예: jinan-maisan-family-hotel-review). 리뷰 핵심 반영.
 - title: 한국어 25~45자. '홍삼빌호텔' 필수 + '진안' 또는 '마이산' 포함 + 리뷰 핵심 포인트.
   사람들이 실제로 검색할 법한 표현 (예: "진안 마이산 가족여행 숙소, 홍삼빌호텔 투숙 후기 — 넓은 객실과 세탁실")
-- summary: 2~3문장. 첫 문장이 '이 후기의 결론'을 바로 말한다. 누가(reviewer_label) 어떤 여행으로 묵었고 무엇이 좋았/아쉬웠는지.
+- summary: 2~3문장. 첫 문장에서 핵심을 바로 말한다 (예: "홍삼빌호텔은 평일에 조용하게 쉬기 좋았다는 가족 여행객의 후기입니다.").
+  "이 후기의 결론은", "요약하자면" 같은 메타 표현으로 시작하지 마라. 누가(reviewer_label) 어떤 여행으로 묵었고 무엇이 좋았/아쉬웠는지.
 - highlights: 리뷰에서 확인되는 구체적 사실 3~6개. 각 1문장, 주어가 분명한 평서문.
 - good_for: 이 후기가 특히 참고될 여행자 유형 1~2문장 (리뷰 근거로만).
 - faq: 3~4개. 질문(q)은 사람들이 AI·검색창에 실제로 묻는 형태
@@ -677,6 +678,8 @@ def validate_blog(b):
         problems.append("blog: slug 는 영문 소문자·하이픈 3~6단어")
     if len(b.get("summary", "")) < 40:
         problems.append("blog: summary 너무 짧음")
+    if re.match(r"\s*(이 후기의 결론|요약하자면|결론적으로|이 글은)", b.get("summary", "")):
+        problems.append("blog: summary 를 '이 후기의 결론은' 같은 메타 표현으로 시작하지 말 것")
     hl = b.get("highlights") or []
     if not (3 <= len(hl) <= 6):
         problems.append(f"blog: highlights {len(hl)}개 (3~6개)")
