@@ -166,7 +166,7 @@
       ]
     },
     {
-      "at": "2026-09-23 23:49",
+      "at": "2026-09-24 00:01",
       "hash": "92167040286054b8b655b9d5400d7610c390be6f5ca9aaa37faa84de6b955759",
       "reviewer_label": "한 손님",
       "stars": 5.0,
@@ -175,21 +175,22 @@
       ],
       "results": {
         "blogger": {
-          "ok": false,
-          "error": "HTTP 403 오류: https://www.googleapis.com/blogger/v3/blogs/8208977775228041975/posts\n응답: {\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"Request had insufficient authentication scopes.\",\n    \"errors\": [\n      {\n        \"message\": \"Insufficient Permission\",\n        \"domain\": \"global\",\n        \"reason\": \"insufficientPermissions\"\n      }\n    ],\n    \"status\": \"PERMISSION_DENIED\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.ErrorInfo\",\n        \"reason\": \"ACCESS_TOKEN_SCOPE"
+          "ok": true,
+          "post_id": "6503202716589575641",
+          "url": "https://hongsamhotel.blogspot.com/2026/09/hongsamvil-maisan-deluxe-laundry-review.html"
         }
       },
       "texts": {
         "threads": "",
         "instagram": "",
         "facebook": "",
-        "blogger_title": "진안 마이산 가족여행 숙소, 홍삼빌호텔 후기 — 평일의 조용함과 세탁실",
-        "blogger_summary": "이 후기의 결론은 평일에 홍삼빌호텔에 묵으면 한적하고 조용한 분위기를 경험할 수 있다는 것입니다. 한 손님은 방학을 맞아 딸과 함께 가족여행으로 1박을 예약했다가 평일 일정 덕분에 연박까지 이어갔습니다. 마이디럭스룸의 넓은 공간, 세탁실 이용, 프런트의 닌텐도 게임 세트가 특히 인상적이었다고 밝혔습니다."
+        "blogger_title": "진안 마이산 가족여행 숙소, 홍삼빌호텔 마이디럭스룸·세탁실 후기",
+        "blogger_summary": "이 후기는 가족여행으로 홍삼빌호텔에 묵은 한 손님이 남긴 5점 후기입니다. 마이디럭스룸의 넓은 공간과 세탁실 이용, 평일의 한적한 분위기를 칭찬했으며, 1박 예약을 연박으로 변경할 수 있었다고 전합니다."
       },
       "images": [
-        "hotel_new_slide6.jpg",
-        "coldplunge.png",
-        "12.png"
+        "42.png",
+        "19.png",
+        "88.png"
       ]
     }
   ]
