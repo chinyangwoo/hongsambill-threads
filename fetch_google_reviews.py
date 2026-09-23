@@ -19,12 +19,11 @@ Google Business Profile API 승인(프로젝트 502238519910) 후 추가된 '앞
 다른 모드 (수동 실행 입력 mode):
   list     : 게시하지 않고 조회 결과만 출력 (API·권한 테스트용)
   baseline : 지금 있는 리뷰를 전부 '처리 완료'로 기록만 하고 게시하지 않음
-             → google_reviews_seen.json 이 없으면 post 모드에서도 자동으로 baseline 부터 실행
-             (도입 첫날 과거 리뷰 수십 건이 한꺼번에 올라가는 사고 방지)
+             (최근 리뷰도 건너뛰고 앞으로 새로 달리는 리뷰만 올리고 싶을 때 1회 실행)
 
 안전장치:
   - 작성자 이름은 읽지도 넘기지도 않는다 (reviewer_label = "한 손님" 고정)
-  - "(Translated by Google)" / "(Google 번역 제공)" 이 붙은 리뷰는 원문만 추출해 사용
+  - "(Translated by Google)" 이 붙은 리뷰는 앞·뒤 어느 형식이든 원문만 추출해 사용
   - 이미 수동으로 붙여넣어 게시한 리뷰는 review_to_sns.py 의 해시 중복검사로 걸러짐
 
 필요한 GitHub Secrets:
@@ -155,12 +154,15 @@ ORIGINAL_MARKERS = ("(Original)", "(원문)")
 def original_comment(comment):
     """구글 자동번역이 붙은 리뷰는 원문 부분만 남긴다."""
     c = (comment or "").strip()
+    # 형식 A: "(Translated by Google) 번역문 (Original) 원문" → 원문만
     for m in ORIGINAL_MARKERS:
         if m in c:
             return c.split(m, 1)[1].strip()
+    # 형식 B: "원문 (Translated by Google) 번역문" → 앞쪽 원문만
     for m in TRANSLATION_MARKERS:
-        if c.startswith(m):
-            return c[len(m):].strip()
+        if m in c:
+            before, after = c.split(m, 1)
+            return (before.strip() or after.strip())
     return c
 
 
@@ -240,11 +242,13 @@ def posted_platforms_for(text):
 def run_list(reviews, seen):
     print(f"\n📋 조회 결과 (게시하지 않음) — 최근순")
     for rv in sorted(reviews, key=lambda r: r["created_raw"], reverse=True)[:20]:
-        reason = skip_reason(rv, seen) if seen else None
+        reason = skip_reason(rv, seen or {"reviews": {}})
         tag = f"제외: {reason}" if reason else "게시 대상"
         print(f"- {rv['created_raw'][:10]} ★{rv['stars']} [{tag}] {rv['text'][:70]!r}")
+    n = sum(1 for rv in reviews if skip_reason(rv, seen or {"reviews": {}}) is None)
+    print(f"\n📊 현재 게시 대상 {n}건 (post 모드에서 하루 1건씩, 오래된 것부터 게시)")
     if seen is None:
-        print("\nℹ️ google_reviews_seen.json 이 아직 없습니다. post 모드 첫 실행 때 기준선이 자동으로 기록됩니다.")
+        print("ℹ️ google_reviews_seen.json 이 아직 없습니다. post 모드 첫 실행 때 빈 기록으로 새로 만듭니다.")
 
 
 def run_baseline(reviews, seen):
@@ -312,9 +316,10 @@ def main():
         run_baseline(reviews, seen)
     elif MODE == "post":
         if seen is None:
-            print("ℹ️ 첫 실행입니다. 과거 리뷰가 한꺼번에 게시되지 않도록 기준선부터 기록합니다.")
-            run_baseline(reviews, seen)
-            return
+            # 과거 리뷰 폭주는 '최근 MAX_AGE_DAYS 일' 필터 + '1회 1건' 제한으로 막는다.
+            # 최근 리뷰도 올리지 않으려면 먼저 mode=baseline 을 한 번 실행하면 된다.
+            print("ℹ️ 첫 실행 — 빈 기록으로 시작합니다 (최근 30일 리뷰만 하루 1건씩 대상).")
+            seen = {"reviews": {}}
         run_post(reviews, seen)
     else:
         raise RuntimeError(f"mode 값이 잘못됨: {MODE} (post / list / baseline)")
