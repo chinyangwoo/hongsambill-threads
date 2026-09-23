@@ -1,5 +1,5 @@
 # 저장 위치: .github/workflows/google_reviews_fetch.yml
-# 구글 비즈니스 프로필 API 로 새 리뷰를 자동 수집 → review_to_sns.py 로 3개 SNS 게시
+# 구글 비즈니스 프로필 API 로 새 리뷰를 자동 수집 → review_to_sns.py 로 3개 SNS + 구글 블로그 게시
 # 매일 1회, 1회 실행당 최대 1건. 수동 실행 시 mode 로 테스트(list)·기준선(baseline) 가능
 name: 구글 리뷰 자동 수집 → SNS 게시
 
@@ -52,6 +52,8 @@ jobs:
           FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
           FB_PAGE_ACCESS_TOKEN: ${{ secrets.FB_PAGE_ACCESS_TOKEN }}
           GH_PAT: ${{ secrets.GH_PAT }}
+          BLOGGER_REFRESH_TOKEN: ${{ secrets.BLOGGER_REFRESH_TOKEN }}
+          BLOGGER_BLOG_ID: ${{ secrets.BLOGGER_BLOG_ID }}
         run: python fetch_google_reviews.py
 
       - name: 기록 저장

@@ -1,5 +1,5 @@
 # 저장 위치: .github/workflows/review_sns.yml
-# 구글 리뷰 1건을 스레드·인스타그램·페이스북에 동시 게시 (수동 실행 전용, 예약 없음)
+# 구글 리뷰 1건을 스레드·인스타그램·페이스북(+블로그 토큰이 있으면 구글 블로그)에 동시 게시 (수동 실행 전용)
 name: 구글 리뷰 → SNS 게시
 
 on:
@@ -24,6 +24,7 @@ on:
           - threads
           - instagram
           - facebook
+          - blogger
       stars:
         description: "별점 (선택, 예: 5 / 4.5 — 4점 미만이면 게시하지 않음)"
         required: false
@@ -60,6 +61,10 @@ jobs:
           FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
           FB_PAGE_ACCESS_TOKEN: ${{ secrets.FB_PAGE_ACCESS_TOKEN }}
           GH_PAT: ${{ secrets.GH_PAT }}
+          GBP_CLIENT_ID: ${{ secrets.GBP_CLIENT_ID }}
+          GBP_CLIENT_SECRET: ${{ secrets.GBP_CLIENT_SECRET }}
+          BLOGGER_REFRESH_TOKEN: ${{ secrets.BLOGGER_REFRESH_TOKEN }}
+          BLOGGER_BLOG_ID: ${{ secrets.BLOGGER_BLOG_ID }}
           REVIEW_TEXT: ${{ inputs.review_text }}
           REVIEWER_LABEL: ${{ inputs.reviewer_label }}
           PLATFORMS: ${{ inputs.platforms }}
