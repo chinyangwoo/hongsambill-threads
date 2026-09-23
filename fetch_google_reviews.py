@@ -10,9 +10,10 @@ Google Business Profile API 승인(프로젝트 502238519910) 후 추가된 '앞
   1. OAuth 리프레시 토큰으로 액세스 토큰 발급
   2. 계정 → 지점 조회, 상호에 LOCATION_KEYWORD("홍삼빌")가 들어간 지점만 사용
      (같은 계정의 홍삼스파 등 다른 지점 리뷰가 호텔 후기로 올라가는 것 방지)
-  3. 리뷰 조회 → 필터: 별점 4점 이상 / 본문 15자 이상 / 최근 MAX_AGE_DAYS 일 이내 /
+  3. 리뷰 조회 → 필터: 별점 4점 이상 / 본문 15자 이상 / START_DATE(2025-10-01) 이후 작성 /
      google_reviews_seen.json 에 처리 완료로 기록되지 않은 것
-  4. 조건을 통과한 리뷰 중 '가장 오래된 1건'만 review_to_sns.py 로 게시 (1회 실행 = 최대 1건)
+  4. 조건을 통과한 리뷰 중 1건만 review_to_sns.py 로 게시 (1회 실행 = 최대 1건)
+     순서: 최근 30일 새 리뷰가 있으면 그것 먼저, 없으면 과거 밀린 리뷰를 오래된 것부터
   5. review_sns_log.json 을 다시 읽어 3개 플랫폼 모두 성공했으면 '완료'로 기록,
      일부 실패면 다음 실행 때 실패한 플랫폼만 재시도 (최대 MAX_ATTEMPTS 회 후 포기)
 
@@ -55,7 +56,8 @@ ALL_PLATFORMS = ("threads", "instagram", "facebook")
 LOCATION_KEYWORD = os.environ.get("LOCATION_KEYWORD", "홍삼빌").strip()
 MIN_STARS = 4
 MIN_COMMENT_LEN = 15
-MAX_AGE_DAYS = int(os.environ.get("MAX_AGE_DAYS", "30"))
+START_DATE = os.environ.get("START_DATE", "2025-10-01").strip()   # 이 날짜(KST) 이후 작성된 리뷰만 대상
+FRESH_DAYS = 30                                # 최근 30일 이내 새 리뷰는 과거 밀린 리뷰보다 먼저 게시
 MAX_ATTEMPTS = 3
 MAX_REVIEW_PAGES = 10                          # 50건 × 10쪽 = 최대 500건 조회
 REVIEWER_LABEL = "한 손님"
@@ -196,9 +198,16 @@ def skip_reason(rv, seen):
         return f"본문 {len(rv['text'])}자"
     if rv["created"] is None:
         return "작성일 없음"
-    if rv["created"] < datetime.now(timezone.utc) - timedelta(days=MAX_AGE_DAYS):
-        return f"{MAX_AGE_DAYS}일 경과"
+    if rv["created"] < START_AT:
+        return f"{START_DATE} 이전"
     return None
+
+
+START_AT = datetime.fromisoformat(START_DATE).replace(tzinfo=KST)
+
+
+def is_fresh(rv):
+    return rv["created"] >= datetime.now(timezone.utc) - timedelta(days=FRESH_DAYS)
 
 
 # ─────────────────────────────────────────────
@@ -246,7 +255,7 @@ def run_list(reviews, seen):
         tag = f"제외: {reason}" if reason else "게시 대상"
         print(f"- {rv['created_raw'][:10]} ★{rv['stars']} [{tag}] {rv['text'][:70]!r}")
     n = sum(1 for rv in reviews if skip_reason(rv, seen or {"reviews": {}}) is None)
-    print(f"\n📊 현재 게시 대상 {n}건 (post 모드에서 하루 1건씩, 오래된 것부터 게시)")
+    print(f"\n📊 현재 게시 대상 {n}건 ({START_DATE} 이후 작성분, 하루 1건씩 — 최근 {FRESH_DAYS}일 새 리뷰 우선, 나머지는 오래된 것부터)")
     if seen is None:
         print("ℹ️ google_reviews_seen.json 이 아직 없습니다. post 모드 첫 실행 때 빈 기록으로 새로 만듭니다.")
 
@@ -266,8 +275,11 @@ def run_baseline(reviews, seen):
 
 def run_post(reviews, seen):
     candidates = [rv for rv in reviews if skip_reason(rv, seen) is None]
-    candidates.sort(key=lambda r: r["created_raw"])            # 가장 오래된 것부터
-    print(f"🔎 게시 대상 {len(candidates)}건")
+    # 순서: ① 최근 30일 새 리뷰(오래된 것부터) → ② 과거 밀린 리뷰(오래된 것부터)
+    #  → 새 리뷰가 밀린 리뷰 뒤에서 몇 달씩 기다리지 않도록
+    candidates.sort(key=lambda r: (0 if is_fresh(r) else 1, r["created_raw"]))
+    fresh = sum(1 for r in candidates if is_fresh(r))
+    print(f"🔎 게시 대상 {len(candidates)}건 (최근 {FRESH_DAYS}일 새 리뷰 {fresh}건 우선)")
     if not candidates:
         print("ℹ️ 새로 게시할 리뷰가 없습니다. 종료.")
         return
@@ -306,7 +318,7 @@ def run_post(reviews, seen):
 
 
 def main():
-    print(f"▶️ 모드: {MODE} / 지점 키워드: {LOCATION_KEYWORD} / 최근 {MAX_AGE_DAYS}일")
+    print(f"▶️ 모드: {MODE} / 지점 키워드: {LOCATION_KEYWORD} / {START_DATE} 이후 작성분")
     reviews = [normalize(r) for r in fetch_reviews()]
     seen = load_seen()
 
@@ -316,9 +328,9 @@ def main():
         run_baseline(reviews, seen)
     elif MODE == "post":
         if seen is None:
-            # 과거 리뷰 폭주는 '최근 MAX_AGE_DAYS 일' 필터 + '1회 1건' 제한으로 막는다.
+            # 과거 리뷰 폭주는 'START_DATE 이후' 필터 + '1회 1건' 제한으로 막는다.
             # 최근 리뷰도 올리지 않으려면 먼저 mode=baseline 을 한 번 실행하면 된다.
-            print("ℹ️ 첫 실행 — 빈 기록으로 시작합니다 (최근 30일 리뷰만 하루 1건씩 대상).")
+            print(f"ℹ️ 첫 실행 — 빈 기록으로 시작합니다 ({START_DATE} 이후 리뷰를 하루 1건씩).")
             seen = {"reviews": {}}
         run_post(reviews, seen)
     else:
