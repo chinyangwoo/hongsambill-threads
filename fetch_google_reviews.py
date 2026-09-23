@@ -14,7 +14,7 @@ Google Business Profile API 승인(프로젝트 502238519910) 후 추가된 '앞
      google_reviews_seen.json 에 처리 완료로 기록되지 않은 것
   4. 조건을 통과한 리뷰 중 1건만 review_to_sns.py 로 게시 (1회 실행 = 최대 1건)
      순서: 최근 30일 새 리뷰가 있으면 그것 먼저, 없으면 과거 밀린 리뷰를 오래된 것부터
-  5. review_sns_log.json 을 다시 읽어 3개 플랫폼 모두 성공했으면 '완료'로 기록,
+  5. review_sns_log.json 을 다시 읽어 모든 플랫폼(블로그 토큰이 있으면 블로그 포함)이 성공했으면 '완료'로 기록,
      일부 실패면 다음 실행 때 실패한 플랫폼만 재시도 (최대 MAX_ATTEMPTS 회 후 포기)
 
 다른 모드 (수동 실행 입력 mode):
@@ -51,7 +51,9 @@ GBP_REVIEWS = "https://mybusiness.googleapis.com/v4/{location}/reviews"
 
 SEEN_FILE = "google_reviews_seen.json"
 SNS_LOG_FILE = "review_sns_log.json"          # review_to_sns.py 가 쓰는 로그
-ALL_PLATFORMS = ("threads", "instagram", "facebook")
+# 블로그 토큰이 등록돼 있으면 블로그까지 성공해야 '처리 완료'
+ALL_PLATFORMS = ("threads", "instagram", "facebook") + (
+    ("blogger",) if os.environ.get("BLOGGER_REFRESH_TOKEN", "").strip() else ())
 
 LOCATION_KEYWORD = os.environ.get("LOCATION_KEYWORD", "홍삼빌").strip()
 MIN_STARS = 4
@@ -100,18 +102,33 @@ def access_token():
     return res["access_token"]
 
 
-def list_paged(url, headers, key, params):
+def list_paged(url, headers, key, params, first=None):
+    """모든 쪽을 모아 반환. first(dict)를 주면 첫 응답의 나머지 필드(평균 별점 등)를 담아 준다."""
     items, token = [], None
     for _ in range(MAX_REVIEW_PAGES):
         p = dict(params)
         if token:
             p["pageToken"] = token
         res = http_json(f"{url}?{urllib.parse.urlencode(p)}", headers=headers)
+        if first is not None and not first:
+            first.update({k: v for k, v in res.items() if k != key})
         items += res.get(key, [])
         token = res.get("nextPageToken")
         if not token:
             break
     return items
+
+
+def format_address(addr):
+    """구글 비즈니스 프로필 주소 → '전북특별자치도 진안군 ○○로 00' 형태"""
+    if not addr:
+        return ""
+    parts = [addr.get("administrativeArea", ""), addr.get("locality", "")] + list(addr.get("addressLines", []))
+    out = []
+    for word in " ".join(p or "" for p in parts).split():
+        if word not in out:            # "진안군 진안군 마령면…" 같은 중복 제거
+            out.append(word)
+    return " ".join(out)
 
 
 def find_locations(h):
@@ -121,7 +138,7 @@ def find_locations(h):
     found, seen = [], set()
     for acc in accounts:
         locs = list_paged(GBP_LOCATIONS.format(account=acc["name"]), h, "locations",
-                          {"readMask": "name,title", "pageSize": 100})
+                          {"readMask": "name,title,storefrontAddress", "pageSize": 100})
         for loc in locs:
             title = loc.get("title", "")
             loc_id = loc["name"]                                   # locations/456
@@ -129,19 +146,32 @@ def find_locations(h):
             print(f"{marker} 지점: {title} ({acc['name']}/{loc_id})")
             if LOCATION_KEYWORD in title and loc_id not in seen:
                 seen.add(loc_id)
-                found.append((f"{acc['name']}/{loc_id}", title))    # accounts/123/locations/456
+                found.append((f"{acc['name']}/{loc_id}", title,
+                              format_address(loc.get("storefrontAddress"))))
     if not found:
         raise RuntimeError(f"상호에 '{LOCATION_KEYWORD}'가 들어간 지점을 찾지 못했습니다.")
     return found
 
 
+PROFILE = {}      # 블로그 글에 넣을 최신 공식 정보 (평균 별점·리뷰 수·주소)
+
+
 def fetch_reviews():
     h = {"Authorization": f"Bearer {access_token()}"}
     reviews = []
-    for loc_path, title in find_locations(h):
+    for loc_path, title, address in find_locations(h):
+        meta = {}
         rs = list_paged(GBP_REVIEWS.format(location=loc_path), h, "reviews",
-                        {"pageSize": 50, "orderBy": "updateTime desc"})
-        print(f"⭐ {title}: 리뷰 {len(rs)}건 조회")
+                        {"pageSize": 50, "orderBy": "updateTime desc"}, first=meta)
+        print(f"⭐ {title}: 리뷰 {len(rs)}건 조회 (평균 {meta.get('averageRating')} / 전체 {meta.get('totalReviewCount')})")
+        if not PROFILE:
+            if meta.get("averageRating"):
+                PROFILE["GBP_AVG_RATING"] = f"{float(meta['averageRating']):.1f}"
+            if meta.get("totalReviewCount"):
+                PROFILE["GBP_REVIEW_COUNT"] = str(meta["totalReviewCount"])
+            if address:
+                PROFILE["HOTEL_ADDRESS"] = address
+                print(f"📍 주소: {address}")
         reviews += rs
     return reviews
 
@@ -296,6 +326,8 @@ def run_post(reviews, seen):
         "REVIEWER_LABEL": REVIEWER_LABEL,
         "PLATFORMS": "all",
         "STARS": str(rv["stars"]),
+        "REVIEW_DATE": rv["created"].astimezone(KST).strftime("%Y-%m-%d") if rv["created"] else "",
+        **PROFILE,
     })
     code = subprocess.run([sys.executable, "review_to_sns.py"], env=env).returncode
 
@@ -304,7 +336,7 @@ def run_post(reviews, seen):
     entry["at"] = now_kst()
     if set(ALL_PLATFORMS) <= done:
         entry["status"] = "done"
-        print(f"✅ 3개 플랫폼 게시 완료 → 처리 완료로 기록")
+        print(f"✅ {len(ALL_PLATFORMS)}개 플랫폼 게시 완료 → 처리 완료로 기록")
     elif entry["attempts"] >= MAX_ATTEMPTS:
         entry["status"] = "gave_up"
         print(f"⚠️ {MAX_ATTEMPTS}회 시도 후 포기. 성공: {sorted(done) or '없음'} — 수동 확인 필요")

@@ -1,8 +1,15 @@
 # -*- coding: utf-8 -*-
 """
-홍삼빌호텔 구글 리뷰 → SNS(스레드·인스타그램·페이스북) 자동 게시 앱
-====================================================================
-workflow_dispatch 수동 실행 전용. 예약 실행 없음.
+홍삼빌호텔 구글 리뷰 → SNS(스레드·인스타그램·페이스북) + 구글 블로그(Blogger) 자동 게시 앱
+==========================================================================================
+workflow_dispatch 수동 실행, 또는 fetch_google_reviews.py(자동 수집)가 호출.
+
+[블로그] BLOGGER_REFRESH_TOKEN 시크릿이 등록돼 있을 때만 켜진다 (없으면 기존 3개 플랫폼만).
+  - AEO/SEO 구조: 직답 요약 → 기본정보 표 → 리뷰 원문 → 확인된 사실 목록 → FAQ → 문의
+  - JSON-LD(@graph: BlogPosting + Hotel + FAQPage) 삽입. 자기 리뷰 별점 마크업은 넣지 않음
+    (구글 정책상 자기 업체 리뷰 별점은 리치결과 대상 아님 → 불이익 방지)
+  - 영문 슬러그 제목으로 먼저 발행 → 한국어 제목으로 수정 (Blogger 주소가 blog-post_12.html 이 되는 것 방지)
+  - 블로그 사진은 images/ 원본을 jsDelivr CDN 주소로 연결 (캐시 폴더는 3일 뒤 지워지므로)
 
 동작 순서:
   1. review_text 해시를 review_sns_log.json 과 대조 → 해시+플랫폼 조합으로 판정,
@@ -28,11 +35,17 @@ workflow_dispatch 수동 실행 전용. 예약 실행 없음.
   INSTAGRAM_ACCESS_TOKEN, INSTAGRAM_USER_ID      (인스타 게시 시)
   FB_PAGE_ID, FB_PAGE_ACCESS_TOKEN               (페이스북 게시 시)
   GH_PAT                                         (선택 — 이 스크립트에서는 미사용)
+  BLOGGER_REFRESH_TOKEN                          (블로그 — 있으면 블로그 게시 켜짐)
+  GBP_CLIENT_ID, GBP_CLIENT_SECRET               (블로그 토큰 발급에 쓴 OAuth 클라이언트)
+  BLOGGER_BLOG_ID                                (선택 — 블로그가 여러 개일 때만)
+
+자동 수집 스크립트가 추가로 넘겨주는 값 (수동 실행 땐 없어도 됨):
+  REVIEW_DATE (리뷰 작성일), GBP_AVG_RATING, GBP_REVIEW_COUNT, HOTEL_ADDRESS
 
 워크플로 입력 → 환경변수:
   REVIEW_TEXT     : 구글 리뷰 본문 (필수)
   REVIEWER_LABEL  : 작성자 표기 (기본 "한 손님")
-  PLATFORMS       : all / threads / instagram / facebook (기본 all)
+  PLATFORMS       : all / threads / instagram / facebook / blogger (기본 all)
   STARS           : 별점 (선택, 예: 5 또는 4.5)
 """
 
@@ -86,6 +99,16 @@ REVIEWER_LABEL = os.environ.get("REVIEWER_LABEL", "").strip() or "한 손님"
 PLATFORMS_INPUT = (os.environ.get("PLATFORMS", "all").strip().lower() or "all")
 STARS_RAW = os.environ.get("STARS", "").strip()
 
+BLOGGER_API = "https://www.googleapis.com/blogger/v3"
+BLOGGER_REFRESH_TOKEN = os.environ.get("BLOGGER_REFRESH_TOKEN", "").strip()
+BLOGGER_ENABLED = bool(BLOGGER_REFRESH_TOKEN)
+BLOG_IMAGE_BASE = f"https://cdn.jsdelivr.net/gh/{REPO}@{BRANCH}/{IMAGE_DIR}/"
+
+REVIEW_DATE = os.environ.get("REVIEW_DATE", "").strip()          # 예: 2026-09-08
+GBP_AVG_RATING = os.environ.get("GBP_AVG_RATING", "").strip()    # 예: 4.6
+GBP_REVIEW_COUNT = os.environ.get("GBP_REVIEW_COUNT", "").strip()
+HOTEL_ADDRESS = os.environ.get("HOTEL_ADDRESS", "").strip()
+
 RESERVATION_NO = "1661-3889"
 DIRECT_NO = "010-8545-0290"
 FB_FIRST_COMMENT = f"홍삼빌호텔 예약번호 {RESERVATION_NO}, 직통상담문의 {DIRECT_NO}"
@@ -95,7 +118,7 @@ HEALTH_WORDS = ["면역", "효능", "건강에 좋", "피로 회복에 좋", "�
 FOOD_SALE_WORDS = ["고기를 제공", "식사를 제공", "고기 판매", "고기를 준비해 드", "고기 준비해 드", "식사 제공"]
 FABRICATION_WORDS = ["할인", "이벤트 진행", "재개장", "리뉴얼 오픈", "오픈 예정", "특가"]
 
-HOTEL_INFO = """- 홍삼빌호텔: 전북 진안군, 마이산 인근의 호텔. 객실 40개. 가족 단위 방문객이 많음.
+HOTEL_INFO = """- 홍삼빌호텔: 전북 진안군, 마이산 인근의 3성급 호텔. 객실 40개. 가족 단위 방문객이 많음.
 - 예약 대표번호 1661-3889 / 직통 상담 010-8545-0290
 - 2층 약 50평 유리난간 테라스 (휴식·산 조망. 테라스에서 바베큐는 하지 않음)
 - 바베큐장: 부스 3개(부스당 4~6명), 직화구이기 3대, 항아리바베큐 설비 1대. 호텔은 장소·설비만 제공.
@@ -122,10 +145,14 @@ def http_json(url, data=None, method=None):
 # ─────────────────────────────────────────────
 def resolve_platforms():
     if PLATFORMS_INPUT == "all":
-        return ["threads", "instagram", "facebook"]
+        return ["threads", "instagram", "facebook"] + (["blogger"] if BLOGGER_ENABLED else [])
     if PLATFORMS_INPUT in ("threads", "instagram", "facebook"):
         return [PLATFORMS_INPUT]
-    raise RuntimeError(f"platforms 값이 잘못됨: {PLATFORMS_INPUT} (all/threads/instagram/facebook)")
+    if PLATFORMS_INPUT == "blogger":
+        if not BLOGGER_ENABLED:
+            raise RuntimeError("BLOGGER_REFRESH_TOKEN 시크릿이 없어 블로그 게시를 할 수 없습니다.")
+        return ["blogger"]
+    raise RuntimeError(f"platforms 값이 잘못됨: {PLATFORMS_INPUT} (all/threads/instagram/facebook/blogger)")
 
 
 def parse_stars():
@@ -596,6 +623,256 @@ def post_fb_first_comment(post_id):
         return None
 
 
+
+# ─────────────────────────────────────────────
+# 4. 구글 블로그(Blogger) — AEO/SEO 최적화 글
+# ─────────────────────────────────────────────
+BLOG_SYSTEM = f"""# 역할
+너는 홍삼빌호텔 공식 블로그 편집자다. 실제 구글 리뷰 1건을 바탕으로,
+검색엔진(SEO)과 ChatGPT·Gemini·Claude·Grok 같은 AI 답변엔진(AEO)이 '출처로 인용하기 좋은' 글의 재료를 만든다.
+AI가 인용하는 글의 조건: 질문에 첫 문장이 바로 답하고, 사실이 짧은 문장으로 분리돼 있고, 근거가 분명하다.
+사람이 검수하지 않고 그대로 발행된다.
+
+# 호텔 정보 (이 범위 안에서만 쓴다)
+{HOTEL_INFO}
+
+# 절대 규칙
+1. 리뷰 작성자 실명·아이디 금지. 작성자는 지정된 표기(reviewer_label)로만 지칭.
+2. 리뷰와 [호텔 정보]에 없는 사실·수치·가격·할인·이벤트·거리·소요시간·재개장 시점을 만들지 마라.
+3. 홍삼 효능 주장 금지. 호텔이 고기·음식을 판매·제공한다는 표현 금지.
+4. 리뷰가 말하지 않은 칭찬을 지어내지 마라. 아쉬운 점이 있으면 그대로 적되 개선 약속은 하지 마라.
+5. 과장 수식어(최고의, 완벽한, 압도적인 등) 금지. 담백한 설명문, 존댓말(~합니다).
+6. 리뷰가 한국어가 아니면 review_ko 에 자연스러운 한국어 번역을 넣는다. 한국어 리뷰면 빈 문자열.
+
+# 작성 항목
+- slug: 영문 소문자·하이픈 3~6단어 (예: jinan-maisan-family-hotel-review). 리뷰 핵심 반영.
+- title: 한국어 25~45자. '홍삼빌호텔' 필수 + '진안' 또는 '마이산' 포함 + 리뷰 핵심 포인트.
+  사람들이 실제로 검색할 법한 표현 (예: "진안 마이산 가족여행 숙소, 홍삼빌호텔 투숙 후기 — 넓은 객실과 세탁실")
+- summary: 2~3문장. 첫 문장이 '이 후기의 결론'을 바로 말한다. 누가(reviewer_label) 어떤 여행으로 묵었고 무엇이 좋았/아쉬웠는지.
+- highlights: 리뷰에서 확인되는 구체적 사실 3~6개. 각 1문장, 주어가 분명한 평서문.
+- good_for: 이 후기가 특히 참고될 여행자 유형 1~2문장 (리뷰 근거로만).
+- faq: 3~4개. 질문(q)은 사람들이 AI·검색창에 실제로 묻는 형태
+  (예: "진안 마이산 근처에 가족이 묵기 좋은 호텔이 있나요?", "홍삼빌호텔에 세탁실이 있나요?").
+  답(a)은 2~3문장, 첫 문장에서 바로 답하고 근거가 '투숙객 후기'인지 '호텔 정보'인지 드러낸다.
+  리뷰·호텔정보로 답할 수 없는 질문은 만들지 마라.
+- labels: 블로그 라벨 4~6개 (예: 홍삼빌호텔, 진안숙소, 마이산숙소, 가족여행, 구글리뷰). '#' 없이.
+
+# 출력 (JSON 하나만, 앞뒤 설명·코드블록 금지)
+{{"slug":"...","title":"...","summary":"...","highlights":["..."],"good_for":"...",
+"faq":[{{"q":"...","a":"..."}}],"labels":["..."],"review_ko":""}}"""
+
+
+def validate_blog(b):
+    problems = []
+    if not isinstance(b, dict) or not b:
+        return ["blog: JSON 없음"]
+    title = b.get("title", "")
+    if "홍삼빌호텔" not in title:
+        problems.append("blog: 제목에 '홍삼빌호텔' 누락")
+    if not ("진안" in title or "마이산" in title):
+        problems.append("blog: 제목에 '진안' 또는 '마이산' 누락")
+    if not (15 <= len(title) <= 60):
+        problems.append(f"blog: 제목 길이 {len(title)}자 (25~45자)")
+    if not re.fullmatch(r"[a-z0-9]+(-[a-z0-9]+){1,7}", b.get("slug", "")):
+        problems.append("blog: slug 는 영문 소문자·하이픈 3~6단어")
+    if len(b.get("summary", "")) < 40:
+        problems.append("blog: summary 너무 짧음")
+    hl = b.get("highlights") or []
+    if not (3 <= len(hl) <= 6):
+        problems.append(f"blog: highlights {len(hl)}개 (3~6개)")
+    faq = b.get("faq") or []
+    if not (3 <= len(faq) <= 4) or any(not (f.get("q") and f.get("a")) for f in faq if isinstance(f, dict)):
+        problems.append("blog: faq 는 q·a 가 있는 3~4개")
+    labels = b.get("labels") or []
+    if not (3 <= len(labels) <= 8):
+        problems.append("blog: labels 4~6개")
+    all_text = " ".join([title, b.get("summary", ""), b.get("good_for", ""), " ".join(hl)]
+                        + [f"{f.get('q', '')} {f.get('a', '')}" for f in faq if isinstance(f, dict)])
+    problems += [p.replace("blog_all", "blog") for p in _common_problems("blog_all", all_text)]
+    for w in ("최고의", "완벽한", "압도적"):
+        if w in all_text and w not in REVIEW_TEXT:
+            problems.append(f"blog: 과장 표현 '{w}'")
+    return problems
+
+
+def generate_blog(stars):
+    stars_line = f"별점: {stars}점\n" if stars is not None else ""
+    date_line = f"리뷰 작성일: {REVIEW_DATE}\n" if REVIEW_DATE else ""
+    base_user = f"""아래 구글 리뷰 1건으로 블로그 글 재료를 JSON 으로만 출력하세요.
+
+작성자 표기(reviewer_label): {REVIEWER_LABEL}
+{stars_line}{date_line}리뷰 본문:
+\"\"\"{REVIEW_TEXT}\"\"\""""
+    feedback, last = "", []
+    for attempt in range(1, MAX_RETRY + 1):
+        text, stop = call_claude(BLOG_SYSTEM, base_user + feedback)
+        try:
+            b = parse_json(text) if text else {}
+        except Exception as e:
+            b = {}
+            print(f"⚠️ 블로그 JSON 파싱 실패: {e}")
+        problems = validate_blog(b)
+        if not problems:
+            print(f"✅ 블로그 글 {attempt}회차 검증 통과")
+            return b
+        last = problems
+        print(f"⚠️ 블로그 {attempt}회차 검증 실패: {problems}")
+        feedback = "\n\n[재작성 요청] 다음 문제를 고쳐서 JSON 만 다시 출력: " + "; ".join(problems)
+        time.sleep(2)
+    raise RuntimeError(f"블로그 글 생성 {MAX_RETRY}회 실패: {last}")
+
+
+def _e(t):
+    """HTML 이스케이프"""
+    return (str(t).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+            .replace('"', "&quot;"))
+
+
+def _date_ko(d):
+    try:
+        y, m, dd = d.split("-")[:3]
+        return f"{int(y)}년 {int(m)}월 {int(dd)}일"
+    except Exception:
+        return d
+
+
+def build_blog_html(b, stars, image_names):
+    now = datetime.now(KST)
+    today_ko = f"{now.year}년 {now.month}월 {now.day}일"
+    star_txt = f"★{stars:g}" if stars is not None else ""
+    src_parts = ["구글 리뷰"]
+    if REVIEW_DATE:
+        src_parts.append(f"{_date_ko(REVIEW_DATE)} 작성")
+    if star_txt:
+        src_parts.append(f"별점 {star_txt}")
+
+    rows = [
+        ("숙소명", "홍삼빌호텔 (Hongsambill Hotel)"),
+        ("위치", HOTEL_ADDRESS or "전북 진안군, 마이산 인근"),
+        ("등급·규모", "3성급 호텔, 객실 40개"),
+        ("주요 시설", "2층 약 50평 테라스(산 조망), 바베큐장(장소·설비 제공)"),
+        ("예약 문의", f"대표번호 {RESERVATION_NO} / 직통 상담 {DIRECT_NO}"),
+    ]
+    if GBP_AVG_RATING and GBP_REVIEW_COUNT:
+        rows.append(("구글 평점", f"{GBP_AVG_RATING}점 (리뷰 {GBP_REVIEW_COUNT}개, {today_ko} 기준)"))
+    table = "".join(
+        f'<tr><th style="text-align:left;padding:6px 10px;border:1px solid #ddd;background:#f7f7f7;white-space:nowrap">{_e(k)}</th>'
+        f'<td style="padding:6px 10px;border:1px solid #ddd">{_e(v)}</td></tr>' for k, v in rows)
+
+    imgs = "".join(
+        f'<p style="text-align:center"><img src="{BLOG_IMAGE_BASE}{urllib.parse.quote(n)}" '
+        f'alt="진안 마이산 홍삼빌호텔 사진 {i}" loading="lazy" style="max-width:100%;height:auto"/></p>'
+        for i, n in enumerate(image_names, 1))
+
+    review_block = f'<blockquote style="border-left:4px solid #b33;margin:0;padding:8px 14px;background:#fafafa">{_e(REVIEW_TEXT).replace(chr(10), "<br/>")}</blockquote>'
+    if b.get("review_ko"):
+        review_block += f'<p><strong>한국어 번역:</strong> {_e(b["review_ko"]).replace(chr(10), "<br/>")}</p>'
+
+    faq = [f for f in b["faq"] if isinstance(f, dict)]
+    faq_html = "".join(f"<h3>{_e(f['q'])}</h3><p>{_e(f['a'])}</p>" for f in faq)
+    hl_html = "".join(f"<li>{_e(h)}</li>" for h in b["highlights"])
+
+    address = {"@type": "PostalAddress", "addressLocality": "진안군",
+               "addressRegion": "전북특별자치도", "addressCountry": "KR"}
+    if HOTEL_ADDRESS:
+        address["streetAddress"] = HOTEL_ADDRESS
+    ld = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {"@type": "BlogPosting", "headline": b["title"], "description": b["summary"],
+             "inLanguage": "ko-KR", "datePublished": now.isoformat(timespec="seconds"),
+             "dateModified": now.isoformat(timespec="seconds"),
+             "image": [f"{BLOG_IMAGE_BASE}{urllib.parse.quote(n)}" for n in image_names],
+             "author": {"@type": "Organization", "name": "홍삼빌호텔"},
+             "publisher": {"@type": "Organization", "name": "홍삼빌호텔"},
+             "about": {"@id": "#hongsambill-hotel"},
+             "keywords": ", ".join(b["labels"])},
+            {"@type": "Hotel", "@id": "#hongsambill-hotel", "name": "홍삼빌호텔",
+             "alternateName": "Hongsambill Hotel", "telephone": "+82-1661-3889",
+             "numberOfRooms": 40, "starRating": {"@type": "Rating", "ratingValue": "3"},
+             "address": address,
+             "containedInPlace": {"@type": "Place", "name": "마이산 도립공원 인근"}},
+            {"@type": "FAQPage", "mainEntity": [
+                {"@type": "Question", "name": f["q"],
+                 "acceptedAnswer": {"@type": "Answer", "text": f["a"]}} for f in faq]},
+        ],
+    }
+    ld_json = json.dumps(ld, ensure_ascii=False).replace("</", "<\\/")
+
+    return f"""<p><em>이 글은 홍삼빌호텔에 실제로 남겨진 {_e(" · ".join(src_parts))}를 바탕으로 작성했습니다. (게시일 {today_ko})</em></p>
+<h2>한 줄 요약</h2>
+<p>{_e(b["summary"])}</p>
+<h2>홍삼빌호텔 기본 정보</h2>
+<table style="border-collapse:collapse;width:100%;font-size:95%">{table}</table>
+{imgs}
+<h2>투숙객이 남긴 구글 리뷰 원문</h2>
+<p>{_e(REVIEWER_LABEL)}께서 남겨 주신 후기입니다{(" (" + star_txt + ")") if star_txt else ""}.</p>
+{review_block}
+<h2>이 후기에서 확인할 수 있는 점</h2>
+<ul>{hl_html}</ul>
+<h2>이런 분께 참고가 됩니다</h2>
+<p>{_e(b.get("good_for", ""))}</p>
+<h2>홍삼빌호텔 자주 묻는 질문</h2>
+{faq_html}
+<h2>예약 문의</h2>
+<p>홍삼빌호텔 예약 대표번호 <strong>{RESERVATION_NO}</strong>, 직통 상담 <strong>{DIRECT_NO}</strong>로 문의하실 수 있습니다.</p>
+<script type="application/ld+json">{ld_json}</script>"""
+
+
+def _json_req(url, token, payload=None, method="GET"):
+    data = json.dumps(payload).encode() if payload is not None else None
+    req = urllib.request.Request(url, data=data, method=method, headers={
+        "Authorization": f"Bearer {token}", "Content-Type": "application/json"})
+    try:
+        with urllib.request.urlopen(req, timeout=60) as res:
+            return json.loads(res.read().decode())
+    except urllib.error.HTTPError as e:
+        body = e.read().decode(errors="replace")
+        raise RuntimeError(f"HTTP {e.code} 오류: {url.split('?')[0]}\n응답: {body}") from e
+
+
+def blogger_token():
+    res = http_json("https://oauth2.googleapis.com/token", {
+        "client_id": os.environ.get("BLOGGER_CLIENT_ID") or os.environ["GBP_CLIENT_ID"],
+        "client_secret": os.environ.get("BLOGGER_CLIENT_SECRET") or os.environ["GBP_CLIENT_SECRET"],
+        "refresh_token": BLOGGER_REFRESH_TOKEN,
+        "grant_type": "refresh_token",
+    })
+    return res["access_token"]
+
+
+def blogger_blog_id(token):
+    bid = os.environ.get("BLOGGER_BLOG_ID", "").strip()
+    if bid:
+        return bid
+    blogs = _json_req(f"{BLOGGER_API}/users/self/blogs", token).get("items", [])
+    if len(blogs) == 1:
+        print(f"📝 블로그: {blogs[0].get('name')} ({blogs[0].get('url')})")
+        return blogs[0]["id"]
+    listing = ", ".join(f"{b.get('name')}={b['id']}" for b in blogs) or "없음"
+    raise RuntimeError(f"블로그를 하나로 정할 수 없습니다. BLOGGER_BLOG_ID 시크릿을 지정하세요. (목록: {listing})")
+
+
+def post_to_blogger(b, stars, image_names):
+    token = blogger_token()
+    blog_id = blogger_blog_id(token)
+    html = build_blog_html(b, stars, image_names)
+    # ① 영문 슬러그 제목으로 발행 → 주소(URL)가 영문으로 고정됨
+    slug_title = b["slug"].replace("-", " ")
+    res = _json_req(f"{BLOGGER_API}/blogs/{blog_id}/posts?isDraft=false", token,
+                    {"title": slug_title, "content": html, "labels": b["labels"]}, "POST")
+    post_id, url = res["id"], res.get("url")
+    # ② 한국어 제목으로 교체 (주소는 그대로 유지)
+    try:
+        time.sleep(3)
+        _json_req(f"{BLOGGER_API}/blogs/{blog_id}/posts/{post_id}", token,
+                  {"title": b["title"]}, "PATCH")
+    except Exception as e:
+        print(f"⚠️ 블로그 제목 한국어 교체 실패 (영문 제목으로 게시됨): {e}")
+    print(f"🔗 블로그 주소: {url}")
+    return post_id, url
+
+
 # ─────────────────────────────────────────────
 # 메인
 # ─────────────────────────────────────────────
@@ -625,10 +902,21 @@ def main():
         return
     print(f"▶️ 이번에 게시할 플랫폼: {platforms}")
 
-    # 2) Claude 1회 호출로 3개 글 생성 (불합격 시 재생성)
-    posts = generate_posts(stars)
-    for name in ("threads", "instagram", "facebook"):
-        print(f"\n✍️ [{name}] ({len(posts.get(name, ''))}자)\n{posts.get(name, '')}")
+    # 2) Claude 1회 호출로 SNS 3개 글 생성 (불합격 시 재생성) — SNS 플랫폼이 남아 있을 때만
+    posts = {}
+    if any(p in platforms for p in ("threads", "instagram", "facebook")):
+        posts = generate_posts(stars)
+        for name in ("threads", "instagram", "facebook"):
+            print(f"\n✍️ [{name}] ({len(posts.get(name, ''))}자)\n{posts.get(name, '')}")
+
+    # 2-1) 블로그 글은 형식이 달라 별도 호출로 생성
+    blog = None
+    if "blogger" in platforms:
+        try:
+            blog = generate_blog(stars)
+            print(f"\n✍️ [blogger] {blog['title']}\n{blog['summary']}")
+        except Exception as e:
+            print(f"❌ 블로그 글 생성 실패 (나머지는 계속 진행): {e}", file=sys.stderr)
 
     # 3) 이미지 3장 → JPG → 공개 URL
     print("\n🖼️ images/ 에서 이미지 선택·변환 중...")
@@ -642,10 +930,22 @@ def main():
         "instagram": lambda: post_to_instagram(posts["instagram"], urls),
         "facebook": lambda: post_to_facebook(posts["facebook"], urls),
     }
+
+    def _blogger():
+        if blog is None:
+            raise RuntimeError("블로그 글 생성 실패로 게시하지 않음")
+        pid, url = post_to_blogger(blog, stars, chosen)
+        results_extra["blogger_url"] = url
+        return pid
+    posters["blogger"] = _blogger
+    results_extra = {}
+
     for name in platforms:
         try:
             post_id = posters[name]()
             results[name] = {"ok": True, "post_id": post_id}
+            if name == "blogger":
+                results[name]["url"] = results_extra.get("blogger_url")
             print(f"🚀 [{name}] 게시 완료! post id = {post_id}")
             if name == "facebook":
                 time.sleep(5)
@@ -664,7 +964,8 @@ def main():
         "stars": stars,
         "platforms": platforms,
         "results": results,
-        "texts": {k: posts.get(k, "") for k in ("threads", "instagram", "facebook")},
+        "texts": {**{k: posts.get(k, "") for k in ("threads", "instagram", "facebook")},
+                  **({"blogger_title": blog["title"], "blogger_summary": blog["summary"]} if blog else {})},
         "images": chosen,
     })
     log["posts"] = log["posts"][-60:]
