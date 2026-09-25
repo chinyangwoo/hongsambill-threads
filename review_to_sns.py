@@ -89,6 +89,8 @@ MIN_STARS = 4.0                     # 이 미만이면 게시하지 않음
 
 CLAUDE_MODEL = os.environ.get("CLAUDE_MODEL", "claude-sonnet-5")
 MAX_TOKENS = int(os.environ.get("CLAUDE_MAX_TOKENS", "4000"))
+# 블로그 글은 항목이 많고, 외국어 리뷰는 번역(review_ko)까지 들어가 4000 에서 잘림 → 별도 한도
+BLOG_MAX_TOKENS = int(os.environ.get("CLAUDE_BLOG_MAX_TOKENS", "16000"))
 
 ANTHROPIC_API_KEY = os.environ["ANTHROPIC_API_KEY"]
 REPO = os.environ.get("GITHUB_REPOSITORY", "")
@@ -237,11 +239,12 @@ SYSTEM_PROMPT = f"""# 역할
 - 설명·인사·사고 과정을 앞뒤에 붙이지 말고, 여는 중괄호로 시작해 닫는 중괄호로 끝내라."""
 
 
-def call_claude(system, user):
+def call_claude(system, user, max_tokens=None):
     """Claude 호출. (본문 텍스트, stop_reason) — facebook_auto_post.py 와 동일 패턴"""
+    max_tokens = max_tokens or MAX_TOKENS
     body = json.dumps({
         "model": CLAUDE_MODEL,
-        "max_tokens": MAX_TOKENS,
+        "max_tokens": max_tokens,
         "system": system,
         "messages": [{"role": "user", "content": user}],
     }).encode()
@@ -254,7 +257,7 @@ def call_claude(system, user):
                      "anthropic-version": "2023-06-01"},
         )
         try:
-            with urllib.request.urlopen(req, timeout=120) as res:
+            with urllib.request.urlopen(req, timeout=300) as res:
                 data = json.loads(res.read().decode())
             break
         except Exception as e:
@@ -269,7 +272,7 @@ def call_claude(system, user):
     if not text:
         print(f"⚠️ Claude 응답에 본문이 없음 (stop_reason={stop})")
     elif stop == "max_tokens":
-        print(f"⚠️ 응답이 max_tokens({MAX_TOKENS})에서 잘렸습니다. 복구를 시도합니다.")
+        print(f"⚠️ 응답이 max_tokens({max_tokens})에서 잘렸습니다. 복구를 시도합니다.")
     return text, stop
 
 
@@ -469,8 +472,18 @@ def git_push_cache(names):
     git("add", "-A", CACHE_DIR)
     if subprocess.run(["git", "diff", "--cached", "--quiet"]).returncode != 0:
         git("commit", "-m", f"review_sns_cache: {', '.join(names)}")
-        git("pull", "--rebase", "origin", BRANCH)
-        git("push", "origin", f"HEAD:{BRANCH}")
+        # GitHub 일시 오류(500 등)로 push 가 실패하면 전체 게시가 멈추므로 최대 4회 재시도
+        for push_try in range(1, 5):
+            try:
+                git("pull", "--rebase", "origin", BRANCH)
+                git("push", "origin", f"HEAD:{BRANCH}")
+                break
+            except subprocess.CalledProcessError as e:
+                if push_try == 4:
+                    raise
+                wait = 15 * push_try
+                print(f"⚠️ git push 실패({push_try}/4): {e} — {wait}초 후 재시도")
+                time.sleep(wait)
     time.sleep(10)   # raw URL 반영 대기
 
 
@@ -708,7 +721,7 @@ def generate_blog(stars):
 \"\"\"{REVIEW_TEXT}\"\"\""""
     feedback, last = "", []
     for attempt in range(1, MAX_RETRY + 1):
-        text, stop = call_claude(BLOG_SYSTEM, base_user + feedback)
+        text, stop = call_claude(BLOG_SYSTEM, base_user + feedback, max_tokens=BLOG_MAX_TOKENS)
         try:
             b = parse_json(text) if text else {}
         except Exception as e:
@@ -721,6 +734,8 @@ def generate_blog(stars):
         last = problems
         print(f"⚠️ 블로그 {attempt}회차 검증 실패: {problems}")
         feedback = "\n\n[재작성 요청] 다음 문제를 고쳐서 JSON 만 다시 출력: " + "; ".join(problems)
+        if stop == "max_tokens" or not text:
+            feedback += "\n글이 길어 잘렸습니다. 각 항목을 짧게 쓰고, 설명 없이 여는 중괄호로 시작해 닫는 중괄호로 끝내세요."
         time.sleep(2)
     raise RuntimeError(f"블로그 글 생성 {MAX_RETRY}회 실패: {last}")
 
