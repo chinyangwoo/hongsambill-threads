@@ -1,19 +1,6 @@
 {
-  "count": 81,
+  "count": 82,
   "posts": [
-    {
-      "at": "2026-09-08 17:16",
-      "topic": "커플/가족 단위 손님들이 진안을 다시 찾는 이유",
-      "text": "",
-      "images": [
-        "81.png",
-        "hotel_new_slide1.jpg",
-        "15.png"
-      ],
-      "post_id": "18089639162674974",
-      "views": 8,
-      "views_final": true
-    },
     {
       "at": "2026-09-09 09:57",
       "topic": "가을 단풍 시즌 마이산 뷰가 미쳤다는 소문의 진실",
@@ -778,7 +765,7 @@
       ],
       "post_id": "18165037453484739",
       "views": 14,
-      "views_final": false
+      "views_final": true
     },
     {
       "at": "2026-09-25 16:44",
@@ -825,7 +812,7 @@
         "hotel_new_slide5.jpg"
       ],
       "post_id": "18368677339212471",
-      "views": 22,
+      "views": 23,
       "views_final": false
     },
     {
@@ -841,7 +828,7 @@
         "running.png"
       ],
       "post_id": "18129936229682887",
-      "views": 41,
+      "views": 42,
       "views_final": false
     },
     {
@@ -857,7 +844,7 @@
         "hotel_new_slide4.jpg"
       ],
       "post_id": "18226761295331148",
-      "views": 73,
+      "views": 74,
       "views_final": false
     },
     {
@@ -873,7 +860,7 @@
         "32.png"
       ],
       "post_id": "17975985783129790",
-      "views": 47,
+      "views": 49,
       "views_final": false
     },
     {
@@ -889,7 +876,7 @@
         "hotel_new_slide8.jpg"
       ],
       "post_id": "18088461740484472",
-      "views": 36,
+      "views": 45,
       "views_final": false
     },
     {
@@ -905,7 +892,7 @@
         "68.png"
       ],
       "post_id": "17906187120329314",
-      "views": 19,
+      "views": 21,
       "views_final": false
     },
     {
@@ -921,7 +908,7 @@
         "80.png"
       ],
       "post_id": "17926576341186193",
-      "views": 16,
+      "views": 28,
       "views_final": false
     },
     {
@@ -937,6 +924,22 @@
         "73.png"
       ],
       "post_id": "18116237327084436",
+      "views": 16,
+      "views_final": false
+    },
+    {
+      "at": "2026-09-28 14:46",
+      "topic": "아이랑 1박2일, 차 덜 타고 걸어서 되는 마이산 코스",
+      "hook": "twist",
+      "cta": "더 좋은 정보 아는 사람 댓글로 부르기",
+      "text": "애 업고 가다가 30분 만에 포기하고 돌아온 코스가 있음\n\n탑사까지 정상 코스는 애 데리고 가기 진짜 애매함, 계단에 경사에 애 다리로는 무리임. 근데 프론트에서 알려준 우회로 있음, 은수사 쪽으로 돌아가는 길인데 거의 평지라 유모차도 반은 밀고 감. 도보 25분 걸리고 차 한 번도 안 탐, 호텔서 나와서 바로 시작임. 애가 힘들다는 말 한 번도 안 해서 놀람 ㄹㅇ. 천둥이도 이 코스는 애들 속도 맞춰서 살살 따라옴 🐾\n이거보다 더 편한 애기 코스 아는 사람 있으면 댓글로 좀 불러줘\n#홍삼빌호텔 #마이산 #진안여행",
+      "len": 290,
+      "images": [
+        "hotel_new_slide3.jpg",
+        "23.png",
+        "62.png"
+      ],
+      "post_id": "17989427136026525",
       "views": null,
       "views_final": false
     }
