@@ -1,16 +1,27 @@
 # -*- coding: utf-8 -*-
 """
-성수주조장 인스타그램 완전 자동 포스팅 앱 (딸기막걸리 판매 CTA 최우선)
+성수주조장 인스타그램 완전 자동 포스팅 앱 (공감·좋아요 우선 → 자연스러운 구매 연결)
 =====================================================================
 홍삼빌호텔 instagram_auto_post.py 와 동일한 구조. 파일명·환경변수·캐시 폴더에
 'seongsu_' 접두어를 붙여 같은 저장소에 넣어도 충돌하지 않습니다.
 
-동작 순서 (하루 2회, KST 10:47 / 17:47 — 슬롯은 워크플로 SLOT 환경변수로 고정):
-  1. 요일별 테마 + 회차 순환으로 이번 글의 주제·CTA 유형 결정
-     (구매 CTA 는 최소 2회에 1회 강제, 같은 CTA 연속 금지)
+[2026-09-28 개편 — 좋아요 늘리기 4가지]
+  ① 릴스 중단: 하루 2회 모두 사진 캐러셀 (REELS_SLOT = "")
+     └ 데이터: 캐러셀 평균 좋아요 8.7개 vs 릴스(무음 슬라이드) 2.6개
+  ② 주제 선택: 순서대로 도는 방식 → '가장 적게 쓴 주제 먼저' (새 주제가 먼저 나감)
+     └ 사용 횟수는 로그의 topic_uses 에 영구 기록
+  ③ 사진 선택: topics.json 의 image_rules 로
+     - cover_prefer: 성과가 좋았던 실제 제품 사진을 첫 장(표지)으로 우선 배치
+     - avoid: 성과가 나쁘거나 AI 느낌 나는 사진은 뒤로 (모자랄 때만 사용)
+     - 같은 사진의 복사본(drive_ 접두어)이 한 게시물에 중복되지 않게
+  ④ CTA: 구매 유도 2회에 1회 강제 → 4회에 1회. 나머지는 댓글·태그·저장 등 공감형
+
+동작 순서 (하루 2회 — 슬롯은 워크플로 SLOT 환경변수로 고정):
+  1. 요일별 테마 + 미사용 주제 우선으로 이번 글의 주제·CTA 유형 결정
+     (구매 CTA 는 4회에 1회, 같은 CTA 연속 금지)
   2. Claude API 로 캡션 생성 (훅 15자 이내 + 본문 + CTA 단독 마지막 줄 + 해시태그 15~20개)
   3. 생성 결과 자동 검수: 문단 정리, 브랜드 해시태그 보충, 30개 초과 제거, 링크 문자열 제거
-  4. Google Drive 폴더에서 랜덤 3장 (최근 4회 사용한 사진 제외) → 인스타 규격 JPG 변환
+  4. images_sungsu/ 폴더에서 3장 (최근 4회 사용한 사진 제외, 실제 사진 우선) → 인스타 규격 JPG 변환
   5. 변환 JPG 를 seongsu_ig_cache/ 에 커밋 → 공개 URL 확보
   6. Instagram API 캐러셀(3장) 게시 → 첫 댓글에 구매 링크 고정 등록
   7. seongsu_instagram_posted_log.json 에 기록 → 다음 회차 중복 방지
@@ -64,7 +75,12 @@ MAX_SIDE = 1440
 MIN_RATIO, MAX_RATIO = 0.8, 1.91
 
 # 릴스(슬라이드 영상) 설정 — 하루 2회 중 REELS_SLOT 회차는 사진 캐러셀 대신 릴스로 게시
-REELS_SLOT = "PM"                 # "AM" | "PM" | "" (빈 문자열이면 릴스 사용 안 함)
+REELS_SLOT = ""                   # "AM" | "PM" | "" (빈 문자열이면 릴스 사용 안 함)
+                                  # 2026-09-28: 무음 슬라이드 릴스 성과가 캐러셀의 1/3 수준이라 중단.
+                                  # 실제 촬영 영상이 생기면 다시 "PM" 으로 켜서 테스트.
+PURCHASE_CTA_EVERY = 4            # 구매 CTA 는 N회에 1회 (직전 N-1회 연속 구매 없으면 이번은 구매)
+LEGACY_TOPIC_COUNT = 20           # 개편 전 topics.json 의 기존 주제 개수 (첫 실행 시 사용 횟수 복원용)
+COVER_EXCLUDE_POSTS = 10          # 표지(첫 장) 우선 사진은 최근 N회 안에 표지로 쓴 적 없는 것만
 REELS_IMAGE_COUNT = 4             # 릴스에 쓸 사진 장수
 REELS_SEC_PER_IMAGE = 2.0         # 사진 1장당 노출 초 (4장 × 2초 = 8초)
 REELS_W, REELS_H = 1080, 1920     # 릴스 규격 9:16
@@ -118,25 +134,50 @@ def current_slot():
     return "AM" if datetime.now(KST).hour < 15 else "PM"
 
 
+def get_topic_uses(cfg, log):
+    """주제별 사용 횟수. 로그에 없으면(개편 후 첫 실행) 예전 순환 규칙으로 정확히 복원.
+    예전 규칙: topics[count % 20] → 앞쪽 주제부터 한 번씩 돌았음."""
+    uses = log.get("topic_uses")
+    if isinstance(uses, dict):
+        return uses
+    uses = {}
+    legacy = cfg["topics"][:LEGACY_TOPIC_COUNT]
+    n = log.get("count", 0)
+    if legacy:
+        full, rest = divmod(n, len(legacy))
+        for i, t in enumerate(legacy):
+            uses[t] = full + (1 if i < rest else 0)
+    return uses
+
+
 def pick_topic(cfg, log):
+    """가장 적게 쓴 주제 먼저. 같은 횟수면 최근 10회에 안 나온 것 → topics.json 순서대로.
+    (새 주제를 topics.json 맨 뒤에 추가하면 사용 횟수 0이라 바로 다음 회차부터 나감)"""
     topics = cfg["topics"]
-    return topics[log["count"] % len(topics)]
+    uses = get_topic_uses(cfg, log)
+    recent = [p.get("topic") for p in log["posts"][-10:]]
+    min_n = min(uses.get(t, 0) for t in topics)
+    candidates = [t for t in topics if uses.get(t, 0) == min_n]
+    not_recent = [t for t in candidates if t not in recent]
+    return (not_recent or candidates)[0]
 
 
 def pick_cta(cfg, log):
     """
-    CTA 전략 (판매 최우선):
-      - 구매 CTA 는 최소 2회에 1회 (직전 글이 구매 CTA 가 아니면 이번은 무조건 구매)
+    CTA 전략 (공감 우선, 구매는 가끔):
+      - 구매 CTA 는 PURCHASE_CTA_EVERY(4)회에 1회 — 직전 3회에 구매가 없으면 이번은 구매
       - 같은 CTA 유형 연속 금지
-      - 나머지는 선물DM > 저장 > 태그 > 공유 > 댓글 순 가중치
+      - 나머지는 댓글·태그 > 저장·공유 > 선물DM 순 가중치 (좋아요·댓글이 붙는 유형 우선)
     """
     pool = cfg["cta_pool"]
-    last = log["posts"][-1]["cta_type"] if log["posts"] else None
-    if last != "구매":
+    recent_types = [p.get("cta_type") for p in log["posts"][-(PURCHASE_CTA_EVERY - 1):]]
+    last = recent_types[-1] if recent_types else None
+    if "구매" in pool and len(recent_types) >= PURCHASE_CTA_EVERY - 1 and "구매" not in recent_types:
         cta_type = "구매"
     else:
-        weighted = ["선물DM"] * 3 + ["저장"] * 3 + ["태그"] * 2 + ["공유"] * 2 + ["댓글"] * 1
-        cta_type = random.choice([c for c in weighted if c != last and c in pool])
+        weighted = ["댓글"] * 3 + ["태그"] * 3 + ["저장"] * 2 + ["공유"] * 2 + ["선물DM"] * 1
+        options = [c for c in weighted if c != last and c in pool]
+        cta_type = random.choice(options or [c for c in pool if c != "구매"] or list(pool))
     return cta_type, random.choice(pool[cta_type])
 
 
@@ -180,9 +221,20 @@ def generate_caption(topic, slot, cta_type, cta_text, cfg, log, fmt="캐러셀")
         if slot == "AM" else
         "저녁 발행: 퇴근 후·홈파티·혼술 무드. 지금 당장 한 잔 하고 싶게."
     )
+    if cta_type == "댓글":
+        # CTA 자체가 질문이므로 본문 끝 질문을 따로 넣으면 질문이 두 번 겹침
+        question_rule = "본문 끝에 별도 질문을 넣지 마세요. 마지막 CTA 문장이 댓글을 부르는 질문 역할을 합니다."
+    else:
+        question_rule = (
+            "본문 마지막 문장은 독자가 한 단어로 바로 답할 수 있는 가벼운 질문 1개 "
+            "(예: \"치킨파예요 떡볶이파예요?\", \"여러분은 차갑게 vs 얼음 가득?\"). "
+            "고르기형·밸런스게임형 질문이 댓글이 가장 잘 달립니다. CTA 와 별개로 댓글을 부르는 장치입니다."
+        )
 
     system = f"""당신은 '{cfg['brand_name']}'(1925년 창업, 전북 진안, 100년 전통 양조장)의 인스타그램 콘텐츠 에디터입니다.
-주력상품 {cfg['product_name']}을 실제로 '팔기 위한' 캡션을 씁니다. 목표는 좋아요가 아니라 구매·저장·DM 입니다.
+주력상품 {cfg['product_name']} 캡션을 씁니다.
+1차 목표는 '공감' — 읽는 사람이 "아 이거 나도 그래" 하고 좋아요·댓글·저장을 누르게 만드는 것.
+판매는 그 다음입니다. 광고처럼 느껴지는 순간 좋아요가 사라집니다. 제품 자랑보다 '상황'과 '감정'을 먼저 쓰세요.
 
 브랜드 정보:
 {cfg['brand_info']}
@@ -213,7 +265,7 @@ def generate_caption(topic, slot, cta_type, cta_text, cfg, log, fmt="캐러셀")
      국산 딸기 그대로 넣어서
      자연스러운 단맛이 나요
    맛은 구체적 감각으로: "달달함" 대신 "첫 입은 딸기, 끝은 은은한 쌀 향".
-본문 마지막 문장은 독자에게 던지는 짧은 질문 1개 (예: "여러분은 어떤 안주랑 드세요?"). CTA 와 별개로 댓글을 부르는 장치입니다.
+{question_rule}
    아래 중 하나 이상을 자연스럽게 녹일 것:
    - 순간(퇴근 후 / 주말 낮술 / 홈파티 / 선물 / 캠핑 / 비 오는 날)
    - 스토리(100년 양조장, 진안 마령면, 3대째, 국산 딸기, 2025 대한민국주류대상 대상)
@@ -235,6 +287,7 @@ def generate_caption(topic, slot, cta_type, cta_text, cfg, log, fmt="캐러셀")
 절대 금지:
 - URL·링크 주소를 캡션에 쓰지 말 것 (인스타 캡션은 링크가 안 눌림. 링크는 첫 댓글·프로필에 있음)
 - 과장 효능("건강에 좋다", "숙취 없다"), 경쟁사 언급, 미성년 관련 표현, "!!!" 남발
+- "좋아요 눌러주세요", "좋아요 누르면 ~" 같은 대놓고 좋아요를 구걸하는 문장 (인스타가 노출을 줄임)
 - 가격 언급, 할인 언급 (실제와 다를 수 있음)
 - 최근 게시글과 비슷한 훅·소재·문장 반복
 - 캡션 외의 설명·따옴표·머리말·"[캡션]" 같은 라벨 출력 금지. 캡션 본문만 출력."""
@@ -490,6 +543,64 @@ def pick_reels_images(cfg, log):
     return [f["name"] for f in chosen], [url]
 
 
+def _base(name):
+    """중복 사진 판별용 이름: 'drive_' 접두어·확장자·대소문자 무시"""
+    stem = os.path.splitext(name)[0].lower()
+    return stem[6:] if stem.startswith("drive_") else stem
+
+
+def _matches(name, patterns):
+    low = name.lower()
+    return any(p.lower() in low for p in patterns)
+
+
+def choose_carousel_images(cfg, log, candidates, all_files):
+    """
+    사진 우선순위 (topics.json 의 image_rules 로 조정):
+      - avoid 패턴(예: "drive_") 사진은 뒤로 미룸 — 다른 사진이 모자랄 때만 사용
+      - cover_prefer 패턴(예: 실제 제품 사진) 은 첫 장(표지)으로 우선 배치
+        단, 최근 COVER_EXCLUDE_POSTS 회 안에 표지로 쓴 사진은 제외 (같은 표지 반복 방지)
+    image_rules 가 없으면 예전처럼 완전 랜덤.
+    """
+    rules = cfg.get("image_rules") or {}
+    avoid = rules.get("avoid", [])
+    prefer = rules.get("cover_prefer", [])
+
+    good = [f for f in candidates if not _matches(f["name"], avoid)]
+    backup = [f for f in candidates if _matches(f["name"], avoid)]
+    random.shuffle(good)
+    random.shuffle(backup)
+    pool = good + backup          # 좋은 사진 먼저, 모자라면 avoid 사진으로 채움
+
+    cover = None
+    if prefer:
+        recent_covers = {_base(p["images"][0]) for p in log["posts"][-COVER_EXCLUDE_POSTS:] if p.get("images")}
+        recent_used = {_base(n) for p in log["posts"][-EXCLUDE_RECENT_POSTS:] for n in p.get("images", [])}
+        cover_pool = [
+            f for f in all_files
+            if _matches(f["name"], prefer)
+            and not _matches(f["name"], avoid)
+            and _base(f["name"]) not in recent_covers
+            and _base(f["name"]) not in recent_used
+        ]
+        if cover_pool:
+            cover = random.choice(cover_pool)
+
+    chosen = [cover] if cover else []
+    for f in pool:
+        if len(chosen) >= IMAGE_COUNT:
+            break
+        # 같은 사진의 복사본(예: STRAW_04.png 와 drive_STRAW_04.png)이 한 게시물에 같이 들어가지 않게
+        if all(_base(f["name"]) != _base(c["name"]) for c in chosen):
+            chosen.append(f)
+    if len(chosen) < IMAGE_COUNT:   # 그래도 모자라면 전체에서 채움
+        rest = [f for f in all_files if all(f["name"] != c["name"] for c in chosen)]
+        chosen += random.sample(rest, IMAGE_COUNT - len(chosen))
+    avoided = sum(_matches(f["name"], avoid) for f in chosen)
+    print(f"   사진 규칙: 표지 우선={'O ' + cover['name'] if cover else 'X'} / avoid 사진 {avoided}장 포함")
+    return chosen
+
+
 def pick_images(cfg, log):
     files = list_local_images()   # GitHub 저장소 images_sungsu/ 폴더만 사용 (Drive 미사용)
     if len(files) < IMAGE_COUNT:
@@ -499,10 +610,10 @@ def pick_images(cfg, log):
         )
 
     # 최근 N회에 쓴 사진은 제외 (사진이 충분할 때만)
-    recent_names = {n for p in log["posts"][-EXCLUDE_RECENT_POSTS:] for n in p.get("images", [])}
-    fresh = [f for f in files if f["name"] not in recent_names]
+    recent_names = {_base(n) for p in log["posts"][-EXCLUDE_RECENT_POSTS:] for n in p.get("images", [])}
+    fresh = [f for f in files if _base(f["name"]) not in recent_names]   # 복사본(drive_)까지 함께 제외
     candidates = fresh if len(fresh) >= IMAGE_COUNT else files
-    chosen = random.sample(candidates, IMAGE_COUNT)
+    chosen = choose_carousel_images(cfg, log, candidates, files)
 
     os.makedirs(CACHE_DIR, exist_ok=True)
     prune_cache()
@@ -716,6 +827,9 @@ def main():
     post_fixed_comment(post_id, cfg.get("fixed_comment", ""))
 
     log["count"] += 1
+    uses = get_topic_uses(cfg, log)
+    uses[topic] = uses.get(topic, 0) + 1
+    log["topic_uses"] = uses           # 주제별 사용 횟수 (posts 는 30개만 남기므로 따로 영구 보관)
     log["posts"].append({
         "at": datetime.now(KST).strftime("%Y-%m-%d %H:%M"),
         "slot": slot,
