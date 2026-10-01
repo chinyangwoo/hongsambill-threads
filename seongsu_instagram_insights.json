@@ -493,7 +493,7 @@
     "reach": 19,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-30 15:15"
+    "fetched_at": "2026-10-01 15:46"
   },
   "18104799953219385": {
     "at": "2026-09-18 09:49",
@@ -515,7 +515,7 @@
     "reach": 49,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-30 15:15"
+    "fetched_at": "2026-10-01 15:46"
   },
   "17985065751099072": {
     "at": "2026-09-18 19:05",
@@ -538,7 +538,7 @@
     "reach": 70,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-30 15:15"
+    "fetched_at": "2026-10-01 15:46"
   },
   "18164821615471901": {
     "at": "2026-09-19 09:40",
@@ -560,7 +560,7 @@
     "reach": 43,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-30 15:15"
+    "fetched_at": "2026-10-01 15:46"
   },
   "18154380151520736": {
     "at": "2026-09-19 18:45",
@@ -583,7 +583,7 @@
     "reach": 29,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-30 15:15"
+    "fetched_at": "2026-10-01 15:46"
   },
   "18091268912404266": {
     "at": "2026-09-20 09:26",
@@ -601,11 +601,11 @@
     "media_type": "FEED",
     "likes": 14,
     "comments": 1,
-    "views": 209,
-    "reach": 92,
+    "views": 211,
+    "reach": 93,
     "saved": 1,
     "shares": 0,
-    "fetched_at": "2026-09-30 15:15"
+    "fetched_at": "2026-10-01 15:46"
   },
   "18191420095400422": {
     "at": "2026-09-20 19:09",
@@ -624,11 +624,11 @@
     "media_type": "REELS",
     "likes": 5,
     "comments": 1,
-    "views": 43,
-    "reach": 22,
+    "views": 44,
+    "reach": 23,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-30 15:15"
+    "fetched_at": "2026-10-01 15:46"
   },
   "18123776861307705": {
     "at": "2026-09-21 09:32",
@@ -650,7 +650,7 @@
     "reach": 40,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-30 15:15"
+    "fetched_at": "2026-10-01 15:46"
   },
   "17971858524140870": {
     "at": "2026-09-21 20:09",
@@ -669,11 +669,11 @@
     "media_type": "REELS",
     "likes": 4,
     "comments": 1,
-    "views": 37,
-    "reach": 23,
+    "views": 38,
+    "reach": 24,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-30 15:15"
+    "fetched_at": "2026-10-01 15:46"
   },
   "18011705279761138": {
     "at": "2026-09-22 10:13",
@@ -695,7 +695,7 @@
     "reach": 32,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-30 15:15"
+    "fetched_at": "2026-10-01 15:46"
   },
   "18117826864946482": {
     "at": "2026-09-22 19:23",
@@ -714,11 +714,11 @@
     "media_type": "REELS",
     "likes": 2,
     "comments": 1,
-    "views": 39,
-    "reach": 21,
+    "views": 40,
+    "reach": 22,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-30 15:15"
+    "fetched_at": "2026-10-01 15:46"
   },
   "18068320712780731": {
     "at": "2026-09-23 09:58",
@@ -740,7 +740,7 @@
     "reach": 44,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-30 15:15"
+    "fetched_at": "2026-10-01 15:46"
   },
   "18089526980219617": {
     "at": "2026-09-23 19:19",
@@ -759,11 +759,11 @@
     "media_type": "REELS",
     "likes": 2,
     "comments": 1,
-    "views": 31,
-    "reach": 19,
+    "views": 32,
+    "reach": 20,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-30 15:15"
+    "fetched_at": "2026-10-01 15:46"
   },
   "18120984299477329": {
     "at": "2026-09-24 09:55",
@@ -785,7 +785,7 @@
     "reach": 35,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-30 15:15"
+    "fetched_at": "2026-10-01 15:46"
   },
   "17877014850558981": {
     "at": "2026-09-24 19:33",
@@ -804,11 +804,11 @@
     "media_type": "REELS",
     "likes": 3,
     "comments": 1,
-    "views": 57,
-    "reach": 47,
+    "views": 58,
+    "reach": 48,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-30 15:15"
+    "fetched_at": "2026-10-01 15:46"
   },
   "18095959871542290": {
     "at": "2026-09-25 09:54",
@@ -830,7 +830,7 @@
     "reach": 39,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-30 15:15"
+    "fetched_at": "2026-10-01 15:46"
   },
   "18005386463786908": {
     "at": "2026-09-25 19:36",
@@ -853,7 +853,7 @@
     "reach": 23,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-30 15:15"
+    "fetched_at": "2026-10-01 15:46"
   },
   "17912820474280848": {
     "at": "2026-09-26 09:55",
@@ -871,11 +871,11 @@
     "media_type": "FEED",
     "likes": 5,
     "comments": 1,
-    "views": 137,
-    "reach": 61,
+    "views": 138,
+    "reach": 62,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-30 15:15"
+    "fetched_at": "2026-10-01 15:46"
   },
   "17991787211849250": {
     "at": "2026-09-26 19:20",
@@ -894,11 +894,11 @@
     "media_type": "REELS",
     "likes": 4,
     "comments": 1,
-    "views": 39,
-    "reach": 26,
+    "views": 40,
+    "reach": 27,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-30 15:15"
+    "fetched_at": "2026-10-01 15:46"
   },
   "18028002956912291": {
     "at": "2026-09-27 09:55",
@@ -916,11 +916,11 @@
     "media_type": "FEED",
     "likes": 6,
     "comments": 1,
-    "views": 121,
-    "reach": 56,
+    "views": 125,
+    "reach": 58,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-30 15:15"
+    "fetched_at": "2026-10-01 15:46"
   },
   "18111244271590200": {
     "at": "2026-09-27 19:49",
@@ -937,13 +937,13 @@
     ],
     "permalink": "https://www.instagram.com/reel/Ddybr8TAp_m/",
     "media_type": "REELS",
-    "likes": 2,
+    "likes": 3,
     "comments": 1,
-    "views": 17,
-    "reach": 13,
+    "views": 20,
+    "reach": 16,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-30 15:15"
+    "fetched_at": "2026-10-01 15:46"
   },
   "18096009857420851": {
     "at": "2026-09-28 10:14",
@@ -961,11 +961,11 @@
     "media_type": "FEED",
     "likes": 3,
     "comments": 1,
-    "views": 124,
-    "reach": 49,
+    "views": 139,
+    "reach": 55,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-30 15:15"
+    "fetched_at": "2026-10-01 15:46"
   },
   "18129499936744290": {
     "at": "2026-09-28 10:35",
@@ -981,13 +981,13 @@
     ],
     "permalink": "https://www.instagram.com/p/Dd0BHtrnYQ3/",
     "media_type": "FEED",
-    "likes": 2,
+    "likes": 3,
     "comments": 1,
-    "views": 57,
-    "reach": 25,
+    "views": 64,
+    "reach": 28,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-30 15:15"
+    "fetched_at": "2026-10-01 15:46"
   },
   "18226441213336855": {
     "at": "2026-09-28 21:02",
@@ -1003,13 +1003,13 @@
     ],
     "permalink": "https://www.instagram.com/p/Dd1I03olQBW/",
     "media_type": "FEED",
-    "likes": 5,
+    "likes": 6,
     "comments": 1,
-    "views": 55,
-    "reach": 19,
+    "views": 59,
+    "reach": 21,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-30 15:15"
+    "fetched_at": "2026-10-01 15:46"
   },
   "17887080720478828": {
     "at": "2026-09-29 11:21",
@@ -1025,13 +1025,13 @@
     ],
     "permalink": "https://www.instagram.com/p/Dd2rIEQlk2F/",
     "media_type": "FEED",
-    "likes": 2,
+    "likes": 3,
     "comments": 1,
-    "views": 32,
-    "reach": 19,
+    "views": 40,
+    "reach": 23,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-30 15:15"
+    "fetched_at": "2026-10-01 15:46"
   },
   "18187242829407284": {
     "at": "2026-09-29 20:37",
@@ -1047,12 +1047,56 @@
     ],
     "permalink": "https://www.instagram.com/p/Dd3qwhkG06W/",
     "media_type": "FEED",
-    "likes": 3,
+    "likes": 5,
     "comments": 1,
-    "views": 47,
-    "reach": 18,
+    "views": 63,
+    "reach": 27,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-09-30 15:15"
+    "fetched_at": "2026-10-01 15:46"
+  },
+  "17933462154403501": {
+    "at": "2026-09-30 10:38",
+    "slot": "AM",
+    "format": "carousel",
+    "cta_type": "선물DM",
+    "topic": "편의점 털어서 만든 딸기막걸리 안주 조합 (과자·치즈·과일)",
+    "hook": "편의점 봉지가 이렇게 될 줄은",
+    "images": [
+      "drive_STRAW_04.png",
+      "51.png",
+      "38.png"
+    ],
+    "permalink": "https://www.instagram.com/p/Dd5LCLbgKo2/",
+    "media_type": "FEED",
+    "likes": 8,
+    "comments": 1,
+    "views": 73,
+    "reach": 24,
+    "saved": 0,
+    "shares": 0,
+    "fetched_at": "2026-10-01 15:46"
+  },
+  "17952595521268442": {
+    "at": "2026-09-30 20:24",
+    "slot": "PM",
+    "format": "carousel",
+    "cta_type": "댓글",
+    "topic": "매운 떡볶이 먹다가 딸기막걸리 한 모금 — 맵부심 친구 반응",
+    "hook": "맵부심 친구가 조용해졌어요",
+    "images": [
+      "44.png",
+      "50.png",
+      "99.png"
+    ],
+    "permalink": "https://www.instagram.com/p/Dd6OEJOGw8m/",
+    "media_type": "FEED",
+    "likes": 3,
+    "comments": 1,
+    "views": 52,
+    "reach": 22,
+    "saved": 0,
+    "shares": 0,
+    "fetched_at": "2026-10-01 15:46"
   }
 }
