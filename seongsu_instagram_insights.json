@@ -628,7 +628,7 @@
     "reach": 23,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-03 14:58"
+    "fetched_at": "2026-10-04 15:35"
   },
   "18123776861307705": {
     "at": "2026-09-21 09:32",
@@ -650,7 +650,7 @@
     "reach": 40,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-03 14:58"
+    "fetched_at": "2026-10-04 15:35"
   },
   "17971858524140870": {
     "at": "2026-09-21 20:09",
@@ -673,7 +673,7 @@
     "reach": 24,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-03 14:58"
+    "fetched_at": "2026-10-04 15:35"
   },
   "18011705279761138": {
     "at": "2026-09-22 10:13",
@@ -695,7 +695,7 @@
     "reach": 32,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-03 14:58"
+    "fetched_at": "2026-10-04 15:35"
   },
   "18117826864946482": {
     "at": "2026-09-22 19:23",
@@ -718,7 +718,7 @@
     "reach": 23,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-03 14:58"
+    "fetched_at": "2026-10-04 15:35"
   },
   "18068320712780731": {
     "at": "2026-09-23 09:58",
@@ -740,7 +740,7 @@
     "reach": 46,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-03 14:58"
+    "fetched_at": "2026-10-04 15:35"
   },
   "18089526980219617": {
     "at": "2026-09-23 19:19",
@@ -763,7 +763,7 @@
     "reach": 21,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-03 14:58"
+    "fetched_at": "2026-10-04 15:35"
   },
   "18120984299477329": {
     "at": "2026-09-24 09:55",
@@ -785,7 +785,7 @@
     "reach": 35,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-03 14:58"
+    "fetched_at": "2026-10-04 15:35"
   },
   "17877014850558981": {
     "at": "2026-09-24 19:33",
@@ -808,7 +808,7 @@
     "reach": 48,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-03 14:58"
+    "fetched_at": "2026-10-04 15:35"
   },
   "18095959871542290": {
     "at": "2026-09-25 09:54",
@@ -830,7 +830,7 @@
     "reach": 39,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-03 14:58"
+    "fetched_at": "2026-10-04 15:35"
   },
   "18005386463786908": {
     "at": "2026-09-25 19:36",
@@ -853,7 +853,7 @@
     "reach": 23,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-03 14:58"
+    "fetched_at": "2026-10-04 15:35"
   },
   "17912820474280848": {
     "at": "2026-09-26 09:55",
@@ -871,11 +871,11 @@
     "media_type": "FEED",
     "likes": 5,
     "comments": 1,
-    "views": 140,
-    "reach": 64,
+    "views": 141,
+    "reach": 66,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-03 14:58"
+    "fetched_at": "2026-10-04 15:35"
   },
   "17991787211849250": {
     "at": "2026-09-26 19:20",
@@ -898,7 +898,7 @@
     "reach": 27,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-03 14:58"
+    "fetched_at": "2026-10-04 15:35"
   },
   "18028002956912291": {
     "at": "2026-09-27 09:55",
@@ -920,7 +920,7 @@
     "reach": 62,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-03 14:58"
+    "fetched_at": "2026-10-04 15:35"
   },
   "18111244271590200": {
     "at": "2026-09-27 19:49",
@@ -943,7 +943,7 @@
     "reach": 16,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-03 14:58"
+    "fetched_at": "2026-10-04 15:35"
   },
   "18096009857420851": {
     "at": "2026-09-28 10:14",
@@ -961,11 +961,11 @@
     "media_type": "FEED",
     "likes": 3,
     "comments": 1,
-    "views": 157,
-    "reach": 62,
+    "views": 158,
+    "reach": 63,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-03 14:58"
+    "fetched_at": "2026-10-04 15:35"
   },
   "18129499936744290": {
     "at": "2026-09-28 10:35",
@@ -983,11 +983,11 @@
     "media_type": "FEED",
     "likes": 3,
     "comments": 1,
-    "views": 70,
-    "reach": 34,
+    "views": 72,
+    "reach": 35,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-03 14:58"
+    "fetched_at": "2026-10-04 15:35"
   },
   "18226441213336855": {
     "at": "2026-09-28 21:02",
@@ -1009,7 +1009,7 @@
     "reach": 21,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-03 14:58"
+    "fetched_at": "2026-10-04 15:35"
   },
   "17887080720478828": {
     "at": "2026-09-29 11:21",
@@ -1027,11 +1027,11 @@
     "media_type": "FEED",
     "likes": 3,
     "comments": 1,
-    "views": 41,
-    "reach": 23,
+    "views": 42,
+    "reach": 24,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-03 14:58"
+    "fetched_at": "2026-10-04 15:35"
   },
   "18187242829407284": {
     "at": "2026-09-29 20:37",
@@ -1049,11 +1049,11 @@
     "media_type": "FEED",
     "likes": 5,
     "comments": 1,
-    "views": 68,
-    "reach": 29,
+    "views": 71,
+    "reach": 30,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-03 14:58"
+    "fetched_at": "2026-10-04 15:35"
   },
   "17933462154403501": {
     "at": "2026-09-30 10:38",
@@ -1071,11 +1071,11 @@
     "media_type": "FEED",
     "likes": 8,
     "comments": 1,
-    "views": 80,
+    "views": 81,
     "reach": 27,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-03 14:58"
+    "fetched_at": "2026-10-04 15:35"
   },
   "17952595521268442": {
     "at": "2026-09-30 20:24",
@@ -1093,11 +1093,11 @@
     "media_type": "FEED",
     "likes": 5,
     "comments": 1,
-    "views": 63,
+    "views": 66,
     "reach": 30,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-03 14:58"
+    "fetched_at": "2026-10-04 15:35"
   },
   "18156883459516187": {
     "at": "2026-10-01 10:37",
@@ -1115,11 +1115,11 @@
     "media_type": "FEED",
     "likes": 5,
     "comments": 1,
-    "views": 41,
-    "reach": 21,
+    "views": 44,
+    "reach": 23,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-03 14:58"
+    "fetched_at": "2026-10-04 15:35"
   },
   "18115759367085513": {
     "at": "2026-10-01 20:51",
@@ -1137,11 +1137,11 @@
     "media_type": "FEED",
     "likes": 4,
     "comments": 1,
-    "views": 42,
-    "reach": 19,
+    "views": 46,
+    "reach": 21,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-03 14:58"
+    "fetched_at": "2026-10-04 15:35"
   },
   "18445947454124428": {
     "at": "2026-10-02 10:50",
@@ -1159,11 +1159,11 @@
     "media_type": "FEED",
     "likes": 3,
     "comments": 1,
-    "views": 32,
-    "reach": 18,
+    "views": 44,
+    "reach": 24,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-03 14:58"
+    "fetched_at": "2026-10-04 15:35"
   },
   "18108049646192636": {
     "at": "2026-10-02 20:23",
@@ -1181,10 +1181,54 @@
     "media_type": "FEED",
     "likes": 4,
     "comments": 1,
-    "views": 51,
-    "reach": 27,
+    "views": 78,
+    "reach": 37,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-03 14:58"
+    "fetched_at": "2026-10-04 15:35"
+  },
+  "17870293068644982": {
+    "at": "2026-10-03 10:29",
+    "slot": "AM",
+    "format": "carousel",
+    "cta_type": "저장",
+    "topic": "핑크색 병 사진 예쁘게 찍는 법: 창가 자연광 + 투명 잔",
+    "hook": "오전 11시 창가 자리면 끝",
+    "images": [
+      "drive_strawberry_rice_wine_7.png",
+      "18.png",
+      "22.png"
+    ],
+    "permalink": "https://www.instagram.com/p/DeA4ZWwmuoL/",
+    "media_type": "FEED",
+    "likes": 1,
+    "comments": 1,
+    "views": 32,
+    "reach": 16,
+    "saved": 0,
+    "shares": 0,
+    "fetched_at": "2026-10-04 15:35"
+  },
+  "18049431560620197": {
+    "at": "2026-10-03 19:40",
+    "slot": "PM",
+    "format": "carousel",
+    "cta_type": "구매",
+    "topic": "뚜껑 따기 전에 이것만: 천천히 여는 법 (넘치지 않게)",
+    "hook": "피크닉 가방이 흠뻑 젖었어요",
+    "images": [
+      "drive_strawberry_rice_wine_5.png",
+      "71.png",
+      "73.png"
+    ],
+    "permalink": "https://www.instagram.com/p/DeB3eUTFqw0/",
+    "media_type": "FEED",
+    "likes": 4,
+    "comments": 1,
+    "views": 53,
+    "reach": 21,
+    "saved": 0,
+    "shares": 0,
+    "fetched_at": "2026-10-04 15:35"
   }
 }
