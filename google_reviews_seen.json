@@ -120,12 +120,17 @@
       "at": "2026-10-03 23:58"
     },
     "AbFvOqkivY_DMBnf8OI4A9d5t6bDOpjNawbW07X2rHjZDs7NfLwcqBMLVm0gHjSp9Z8N_HRxRp3ZCg": {
-      "status": "pending",
-      "attempts": 1,
+      "status": "done",
+      "attempts": 2,
       "stars": 5,
-      "posted": [],
-      "at": "2026-10-05 00:31"
+      "posted": [
+        "blogger",
+        "facebook",
+        "instagram",
+        "threads"
+      ],
+      "at": "2026-10-06 04:32"
     }
   },
-  "updated": "2026-10-05 00:31"
+  "updated": "2026-10-06 04:32"
 }
