@@ -9,6 +9,18 @@ v1 대비 바뀐 점
      → 성과 좋은 훅에 가중치를 주고 25%는 새 훅을 실험한다 (자가 학습).
   ④ 생성된 글을 규칙(길이·줄바꿈·금지어·첫줄)으로 검사해서 불합격이면 재생성.
 
+v2.1 (2026-10-06) 빈 글 게시 방지
+  - Claude 가 빈 응답을 주면 후보에서 빼고 다시 요청한다. (기존에는 빈 글이
+    '문제 1건'으로 계산돼 오히려 최선안으로 뽑혀 사진만 게시되는 일이 있었음)
+  - 끝까지 글이 안 나오면 사진만 올리지 않고 그 회차를 실패 처리한다.
+  - Claude API 일시 오류(과부하 등)는 잠깐 쉬었다가 자동 재시도한다.
+
+v2.2 (2026-10-06) "게시됐다는데 계정에서 안 보임" 진단 기능
+  - 실행할 때마다 이 토큰이 실제로 연결된 스레드 계정(@아이디)을 확인해 기록한다.
+  - 게시글마다 바로 열어볼 수 있는 주소(permalink)를 posted_log.json 에 남긴다.
+  - 최근 글 15개도 주소를 채워 넣고, 조회가 안 되는 글은 '조회 실패'로 표시한다.
+  - 오류 메시지에 토큰이 섞여 나오지 않도록 가린다.
+
 동작 순서:
   1. 최근 게시물 조회수 수집 → posted_log.json 갱신
   2. topics.json 에서 주제 선택(순환) + 훅 유형 선택(성과 기반) + 댓글유도 선택
@@ -49,6 +61,8 @@ IMAGE_EXTS = {".jpg", ".jpeg", ".png"}
 KST = timezone(timedelta(hours=9))
 
 MAX_RETRY = 3            # 글 품질 미달 시 재생성 횟수
+EMPTY_RETRY = 3          # Claude 가 빈 응답을 줬을 때 추가로 다시 요청하는 횟수
+API_RETRY = 3            # Claude API 일시 오류(과부하·속도제한) 시 재시도 횟수
 EXPLORE_RATE = 0.25      # 25%는 성과와 무관하게 새 훅 실험
 MIN_SAMPLES = 2          # 훅 유형별 최소 표본 수(이하면 무조건 실험 대상)
 
@@ -69,7 +83,9 @@ def http_json(url, data=None, method=None):
             return json.loads(res.read().decode())
     except urllib.error.HTTPError as e:
         body = e.read().decode(errors="replace")
-        raise RuntimeError("HTTP " + str(e.code) + " 오류: " + url + "\n응답: " + body) from e
+        # 오류 문구에 토큰이 그대로 찍히지 않도록 가린다
+        safe_url = url.replace(urllib.parse.quote(ACCESS_TOKEN), "***").replace(ACCESS_TOKEN, "***")
+        raise RuntimeError("HTTP " + str(e.code) + " 오류: " + safe_url + "\n응답: " + body) from e
 
 
 # ─────────────────────────────────────────────
@@ -94,6 +110,62 @@ def load_cfg():
 def pick_topic(log, cfg):
     topics = cfg["topics"]
     return topics[log["count"] % len(topics)]
+
+
+# ─────────────────────────────────────────────
+# 0-1. 진단: 어느 계정에 올라가는지 / 글 주소 확인
+# ─────────────────────────────────────────────
+def check_account(log):
+    """이 토큰이 실제로 연결된 스레드 계정을 확인해서 로그에 남긴다. 실패해도 게시는 계속한다."""
+    try:
+        res = http_json(THREADS_API + "/me?fields=id,username&access_token="
+                        + urllib.parse.quote(ACCESS_TOKEN))
+        username = res.get("username")
+        id_match = str(res.get("id")) == str(USER_ID)
+        print("▶ 이 토큰이 연결된 스레드 계정: @" + str(username)
+              + " (THREADS_USER_ID 일치: " + ("예" if id_match else "아니오") + ")")
+        log["account"] = {
+            "username": username,
+            "id_match": id_match,
+            "checked_at": datetime.now(KST).strftime("%Y-%m-%d %H:%M"),
+        }
+    except Exception as e:
+        print("계정 확인 실패 (게시는 계속 진행): " + str(e)[:200])
+    return log
+
+
+def fetch_permalink(post_id):
+    """게시글을 바로 열 수 있는 주소를 가져온다."""
+    res = http_json(THREADS_API + "/" + str(post_id) + "?fields=id,permalink&access_token="
+                    + urllib.parse.quote(ACCESS_TOKEN))
+    return res.get("permalink")
+
+
+def update_permalinks(log):
+    """최근 15개 글 중 주소가 없는 글에 주소를 채운다. 조회가 안 되면 '조회 실패'로 표시."""
+    ok = 0
+    fail = 0
+    for post in log["posts"][-15:]:
+        pid = post.get("post_id")
+        if not pid or post.get("permalink"):
+            continue
+        try:
+            link = fetch_permalink(pid)
+            if link:
+                post["permalink"] = link
+                post.pop("check", None)
+                ok += 1
+            else:
+                post["check"] = "조회 실패"
+                fail += 1
+        except Exception:
+            # 오류 원문은 파일에 남기지 않는다 (공개 저장소이므로)
+            post["check"] = "조회 실패"
+            fail += 1
+        time.sleep(1)
+    if ok or fail:
+        print("▶ 최근 글 주소 확인: 정상 " + str(ok) + "건 / 조회 실패 " + str(fail) + "건")
+    return log
 
 
 # ─────────────────────────────────────────────
@@ -248,24 +320,51 @@ def build_system_prompt(cfg, hook, cta):
 def call_claude(system, user):
     body = json.dumps({
         "model": "claude-sonnet-5",
-        "max_tokens": 700,
+        "max_tokens": 1500,
         "temperature": 1.0,
         "system": system,
         "messages": [{"role": "user", "content": user}],
     }).encode()
 
-    req = urllib.request.Request(
-        "https://api.anthropic.com/v1/messages",
-        data=body,
-        headers={
-            "Content-Type": "application/json",
-            "x-api-key": ANTHROPIC_API_KEY,
-            "anthropic-version": "2023-06-01",
-        },
-    )
-    with urllib.request.urlopen(req, timeout=120) as res:
-        data = json.loads(res.read().decode())
-    return "".join(b["text"] for b in data["content"] if b["type"] == "text").strip()
+    data = None
+    for attempt in range(1, API_RETRY + 1):
+        req = urllib.request.Request(
+            "https://api.anthropic.com/v1/messages",
+            data=body,
+            headers={
+                "Content-Type": "application/json",
+                "x-api-key": ANTHROPIC_API_KEY,
+                "anthropic-version": "2023-06-01",
+            },
+        )
+        try:
+            with urllib.request.urlopen(req, timeout=120) as res:
+                data = json.loads(res.read().decode())
+            break
+        except urllib.error.HTTPError as e:
+            detail = e.read().decode(errors="replace")[:300]
+            # 429(속도제한)·5xx(서버 과부하)만 잠깐 쉬었다가 재시도, 그 외는 바로 실패
+            if e.code in (429, 500, 502, 503, 504, 529) and attempt < API_RETRY:
+                print("Claude API 일시 오류 HTTP " + str(e.code) + " → 20초 후 재시도 ("
+                      + str(attempt) + "/" + str(API_RETRY) + ")")
+                time.sleep(20)
+                continue
+            raise RuntimeError("Claude API 오류 HTTP " + str(e.code) + ": " + detail) from e
+        except urllib.error.URLError as e:
+            if attempt < API_RETRY:
+                print("Claude API 연결 실패 → 20초 후 재시도 (" + str(attempt) + "/" + str(API_RETRY) + ")")
+                time.sleep(20)
+                continue
+            raise RuntimeError("Claude API 연결 실패: " + str(e)) from e
+
+    blocks = data.get("content") or []
+    text = "".join(b.get("text", "") for b in blocks if b.get("type") == "text").strip()
+    if not text:
+        # 원인 추적용: 왜 비었는지 실행 로그에 남긴다
+        print("  ※ Claude 빈 응답 — stop_reason=" + str(data.get("stop_reason"))
+              + ", 블록=" + str([b.get("type") for b in blocks])
+              + ", 출력토큰=" + str((data.get("usage") or {}).get("output_tokens")))
+    return text
 
 
 def validate(text, cfg):
@@ -313,7 +412,8 @@ def validate(text, cfg):
 
 
 def generate_post(topic, cfg, log, hook, cta):
-    recent = [p["text"] for p in log["posts"][-6:]]
+    # 과거에 빈 글로 기록된 회차는 참고 목록에서 뺀다
+    recent = [p["text"] for p in log["posts"][-8:] if p.get("text")][-6:]
     recent_block = "\n---\n".join(recent) if recent else "(없음)"
 
     system = build_system_prompt(cfg, hook, cta)
@@ -325,10 +425,25 @@ def generate_post(topic, cfg, log, hook, cta):
 
     best = None
     user = base_user
-    for attempt in range(1, MAX_RETRY + 1):
+    attempt = 0
+    empty_left = EMPTY_RETRY
+    while attempt < MAX_RETRY:
         text = call_claude(system, user)
         # 혹시 따옴표로 감싸서 오면 벗겨낸다
         text = text.strip().strip('"').strip("'").strip()
+
+        # 빈 응답은 후보로 치지 않는다. 기본 요청으로 되돌려 다시 받는다.
+        if not text:
+            if empty_left <= 0:
+                print("빈 응답이 계속됨 → 재요청 중단")
+                break
+            empty_left -= 1
+            print("빈 응답 → 5초 후 다시 요청 (남은 재요청 " + str(empty_left) + "회)")
+            user = base_user
+            time.sleep(5)
+            continue
+
+        attempt += 1
         problems = validate(text, cfg)
         print("생성 " + str(attempt) + "회차: " + str(len(text)) + "자, 문제 " + str(len(problems)) + "건")
         if not problems:
@@ -336,14 +451,24 @@ def generate_post(topic, cfg, log, hook, cta):
         print("  → " + " / ".join(problems))
         if best is None or len(problems) < len(best[1]):
             best = (text, problems)
+        # 반려된 글을 먼저 보여주고, 맨 끝은 반드시 '다시 써라'는 지시로 끝낸다
         user = (
             base_user + "\n\n"
-            "[직전 시도가 아래 문제로 반려되었습니다. 반드시 고쳐서 다시 쓰세요]\n"
+            "[직전 시도가 반려되었습니다]\n"
+            "반려된 글:\n" + text + "\n\n"
+            "반려 사유:\n"
             "- " + "\n- ".join(problems) + "\n\n"
-            "반려된 글:\n" + text
+            "위 사유를 전부 고쳐서 게시글 본문을 처음부터 다시 써서 본문만 출력하세요."
         )
 
-    # 3회 모두 실패하면 그나마 문제 적은 글을 쓰되 길이만 강제로 자른다
+    # 쓸 수 있는 글이 하나도 없으면 사진만 올리지 않고 이번 회차를 실패 처리한다
+    if best is None:
+        raise RuntimeError(
+            "글 생성 실패: Claude 가 빈 응답만 돌려주었습니다. "
+            "사진만 올라가는 것을 막기 위해 이번 회차는 게시하지 않습니다."
+        )
+
+    # 규칙을 완전히 통과한 글이 없으면 그나마 문제 적은 글을 쓰되 길이만 강제로 자른다
     text = best[0]
     print("규칙 완전 통과 실패 → 최선안 사용 후 길이 보정")
     if len(text) > cfg["length"]["max"]:
@@ -377,6 +502,10 @@ def pick_images():
 # 5. Threads 캐러셀 게시
 # ─────────────────────────────────────────────
 def post_to_threads(text, image_urls):
+    # 마지막 안전장치: 글이 비어 있으면 절대 게시하지 않는다
+    if not text or not text.strip():
+        raise RuntimeError("게시 중단: 글 내용이 비어 있습니다.")
+
     child_ids = []
     for url in image_urls:
         res = http_json(THREADS_API + "/" + USER_ID + "/threads", {
@@ -477,6 +606,10 @@ def main():
     cfg = load_cfg()
     log = load_log()
 
+    # 0) 진단: 어느 계정에 올라가는지, 최근 글이 실제로 살아 있는지 확인
+    log = check_account(log)
+    log = update_permalinks(log)
+
     # 1) 지난 글들의 조회수부터 수집 (훅 성과 학습 재료)
     log = update_views(log)
 
@@ -503,6 +636,15 @@ def main():
     post_id = post_to_threads(text, urls)
     print("게시 완료! post id = " + str(post_id))
 
+    # 방금 올린 글의 주소 확인 (실패해도 넘어간다)
+    permalink = None
+    try:
+        time.sleep(5)
+        permalink = fetch_permalink(post_id)
+        print("▶ 게시글 주소: " + str(permalink))
+    except Exception as e:
+        print("게시글 주소 확인 실패: " + str(e)[:200])
+
     # 5) 로그 저장
     log["count"] += 1
     log["posts"].append({
@@ -514,6 +656,7 @@ def main():
         "len": len(text),
         "images": chosen,
         "post_id": post_id,
+        "permalink": permalink,
         "views": None,
         "views_final": False,
     })
