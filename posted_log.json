@@ -1,22 +1,6 @@
 {
-  "count": 107,
+  "count": 108,
   "posts": [
-    {
-      "at": "2026-09-17 21:36",
-      "topic": "주말에 어디 갈지 고민하는 사람들을 위한 1박2일 진안 코스",
-      "hook": "secret",
-      "cta": "같은 경험 있는 사람 손들게 하기",
-      "text": "이번 주말 코스 고민하는 사람들한테 나만 아는 동선 하나 풀고 감\n\n토요일 체크인하자마자 짐만 두고 홍삼스파부터 감, 그다음 방에서 뷰 보면서 좀 쉬다가 저녁에 탑사 야경 걷기. 일요일 아침에 일찍 일어나서 은수사까지 들렀다가 체크아웃하는 코스로 딱 24시간 안에 다 끝남. 스파 왕복 포함해도 하루 동안 5천보밖에 안 걸어서 여행 온 건지 쉬러 온 건지 헷갈릴 정도임 ㅋㅋ 천둥이는 체크아웃할 때마다 로비서 배웅해줌\n1박2일로 이 코스대로 갔다 온 사람 손 들어봐, 순서 다르게 간 사람도 궁금함 🐾\n#홍삼빌호텔 #진안여행 #마이산",
-      "len": 298,
-      "images": [
-        "29.png",
-        "63.png",
-        "57.png"
-      ],
-      "post_id": "18130861927668442",
-      "views": 28,
-      "views_final": true
-    },
     {
       "at": "2026-09-18 07:52",
       "topic": "마이산 새벽 등산 후 호텔에서 쉬는 하루 코스",
@@ -823,7 +807,7 @@
       ],
       "post_id": "18071811530769923",
       "views": 25,
-      "views_final": false,
+      "views_final": true,
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeCEaY9m88e"
     },
     {
@@ -907,7 +891,7 @@
         "46.png"
       ],
       "post_id": "18097471391355744",
-      "views": 7,
+      "views": 9,
       "views_final": false,
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeGhv5wEVuT"
     },
@@ -942,7 +926,7 @@
       ],
       "post_id": "18128218630840819",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeIkIcPFDvy",
-      "views": 9,
+      "views": 13,
       "views_final": false
     },
     {
@@ -959,7 +943,7 @@
       ],
       "post_id": "18476821351116132",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeIlu3rkaJD",
-      "views": 6,
+      "views": 10,
       "views_final": false
     },
     {
@@ -976,6 +960,23 @@
       ],
       "post_id": "18204698140329593",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeJLKhAFlyK",
+      "views": 8,
+      "views_final": false
+    },
+    {
+      "at": "2026-10-06 23:12",
+      "topic": "마이산 처음 갈 때 모르면 손해 보는 것",
+      "hook": "provoke",
+      "cta": "밸런스 게임으로 둘 중 하나 고르게 하기",
+      "text": "마이산 아침 일찍 가면 안 되는 이유 아는 사람 몇 없음\n\n다들 사람 없을 때 사진 찍는다고 새벽같이 출발하는데, 탑사는 오전 9시 전엔 은수사 쪽 햇빛이 역광이라 사진이 다 뿌옇게 나옴. 홍삼빌호텔 직원이 10시쯤 가라고 알려줘서 반신반의했는데 진짜 빛이 탑 위에서 정면으로 떨어져서 색감부터 다름. 거기다 아침잠 더 자고 느긋하게 나가도 되니까 일석이조임. 체크아웃 전에 로비 들렀더니 천둥이가 산책 나갈 준비하고 있어서 같이 마당 한 바퀴 돌고 출발함🐾\n밸런스 게임: 새벽 인적 없는 탑사 vs 10시 황금빛 탑사, 뭐 고를래\n#홍삼빌호텔 #마이산 #진안여행",
+      "len": 315,
+      "images": [
+        "69.png",
+        "hotel_new_slide5.jpg",
+        "hotel_slide3.png"
+      ],
+      "post_id": "18108661982231370",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DeJ-BpoFe17",
       "views": null,
       "views_final": false
     }
@@ -983,6 +984,6 @@
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-10-06 15:46"
+    "checked_at": "2026-10-06 23:10"
   }
 }
