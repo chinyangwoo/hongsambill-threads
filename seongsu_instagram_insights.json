@@ -718,7 +718,7 @@
     "reach": 23,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-05 15:30"
+    "fetched_at": "2026-10-06 16:07"
   },
   "18068320712780731": {
     "at": "2026-09-23 09:58",
@@ -740,7 +740,7 @@
     "reach": 48,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-05 15:30"
+    "fetched_at": "2026-10-06 16:07"
   },
   "18089526980219617": {
     "at": "2026-09-23 19:19",
@@ -763,7 +763,7 @@
     "reach": 21,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-05 15:30"
+    "fetched_at": "2026-10-06 16:07"
   },
   "18120984299477329": {
     "at": "2026-09-24 09:55",
@@ -785,7 +785,7 @@
     "reach": 35,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-05 15:30"
+    "fetched_at": "2026-10-06 16:07"
   },
   "17877014850558981": {
     "at": "2026-09-24 19:33",
@@ -808,7 +808,7 @@
     "reach": 49,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-05 15:30"
+    "fetched_at": "2026-10-06 16:07"
   },
   "18095959871542290": {
     "at": "2026-09-25 09:54",
@@ -826,11 +826,11 @@
     "media_type": "FEED",
     "likes": 5,
     "comments": 1,
-    "views": 100,
-    "reach": 39,
+    "views": 104,
+    "reach": 40,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-05 15:30"
+    "fetched_at": "2026-10-06 16:07"
   },
   "18005386463786908": {
     "at": "2026-09-25 19:36",
@@ -853,7 +853,7 @@
     "reach": 23,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-05 15:30"
+    "fetched_at": "2026-10-06 16:07"
   },
   "17912820474280848": {
     "at": "2026-09-26 09:55",
@@ -875,7 +875,7 @@
     "reach": 66,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-05 15:30"
+    "fetched_at": "2026-10-06 16:07"
   },
   "17991787211849250": {
     "at": "2026-09-26 19:20",
@@ -898,7 +898,7 @@
     "reach": 28,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-05 15:30"
+    "fetched_at": "2026-10-06 16:07"
   },
   "18028002956912291": {
     "at": "2026-09-27 09:55",
@@ -920,7 +920,7 @@
     "reach": 62,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-05 15:30"
+    "fetched_at": "2026-10-06 16:07"
   },
   "18111244271590200": {
     "at": "2026-09-27 19:49",
@@ -939,11 +939,11 @@
     "media_type": "REELS",
     "likes": 3,
     "comments": 1,
-    "views": 21,
-    "reach": 16,
+    "views": 22,
+    "reach": 17,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-05 15:30"
+    "fetched_at": "2026-10-06 16:07"
   },
   "18096009857420851": {
     "at": "2026-09-28 10:14",
@@ -961,11 +961,11 @@
     "media_type": "FEED",
     "likes": 4,
     "comments": 1,
-    "views": 169,
-    "reach": 67,
+    "views": 186,
+    "reach": 77,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-05 15:30"
+    "fetched_at": "2026-10-06 16:07"
   },
   "18129499936744290": {
     "at": "2026-09-28 10:35",
@@ -983,11 +983,11 @@
     "media_type": "FEED",
     "likes": 3,
     "comments": 1,
-    "views": 77,
+    "views": 78,
     "reach": 38,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-05 15:30"
+    "fetched_at": "2026-10-06 16:07"
   },
   "18226441213336855": {
     "at": "2026-09-28 21:02",
@@ -1005,11 +1005,11 @@
     "media_type": "FEED",
     "likes": 6,
     "comments": 1,
-    "views": 60,
+    "views": 61,
     "reach": 22,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-05 15:30"
+    "fetched_at": "2026-10-06 16:07"
   },
   "17887080720478828": {
     "at": "2026-09-29 11:21",
@@ -1031,7 +1031,7 @@
     "reach": 25,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-05 15:30"
+    "fetched_at": "2026-10-06 16:07"
   },
   "18187242829407284": {
     "at": "2026-09-29 20:37",
@@ -1049,11 +1049,11 @@
     "media_type": "FEED",
     "likes": 5,
     "comments": 1,
-    "views": 71,
-    "reach": 31,
+    "views": 73,
+    "reach": 32,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-05 15:30"
+    "fetched_at": "2026-10-06 16:07"
   },
   "17933462154403501": {
     "at": "2026-09-30 10:38",
@@ -1071,11 +1071,11 @@
     "media_type": "FEED",
     "likes": 8,
     "comments": 1,
-    "views": 81,
-    "reach": 27,
+    "views": 84,
+    "reach": 29,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-05 15:30"
+    "fetched_at": "2026-10-06 16:07"
   },
   "17952595521268442": {
     "at": "2026-09-30 20:24",
@@ -1093,11 +1093,11 @@
     "media_type": "FEED",
     "likes": 5,
     "comments": 1,
-    "views": 80,
-    "reach": 34,
+    "views": 86,
+    "reach": 35,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-05 15:30"
+    "fetched_at": "2026-10-06 16:07"
   },
   "18156883459516187": {
     "at": "2026-10-01 10:37",
@@ -1115,11 +1115,11 @@
     "media_type": "FEED",
     "likes": 5,
     "comments": 1,
-    "views": 44,
-    "reach": 24,
+    "views": 56,
+    "reach": 27,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-05 15:30"
+    "fetched_at": "2026-10-06 16:07"
   },
   "18115759367085513": {
     "at": "2026-10-01 20:51",
@@ -1137,11 +1137,11 @@
     "media_type": "FEED",
     "likes": 4,
     "comments": 1,
-    "views": 58,
-    "reach": 25,
+    "views": 64,
+    "reach": 27,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-05 15:30"
+    "fetched_at": "2026-10-06 16:07"
   },
   "18445947454124428": {
     "at": "2026-10-02 10:50",
@@ -1159,11 +1159,11 @@
     "media_type": "FEED",
     "likes": 3,
     "comments": 1,
-    "views": 46,
-    "reach": 25,
+    "views": 52,
+    "reach": 29,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-05 15:30"
+    "fetched_at": "2026-10-06 16:07"
   },
   "18108049646192636": {
     "at": "2026-10-02 20:23",
@@ -1181,11 +1181,11 @@
     "media_type": "FEED",
     "likes": 4,
     "comments": 1,
-    "views": 94,
-    "reach": 46,
+    "views": 113,
+    "reach": 55,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-05 15:30"
+    "fetched_at": "2026-10-06 16:07"
   },
   "17870293068644982": {
     "at": "2026-10-03 10:29",
@@ -1201,13 +1201,13 @@
     ],
     "permalink": "https://www.instagram.com/p/DeA4ZWwmuoL/",
     "media_type": "FEED",
-    "likes": 1,
+    "likes": 2,
     "comments": 1,
-    "views": 49,
-    "reach": 23,
+    "views": 65,
+    "reach": 31,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-05 15:30"
+    "fetched_at": "2026-10-06 16:07"
   },
   "18049431560620197": {
     "at": "2026-10-03 19:40",
@@ -1223,13 +1223,13 @@
     ],
     "permalink": "https://www.instagram.com/p/DeB3eUTFqw0/",
     "media_type": "FEED",
-    "likes": 4,
+    "likes": 5,
     "comments": 1,
-    "views": 60,
-    "reach": 23,
+    "views": 67,
+    "reach": 26,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-05 15:30"
+    "fetched_at": "2026-10-06 16:07"
   },
   "18105920534354758": {
     "at": "2026-10-04 11:01",
@@ -1245,13 +1245,13 @@
     ],
     "permalink": "https://www.instagram.com/p/DeDgzliEavw/",
     "media_type": "FEED",
-    "likes": 0,
+    "likes": 1,
     "comments": 1,
-    "views": 58,
-    "reach": 29,
+    "views": 72,
+    "reach": 36,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-05 15:30"
+    "fetched_at": "2026-10-06 16:07"
   },
   "17949550887056013": {
     "at": "2026-10-04 20:20",
@@ -1267,12 +1267,56 @@
     ],
     "permalink": "https://www.instagram.com/p/DeEg0GyG8c2/",
     "media_type": "FEED",
-    "likes": 1,
+    "likes": 2,
     "comments": 1,
-    "views": 31,
-    "reach": 15,
+    "views": 42,
+    "reach": 19,
     "saved": 0,
     "shares": 0,
-    "fetched_at": "2026-10-05 15:30"
+    "fetched_at": "2026-10-06 16:07"
+  },
+  "18347213827249795": {
+    "at": "2026-10-05 10:19",
+    "slot": "AM",
+    "format": "carousel",
+    "cta_type": "태그",
+    "topic": "가을밤 캠핑 불멍하면서 마시는 딸기막걸리",
+    "hook": "불멍엔 막걸리가 이겨요 🔥",
+    "images": [
+      "72.png",
+      "100.png",
+      "25.png"
+    ],
+    "permalink": "https://www.instagram.com/p/DeGAzlujpQE/",
+    "media_type": "FEED",
+    "likes": 3,
+    "comments": 1,
+    "views": 62,
+    "reach": 31,
+    "saved": 0,
+    "shares": 0,
+    "fetched_at": "2026-10-06 16:07"
+  },
+  "17862735126694602": {
+    "at": "2026-10-05 21:42",
+    "slot": "PM",
+    "format": "carousel",
+    "cta_type": "구매",
+    "topic": "핑크색이라 할로윈·가을 홈파티 테이블에서 제일 먼저 사진 찍히는 술",
+    "hook": "두면 다들 사진부터 찍어요",
+    "images": [
+      "drive_04_serving.png",
+      "52.png",
+      "33.png"
+    ],
+    "permalink": "https://www.instagram.com/p/DeHPBpQm7kM/",
+    "media_type": "FEED",
+    "likes": 2,
+    "comments": 1,
+    "views": 52,
+    "reach": 27,
+    "saved": 0,
+    "shares": 0,
+    "fetched_at": "2026-10-06 16:07"
   }
 }
