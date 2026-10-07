@@ -1,22 +1,6 @@
 {
-  "count": 110,
+  "count": 111,
   "posts": [
-    {
-      "at": "2026-09-18 21:14",
-      "topic": "총지배견 천둥이(허스키)의 오늘 하루 일상",
-      "hook": "fail",
-      "cta": "내 판단이 맞는지 의견 물어보기",
-      "text": "아침에 로비에서 나 혼자 착각한 거 하나 있음\n\n천둥이가 로비에 가만히 앉아있길래 그냥 쉬는 줄 알았는데 알고보니 출근 루틴이었음. 직원분 말로는 아침 8시쯤 로비랑 조식장 앞 한바퀴 순찰 돌고 자기 자리로 옴. 낮엔 체크인 짐 옆에서 냄새 맡고 오후엔 테라스서 낮잠, 저녁 되면 다시 로비 출근. 거의 하루 스케줄이 총지배인 급이라 직원인지 손님인지 헷갈릴 정도임 ㅋㅋ\n이거 순찰 도는 거 맞는 듯한데 그냥 산책인지 아는 사람 있으면 말해줘 🐾\n#홍삼빌호텔 #진안여행 #마이산",
-      "len": 267,
-      "images": [
-        "57.png",
-        "55.png",
-        "sauna.png"
-      ],
-      "post_id": "17968854255171711",
-      "views": 31,
-      "views_final": true
-    },
     {
       "at": "2026-09-19 07:36",
       "topic": "서울에서 진안까지, 사람 없는 조용한 여행지를 찾는 사람들에게",
@@ -826,7 +810,7 @@
       ],
       "post_id": "18101194241387371",
       "views": 28,
-      "views_final": false,
+      "views_final": true,
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeEtkCkEcoH"
     },
     {
@@ -945,7 +929,7 @@
       ],
       "post_id": "18108661982231370",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeJ-BpoFe17",
-      "views": 15,
+      "views": 17,
       "views_final": false
     },
     {
@@ -962,7 +946,7 @@
       ],
       "post_id": "18101436872455355",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeLANlGjz9E",
-      "views": 29,
+      "views": 30,
       "views_final": false
     },
     {
@@ -979,6 +963,23 @@
       ],
       "post_id": "18215135707352934",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeLtKPBlnix",
+      "views": 12,
+      "views_final": false
+    },
+    {
+      "at": "2026-10-07 23:30",
+      "topic": "진안 로컬 맛집과 숙소 주변 먹거리 이야기",
+      "hook": "question",
+      "cta": "같이 갈 사람 태그하라고 하기",
+      "text": "저녁 7시 넘었는데 식당 문 다 닫혀있어서 당황한 사람\n\n여행 와서 밥때 놓치면 진짜 대참사인데, 홍삼빌호텔 직원이 체크인할 때 미리 근처 맛집 리스트를 쥐여줌. 걸어서 5분 거리에 흑돼지 숯불구이집이 있는데 거기 홍삼 넣고 재운 양념이 진짜 미쳤음, 고기값 2인 기준 3만원도 안 나옴. 다음날 아침엔 호텔 바로 옆 진안콩국수집에서 해장하고 체크아웃함. 나오는데 천둥이가 또 마당에서 기다리고 있어서 사진 한 장 더 찍고 출발함🐾\n같이 가서 흑돼지에 콩국수 코스 뛸 사람 태그 좀\n#홍삼빌호텔 #진안가볼만한곳 #전북여행",
+      "len": 291,
+      "images": [
+        "83.png",
+        "37.png",
+        "hotel_slide3.png"
+      ],
+      "post_id": "18107641730220342",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DeMk4bRm7Mb",
       "views": null,
       "views_final": false
     }
@@ -986,6 +987,6 @@
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-10-07 15:21"
+    "checked_at": "2026-10-07 23:29"
   }
 }
