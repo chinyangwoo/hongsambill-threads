@@ -1,22 +1,6 @@
 {
-  "count": 113,
+  "count": 114,
   "posts": [
-    {
-      "at": "2026-09-19 20:56",
-      "topic": "마이산 탑사의 돌탑, 직접 보면 다른 이유",
-      "hook": "secret",
-      "cta": "밸런스 게임으로 둘 중 하나 고르게 하기",
-      "text": "탑사 돌탑 사진으로만 보다가 실물 보고 말 잃었던 순간 있음\n\n사진 볼 땐 그냥 돌무더기인 줄 알았는데 실제 밑에서 보면 높이가 15m라 목 젖혀야 끝이 보임. 접착제 하나 없이 자연석만 쌓았는데 100년 넘게 그대로라는 게 안 믿김, 돌 틈 보면 제각각 크기가 딱 맞물려있음. 호텔서 걸어갈 거리라 아침 먹고 바로 다녀왔는데 천둥이는 따라나서려다 문 앞에서 붙잡힘 ㅋㅋ\n탑사 볼 땐 낮 vs 노을, 뭐가 더 낫다고 생각함 🐾\n#홍삼빌호텔 #마이산 #진안여행",
-      "len": 256,
-      "images": [
-        "24.png",
-        "46.png",
-        "89.png"
-      ],
-      "post_id": "18114946775070109",
-      "views": 31,
-      "views_final": true
-    },
     {
       "at": "2026-09-20 07:21",
       "topic": "커플·가족 손님들이 진안을 다시 찾는 이유",
@@ -914,7 +898,7 @@
       ],
       "post_id": "18101436872455355",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeLANlGjz9E",
-      "views": 33,
+      "views": 34,
       "views_final": false
     },
     {
@@ -948,7 +932,7 @@
       ],
       "post_id": "18107641730220342",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeMk4bRm7Mb",
-      "views": 67,
+      "views": 71,
       "views_final": false
     },
     {
@@ -965,7 +949,7 @@
       ],
       "post_id": "18136688161630305",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeNnpOODSvp",
-      "views": 13,
+      "views": 14,
       "views_final": false
     },
     {
@@ -982,6 +966,23 @@
       ],
       "post_id": "17895118956612011",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeOTIDDFv8z",
+      "views": 23,
+      "views_final": false
+    },
+    {
+      "at": "2026-10-08 23:35",
+      "topic": "고기만 사 오면 되는 항아리바베큐, 진안 흑돼지 구워 먹는 저녁",
+      "hook": "compare",
+      "cta": "밸런스 게임으로 둘 중 하나 고르게 하기",
+      "text": "캠핑장 불멍 vs 호텔방에서 숯불 피우기 고민하는 거 자체가 웃긴 상황이었음\n\n밖에서 바베큐하면 설거지에 정리에 피곤한데 여기는 객실에 항아리 통째로 준비돼있어서 고기만 사 오면 끝남. 근처 정육점에서 진안 흑돼지 한 근 떠왔는데 가격도 서울 삼겹살값이랑 비슷함. 항아리 안에서 숯 타는 소리 들으면서 7시부터 9시까지 두 시간을 방에서 안 나감, 냄새도 생각보다 안 배고 환기 잘 됨. 중간에 천둥이가 복도 지나가다 냄새 맡고 문 앞에서 한참 서성이는 거 창문으로 목격함🐾\n밸런스 게임: 밖에서 불멍하며 고기 vs 방에서 항아리로 고기, 뭐 고를래\n#홍삼빌호텔 #진안여행 #홍삼스파",
+      "len": 326,
+      "images": [
+        "78.png",
+        "running.png",
+        "hotel_new_slide1.jpg"
+      ],
+      "post_id": "18119764753949021",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DePKRNulZkf",
       "views": null,
       "views_final": false
     }
@@ -989,6 +990,6 @@
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-10-08 15:32"
+    "checked_at": "2026-10-08 23:34"
   }
 }
