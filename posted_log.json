@@ -1,22 +1,6 @@
 {
-  "count": 112,
+  "count": 113,
   "posts": [
-    {
-      "at": "2026-09-19 13:56",
-      "topic": "진안 로컬 맛집과 호텔 주변 먹거리 이야기",
-      "hook": "insider",
-      "cta": "다음에 뭐 할지 골라달라고 투표 붙이기",
-      "text": "호텔 프론트에서 밥 얘기 나오면 무조건 이 집 얘기 나옴\n\n체크인할 때 직원분한테 저녁 뭐 먹을지 물어봤는데 관광지 식당 말고 로컬 사람들 진짜 가는 데 하나 찍어줌, 걸어서 7분 거리 시래기정식집인데 메뉴판도 없고 그날 나오는 대로 먹는 스타일. 상 위에 반찬만 열 개 넘게 깔리는데 가격은 만원 초반대라 계산할 때 두 번 물어봄 진짜 이거 맞냐고 ㅋㅋ 다음날 탑사 걷고 내려와서 홍삼 아이스크림도 하나 사 먹었는데 그것도 로컬 인정 맛집이라고 함. 천둥이는 우리 손에 봉지 들려있으면 냄새 맡으려고 코 들이밈\n저녁 먹고 뭐 할지 골라줘, 야경 산책 vs 방콕 휴식 🐾\n#홍삼빌호텔 #진안",
-      "len": 330,
-      "images": [
-        "78.png",
-        "87.png",
-        "breakfast.png"
-      ],
-      "post_id": "18129865606707099",
-      "views": 31,
-      "views_final": true
-    },
     {
       "at": "2026-09-19 20:56",
       "topic": "마이산 탑사의 돌탑, 직접 보면 다른 이유",
@@ -828,7 +812,7 @@
       ],
       "post_id": "18097471391355744",
       "views": 11,
-      "views_final": false,
+      "views_final": true,
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeGhv5wEVuT"
     },
     {
@@ -930,7 +914,7 @@
       ],
       "post_id": "18101436872455355",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeLANlGjz9E",
-      "views": 32,
+      "views": 33,
       "views_final": false
     },
     {
@@ -947,7 +931,7 @@
       ],
       "post_id": "18215135707352934",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeLtKPBlnix",
-      "views": 13,
+      "views": 15,
       "views_final": false
     },
     {
@@ -964,7 +948,7 @@
       ],
       "post_id": "18107641730220342",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeMk4bRm7Mb",
-      "views": 53,
+      "views": 67,
       "views_final": false
     },
     {
@@ -981,6 +965,23 @@
       ],
       "post_id": "18136688161630305",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeNnpOODSvp",
+      "views": 13,
+      "views_final": false
+    },
+    {
+      "at": "2026-10-08 15:33",
+      "topic": "사람 몰리는 단풍 명소 대신 조용한 마이산 단풍",
+      "hook": "fail",
+      "cta": "빈칸 채우기식으로 한 단어 답하게 하기",
+      "text": "단풍 명소 검색하고 거기로 안 간 거 아직도 안 믿김\n\n원래 단풍철이면 다들 내장산 내장산 하길래 나도 그쪽 알아봤다가, 주차만 2시간 걸린다는 후기 보고 바로 접음. 근데 홍삼빌호텔 직원이 마이산도 10월 말이면 단풍 절정이라고 해서 반신반의로 탑사길 올라갔는데 진짜 사람 10명도 안 봄. 은수사 단풍나무 밑에서 사진 찍는데 뒤에 아무도 안 걸림, 이게 되네 싶었음. 내려오는 길에 천둥이 만나서 낙엽 밟으면서 같이 걸음🐾\n빈칸 채우기: 사람 없는 단풍길 걸으면서 든 생각은 ___ 한 단어로 답해줘\n#홍삼빌호텔 #마이산 #진안여행",
+      "len": 299,
+      "images": [
+        "42.png",
+        "75.png",
+        "17_running_maisan.png"
+      ],
+      "post_id": "17895118956612011",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DeOTIDDFv8z",
       "views": null,
       "views_final": false
     }
@@ -988,6 +989,6 @@
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-10-08 09:12"
+    "checked_at": "2026-10-08 15:32"
   }
 }
