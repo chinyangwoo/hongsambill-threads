@@ -1,22 +1,6 @@
 {
-  "count": 114,
+  "count": 115,
   "posts": [
-    {
-      "at": "2026-09-20 07:21",
-      "topic": "커플·가족 손님들이 진안을 다시 찾는 이유",
-      "hook": "fail",
-      "cta": "더 좋은 정보 아는 사람 댓글로 부르기",
-      "text": "",
-      "len": 0,
-      "images": [
-        "hotel.png",
-        "73.png",
-        "59.png"
-      ],
-      "post_id": "18094729025408739",
-      "views": 7,
-      "views_final": true
-    },
     {
       "at": "2026-09-20 14:18",
       "topic": "가을 단풍 시즌 마이산 뷰",
@@ -813,7 +797,7 @@
       ],
       "post_id": "18117922075912021",
       "views": 14,
-      "views_final": false,
+      "views_final": true,
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeHlqICEcjc"
     },
     {
@@ -915,7 +899,7 @@
       ],
       "post_id": "18215135707352934",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeLtKPBlnix",
-      "views": 15,
+      "views": 16,
       "views_final": false
     },
     {
@@ -932,7 +916,7 @@
       ],
       "post_id": "18107641730220342",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeMk4bRm7Mb",
-      "views": 71,
+      "views": 81,
       "views_final": false
     },
     {
@@ -966,7 +950,7 @@
       ],
       "post_id": "17895118956612011",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeOTIDDFv8z",
-      "views": 23,
+      "views": 25,
       "views_final": false
     },
     {
@@ -983,6 +967,23 @@
       ],
       "post_id": "18119764753949021",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DePKRNulZkf",
+      "views": 13,
+      "views_final": false
+    },
+    {
+      "at": "2026-10-09 09:24",
+      "topic": "2층 유리난간 테라스에서 마이산 보며 멍때리기",
+      "hook": "secret",
+      "cta": "다음에 뭐 할지 골라달라고 투표 붙이기",
+      "text": "이거 체크인할 때 아무도 안 알려주는 자리 하나 있는데 진짜 아까움\n\n2층 복도 끝에 유리난간 테라스 있음, 아는 사람 별로 없음. 의자 두 개 딱 놔뒀는데 정면으로 마이산 봉우리 두 개가 걸림. 아침 8시쯤 나갔다가 안개 걷히는 거 보면서 40분을 핸드폰도 안 만지고 앉아만 있었음. 유리라서 바람도 안 들어와서 춥지도 않음. 내려가는데 천둥이가 계단에서 마주쳐서 거기 같이 앉혀놓고 사진 건짐🐾\n투표: 1) 그 테라스 야경 버전 2) 1층 마당 천둥이 아침산책, 뭐 먼저 올림?\n#홍삼빌호텔 #마이산 #진안여행",
+      "len": 287,
+      "images": [
+        "46.png",
+        "49.png",
+        "48.png"
+      ],
+      "post_id": "18118273526051299",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DeQNrCbDfl3",
       "views": null,
       "views_final": false
     }
@@ -990,6 +991,6 @@
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-10-08 23:34"
+    "checked_at": "2026-10-09 09:23"
   }
 }
