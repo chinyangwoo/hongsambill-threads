@@ -1,22 +1,6 @@
 {
-  "count": 115,
+  "count": 116,
   "posts": [
-    {
-      "at": "2026-09-20 14:18",
-      "topic": "가을 단풍 시즌 마이산 뷰",
-      "hook": "twist",
-      "cta": "같은 경험 있는 사람 손들게 하기",
-      "text": "창문 열었다가 3초간 아무 말도 못 함 ㅋㅋ\n\n체크인하고 커튼 걷었는데 마이산 봉우리 두 개가 단풍으로 완전 뒤덮여있음. 원래 삐죽한 돌산 느낌인데 이 시즌엔 밑동부터 빨갛고 노랗게 덮여서 산 색깔이 아예 다름. 걸어서 은수사까지 갔더니 은행나무 한 그루가 노란 폭탄 터진 수준, 사람들 다 밑에서 사진 찍느라 줄 서있음. 벤치에 앉아서 10분 정도 그냥 멍 때렸는데 그게 여행 중 제일 좋았음. 천둥이는 낙엽 밟는 소리 신기한지 계속 발로 툭툭 치면서 따라다님 🐾\n단풍 절정 시즌에 산 보고 말 잃어본 사람 손 들어봐\n#홍삼빌호텔 #마이산 #진안여행",
-      "len": 308,
-      "images": [
-        "29.png",
-        "38.png",
-        "hotel_new_slide5.jpg"
-      ],
-      "post_id": "18105964829221591",
-      "views": 37,
-      "views_final": true
-    },
     {
       "at": "2026-09-20 21:22",
       "topic": "호캉스인데 힐링까지 되는 곳, 진안고원의 밤하늘",
@@ -815,7 +799,7 @@
       "post_id": "18128218630840819",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeIkIcPFDvy",
       "views": 18,
-      "views_final": false
+      "views_final": true
     },
     {
       "at": "2026-10-06 10:20",
@@ -832,7 +816,7 @@
       "post_id": "18476821351116132",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeIlu3rkaJD",
       "views": 16,
-      "views_final": false
+      "views_final": true
     },
     {
       "at": "2026-10-06 15:48",
@@ -916,7 +900,7 @@
       ],
       "post_id": "18107641730220342",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeMk4bRm7Mb",
-      "views": 81,
+      "views": 86,
       "views_final": false
     },
     {
@@ -933,7 +917,7 @@
       ],
       "post_id": "18136688161630305",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeNnpOODSvp",
-      "views": 14,
+      "views": 16,
       "views_final": false
     },
     {
@@ -950,7 +934,7 @@
       ],
       "post_id": "17895118956612011",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeOTIDDFv8z",
-      "views": 25,
+      "views": 26,
       "views_final": false
     },
     {
@@ -984,6 +968,23 @@
       ],
       "post_id": "18118273526051299",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeQNrCbDfl3",
+      "views": 15,
+      "views_final": false
+    },
+    {
+      "at": "2026-10-09 15:35",
+      "topic": "마이산 탑사 돌탑, 사진이랑 실물이 다른 이유",
+      "hook": "question",
+      "cta": "같이 갈 사람 태그하라고 하기",
+      "text": "사진빨 하나도 없다는 말 듣고 기대 하나도 안 했던 사람\n\n인터넷에 떠도는 사진은 죄다 멀리서 찍어서 그냥 자갈탑 쌓아놓은 줄 알았는데 실물 보면 생각 자체가 바뀜. 제일 큰 탑 두 개는 높이가 거의 13m라 사람 두세 배 넘고, 그런 돌탑이 80개 넘게 빽빽하게 서있어서 걸어 들어가는 순간부터 압도됨. 100년 넘게 바람 맞으면서도 안 무너졌다는 게 더 소름. 내려오는 길에 천둥이 만나서 탑 배경으로 사진 한 장 건짐🐾\n사진만 보고 가볼까 말까 고민하던 사람 있으면 같이 갈 사람 태그해놓고 계획 짜자\n#홍삼빌호텔 #마이산 #진안여행",
+      "len": 301,
+      "images": [
+        "60.png",
+        "17.png",
+        "45.png"
+      ],
+      "post_id": "18134532049657591",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DeQ4HDKmz6y",
       "views": null,
       "views_final": false
     }
@@ -991,6 +992,6 @@
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-10-09 09:23"
+    "checked_at": "2026-10-09 15:33"
   }
 }
