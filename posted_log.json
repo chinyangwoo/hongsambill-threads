@@ -1,22 +1,6 @@
 {
-  "count": 118,
+  "count": 119,
   "posts": [
-    {
-      "at": "2026-09-21 14:21",
-      "topic": "호텔 직원들만 아는 마이산 숨은 포토스팟",
-      "hook": "fail",
-      "cta": "밸런스 게임으로 둘 중 하나 고르게 하기",
-      "text": "탑사 정면 사진만 찍다가 뒤늦게 안 사실 하나 있음\n체크인할 때 직원분이 \"탑사 말고 그 옆길로 올라가보셨어요?\" 하길래 뭔 소린가 했는데, 주차장 지나서 왼쪽 산책로로 3분만 올라가면 봉우리 두 개랑 탑사 전체가 한 프레임에 들어옴. 관광객들 거의 다 정문 앞에서만 찍고 내려감. 거기서 찍은 사진 인화해서 로비에 걸어놨는데 직원들끼리 손님들한테 몰래 알려주는 자리라고 함, 아무도 없어서 줄도 안 서고 좋았음. 천둥이도 그 길 따라오다 중간에 주저앉아서 안 감 ㅋㅋ\n포토스팟 갈 때 혼자 몰래 찾기 vs 직원한테 물어보고 가기, 뭐가 나음 🐾\n#홍삼빌호텔 #마이산 #진안여행",
-      "len": 323,
-      "images": [
-        "12.png",
-        "89.png",
-        "25.png"
-      ],
-      "post_id": "18107683325188490",
-      "views": 17,
-      "views_final": true
-    },
     {
       "at": "2026-09-21 23:08",
       "topic": "주말에 어디 갈지 고민하는 사람들을 위한 1박2일 진안 코스",
@@ -902,7 +886,7 @@
       ],
       "post_id": "17895118956612011",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeOTIDDFv8z",
-      "views": 27,
+      "views": 30,
       "views_final": false
     },
     {
@@ -936,7 +920,7 @@
       ],
       "post_id": "18118273526051299",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeQNrCbDfl3",
-      "views": 21,
+      "views": 23,
       "views_final": false
     },
     {
@@ -953,7 +937,7 @@
       ],
       "post_id": "18134532049657591",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeQ4HDKmz6y",
-      "views": 18,
+      "views": 20,
       "views_final": false
     },
     {
@@ -987,6 +971,23 @@
       ],
       "post_id": "18105658727526350",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeSwJUfGPre",
+      "views": 12,
+      "views_final": false
+    },
+    {
+      "at": "2026-10-10 15:18",
+      "topic": "마이산 한 바퀴 돌고 홍삼스파에서 다리 푸는 하루",
+      "hook": "number",
+      "cta": "밸런스 게임으로 둘 중 하나 고르게 하기",
+      "text": "다리 풀린 거 느끼는데 걸린 시간 딱 10분\n\n아침에 탑사까지 왕복 1시간 걸으면서 은수사까지 다 돌고 나니까 종아리가 돌덩이였음. 근데 체크인하자마자 홍삼스파 가서 뜨거운 탕에 10분 담궜는데 다리가 그냥 녹음, 이게 뭔 일인가 싶었음. 스파랑 호텔이 붙어있어서 걸어서 3분, 산 타고 바로 지지러 가는 동선이 말이 됨. 나와서 로비 지나가는데 천둥이가 또 늘어져있어서 똑같이 다리 뻗고 누워있었음🐾\n밸런스 게임: 산타기 전에 스파 몸풀기 vs 산타고 나서 스파 다리풀기, 뭐가 나음\n#홍삼빌호텔 #홍삼스파 #마이산",
+      "len": 289,
+      "images": [
+        "68.png",
+        "hotel_new_slide6.jpg",
+        "11.png"
+      ],
+      "post_id": "18087137825287728",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DeTa84yHCr2",
       "views": null,
       "views_final": false
     }
@@ -994,6 +995,6 @@
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-10-10 09:02"
+    "checked_at": "2026-10-10 15:16"
   }
 }
