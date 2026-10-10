@@ -1,22 +1,6 @@
 {
-  "count": 117,
+  "count": 118,
   "posts": [
-    {
-      "at": "2026-09-21 07:28",
-      "topic": "홍삼의 고장 진안에서만 할 수 있는 경험",
-      "hook": "compare",
-      "cta": "같이 갈 사람 태그하라고 하기",
-      "text": "제주도 홍삼 사러 가는 거 아니고 산지 가서 직접 캐는 경험을 해봄\n\n호텔 프론트에서 홍삼밭 체험 있다길래 반신반의하고 갔는데 진짜 흙 파서 뿌리 뽑는 거였음, 6년근 하나 캐는데 생각보다 힘 줘야 함 ㅋㅋ 캐자마자 그 자리에서 하나 잘라서 맛보여주는데 인삼이랑 다르게 단맛이 확 돌아서 놀람. 체험 끝나고 걸어서 5분이면 홍삼스파라 흙 묻은 손 씻고 바로 몸 담금, 이 동선이 진안 아니면 안 나옴. 천둥이는 밭 옆에서 우리 따라 땅 파는 시늉하다가 흙 묻혀서 혼남 🐾\n이거 캐 먹으러 같이 갈 사람 태그 좀\n#홍삼빌호텔 #홍삼스파 #진안여행",
-      "len": 304,
-      "images": [
-        "79.jpg",
-        "hotel_slide3.png",
-        "67.png"
-      ],
-      "post_id": "18097124168541377",
-      "views": 24,
-      "views_final": true
-    },
     {
       "at": "2026-09-21 14:21",
       "topic": "호텔 직원들만 아는 마이산 숨은 포토스팟",
@@ -851,7 +835,7 @@
       "post_id": "18101436872455355",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeLANlGjz9E",
       "views": 34,
-      "views_final": false
+      "views_final": true
     },
     {
       "at": "2026-10-07 15:23",
@@ -935,7 +919,7 @@
       ],
       "post_id": "18119764753949021",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DePKRNulZkf",
-      "views": 13,
+      "views": 15,
       "views_final": false
     },
     {
@@ -952,7 +936,7 @@
       ],
       "post_id": "18118273526051299",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeQNrCbDfl3",
-      "views": 18,
+      "views": 21,
       "views_final": false
     },
     {
@@ -969,7 +953,7 @@
       ],
       "post_id": "18134532049657591",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeQ4HDKmz6y",
-      "views": 17,
+      "views": 18,
       "views_final": false
     },
     {
@@ -986,6 +970,23 @@
       ],
       "post_id": "18138798910545002",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeRtoKqkdK4",
+      "views": 15,
+      "views_final": false
+    },
+    {
+      "at": "2026-10-10 09:04",
+      "topic": "아이랑 1박2일, 차 덜 타고 걸어서 되는 마이산 코스",
+      "hook": "compare",
+      "cta": "더 좋은 정보 아는 사람 댓글로 부르기",
+      "text": "키즈카페 대신 산 데려가면 큰일 날 줄 알았음\n\n근데 7살 조카랑 1박2일로 갔다가 진짜 차 한 번도 안 탐. 호텔 정문에서 탑사 입구까지 걸어서 15분, 경사도 거의 없어서 중간에 업어준 거 딱 한 번. 은수사까지도 평지라 유모차 끄는 애기 엄마들도 꽤 보임. 왕복 1시간 코스로 탑 구경하고 내려와서 바로 체크인하고 스파 가서 애 체력 방전시킴. 숙소 들어가는 길에 천둥이 만나서 조카가 또 한참 붙어있었음🐾\n애들 데리고 차 안 타고 되는 코스 더 아는 사람 있으면 댓글로 알려줘\n#홍삼빌호텔 #마이산 #진안가볼만한곳",
+      "len": 291,
+      "images": [
+        "37.png",
+        "34.jpg",
+        "87.png"
+      ],
+      "post_id": "18105658727526350",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DeSwJUfGPre",
       "views": null,
       "views_final": false
     }
@@ -993,6 +994,6 @@
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-10-09 23:21"
+    "checked_at": "2026-10-10 09:02"
   }
 }
