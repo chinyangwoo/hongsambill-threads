@@ -1,22 +1,6 @@
 {
-  "count": 120,
+  "count": 121,
   "posts": [
-    {
-      "at": "2026-09-22 08:18",
-      "topic": "마이산 새벽 등산 후 호텔에서 쉬는 하루 코스",
-      "hook": "twist",
-      "cta": "같은 경험 있는 사람 손들게 하기",
-      "text": "",
-      "len": 0,
-      "images": [
-        "18.png",
-        "60.png",
-        "20.png"
-      ],
-      "post_id": "17964945291188558",
-      "views": 9,
-      "views_final": true
-    },
     {
       "at": "2026-09-22 14:18",
       "topic": "홍삼스파 + 호텔 숙박 조합이 피로 회복에 좋은 이유",
@@ -837,7 +821,7 @@
       "post_id": "18107641730220342",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeMk4bRm7Mb",
       "views": 89,
-      "views_final": false
+      "views_final": true
     },
     {
       "at": "2026-10-08 09:13",
@@ -904,7 +888,7 @@
       ],
       "post_id": "18118273526051299",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeQNrCbDfl3",
-      "views": 23,
+      "views": 25,
       "views_final": false
     },
     {
@@ -972,7 +956,7 @@
       ],
       "post_id": "18087137825287728",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeTa84yHCr2",
-      "views": 7,
+      "views": 8,
       "views_final": false
     },
     {
@@ -989,6 +973,23 @@
       ],
       "post_id": "18114461426036916",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeUNpWeG2-M",
+      "views": 9,
+      "views_final": false
+    },
+    {
+      "at": "2026-10-11 08:35",
+      "topic": "서울에서 3시간, 사람 없는 조용한 여행지를 찾는 사람들에게",
+      "hook": "provoke",
+      "cta": "빈칸 채우기식으로 한 단어 답하게 하기",
+      "text": "조용한 데 가고 싶다면서 결국 사람 많은 핫플 검색하고 있는 거 나만 봄?\n\nㄹㅇ 주말에 서울에서 3시간 걸려서 진안 왔는데 토요일 오후에 탑사 앞에 사람이 열 명도 안 됨. 평일 아니고 주말인데도. 숙소도 마찬가지로 복도에서 이틀 동안 마주친 사람 세 명 남짓, 로비는 거의 내 독차지였음. 조용한 거 찾다가 결국 캐리어 끌고 인파 뚫는 거 반복하는 사람들 보면 괜히 답답함. 체크아웃할 때 천둥이만 혼자 마당 지키고 있는 것도 이 동네 분위기 그 자체였음🐾\n사람 없는 여행지 하면 딱 떠오르는 지역 한 단어로 댓글 남겨줘\n#홍삼빌호텔 #진안여행 #전북여행",
+      "len": 312,
+      "images": [
+        "88.png",
+        "breakfast.png",
+        "44.png"
+      ],
+      "post_id": "18104713919613390",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DeVRmH8kUuz",
       "views": null,
       "views_final": false
     }
@@ -996,6 +997,6 @@
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-10-10 22:39"
+    "checked_at": "2026-10-11 08:33"
   }
 }
