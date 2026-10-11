@@ -1,22 +1,6 @@
 {
-  "count": 121,
+  "count": 122,
   "posts": [
-    {
-      "at": "2026-09-22 14:18",
-      "topic": "홍삼스파 + 호텔 숙박 조합이 피로 회복에 좋은 이유",
-      "hook": "compare",
-      "cta": "더 좋은 정보 아는 사람 댓글로 부르기",
-      "text": "사우나 갈까 등산 갈까 고민하다가 둘 다 하고 옴 ㅋㅋ\n\n원래 마이산 등반하면 다리 뭉치고 다음날 뻐근한 게 국룰인데, 내려오자마자 걸어서 5분 거리 홍삼스파行. 40분 정도 몸 담갔는데 다음날 아침에 근육통이 하나도 없어서 진짜 놀람. 스파 끝나고 방 들어가서 그대로 뻗었는데 8시간을 한 번도 안 깨고 잤음, 평소 새벽에 한 번씩 깨는 편인데 이번엔 알람 소리에 겨우 일어남. 등산+스파+숙박 이 조합이 피로 푸는 순서로 진짜 맞는 듯. 천둥이는 스파 입구까지만 따라오고 안 들어옴 🐾\n이거 말고 등산 후 피로 푸는 법 더 아는 사람 댓글로 좀 불러줘\n#홍삼빌호텔 #홍삼스파 #진안여행",
-      "len": 329,
-      "images": [
-        "24.png",
-        "sauna.png",
-        "84.png"
-      ],
-      "post_id": "18095375231565967",
-      "views": 29,
-      "views_final": true
-    },
     {
       "at": "2026-09-22 21:37",
       "topic": "총지배견 천둥이(허스키)의 오늘 하루 일상",
@@ -838,7 +822,7 @@
       "post_id": "18136688161630305",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeNnpOODSvp",
       "views": 17,
-      "views_final": false
+      "views_final": true
     },
     {
       "at": "2026-10-08 15:33",
@@ -905,7 +889,7 @@
       ],
       "post_id": "18134532049657591",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeQ4HDKmz6y",
-      "views": 20,
+      "views": 22,
       "views_final": false
     },
     {
@@ -922,7 +906,7 @@
       ],
       "post_id": "18138798910545002",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeRtoKqkdK4",
-      "views": 16,
+      "views": 17,
       "views_final": false
     },
     {
@@ -939,7 +923,7 @@
       ],
       "post_id": "18105658727526350",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeSwJUfGPre",
-      "views": 13,
+      "views": 14,
       "views_final": false
     },
     {
@@ -973,7 +957,7 @@
       ],
       "post_id": "18114461426036916",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeUNpWeG2-M",
-      "views": 9,
+      "views": 12,
       "views_final": false
     },
     {
@@ -990,6 +974,23 @@
       ],
       "post_id": "18104713919613390",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeVRmH8kUuz",
+      "views": 11,
+      "views_final": false
+    },
+    {
+      "at": "2026-10-11 15:18",
+      "topic": "호캉스 대신 별멍, 진안고원의 밤하늘",
+      "hook": "compare",
+      "cta": "같은 경험 있는 사람 손들게 하기",
+      "text": "호캉스 예약해놓고 결국 창밖만 보다 끝난 적 있음?\n\n나도 그럴 줄 알았는데 여기서는 반대로 됨. 체크인하고 저녁 먹고 나니까 할 거 없어서 옥상 올라갔다가 그대로 1시간 앉아있었음. 진안고원이 해발 높은 동네라 그런지 별이 그냥 쏟아짐, 폰카메라로도 대충 찍었는데 점이 수십 개는 찍힘. 호텔 불빛 거의 꺼져있어서 암순응 되는 데 5분도 안 걸림. 내려오는데 천둥이도 마당에 앉아서 같이 하늘 보고 있어서 옆에 한참 앉아있었음🐾\n도시에서 별 세 개도 안 보이다가 여행 가서 하늘 보고 멈춰본 사람 손 들어봐\n#홍삼빌호텔 #진안여행 #마이산",
+      "len": 302,
+      "images": [
+        "hotel_new_slide2.jpg",
+        "90.png",
+        "62.png"
+      ],
+      "post_id": "18194865700391832",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DeV_va0kd63",
       "views": null,
       "views_final": false
     }
@@ -997,6 +998,6 @@
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-10-11 08:33"
+    "checked_at": "2026-10-11 15:16"
   }
 }
