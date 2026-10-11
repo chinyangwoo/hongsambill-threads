@@ -1,22 +1,6 @@
 {
-  "count": 122,
+  "count": 123,
   "posts": [
-    {
-      "at": "2026-09-22 21:37",
-      "topic": "총지배견 천둥이(허스키)의 오늘 하루 일상",
-      "hook": "secret",
-      "cta": "내 판단이 맞는지 의견 물어보기",
-      "text": "이거 진짜 아무한테도 말 안 하려고 했는데 총지배견 근태가 심상치 않음 🐾\n아침 7시에 로비 문 열자마자 프론트 앞에 앉아서 출근 도장 찍고, 8시부터는 조식 먹는 사람들 테이블마다 순찰 돌면서 눈치 봄(밥 안 주면 삐짐). 오전 10시쯤엔 주차장 나가서 체크인하러 오는 차마다 마중 나가는데 이게 하루도 안 빠짐. 낮에는 옥상 테라스에 누워서 낮잠 자다가 저녁 6시 되면 또 로비로 복귀함, 진짜 시계처럼 움직임.\n이 정도면 얘 월급 줘야 하는 거 아닌가 다들 어떻게 생각함\n#홍삼빌호텔 #진안여행 #마이산",
-      "len": 284,
-      "images": [
-        "40.png",
-        "43.png",
-        "74.png"
-      ],
-      "post_id": "18167494939463134",
-      "views": 46,
-      "views_final": true
-    },
     {
       "at": "2026-09-23 07:58",
       "topic": "서울에서 진안까지, 사람 없는 조용한 여행지를 찾는 사람들에게",
@@ -839,7 +823,7 @@
       "post_id": "17895118956612011",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeOTIDDFv8z",
       "views": 32,
-      "views_final": false
+      "views_final": true
     },
     {
       "at": "2026-10-08 23:35",
@@ -889,7 +873,7 @@
       ],
       "post_id": "18134532049657591",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeQ4HDKmz6y",
-      "views": 22,
+      "views": 23,
       "views_final": false
     },
     {
@@ -906,7 +890,7 @@
       ],
       "post_id": "18138798910545002",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeRtoKqkdK4",
-      "views": 17,
+      "views": 19,
       "views_final": false
     },
     {
@@ -923,7 +907,7 @@
       ],
       "post_id": "18105658727526350",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeSwJUfGPre",
-      "views": 14,
+      "views": 15,
       "views_final": false
     },
     {
@@ -957,7 +941,7 @@
       ],
       "post_id": "18114461426036916",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeUNpWeG2-M",
-      "views": 12,
+      "views": 14,
       "views_final": false
     },
     {
@@ -974,7 +958,7 @@
       ],
       "post_id": "18104713919613390",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeVRmH8kUuz",
-      "views": 11,
+      "views": 14,
       "views_final": false
     },
     {
@@ -991,6 +975,23 @@
       ],
       "post_id": "18194865700391832",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeV_va0kd63",
+      "views": 16,
+      "views_final": false
+    },
+    {
+      "at": "2026-10-11 23:03",
+      "topic": "진안 로컬 맛집과 숙소 주변 먹거리 이야기",
+      "hook": "number",
+      "cta": "내 판단이 맞는지 의견 물어보기",
+      "text": "걸어서 3분 거리에 국밥집 있는데 양이 미쳤음\n\n체크인하고 배고파서 직원분한테 물어보니까 호텔에서 3분 거리에 시래기국밥집 있다고 알려줌. 가격 8천원인데 양이 두 그릇 합친 수준, 혼자 가서 반도 못 먹고 나왔음. 다음날 아침엔 재래시장 들러서 홍삼 넣은 어묵 사먹었는데 이것도 로컬 아니면 모르는 맛이었음. 숙소 가서 짐 풀고 나오는데 천둥이가 또 마당에 앉아있어서 국밥 냄새 맡고 쳐다보길래 괜히 미안했음🐾\n숙소 주변 로컬 맛집 찾아다니는 거 vs 호텔 조식만 먹고 끝내는 거, 내 선택 맞는지 댓글로 알려줘\n#홍삼빌호텔 #진안여행 #진안가볼만한곳",
+      "len": 309,
+      "images": [
+        "sauna_true_vertical.png",
+        "42.png",
+        "87.png"
+      ],
+      "post_id": "18198980152377566",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DeW1ATZlTmE",
       "views": null,
       "views_final": false
     }
@@ -998,6 +999,6 @@
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-10-11 15:16"
+    "checked_at": "2026-10-11 23:01"
   }
 }
