@@ -1,22 +1,6 @@
 {
-  "count": 123,
+  "count": 124,
   "posts": [
-    {
-      "at": "2026-09-23 07:58",
-      "topic": "서울에서 진안까지, 사람 없는 조용한 여행지를 찾는 사람들에게",
-      "hook": "insider",
-      "cta": "같이 갈 사람 태그하라고 하기",
-      "text": "사람 많은 데 질려서 조용한 곳만 찾는 사람들만 아는 곳 있음\n서울서 차로 세 시간 좀 넘게 걸리는데 그게 오히려 필터링이 됨. 평일 체크인했더니 로비에 나 말고 한 팀밖에 없었고 조식 때도 테이블 반절이 빔. 창문 열면 산 소리밖에 안 들리고 밤엔 진짜 조용해서 이명 들릴 정도. 사람 없는 시간에 마이산 산책로 걸으니까 나 혼자 전세 낸 느낌 들었음, 서울에서 이런 침묵 느껴본 게 얼마만인지 모르겠음. 천둥이도 조용해서 그런지 로비 바닥에 늘어져서 낮잠만 잠 🐾\n이런 조용한 데 나만 알고 있기 아깝던데 같이 갈 사람 태그 좀\n#홍삼빌호텔 #진안여행 #마이산",
-      "len": 315,
-      "images": [
-        "87.png",
-        "31.png",
-        "32.png"
-      ],
-      "post_id": "17956849383218936",
-      "views": 30,
-      "views_final": true
-    },
     {
       "at": "2026-09-23 14:04",
       "topic": "진안 로컬 맛집과 호텔 주변 먹거리 이야기",
@@ -840,7 +824,7 @@
       "post_id": "18119764753949021",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DePKRNulZkf",
       "views": 16,
-      "views_final": false
+      "views_final": true
     },
     {
       "at": "2026-10-09 09:24",
@@ -924,7 +908,7 @@
       ],
       "post_id": "18087137825287728",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeTa84yHCr2",
-      "views": 8,
+      "views": 10,
       "views_final": false
     },
     {
@@ -941,7 +925,7 @@
       ],
       "post_id": "18114461426036916",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeUNpWeG2-M",
-      "views": 14,
+      "views": 16,
       "views_final": false
     },
     {
@@ -958,7 +942,7 @@
       ],
       "post_id": "18104713919613390",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeVRmH8kUuz",
-      "views": 14,
+      "views": 16,
       "views_final": false
     },
     {
@@ -975,7 +959,7 @@
       ],
       "post_id": "18194865700391832",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeV_va0kd63",
-      "views": 16,
+      "views": 20,
       "views_final": false
     },
     {
@@ -992,6 +976,23 @@
       ],
       "post_id": "18198980152377566",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeW1ATZlTmE",
+      "views": 22,
+      "views_final": false
+    },
+    {
+      "at": "2026-10-12 08:41",
+      "topic": "총지배견 천둥이(허스키), 아이들이 체크인보다 먼저 찾는 이유",
+      "hook": "fail",
+      "cta": "같이 갈 사람 태그하라고 하기",
+      "text": "체크인 줄 서는데 애들이 데스크는 쳐다도 안 봄\n처음엔 황당했는데 이유가 바로 나옴, 로비 문 열리자마자 천둥이가 마당에서 걸어나오니까 애들 셋이 캐리어고 뭐고 다 버려두고 달려감. 우리 옆에 있던 애는 부모가 이름 세 번 불러도 안 들림. 직원분 말로는 거의 매일 있는 일이라고, 체크인보다 천둥이 인사가 먼저라 프론트에서도 그냥 기다려준다고 함. 5분 뒤에야 겨우 데려와서 체크인 끝냄, 애 손에 허스키 털 한 움큼 묻어있었음🐾\n이거 보고 애들이랑 같이 갈 사람 있으면 태그해놔\n#홍삼빌호텔 #마이산 #진안가볼만한곳",
+      "len": 290,
+      "images": [
+        "46.png",
+        "hotel_new_slide4.jpg",
+        "88.png"
+      ],
+      "post_id": "17864632338692310",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DeX3FjDFfsz",
       "views": null,
       "views_final": false
     }
@@ -999,6 +1000,6 @@
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-10-11 23:01"
+    "checked_at": "2026-10-12 08:39"
   }
 }
