@@ -1,22 +1,6 @@
 {
-  "count": 124,
+  "count": 125,
   "posts": [
-    {
-      "at": "2026-09-23 14:04",
-      "topic": "진안 로컬 맛집과 호텔 주변 먹거리 이야기",
-      "hook": "fail",
-      "cta": "다음에 뭐 할지 골라달라고 투표 붙이기",
-      "text": "체크아웃하고 3시간 뒤에 후회한 거 하나 있음\n홍삼삼계탕집 안 가고 그냥 편의점에서 때웠거든. 근데 호텔 프론트 옆에 붙어있던 로컬맛집 리스트 보니까 도보 10분 거리에 진안 홍삼삼계탕집이 있었음, 점심시간 피해서 2시쯤 갔어야 안 기다린다고 적혀있더라. 그거 말고도 흑돼지 두루치기집이랑 우체국 앞 손두부집도 적혀있었는데 다 걸어서 15분 안쪽. 다음날 아침에 알고 땅쳤음 진짜. 천둥이는 삼계탕 냄새 나는 손님 옷만 킁킁대고 다님 ㅋㅋ\n다음번엔 삼계탕집 vs 흑돼지 두루치기집 뭐 먼저 갈지 골라줄 사람 🐾\n#홍삼빌호텔 #진안여행 #진안가볼만한곳",
-      "len": 307,
-      "images": [
-        "17_running_maisan.png",
-        "55.png",
-        "33.png"
-      ],
-      "post_id": "18052944989804731",
-      "views": 24,
-      "views_final": true
-    },
     {
       "at": "2026-09-23 21:46",
       "topic": "마이산 탑사의 돌탑, 직접 보면 다른 이유",
@@ -841,7 +825,7 @@
       "post_id": "18118273526051299",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeQNrCbDfl3",
       "views": 25,
-      "views_final": false
+      "views_final": true
     },
     {
       "at": "2026-10-09 15:35",
@@ -874,7 +858,7 @@
       ],
       "post_id": "18138798910545002",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeRtoKqkdK4",
-      "views": 19,
+      "views": 20,
       "views_final": false
     },
     {
@@ -891,7 +875,7 @@
       ],
       "post_id": "18105658727526350",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeSwJUfGPre",
-      "views": 15,
+      "views": 16,
       "views_final": false
     },
     {
@@ -908,7 +892,7 @@
       ],
       "post_id": "18087137825287728",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeTa84yHCr2",
-      "views": 10,
+      "views": 11,
       "views_final": false
     },
     {
@@ -925,7 +909,7 @@
       ],
       "post_id": "18114461426036916",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeUNpWeG2-M",
-      "views": 16,
+      "views": 18,
       "views_final": false
     },
     {
@@ -942,7 +926,7 @@
       ],
       "post_id": "18104713919613390",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeVRmH8kUuz",
-      "views": 16,
+      "views": 17,
       "views_final": false
     },
     {
@@ -959,7 +943,7 @@
       ],
       "post_id": "18194865700391832",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeV_va0kd63",
-      "views": 20,
+      "views": 21,
       "views_final": false
     },
     {
@@ -976,7 +960,7 @@
       ],
       "post_id": "18198980152377566",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeW1ATZlTmE",
-      "views": 22,
+      "views": 23,
       "views_final": false
     },
     {
@@ -993,6 +977,23 @@
       ],
       "post_id": "17864632338692310",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeX3FjDFfsz",
+      "views": 20,
+      "views_final": false
+    },
+    {
+      "at": "2026-10-12 15:24",
+      "topic": "사람 몰리는 단풍 명소 대신 조용한 마이산 단풍",
+      "hook": "provoke",
+      "cta": "다음에 뭐 할지 골라달라고 투표 붙이기",
+      "text": "단풍놀이 가서 사람 구경만 하다 온 적 없음?\n\n나도 그런 줄 알고 포기하다시피 마이산 왔는데 입구부터 느낌 다름. 탑사 올라가는 길 단풍 절정인데 사진 찍으려고 기다릴 필요가 없음, 그냥 서서 10분을 찍어도 아무도 안 지나감. 유명 단풍 명소에서 인증샷 하나 건지려고 사람 머리 피해가며 찍던 거 생각하면 허무할 정도. 숙소 돌아오는 길도 똑같이 고요해서 낙엽 밟는 소리만 들림. 로비 들어가니까 천둥이가 단풍잎 하나 머리에 얹고 나와있어서 혼자 웃었음🐾\n다음날 코스 투표: 1) 은수사까지 더 걷기 2) 홍삼스파에서 쉬기, 뭐가 나음\n#홍삼빌호텔 #마이산 #진안여행",
+      "len": 319,
+      "images": [
+        "11.png",
+        "maisan_hero.png",
+        "27.png"
+      ],
+      "post_id": "17875524357582608",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DeYlPJKERoO",
       "views": null,
       "views_final": false
     }
@@ -1000,6 +1001,6 @@
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-10-12 08:39"
+    "checked_at": "2026-10-12 15:23"
   }
 }
