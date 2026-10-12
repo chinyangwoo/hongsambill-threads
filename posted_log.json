@@ -1,22 +1,6 @@
 {
-  "count": 125,
+  "count": 126,
   "posts": [
-    {
-      "at": "2026-09-23 21:46",
-      "topic": "마이산 탑사의 돌탑, 직접 보면 다른 이유",
-      "hook": "compare",
-      "cta": "밸런스 게임으로 둘 중 하나 고르게 하기",
-      "text": "경주 첨성대 보고 실망한 적 있는 사람 이 얘기 좀 들어봐\n\n탑사 돌탑도 딱 그럴 줄 알았음, 사진으로 하도 봐서 별거 있겠나 싶었는데 실제로 앞에 서니까 느낌 완전 다름. 13m짜리가 접착제 하나 없이 돌만 쌓은 거라는데 바람 세게 부는 날 가봤거든? 근데 하나도 안 흔들림. 100년 넘게 저러고 있다는 게 실물로 보니까 소름 돋음. 은수사까지 왕복 40분, 호텔서 도보로 바로 연결돼서 차 없이 다녀옴. 천둥이는 탑사 근처만 가면 괜히 얌전해짐 ㅋㅋ\n탑사 갈 땐 아침 일찍 vs 노을 질 때 뭐가 나은지 아는 사람 댓글 좀\n#홍삼빌호텔 #마이산 #진안여행",
-      "len": 313,
-      "images": [
-        "hotel_new_slide6.jpg",
-        "11.png",
-        "86.png"
-      ],
-      "post_id": "17990138979028735",
-      "views": 42,
-      "views_final": true
-    },
     {
       "at": "2026-09-24 07:58",
       "topic": "커플·가족 손님들이 진안을 다시 찾는 이유",
@@ -842,7 +826,7 @@
       "post_id": "18134532049657591",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeQ4HDKmz6y",
       "views": 23,
-      "views_final": false
+      "views_final": true
     },
     {
       "at": "2026-10-09 23:23",
@@ -859,7 +843,7 @@
       "post_id": "18138798910545002",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeRtoKqkdK4",
       "views": 20,
-      "views_final": false
+      "views_final": true
     },
     {
       "at": "2026-10-10 09:04",
@@ -926,7 +910,7 @@
       ],
       "post_id": "18104713919613390",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeVRmH8kUuz",
-      "views": 17,
+      "views": 20,
       "views_final": false
     },
     {
@@ -943,7 +927,7 @@
       ],
       "post_id": "18194865700391832",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeV_va0kd63",
-      "views": 21,
+      "views": 24,
       "views_final": false
     },
     {
@@ -960,7 +944,7 @@
       ],
       "post_id": "18198980152377566",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeW1ATZlTmE",
-      "views": 23,
+      "views": 25,
       "views_final": false
     },
     {
@@ -977,7 +961,7 @@
       ],
       "post_id": "17864632338692310",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeX3FjDFfsz",
-      "views": 20,
+      "views": 28,
       "views_final": false
     },
     {
@@ -994,6 +978,23 @@
       ],
       "post_id": "17875524357582608",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeYlPJKERoO",
+      "views": 11,
+      "views_final": false
+    },
+    {
+      "at": "2026-10-13 01:44",
+      "topic": "고기만 사 오면 되는 항아리바베큐, 진안 흑돼지 구워 먹는 저녁",
+      "hook": "twist",
+      "cta": "빈칸 채우기식으로 한 단어 답하게 하기",
+      "text": "저녁 7시에 방 안에서 연기 피우고 있는데 아무도 안 말림\n알고보니 그게 정상이었음. 홍삼빌호텔 마당에 항아리 바베큐 시설 있어서 고기만 사 오면 숯이랑 그릴이랑 다 준비돼 있음. 근처 정육점에서 진안 흑돼지 한 근 2만원대에 떠다가 구웠는데 육즙이 미쳤음, 불판 아니고 항아리라 그런지 냄새도 덜 배고 고기가 더 두툼하게 익음. 옆 테이블 가족도 똑같이 고기 굽다가 냄새 따라온 천둥이한테 한 점씩 몰래 건네고 있었음🐾\n\n오늘 저녁 메뉴로 딱 한 단어만 댓글 남겨봐\n#홍삼빌호텔 #진안여행 #마이산",
+      "len": 279,
+      "images": [
+        "49.png",
+        "hotel_new_slide4.jpg",
+        "hotel_new_slide7.jpg"
+      ],
+      "post_id": "18135193645563779",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DeZsOGIlr8q",
       "views": null,
       "views_final": false
     }
@@ -1001,6 +1002,6 @@
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-10-12 15:23"
+    "checked_at": "2026-10-13 01:43"
   }
 }
