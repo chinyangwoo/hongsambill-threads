@@ -1,22 +1,6 @@
 {
-  "count": 127,
+  "count": 128,
   "posts": [
-    {
-      "at": "2026-09-24 14:15",
-      "topic": "가을 단풍 시즌 마이산 뷰",
-      "hook": "secret",
-      "cta": "내 판단이 맞는지 의견 물어보기",
-      "text": "이거 알려주면 다음주 마이산 사람 터질 것 같아서 고민됨\n근데 진짜 지금 아니면 못 보는 각이라 공개함. 어제 오후 4시쯤 방 창문 열었는데 마이산 봉우리 두 개 사이로 단풍이 반쯤 물들어서 그라데이션처럼 퍼져있었음. 사진으로 찍었는데 실물의 반도 못 담김. 도보 15분이면 탑사 가는 길인데 그 길목 나무들이 이번주부터 색 바뀌기 시작했다고 프론트에서 그럼. 절정은 다음주 초 예상이라는데 그 전에 미리 본 게 오히려 나은 것 같기도 함. 천둥이도 산책 중에 자꾸 그쪽으로 고개 돌림 🐾\n내 생각엔 절정보다 지금이 나은 것 같은데 다들 어떻게 생각함\n#홍삼빌호텔 #마이산 #진안여행",
-      "len": 326,
-      "images": [
-        "60.png",
-        "hotel_new_slide9.jpg",
-        "sauna.png"
-      ],
-      "post_id": "17903697660587487",
-      "views": 17,
-      "views_final": true
-    },
     {
       "at": "2026-09-24 21:44",
       "topic": "호캉스인데 힐링까지 되는 곳, 진안고원의 밤하늘",
@@ -861,7 +845,7 @@
       "post_id": "18087137825287728",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeTa84yHCr2",
       "views": 11,
-      "views_final": false
+      "views_final": true
     },
     {
       "at": "2026-10-10 22:41",
@@ -945,7 +929,7 @@
       ],
       "post_id": "17864632338692310",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeX3FjDFfsz",
-      "views": 30,
+      "views": 32,
       "views_final": false
     },
     {
@@ -996,6 +980,23 @@
       ],
       "post_id": "17911752999515047",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeasBN7jLiU",
+      "views": 12,
+      "views_final": false
+    },
+    {
+      "at": "2026-10-13 16:03",
+      "topic": "마이산 탑사 돌탑, 사진이랑 실물이 다른 이유",
+      "hook": "question",
+      "cta": "밸런스 게임으로 둘 중 하나 고르게 하기",
+      "text": "사진으로만 보고 가면 딱 실망하는 타이밍 있는 거 알아?\n\n나도 사진에서 본 탑 몇 개 서있는 느낌으로 갔다가 입구에서 그대로 멈췄음. 실제론 80개 넘는 돌탑이 숲처럼 빽빽하게 서있어서 카메라 프레임 안에 다 안 담김, 그래서 사진은 항상 한두 개만 클로즈업으로 찍혀서 작아 보이는 거였음. 가장 큰 탑은 13m라는데 고개 완전히 젖혀야 끝이 보임. 바람 엄청 부는 자리인데 100년 넘게 안 무너졌다는 안내판 보고 소름 돋",
+      "len": 238,
+      "images": [
+        "85.png",
+        "63.png",
+        "78.png"
+      ],
+      "post_id": "17877739839565963",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DebOiV9G3XU",
       "views": null,
       "views_final": false
     }
@@ -1003,6 +1004,6 @@
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-10-13 11:00"
+    "checked_at": "2026-10-13 16:01"
   }
 }
