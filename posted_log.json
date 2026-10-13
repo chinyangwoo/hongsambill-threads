@@ -1,22 +1,6 @@
 {
-  "count": 126,
+  "count": 127,
   "posts": [
-    {
-      "at": "2026-09-24 07:58",
-      "topic": "커플·가족 손님들이 진안을 다시 찾는 이유",
-      "hook": "question",
-      "cta": "같은 경험 있는 사람 손들게 하기",
-      "text": "작년에 갔던 델 올해 또 가는 거, 이거 진짜 이유 있는 거였음\n\n친구 커플이랑 우리 부부랑 작년에 왔던 델 이번 연휴에 또 옴. 물어보니까 애 있는 집이랑 커플이랑 원하는 게 겹치는 지점이 여기라고. 방은 따로 쓰고 저녁에 로비서 만나고, 애는 천둥이랑 마당서 놀고 어른들은 그 사이 스파 다녀옴. 각자 페이스대로 놀다가 저녁엔 자연스럽게 모임. 작년 사진 보니까 애 키가 그새 훌쩍 컸더라 ㅋㅋ\n매년 같은 숙소 또 가는 사람 손 좀 들어봐\n#홍삼빌호텔 #진안여행 #전북여행",
-      "len": 266,
-      "images": [
-        "11_digital_detox.png",
-        "58.png",
-        "hotel_new_slide7.jpg"
-      ],
-      "post_id": "18048682346814584",
-      "views": 25,
-      "views_final": true
-    },
     {
       "at": "2026-09-24 14:15",
       "topic": "가을 단풍 시즌 마이산 뷰",
@@ -860,7 +844,7 @@
       "post_id": "18105658727526350",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeSwJUfGPre",
       "views": 16,
-      "views_final": false
+      "views_final": true
     },
     {
       "at": "2026-10-10 15:18",
@@ -910,7 +894,7 @@
       ],
       "post_id": "18104713919613390",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeVRmH8kUuz",
-      "views": 20,
+      "views": 22,
       "views_final": false
     },
     {
@@ -927,7 +911,7 @@
       ],
       "post_id": "18194865700391832",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeV_va0kd63",
-      "views": 24,
+      "views": 25,
       "views_final": false
     },
     {
@@ -944,7 +928,7 @@
       ],
       "post_id": "18198980152377566",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeW1ATZlTmE",
-      "views": 25,
+      "views": 27,
       "views_final": false
     },
     {
@@ -961,7 +945,7 @@
       ],
       "post_id": "17864632338692310",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeX3FjDFfsz",
-      "views": 28,
+      "views": 30,
       "views_final": false
     },
     {
@@ -995,6 +979,23 @@
       ],
       "post_id": "18135193645563779",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeZsOGIlr8q",
+      "views": 8,
+      "views_final": false
+    },
+    {
+      "at": "2026-10-13 11:02",
+      "topic": "2층 유리난간 테라스에서 마이산 보며 멍때리기",
+      "hook": "compare",
+      "cta": "더 좋은 정보 아는 사람 댓글로 부르기",
+      "text": "호캉스 가서 액티비티 짜다가 결국 아무것도 안 한 날 있음?\n\n나도 2층 테라스 나가기 전까진 그럴 생각이었음. 근데 유리난간이라 앉은 채로 마이산이 그대로 눈높이에 걸림, 시야 가리는 게 하나도 없어서 그냥 의자에 앉아서 40분을 멍때림. 커피 식는 줄도 몰랐음. 밑에 마당 보니까 천둥이도 테라스 쪽 올려다보면서 한참 앉아있길래 같이 멍때리는 기분 들었음🐾\n이 근처에 테라스 뷰로 더 좋은 데 아는 사람 있으면 댓글로 소환함\n#홍삼빌호텔 #마이산 #진안여행",
+      "len": 257,
+      "images": [
+        "59.png",
+        "23.png",
+        "41.png"
+      ],
+      "post_id": "17911752999515047",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DeasBN7jLiU",
       "views": null,
       "views_final": false
     }
@@ -1002,6 +1003,6 @@
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-10-13 01:43"
+    "checked_at": "2026-10-13 11:00"
   }
 }
