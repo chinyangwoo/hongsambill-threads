@@ -1,22 +1,6 @@
 {
-  "count": 128,
+  "count": 129,
   "posts": [
-    {
-      "at": "2026-09-24 21:44",
-      "topic": "호캉스인데 힐링까지 되는 곳, 진안고원의 밤하늘",
-      "hook": "twist",
-      "cta": "빈칸 채우기식으로 한 단어 답하게 하기",
-      "text": "새벽 두시에 커튼 왜 걷었나 몰라 진짜 잠 다 깼음\n원래 자려고 불 다 끄고 누웠는데 창밖이 허전해서 커튼 걷었다가 그대로 굳음. 별이 촘촘하게 박혀있는데 도시랑 밀도 자체가 다름, 눈으로 은하수 띠까지 보임. 옥상 테라스 올라가서 30분을 그냥 누워만 있었음, 핸드폰도 안 만짐. 호캉스 온 건데 이건 반칙 아닌가 싶을 정도로 힐링됨. 다음날 프론트에 물어보니까 진안이 광공해 적은 지역이라 일부러 별 보러 오는 사람도 있다고 함.\n이 정도 별 보려면 뭐가 젤 중요한지 한 단어로 답 좀 (날씨? 위치? 타이밍?)\n#홍삼빌호텔 #진안여행 #마이산",
-      "len": 306,
-      "images": [
-        "72.png",
-        "41.png",
-        "53.png"
-      ],
-      "post_id": "17888778969460562",
-      "views": 44,
-      "views_final": true
-    },
     {
       "at": "2026-09-25 08:14",
       "topic": "홍삼의 고장 진안에서만 할 수 있는 경험",
@@ -862,7 +846,7 @@
       "post_id": "18114461426036916",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeUNpWeG2-M",
       "views": 18,
-      "views_final": false
+      "views_final": true
     },
     {
       "at": "2026-10-11 08:35",
@@ -929,7 +913,7 @@
       ],
       "post_id": "17864632338692310",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeX3FjDFfsz",
-      "views": 32,
+      "views": 36,
       "views_final": false
     },
     {
@@ -946,7 +930,7 @@
       ],
       "post_id": "17875524357582608",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeYlPJKERoO",
-      "views": 11,
+      "views": 13,
       "views_final": false
     },
     {
@@ -963,7 +947,7 @@
       ],
       "post_id": "18135193645563779",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeZsOGIlr8q",
-      "views": 8,
+      "views": 10,
       "views_final": false
     },
     {
@@ -980,7 +964,7 @@
       ],
       "post_id": "17911752999515047",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeasBN7jLiU",
-      "views": 12,
+      "views": 17,
       "views_final": false
     },
     {
@@ -997,6 +981,23 @@
       ],
       "post_id": "17877739839565963",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DebOiV9G3XU",
+      "views": 12,
+      "views_final": false
+    },
+    {
+      "at": "2026-10-14 00:03",
+      "topic": "제주·강원 대신 진안을 고른 이유",
+      "hook": "fail",
+      "cta": "같이 갈 사람 태그하라고 하기",
+      "text": "매번 연휴 때마다 제주 강원 뒤지다가 결국 포기한 적 있음\n\n이번에도 똑같이 검색하다가 1박 30만원 보고 바로 닫음, 비행기값까지 더하면 답 없는 수준. 그냥 반대로 가보자 해서 고른 게 진안이었음. 홍삼빌호텔 평점 4.7에 가격은 반값, 마이산까지 걸어서 감. 체크인하자마자 홍삼스파 가서 피로 다 풀었는데 이게 제주 안 간 거 신의 한 수였음. 마당 나오니까 천둥이가 꼬리 흔들어줘서 그걸로 결정 확신함🐾\n연휴에 사람 없는 데로 같이 도망갈 사람 태그해라\n#홍삼빌호텔 #진안여행 #전북여행",
+      "len": 276,
+      "images": [
+        "81.png",
+        "40.png",
+        "13_burnout_recovery.png"
+      ],
+      "post_id": "18110872994060628",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DecFesCm4Ig",
       "views": null,
       "views_final": false
     }
@@ -1004,6 +1005,6 @@
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-10-13 16:01"
+    "checked_at": "2026-10-14 00:02"
   }
 }
