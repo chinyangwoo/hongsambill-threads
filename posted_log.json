@@ -1,22 +1,6 @@
 {
-  "count": 129,
+  "count": 130,
   "posts": [
-    {
-      "at": "2026-09-25 08:14",
-      "topic": "홍삼의 고장 진안에서만 할 수 있는 경험",
-      "hook": "insider",
-      "cta": "더 좋은 정보 아는 사람 댓글로 부르기",
-      "text": "체크인할 때 직원이 지나가듯 흘린 말 하나 있음\n홍삼스파 시간대 팁이었는데, 저녁 8시 이후로 가면 사람 거의 없다고. 반신반의하고 갔거든? 근데 진짜 탕에 나 혼자였음. 홍삼 성분 들어간 물이라는데 들어가자마자 향부터 다름, 20분 정도 있었더니 몸이 확 풀리는 게 느껴짐. 끝나고 로비에서 홍삼정 시식도 주는데 이게 진안 아니면 못 먹는 거라 그런지 계속 생각남. 천둥이는 스파존 문 앞에서만 얌전히 기다림, 홍삼 냄새는 싫은가 봄 ㅋㅋ\n\n이거 말고 진안에서만 할 수 있는 거 더 아는 사람 댓글로 좀 불러줘 🐾\n#홍삼빌호텔 #홍",
-      "len": 298,
-      "images": [
-        "56.png",
-        "90.png",
-        "33.png"
-      ],
-      "post_id": "17973008507942824",
-      "views": 16,
-      "views_final": true
-    },
     {
       "at": "2026-09-25 14:17",
       "topic": "호텔 직원들만 아는 마이산 숨은 포토스팟",
@@ -863,7 +847,7 @@
       "post_id": "18104713919613390",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeVRmH8kUuz",
       "views": 22,
-      "views_final": false
+      "views_final": true
     },
     {
       "at": "2026-10-11 15:18",
@@ -913,7 +897,7 @@
       ],
       "post_id": "17864632338692310",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeX3FjDFfsz",
-      "views": 36,
+      "views": 41,
       "views_final": false
     },
     {
@@ -947,7 +931,7 @@
       ],
       "post_id": "18135193645563779",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeZsOGIlr8q",
-      "views": 10,
+      "views": 11,
       "views_final": false
     },
     {
@@ -964,7 +948,7 @@
       ],
       "post_id": "17911752999515047",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeasBN7jLiU",
-      "views": 17,
+      "views": 19,
       "views_final": false
     },
     {
@@ -998,6 +982,23 @@
       ],
       "post_id": "18110872994060628",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DecFesCm4Ig",
+      "views": 9,
+      "views_final": false
+    },
+    {
+      "at": "2026-10-14 08:45",
+      "topic": "아이랑 1박2일, 차 덜 타고 걸어서 되는 마이산 코스",
+      "hook": "provoke",
+      "cta": "내 판단이 맞는지 의견 물어보기",
+      "text": "애 데리고 여행 가면 차에서 반은 울고 반은 잠든다는 거 편견임\n\n이번에 마이산 가면서 느낌, 호텔에서 탑사까지 걸어서 15분인데 그 사이에 차 탄 기억이 없음. 아침 먹고 바로 걸어나가서 은수사까지 왕복해도 애 다리로 한 시간 반이면 끝남. 중간에 힘들다 소리 나오면 돌탑 세는 걸로 달래니까 또 걸음. 돌아오는 길엔 애가 먼저 뛰어가서 천둥이 찾고 있었음, 차 안에서 보채는 시간 자체가 아예 없었던 1박2일🐾\n이 정도면 애랑 가기 딱 좋은 코스 맞지? 아닌 사람 있나 댓글로 반박해봐\n#홍삼빌호텔 #마이산 #진안가볼만한곳",
+      "len": 294,
+      "images": [
+        "67.png",
+        "35.png",
+        "81.png"
+      ],
+      "post_id": "18106475612623773",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DedBIQhjW4J",
       "views": null,
       "views_final": false
     }
@@ -1005,6 +1006,6 @@
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-10-14 00:02"
+    "checked_at": "2026-10-14 08:43"
   }
 }
