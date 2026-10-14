@@ -1,22 +1,6 @@
 {
-  "count": 131,
+  "count": 132,
   "posts": [
-    {
-      "at": "2026-09-25 16:44",
-      "topic": "주말에 어디 갈지 고민하는 사람들을 위한 1박2일 진안 코스",
-      "hook": "provoke",
-      "cta": "같이 갈 사람 태그하라고 하기",
-      "text": "주말마다 어디갈지 고민만 하다 그냥 집에 있는 사람 이거 하나 저장해둬\n\n내가 짠 코스인데 1일차 오후 체크인하고 홍삼스파 한 시간, 저녁 먹고 로비서 천둥이랑 놀아주기. 2일차 아침 8시에 탑사 가서 은수사까지 왕복 40분 걷고 돌아와서 체크아웃. 딱 이 순서로 하면 이동 시간 거의 없이 도보로만 다 끝남, 차 필요한 구간이 하나도 없음. 실제로 짐도 두 번밖에 안 챙김. 나는 이 코스로 세 번째 왔는데 매번 순서 안 바꿈, 이게 제일 안 피곤함 🐾\n이 코스 그대로 이번 주말에 같이 갈 사람 태그 좀 해봐\n#홍삼빌호텔 #진안여행 #마이산",
-      "len": 304,
-      "images": [
-        "25.png",
-        "38.png",
-        "hotel_slide1.png"
-      ],
-      "post_id": "17973824130124905",
-      "views": 29,
-      "views_final": true
-    },
     {
       "at": "2026-09-25 21:47",
       "topic": "마이산 새벽 등산 후 호텔에서 쉬는 하루 코스",
@@ -848,7 +832,7 @@
       "post_id": "18194865700391832",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeV_va0kd63",
       "views": 25,
-      "views_final": false
+      "views_final": true
     },
     {
       "at": "2026-10-11 23:03",
@@ -865,7 +849,7 @@
       "post_id": "18198980152377566",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeW1ATZlTmE",
       "views": 27,
-      "views_final": false
+      "views_final": true
     },
     {
       "at": "2026-10-12 08:41",
@@ -915,7 +899,7 @@
       ],
       "post_id": "18135193645563779",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeZsOGIlr8q",
-      "views": 11,
+      "views": 13,
       "views_final": false
     },
     {
@@ -932,7 +916,7 @@
       ],
       "post_id": "17911752999515047",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeasBN7jLiU",
-      "views": 19,
+      "views": 21,
       "views_final": false
     },
     {
@@ -949,7 +933,7 @@
       ],
       "post_id": "17877739839565963",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DebOiV9G3XU",
-      "views": 12,
+      "views": 14,
       "views_final": false
     },
     {
@@ -966,7 +950,7 @@
       ],
       "post_id": "18110872994060628",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DecFesCm4Ig",
-      "views": 9,
+      "views": 11,
       "views_final": false
     },
     {
@@ -983,7 +967,7 @@
       ],
       "post_id": "18106475612623773",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DedBIQhjW4J",
-      "views": 30,
+      "views": 44,
       "views_final": false
     },
     {
@@ -1000,6 +984,23 @@
       ],
       "post_id": "18043072763828332",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DednM5hFcD_",
+      "views": 17,
+      "views_final": false
+    },
+    {
+      "at": "2026-10-15 08:15",
+      "topic": "마이산 처음 갈 때 모르면 손해 보는 것",
+      "hook": "question",
+      "cta": "같은 경험 있는 사람 손들게 하기",
+      "text": "마이산 첫 방문에 뭣도 모르고 갔다가 입구에서부터 헤맨 사람\n\n나도 그랬음. 내비에 그냥 마이산만 치면 탑사랑 먼 주차장으로 꽂혀서 거기서부터 헤맴. 홍삼빌호텔서 묵으면 이 고민 자체가 없어짐, 탑사 방향으로 도보 15분이라 주차장이고 뭐고 그냥 신발만 신고 나가면 끝. 아침 7시쯤 나서면 상인들 자리 펴기 전이라 길도 한산하고 돌탑 사진도 사람 없이 찍힘. 왕복 30분인데 다리 하나도 안 아팠고 나올 때 천둥이가 입구까지 따라나오는 것도 덤🐾\n나처럼 처음 마이산 가서 길 헤맨 적 있는 사람 손\n#홍삼빌호텔 #마이산 #진안가볼만한곳",
+      "len": 300,
+      "images": [
+        "63.png",
+        "hotel_new_slide6.jpg",
+        "17.png"
+      ],
+      "post_id": "18120553318887346",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DefikhzgNI3",
       "views": null,
       "views_final": false
     }
@@ -1007,6 +1008,6 @@
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-10-14 14:16"
+    "checked_at": "2026-10-15 08:14"
   }
 }
