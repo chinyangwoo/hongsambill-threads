@@ -318,13 +318,18 @@ def build_system_prompt(cfg, hook, cta):
 
 
 def call_claude(system, user):
-    body = json.dumps({
+    # 2026-10-15 수정: 모델이 '생각(thinking)'에 토큰 1500개를 전부 써버려서
+    # 본문이 비는 문제 → ① 생각 기능을 끄고 ② 토큰 한도를 넉넉히 올림.
+    # 만약 API가 '생각 끄기' 옵션을 거부하면(400 오류) 그 옵션만 빼고 자동 재시도.
+    payload = {
         "model": "claude-sonnet-5",
-        "max_tokens": 1500,
+        "max_tokens": 8000,
         "temperature": 1.0,
+        "thinking": {"type": "disabled"},
         "system": system,
         "messages": [{"role": "user", "content": user}],
-    }).encode()
+    }
+    body = json.dumps(payload).encode()
 
     data = None
     for attempt in range(1, API_RETRY + 1):
@@ -348,6 +353,11 @@ def call_claude(system, user):
                 print("Claude API 일시 오류 HTTP " + str(e.code) + " → 20초 후 재시도 ("
                       + str(attempt) + "/" + str(API_RETRY) + ")")
                 time.sleep(20)
+                continue
+            if e.code == 400 and "thinking" in payload and "thinking" in detail:
+                print("  'thinking 끄기' 옵션이 거부됨 → 옵션 빼고 다시 요청")
+                payload.pop("thinking", None)
+                body = json.dumps(payload).encode()
                 continue
             raise RuntimeError("Claude API 오류 HTTP " + str(e.code) + ": " + detail) from e
         except urllib.error.URLError as e:
