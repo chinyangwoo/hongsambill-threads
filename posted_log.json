@@ -1,22 +1,6 @@
 {
-  "count": 135,
+  "count": 136,
   "posts": [
-    {
-      "at": "2026-09-26 21:15",
-      "topic": "서울에서 진안까지, 사람 없는 조용한 여행지를 찾는 사람들에게",
-      "hook": "fail",
-      "cta": "빈칸 채우기식으로 한 단어 답하게 하기",
-      "text": "서울서 3시간 걸려서 갔는데 사람 없는 게 오히려 불안했던 적 있음\n주말인데 평일보다 조용해서 잘못 찾아온 줄 알았음. 근데 그게 진안 매력이더라. 로비에 우리 가족밖에 없어서 체크인도 5분 컷, 홍삼스파도 통째로 전세 낸 것처럼 썼음. 탑사 올라갈 때도 마주친 사람 셋 손에 꼽음, 서울 주말 나들이랑 비교하면 이건 거의 무인도임. 사람 많은 데 지친 사람한테는 이 조용함이 진짜 힐링임. 천둥이만 유일하게 시끄러운 존재였음 ㅋㅋ 걔 혼자 로비 텐션 담당\n\n서울 사람들이 진안 오면 제일 놀라는 포인트 한 단어로 말하면 뭘 것 같음\n#홍삼빌호텔 #진안여행 #전북여행",
-      "len": 317,
-      "images": [
-        "71.png",
-        "44.png",
-        "hotel_new_slide4.jpg"
-      ],
-      "post_id": "18226761295331148",
-      "views": 78,
-      "views_final": true
-    },
     {
       "at": "2026-09-27 07:52",
       "topic": "진안 로컬 맛집과 호텔 주변 먹거리 이야기",
@@ -929,7 +913,7 @@
       ],
       "post_id": "18106475612623773",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DedBIQhjW4J",
-      "views": 45,
+      "views": 46,
       "views_final": false,
       "replies": 0
     },
@@ -983,7 +967,7 @@
       ],
       "post_id": "18145235515597868",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DegKgB2FX28",
-      "views": 40,
+      "views": 42,
       "views_final": false,
       "replies": 0
     },
@@ -1001,7 +985,7 @@
       ],
       "post_id": "18459160846186567",
       "permalink": "https://www.threads.com/@hongsamhotel/post/Deg0-7DlVk8",
-      "views": 0,
+      "views": 4,
       "views_final": false,
       "replies": 0
     },
@@ -1019,6 +1003,24 @@
       ],
       "post_id": "18152065885547337",
       "permalink": "https://www.threads.com/@hongsamhotel/post/Deg2cWuG9v2",
+      "views": 7,
+      "replies": 0,
+      "views_final": false
+    },
+    {
+      "at": "2026-10-15 21:40",
+      "topic": "총지배견 천둥이(허스키), 아이들이 체크인보다 먼저 찾는 이유",
+      "hook": "question",
+      "cta": "ab",
+      "text": "애 체크인하기도 전에 캐리어 버리고 어디부터 뛰어가는 집 있나\n\n우리 집 얘기임. 호텔 도착하자마자 프런트는 쳐다도 안 보고 로비 바닥에 엎드려 있던 천둥이한테 직행, 체크인하는 5분 내내 거기 붙어서 안 떨어짐. 직원분이 키 받는 거보다 천둥이 쓰다듬는 게 먼저인 애들 많다고 웃으면서 말해줌. 결국 체크인 끝나고도 방 올라가기 싫다고 떼써서 로비에서 10분 더 놀다 감, 다음날 체크아웃할 때도 똑같이 반복함🐾\n\n애들이 호텔보다 개를 더 좋아하는 거 신기한 사람 vs 당연한 거 아니냐는 사람, A/B\n\n#홍삼빌호텔 #진안여행 #마이산",
+      "len": 301,
+      "images": [
+        "85.png",
+        "30.png",
+        "17.png"
+      ],
+      "post_id": "18034518947666637",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/Deg-pbcERVr",
       "views": null,
       "replies": null,
       "views_final": false
@@ -1027,6 +1029,6 @@
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-10-15 20:27"
+    "checked_at": "2026-10-15 21:38"
   }
 }
