@@ -1,22 +1,6 @@
 {
-  "count": 133,
+  "count": 134,
   "posts": [
-    {
-      "at": "2026-09-26 08:20",
-      "topic": "홍삼스파 + 호텔 숙박 조합이 피로 회복에 좋은 이유",
-      "hook": "insider",
-      "cta": "내 판단이 맞는지 의견 물어보기",
-      "text": "피로가 스파 온도 때문인 줄 알았는데 알고보니 순서 때문이었음\n\n원래 스파하고 바로 씻고 잤는데 이번엔 순서 바꿔봄. 스파 30분 하고 침대에 걸터앉아 물 마시며 10분 멍때림. 그 다음 누웠더니 바로 잠들었고 아침 7시에 알람 없이 깼는데 몸이 이렇게 가벼운 적 없었음. 체온 오른 상태로 바로 자기보다 텀 두는 게 낫다고 프론트에서 그럼. 천둥이도 스파존 갔다온 날은 로비서 더 늘어져 잠 🐾\n스파 후 바로 자는 것보다 텀 두는 게 맞는 것 같은데 다들 어떻게 생각함\n#홍삼빌호텔 #홍삼스파 #진안여행",
-      "len": 282,
-      "images": [
-        "70.png",
-        "90.png",
-        "hotel_new_slide5.jpg"
-      ],
-      "post_id": "18368677339212471",
-      "views": 24,
-      "views_final": true
-    },
     {
       "at": "2026-09-26 14:22",
       "topic": "총지배견 천둥이(허스키)의 오늘 하루 일상",
@@ -867,7 +851,7 @@
       "post_id": "17875524357582608",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeYlPJKERoO",
       "views": 13,
-      "views_final": false
+      "views_final": true
     },
     {
       "at": "2026-10-13 01:44",
@@ -934,7 +918,7 @@
       ],
       "post_id": "18110872994060628",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DecFesCm4Ig",
-      "views": 11,
+      "views": 12,
       "views_final": false
     },
     {
@@ -951,7 +935,7 @@
       ],
       "post_id": "18106475612623773",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DedBIQhjW4J",
-      "views": 44,
+      "views": 45,
       "views_final": false
     },
     {
@@ -985,7 +969,7 @@
       ],
       "post_id": "18120553318887346",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DefikhzgNI3",
-      "views": 16,
+      "views": 22,
       "views_final": false
     },
     {
@@ -1002,6 +986,23 @@
       ],
       "post_id": "18145235515597868",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DegKgB2FX28",
+      "views": 40,
+      "views_final": false
+    },
+    {
+      "at": "2026-10-15 20:15",
+      "topic": "호캉스 대신 별멍, 진안고원의 밤하늘",
+      "hook": "compare",
+      "cta": "빈칸 채우기식으로 한 단어 답하게 하기",
+      "text": "불멍 유행이라길래 따라하다가 결국 하늘 보고 끝났음\n\n캠핑장 가서 불멍 한다고 앉아있었는데 옆에 있던 사람이 고개 들어보라길래 봤다가 그걸로 끝, 불은 한 번도 안 봄. 진안 와서 이것도 비슷했음. 홍삼스파 끝나고 마당 나왔는데 별이 그냥 꽉 차있어서 10분 넘게 목 아픈 줄도 모르고 서있었음. 여기 해발이 높아서 별이 더 가깝게 보인다던데 체감상 진짜 그럼, 폰 카메라로 찍어도 20개 넘게 찍힘. 천둥이도 같이 하늘 보는 건지 옆에 앉아서 안 움직이고 있었음🐾\n오늘 별 보면서 떠오른 단어 딱 한 단어만 댓글로\n#홍삼빌호텔 #진안여행 #홍삼스파",
+      "len": 307,
+      "images": [
+        "35.png",
+        "36.png",
+        "55.png"
+      ],
+      "post_id": "18459160846186567",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/Deg0-7DlVk8",
       "views": null,
       "views_final": false
     }
@@ -1009,6 +1010,6 @@
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-10-15 14:02"
+    "checked_at": "2026-10-15 20:14"
   }
 }
