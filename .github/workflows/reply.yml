@@ -1,0 +1,54 @@
+name: 스레드 댓글 자동 답글
+
+on:
+  schedule:
+    # 한국시간 오전 8시 ~ 밤 11시, 매시 41분에 실행 (GitHub cron 은 UTC = 한국시간 −9시간)
+    # UTC 23시 = KST 08시 / UTC 0~14시 = KST 09~23시
+    - cron: "41 23 * * *"
+    - cron: "41 0-14 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "시험 모드 (체크하면 답글을 실제로 올리지 않고 로그에만 보여줌)"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write          # replied_log.json 커밋용
+
+# 다른 자동 게시 작업과 같은 줄에 서서 기록 저장이 겹치지 않게
+concurrency:
+  group: auto-post-commit
+  cancel-in-progress: false
+
+jobs:
+  reply:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 저장소 체크아웃
+        uses: actions/checkout@v4
+
+      - name: Python 설치
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 댓글 답글 실행
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+          THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
+          REPLY_DRY_RUN: ${{ (github.event_name == 'workflow_dispatch' && inputs.dry_run) && '1' || '0' }}
+        run: python threads_auto_reply.py
+
+      - name: 답글 기록 저장
+        run: |
+          git config user.name "threads-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add replied_log.json || true
+          git diff --cached --quiet || git commit -m "🤖 댓글 답글 기록 업데이트"
+          for i in 1 2 3 4 5; do
+            git pull --rebase origin main && git push && break
+            echo "푸시 실패 ($i/5) — 10초 후 재시도"
+            sleep 10
+          done
