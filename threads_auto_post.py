@@ -21,6 +21,15 @@ v2.2 (2026-10-06) "게시됐다는데 계정에서 안 보임" 진단 기능
   - 최근 글 15개도 주소를 채워 넣고, 조회가 안 되는 글은 '조회 실패'로 표시한다.
   - 오류 메시지에 토큰이 섞여 나오지 않도록 가린다.
 
+v2.3 (2026-10-15) 댓글 유도 강화
+  - Claude 의 '생각(thinking)' 단계가 토큰을 다 써서 글이 비던 문제 수정.
+  - 게시물마다 조회수와 함께 '댓글 수'도 수집한다.
+  - 댓글 유도 방식(CTA)도 훅처럼 성적표를 만들어, 댓글이 많이 달린 방식에
+    가중치를 주고 25%는 새 방식을 실험한다 (자가 학습).
+  - 댓글 유도 방식을 '읽는 사람이 1초 안에 자기 얘기로 답할 수 있는 것' 8종으로 교체.
+  - 댓글 유도 문장은 마지막에 따로 한 줄로 쓰게 하고, 규칙으로 검사한다.
+    (읽는 사람이 그 장소에 가봤다고 가정하는 질문, '어떠세요' 류 막연한 질문 금지)
+
 동작 순서:
   1. 최근 게시물 조회수 수집 → posted_log.json 갱신
   2. topics.json 에서 주제 선택(순환) + 훅 유형 선택(성과 기반) + 댓글유도 선택
@@ -72,6 +81,36 @@ USER_ID = os.environ["THREADS_USER_ID"]
 REPO = os.environ.get("GITHUB_REPOSITORY", "")
 BRANCH = os.environ.get("GITHUB_REF_NAME", "main")
 
+# 댓글 유도 방식 (topics.json 의 cta_types 가 옛날 형식(문장 목록)이면 이걸 쓴다)
+# 원칙: 읽는 사람이 '지금 그 자리에서' '자기 경험·취향으로' '1초 안에' 답할 수 있어야 한다.
+DEFAULT_CTAS = [
+    {"id": "ab", "name": "둘 중 하나 고르기",
+     "rule": "글 내용과 직결된 선택지 2개를 주고 A/B(또는 1/2)로만 답하게 한다. 두 선택지 모두 그럴듯해서 갈리게 만든다.",
+     "samples": ["새벽 등산 후 낮잠 vs 늦잠 자고 스파, 너네는 뭐 고름? A/B로만", "여행 가면 1번 맛집 먼저 2번 숙소 먼저, 번호만"]},
+    {"id": "number", "name": "숫자로 답하기",
+     "rule": "읽는 사람 자신의 습관·경험을 숫자 하나로 답하게 한다.",
+     "samples": ["너네 여행 가면 하루에 몇 시간 걸음? 숫자만", "1년에 국내여행 몇 번 감? 솔직하게 숫자로"]},
+    {"id": "metoo", "name": "나만 그런지 확인",
+     "rule": "글에 나온 내 습관·실수가 나만 그런지 묻는다. 'ㅇㅇ' 한 글자로도 답할 수 있게.",
+     "samples": ["이거 나만 그런 거 아니지? 맞으면 ㅇㅇ", "여행 가서 숙소에만 있는 사람 나 말고 또 있음?"]},
+    {"id": "debate", "name": "반박 유도",
+     "rule": "살짝 갈릴 만한 내 의견을 단정적으로 던지고 아니라는 사람을 부른다. 지역·업체·사람 비하 금지.",
+     "samples": ["단풍은 무조건 10월 말이라고 봄, 아니라는 사람?", "여행은 1박이 제일 좋다고 생각함, 반박 받음"]},
+    {"id": "recommend", "name": "추천 하나만 받기",
+     "rule": "읽는 사람이 아는 정보를 딱 하나만 알려달라고 한다. 범위를 좁혀서 바로 떠오르게 한다.",
+     "samples": ["비 오는 날 국내여행 필살기 하나만 알려줘", "1박2일 근교 여행지 너만 아는 데 하나만"]},
+    {"id": "tag", "name": "같이 갈 사람 태그",
+     "rule": "글 내용에 딱 맞는 특정한 사람(누구인지 구체적으로)을 한 명만 태그하게 한다.",
+     "samples": ["맨날 피곤하다는 친구 한 명 태그", "강아지 있는 친구 이거 보여줘"]},
+    {"id": "blank", "name": "빈칸 채우기",
+     "rule": "읽는 사람 자신의 이야기로 빈칸을 채우게 한다. 빈칸은 ___ 로 표시하고 한 단어로 답할 수 있게.",
+     "samples": ["여행 가면 제일 먼저 하는 거: ___ 한 단어로", "내 인생 최고의 여행지는 ___ 지역명만"]},
+    {"id": "handsup", "name": "경험 있는 사람 손",
+     "rule": "글에 나온 상황을 겪어본 사람만 손들게 한다. 상황은 많은 사람이 겪어봤을 만큼 흔해야 한다.",
+     "samples": ["여행 가서 길 헤매다 반나절 날려본 사람 손", "쉬러 갔다가 더 피곤해서 온 사람 손"]},
+]
+CTA_EXPLORE_RATE = 0.25   # 25%는 댓글 성적과 무관하게 새 방식 실험
+
 
 def http_json(url, data=None, method=None):
     """간단한 HTTP 요청 헬퍼 (표준 라이브러리만 사용)"""
@@ -104,7 +143,12 @@ def load_log():
 
 def load_cfg():
     with open(TOPICS_FILE, encoding="utf-8") as f:
-        return json.load(f)
+        cfg = json.load(f)
+    ctas = cfg.get("cta_types") or []
+    if not ctas or not all(isinstance(c, dict) and c.get("id") for c in ctas):
+        print("[안내] topics.json 의 cta_types 가 옛날 형식이라 내장 댓글유도 8종을 사용합니다.")
+        cfg["cta_types"] = DEFAULT_CTAS
+    return cfg
 
 
 def pick_topic(log, cfg):
@@ -171,41 +215,48 @@ def update_permalinks(log):
 # ─────────────────────────────────────────────
 # 1. 조회수 수집 (훅 성과 학습용)
 # ─────────────────────────────────────────────
-def fetch_views(post_id):
-    """Threads Insights API 로 해당 게시물의 조회수(views)를 가져온다."""
+def fetch_insights(post_id):
+    """Threads Insights API 로 조회수(views)와 댓글 수(replies)를 가져온다."""
     url = (THREADS_API + "/" + str(post_id) + "/insights"
-           + "?metric=views&access_token=" + urllib.parse.quote(ACCESS_TOKEN))
+           + "?metric=views,replies&access_token=" + urllib.parse.quote(ACCESS_TOKEN))
     res = http_json(url)
+    out = {}
     for item in res.get("data", []):
-        if item.get("name") != "views":
+        name = item.get("name")
+        if name not in ("views", "replies"):
             continue
         # 응답 형태가 두 가지라 둘 다 대응
         if "total_value" in item:
-            return int(item["total_value"].get("value", 0))
-        values = item.get("values") or []
-        if values:
-            return int(values[0].get("value", 0))
-    return None
+            out[name] = int(item["total_value"].get("value", 0))
+        else:
+            values = item.get("values") or []
+            if values:
+                out[name] = int(values[0].get("value", 0))
+    return out
 
 
 def update_views(log):
-    """최근 15개 게시물 중 조회수가 아직 없거나 오래되지 않은 건을 갱신한다."""
+    """최근 15개 게시물의 조회수·댓글 수를 갱신한다."""
     updated = 0
     for post in log["posts"][-15:]:
         pid = post.get("post_id")
         if not pid:
             continue
-        # 이미 수집했고, 게시 후 3일이 지났으면 더 안 봐도 됨(조회수 거의 고정)
-        if post.get("views") is not None and post.get("views_final"):
+        # 이미 수집했고, 게시 후 3일이 지났으면 더 안 봐도 됨(숫자 거의 고정)
+        if (post.get("views") is not None and post.get("views_final")
+                and post.get("replies") is not None):
             continue
         try:
-            v = fetch_views(pid)
+            ins = fetch_insights(pid)
         except Exception as e:
-            print("조회수 수집 건너뜀 (" + str(pid) + "): " + str(e))
+            print("조회수·댓글 수집 건너뜀 (" + str(pid) + "): " + str(e))
             continue
-        if v is None:
+        if not ins:
             continue
-        post["views"] = v
+        if "views" in ins:
+            post["views"] = ins["views"]
+        if "replies" in ins:
+            post["replies"] = ins["replies"]
         try:
             posted_at = datetime.strptime(post["at"], "%Y-%m-%d %H:%M").replace(tzinfo=KST)
             if (datetime.now(KST) - posted_at).days >= 3:
@@ -215,7 +266,7 @@ def update_views(log):
         updated += 1
         time.sleep(1)
     if updated:
-        print("조회수 " + str(updated) + "건 갱신 완료")
+        print("조회수·댓글 수 " + str(updated) + "건 갱신 완료")
     return log
 
 
@@ -264,17 +315,42 @@ def pick_hook(log, cfg):
     return chosen, "성과기반", stats
 
 
+def cta_stats(log, cta_ids):
+    """댓글 유도 방식별 (표본수, 평균 댓글 수)"""
+    stats = {cid: {"n": 0, "sum": 0, "avg": 0.0} for cid in cta_ids}
+    for post in log["posts"]:
+        cid = post.get("cta")
+        r = post.get("replies")
+        if cid in stats and isinstance(r, int):
+            stats[cid]["n"] += 1
+            stats[cid]["sum"] += r
+    for cid in stats:
+        n = stats[cid]["n"]
+        stats[cid]["avg"] = (stats[cid]["sum"] / n) if n else 0.0
+    return stats
+
+
 def pick_cta(log, cfg):
     ctas = cfg["cta_types"]
-    recent = [p.get("cta") for p in log["posts"][-4:]]
-    pool = [c for c in ctas if c not in recent] or ctas
-    return random.choice(pool)
+    stats = cta_stats(log, [c["id"] for c in ctas])
+    recent = [p.get("cta") for p in log["posts"][-3:]]  # 직전 3회와 같은 방식 금지
+    pool = [c for c in ctas if c["id"] not in recent] or ctas
+
+    untested = [c for c in pool if stats[c["id"]]["n"] < MIN_SAMPLES]
+    if untested:
+        return random.choice(untested), "실험(표본부족)", stats
+    if random.random() < CTA_EXPLORE_RATE:
+        return random.choice(pool), "실험(랜덤)", stats
+    # 댓글이 0개인 방식도 가끔은 뽑히도록 +0.5
+    weights = [(stats[c["id"]]["avg"] + 0.5) ** 2 for c in pool]
+    return random.choices(pool, weights=weights, k=1)[0], "댓글성과기반", stats
 
 
 # ─────────────────────────────────────────────
 # 3. 글 생성 + 품질 검증
 # ─────────────────────────────────────────────
 def build_system_prompt(cfg, hook, cta):
+    cta_samples = " / ".join(cta.get("samples", []))
     L = cfg["length"]
     hashtags = " ".join(cfg["hashtags"])
     banned = ", ".join(cfg["banned_phrases"])
@@ -296,8 +372,17 @@ def build_system_prompt(cfg, hook, cta):
         "【전체 구조】\n"
         "1) 첫 줄: 위 훅 유형대로 한 방.\n"
         "2) 본문: 훅에서 던진 궁금증을 실제 경험담으로 풀어준다. 구체적인 장면 하나, 구체적인 숫자 하나는 꼭 넣는다.\n"
-        "3) 마지막: 댓글 유도 장치 1개 — 이번 회차 지정 방식은 '" + cta + "' 이다. 이 방식으로만 마무리한다.\n"
+        "3) 댓글 유도 문장 1개 — 본문과 줄을 바꿔서 따로 한 줄로 쓴다 (아래 【댓글 유도】 참고).\n"
         "4) 맨 마지막 줄에 해시태그 2~3개. 후보: " + hashtags + "\n\n"
+        "【댓글 유도 — 조회수만큼 중요하다. 댓글이 달려야 글이 퍼진다】\n"
+        "- 이번 회차 방식: " + cta["name"] + "\n"
+        "- 규칙: " + cta["rule"] + "\n"
+        "- 느낌 예시(그대로 베끼지 말고 이 글 내용에 맞게 새로 쓸 것): " + cta_samples + "\n"
+        "- 읽는 사람이 '지금 그 자리에서', '자기 경험이나 취향으로', '1초 안에' 답할 수 있어야 한다.\n"
+        "- 읽는 사람이 이 장소에 가봤다거나 오늘 뭘 했다고 가정하는 질문 금지 (예: '오늘 별 보면서 떠오른 단어' X).\n"
+        "- '어떠세요', '어때?', '궁금하다', '의견 남겨줘' 처럼 막연한 질문 금지. 선택지나 답 형식을 정해준다.\n"
+        "- 공백 포함 50자 이내, 반말, 존댓말 금지.\n"
+        "- 본문 끝에 일부러 한 가지를 말하지 않고 남겨두거나, 갈릴 만한 내 의견을 하나 넣으면 댓글이 더 달린다.\n\n"
         "【분량 — 반드시 지킬 것】\n"
         "- 공백 포함 " + str(L["min"]) + "자 이상 " + str(L["max"]) + "자 이내. 짧고 빠르게 읽히는 게 핵심이다.\n"
         "- 곁가지 설명, 미사여구, 마무리 인사 전부 삭제하고 알맹이만 남긴다.\n\n"
@@ -377,6 +462,34 @@ def call_claude(system, user):
     return text
 
 
+CTA_VAGUE = ["어떠세요", "어때요", "어떨까", "궁금하다", "궁금함", "의견 남겨", "생각 남겨", "여러분"]
+CTA_ASSUME = ["오늘 ", "다녀온 사람", "가본 사람만", "묵어본"]
+CTA_CUES = ["?", "골라", "고름", "A/B", "1번", "2번", "번호", "숫자", "ㅇㅇ", "손", "태그",
+            "알려", "한 단어", "___", "반박", "아니라는", "댓글", "한 명", "하나만", "말해"]
+
+
+def cta_problems(chunks):
+    """해시태그 줄 바로 앞 줄 = 댓글 유도 문장. 규칙에 맞는지 검사한다."""
+    body = [ln.strip() for ln in chunks if not re.fullmatch(r"(#[^\s#]+\s*)+", ln.strip())]
+    if len(body) < 2:
+        return ["댓글 유도 문장이 본문과 따로 한 줄로 없음"]
+    cta = body[-1]
+    probs = []
+    if len(cta) > 60:
+        probs.append("댓글 유도 문장이 본문에 붙어 있거나 김 (" + str(len(cta)) + "자) — 따로 한 줄, 50자 이내")
+    if "#" in cta:
+        probs.append("댓글 유도 문장에 해시태그가 섞임")
+    for w in CTA_VAGUE:
+        if w in cta:
+            probs.append("댓글 유도가 막연함: " + w)
+    for w in CTA_ASSUME:
+        if w in cta:
+            probs.append("댓글 유도가 읽는 사람이 이미 가봤다/오늘 했다고 가정함: " + w.strip())
+    if not any(c in cta for c in CTA_CUES):
+        probs.append("댓글 유도 문장에 답하는 방법(질문·선택지·손·태그 등)이 없음")
+    return probs
+
+
 def validate(text, cfg):
     """글이 규칙을 지켰는지 검사. 통과하면 빈 리스트, 아니면 문제 목록을 돌려준다."""
     L = cfg["length"]
@@ -410,6 +523,8 @@ def validate(text, cfg):
     for bad in cfg["banned_phrases"]:
         if bad in text:
             problems.append("금지 표현 사용: " + bad)
+
+    problems += cta_problems(chunks)
 
     tags = re.findall(r"#[^\s#]+", text)
     if len(tags) < 2 or len(tags) > 3:
@@ -626,15 +741,19 @@ def main():
     # 2) 이번 회차 재료 선택
     topic = pick_topic(log, cfg)
     hook, reason, stats = pick_hook(log, cfg)
-    cta = pick_cta(log, cfg)
+    cta, cta_reason, cstats = pick_cta(log, cfg)
 
     print("이번 회차 소재: " + topic)
     print("이번 회차 훅: " + hook["name"] + " [" + hook["id"] + "] — 선택근거: " + reason)
-    print("이번 회차 댓글유도: " + cta)
+    print("이번 회차 댓글유도: " + cta["name"] + " [" + cta["id"] + "] — 선택근거: " + cta_reason)
     print("훅별 성적표 (표본수 / 평균조회수):")
     for h in cfg["hook_types"]:
         s = stats[h["id"]]
         print("  - " + h["id"].ljust(9) + " n=" + str(s["n"]) + " avg=" + str(round(s["avg"], 1)))
+    print("댓글유도별 성적표 (표본수 / 평균댓글수):")
+    for c in cfg["cta_types"]:
+        s = cstats[c["id"]]
+        print("  - " + c["id"].ljust(9) + " n=" + str(s["n"]) + " avg=" + str(round(s["avg"], 2)))
 
     # 3) 글 생성
     text = generate_post(topic, cfg, log, hook, cta)
@@ -661,13 +780,14 @@ def main():
         "at": datetime.now(KST).strftime("%Y-%m-%d %H:%M"),
         "topic": topic,
         "hook": hook["id"],
-        "cta": cta,
+        "cta": cta["id"],
         "text": text,
         "len": len(text),
         "images": chosen,
         "post_id": post_id,
         "permalink": permalink,
         "views": None,
+        "replies": None,
         "views_final": False,
     })
     log["posts"] = log["posts"][-60:]
