@@ -38,7 +38,7 @@ def ask(question):
         "max_tokens": 1500,
         "system": "당신은 한국 여행·음식 정보를 찾아 주는 검색 도우미입니다. 웹 검색으로 최신 정보를 찾아 한국어로 답하고, 구체적인 업체·장소 이름을 들어 추천하세요.",
         "messages": [{"role": "user", "content": question}],
-        "tools": [{"type": "web_search_20250305", "name": "web_search", "max_uses": 3, "user_location": {"type": "approximate", "country": "KR", "timezone": "Asia/Seoul"}}],
+        "tools": [{"type": "web_search_20250305", "name": "web_search", "max_uses": 2, "user_location": {"type": "approximate", "country": "KR", "timezone": "Asia/Seoul"}}],
     }
     req = urllib.request.Request("https://api.anthropic.com/v1/messages", data=json.dumps(body).encode(),
                                  headers={"x-api-key": API_KEY, "anthropic-version": "2023-06-01", "content-type": "application/json"})
@@ -79,7 +79,12 @@ def main():
             data = json.load(f)
     today = datetime.now(KST).strftime("%Y-%m-%d")
     done = {(c["date"], c["question"]) for c in data["checks"]}
-    for q in cfg["questions"]:
+    # 하루에 질문 1개만: 날짜에 따라 목록을 순서대로 돌아가며 고른다 (비용 절감)
+    qs = cfg["questions"]
+    pick = qs[datetime.now(KST).toordinal() % len(qs)] if qs else None
+    if any(c["date"] == today for c in data["checks"]):
+        pick = None   # 오늘은 이미 점검함
+    for q in ([pick] if pick else []):
         if (today, q["q"]) in done:
             continue
         try:
