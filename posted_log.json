@@ -1,22 +1,6 @@
 {
-  "count": 138,
+  "count": 139,
   "posts": [
-    {
-      "at": "2026-09-27 22:02",
-      "topic": "커플·가족 손님들이 진안을 다시 찾는 이유",
-      "hook": "insider",
-      "cta": "같이 갈 사람 태그하라고 하기",
-      "text": "프론트 직원이 재방문 손님 비율 슬쩍 말해준 거 아직도 생각남\n\n체크아웃할 때 직원분이 \"여기 오시는 분들 절반 넘게 두 번째예요\" 이러는 거임. 옆에서 대화하던 가족도 작년에 왔다가 또 왔다고 함. 이유 물어보니 다들 비슷하게 \"뭘 하러 오는 게 아니라 그냥 있으려고 온다\"는 거. 스파하고 탑사 걷고 방에서 늘어지는 코스가 애나 어른이나 다 만족한다고 함. 천둥이도 재방문 손님은 유독 꼬리 더 흔듦 🐾\n같이 갈 사람 있으면 밑에 태그 좀\n#홍삼빌호텔 #진안여행 #홍삼스파",
-      "len": 266,
-      "images": [
-        "50.png",
-        "17.png",
-        "68.png"
-      ],
-      "post_id": "17906187120329314",
-      "views": 28,
-      "views_final": true
-    },
     {
       "at": "2026-09-28 08:04",
       "topic": "가을 단풍 시즌 마이산 뷰",
@@ -846,7 +830,7 @@
       "post_id": "17877739839565963",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DebOiV9G3XU",
       "views": 14,
-      "views_final": false,
+      "views_final": true,
       "replies": 0
     },
     {
@@ -935,7 +919,7 @@
       ],
       "post_id": "18145235515597868",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DegKgB2FX28",
-      "views": 54,
+      "views": 55,
       "views_final": false,
       "replies": 0
     },
@@ -953,7 +937,7 @@
       ],
       "post_id": "18459160846186567",
       "permalink": "https://www.threads.com/@hongsamhotel/post/Deg0-7DlVk8",
-      "views": 7,
+      "views": 8,
       "views_final": false,
       "replies": 0
     },
@@ -989,7 +973,7 @@
       ],
       "post_id": "18034518947666637",
       "permalink": "https://www.threads.com/@hongsamhotel/post/Deg-pbcERVr",
-      "views": 26,
+      "views": 27,
       "replies": 0,
       "views_final": false
     },
@@ -1025,6 +1009,24 @@
       ],
       "post_id": "18095235833392513",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeiuDCIFkGF",
+      "views": 9,
+      "replies": 0,
+      "views_final": false
+    },
+    {
+      "at": "2026-10-16 21:25",
+      "topic": "객실 창으로 마이산 보며 멍때리기",
+      "hook": "provoke",
+      "cta": "debate",
+      "text": "호텔방 가면 TV부터 켜는 사람이었는데 이번엔 리모컨 손도 안 댐\n\n체크인하고 캐리어도 안 풀고 창가로 직행함, 마이산 봉우리 두 개가 창틀에 딱 맞게 들어와서 그림 걸어놓은 줄 앎. 침대에 걸터앉아서 멍때리다 정신 차려보니 40분 지나있음, 폰도 TV도 안 건드림. 날 흐려서 봉우리 위에 구름 낮게 깔려있었는데 그게 더 분위기 있었음. 천둥이도 창가 쪽 바닥에 와서 같이 늘어져 있어서 둘이 같은 방향 보고 있었음🐾\n호텔 가면 TV부터 켜는 사람 ㅇ, 창밖부터 보는 사람 ㄴ, 골라봐\n#홍삼빌호텔 #마이산 #진안여행",
+      "len": 290,
+      "images": [
+        "hotel_new_slide7.jpg",
+        "54.png",
+        "23.png"
+      ],
+      "post_id": "18097242356450476",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/Dejhto7oIKa",
       "views": null,
       "replies": null,
       "views_final": false
@@ -1033,6 +1035,6 @@
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-10-16 13:52"
+    "checked_at": "2026-10-16 21:23"
   }
 }
