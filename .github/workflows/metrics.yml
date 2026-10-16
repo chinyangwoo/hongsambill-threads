@@ -1,10 +1,10 @@
-# 홍보 대시보드 — SNS 성과 수집 (하루 2회) + AI 인용 점검 (하루 1회)
+# 홍보 대시보드 — SNS 성과 수집 (하루 2회). AI 인용 점검은 대표 요청으로 중단 (2026-10-16)
 # 결과는 metrics/*.json 에 저장되고, Supabase 가 30분마다 읽어 대시보드에 반영합니다.
 name: 홍보 대시보드 수집
 
 on:
   schedule:
-    - cron: "53 23 * * *"   # KST 08:53 — SNS 성과 + AI 인용 점검
+    - cron: "53 23 * * *"   # KST 08:53 — SNS 성과
     - cron: "53 11 * * *"   # KST 20:53 — SNS 성과
   workflow_dispatch: {}
   push:
@@ -38,12 +38,6 @@ jobs:
           SEONGSU_INSTAGRAM_ACCESS_TOKEN: ${{ secrets.SEONGSU_INSTAGRAM_ACCESS_TOKEN }}
           SEONGSU_INSTAGRAM_USER_ID: ${{ secrets.SEONGSU_INSTAGRAM_USER_ID }}
         run: python metrics_collect.py threads_hotel fb_hotel ig_hotel ig_seongsu
-
-      - name: AI 인용 점검 (아침 1회)
-        if: github.event_name != 'schedule' || github.event.schedule == '53 23 * * *'
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python ai_citation_check.py || true
 
       - name: 결과 저장
         if: always()
