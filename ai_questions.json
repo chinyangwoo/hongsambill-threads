@@ -1,0 +1,29 @@
+{
+  "our_domains": [
+    "hongsamhotel.kr",
+    "hongsamhotel.blogspot.com",
+    "jinansauna.kr",
+    "topbrewery.kr",
+    "blog.naver.com/born_to_drink",
+    "blog.naver.com/sungsu-brewery",
+    "instagram.com/jbt_sulmacha",
+    "threads.net/@jinan.sauna"
+  ],
+  "our_names": {
+    "hsb": ["홍삼빌호텔", "홍삼빌 호텔", "Hongsambill", "홍삼빌"],
+    "ssb": ["성수주조장", "Seongsu Brewery"],
+    "spa": ["홍삼스파", "진안 사우나투어", "진안사우나투어"]
+  },
+  "questions": [
+    {"q": "진안 가족 숙소 추천해줘", "business": "hsb"},
+    {"q": "마이산 근처 반려견 동반 가능한 호텔 있어?", "business": "hsb"},
+    {"q": "마이산 근처 호텔 추천", "business": "hsb"},
+    {"q": "진안에 바베큐 되는 숙소 있어?", "business": "hsb"},
+    {"q": "전북 진안 1박 2일 여행 코스 추천해줘", "business": "hsb"},
+    {"q": "딸기막걸리 추천해줘", "business": "ssb"},
+    {"q": "선물하기 좋은 막걸리 추천해줘", "business": "ssb"},
+    {"q": "진안 양조장 가볼 만한 곳", "business": "ssb"},
+    {"q": "전북 전통주 양조장 추천", "business": "ssb"},
+    {"q": "진안 사우나·스파 어디가 좋아?", "business": "spa"}
+  ]
+}
