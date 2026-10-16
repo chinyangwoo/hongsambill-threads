@@ -107,6 +107,9 @@ def fetch_instagram(pid, token):
             "shares": as_int(ins.get("shares")), "saves": as_int(ins.get("saved")), "permalink": media.get("permalink")}
 
 
+FB_ERR = []
+
+
 def fetch_facebook(pid, token):
     base = "https://graph.facebook.com/v21.0"
     post = {}
@@ -115,6 +118,8 @@ def fetch_facebook(pid, token):
         post = http_json(f"{base}/{pid}?fields={urllib.parse.quote(fields)}&access_token={urllib.parse.quote(token)}")
     except Exception as e:
         print(f"   ⚠️ post 실패 {pid}: {e}")
+        if len(FB_ERR) < 3:
+            FB_ERR.append(str(e)[:300])
     ins = try_metrics(base, pid, token, ["post_impressions_unique,post_impressions", "post_impressions_unique", "post_media_view"])
     views = ins.get("post_impressions", ins.get("post_media_view"))
     return {"views": as_int(views) if views is not None else None,
@@ -192,7 +197,7 @@ def collect(key):
     followers = fetch_followers(ch["kind"], os.environ.get(ch["user"], "me") or "me", token)
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump({"channel": key, "label": ch["label"], "business": ch["business"], "updated": now.isoformat(),
-                   "followers": followers, "posts": keep}, f, ensure_ascii=False, indent=1)
+                   "followers": followers, "errors": FB_ERR if ch["kind"] == "facebook" else [], "posts": keep}, f, ensure_ascii=False, indent=1)
     tv = sum(as_int(v.get("views")) for v in keep)
     print(f"✅ {ch['label']}: {n}건 갱신, 보관 {len(keep)}건, 누적 조회 {tv:,}, 팔로워 {followers}")
 
