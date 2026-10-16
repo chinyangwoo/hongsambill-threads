@@ -7,6 +7,9 @@ on:
     - cron: "53 23 * * *"   # KST 08:53 — SNS 성과 + AI 인용 점검
     - cron: "53 11 * * *"   # KST 20:53 — SNS 성과
   workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths: [metrics_collect.py, ai_citation_check.py, ai_questions.json, .github/workflows/metrics.yml]
 
 concurrency:
   group: auto-post-commit
@@ -37,7 +40,7 @@ jobs:
         run: python metrics_collect.py threads_hotel fb_hotel ig_hotel ig_seongsu
 
       - name: AI 인용 점검 (아침 1회)
-        if: github.event_name == 'workflow_dispatch' || github.event.schedule == '53 23 * * *'
+        if: github.event_name != 'schedule' || github.event.schedule == '53 23 * * *'
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python ai_citation_check.py || true
