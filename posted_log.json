@@ -1,22 +1,6 @@
 {
-  "count": 140,
+  "count": 141,
   "posts": [
-    {
-      "at": "2026-09-28 10:40",
-      "topic": "제주·강원 대신 진안을 고른 이유",
-      "hook": "fail",
-      "cta": "내 판단이 맞는지 의견 물어보기",
-      "text": "친구들 다 제주 강원 갈 때 나만 진안 간다니까 왜냐고 물어봄\n이유 단순함, 비행기값 숙소값 합치면 30만원 넘게 깨지는데 여기는 서울서 3시간에 그 절반도 안 씀. 홍삼스파에 마이산 뷰에 탑사까지 도보로 다 되니까 이동시간 자체가 안 나옴. 제주는 렌트카 필수고 강원은 동선 짜는 데만 하루 씀, 여기는 호텔 하나 잡으면 반경 다 걸어서 끝남. 8만원대로 스파+숙박 다 되는 곳 나도 처음 봄. 천둥이 보너스는 덤 🐾\n근데 이 정도면 제주 강원보다 낫다고 봐도 되는 거 맞지, 내 판단 이상한 거 아니지\n#홍삼빌호텔 #진안여행 #홍삼스파",
-      "len": 301,
-      "images": [
-        "15.png",
-        "21.png",
-        "73.png"
-      ],
-      "post_id": "18116237327084436",
-      "views": 28,
-      "views_final": true
-    },
     {
       "at": "2026-09-28 14:46",
       "topic": "아이랑 1박2일, 차 덜 타고 걸어서 되는 마이산 코스",
@@ -850,7 +834,7 @@
       "post_id": "18106475612623773",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DedBIQhjW4J",
       "views": 51,
-      "views_final": false,
+      "views_final": true,
       "replies": 0
     },
     {
@@ -939,7 +923,7 @@
       ],
       "post_id": "18152065885547337",
       "permalink": "https://www.threads.com/@hongsamhotel/post/Deg2cWuG9v2",
-      "views": 11,
+      "views": 13,
       "replies": 0,
       "views_final": false
     },
@@ -1011,7 +995,7 @@
       ],
       "post_id": "18097242356450476",
       "permalink": "https://www.threads.com/@hongsamhotel/post/Dejhto7oIKa",
-      "views": 5,
+      "views": 6,
       "replies": 0,
       "views_final": false
     },
@@ -1029,6 +1013,24 @@
       ],
       "post_id": "18414487441081195",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DekpkgHDsGy",
+      "views": 11,
+      "replies": 0,
+      "views_final": false
+    },
+    {
+      "at": "2026-10-17 13:55",
+      "topic": "제주·강원 대신 진안을 고른 이유",
+      "hook": "secret",
+      "cta": "number",
+      "text": "이번 연휴 제주 강원 다 제끼고 진안 간 이유 하나 있음\n\n비행기값 숙소값 합치면 20만원 훌쩍인데 거기 가봤자 인파 틈에서 사진 찍고 끝남. 진안은 차로 가고 그 돈 반도 안 드는데 마이산까지 호텔서 도보라 이동에 에너지 하나도 안 씀. 리뷰 4.6짜리 숙소인데 사람 안 치여서 방에서도 밖에서도 여유로움. 홍삼스파는 내년 1월 오픈 예정이라길래 그거 보고 또 와야지 싶었음. 체크아웃할 때 천둥이가 마중나와서 발걸음 느려짐🐾\n제주 강원 진안 중에 담에 가고 싶은 곳 하나만 찍어줘\n#홍삼빌호텔 #진안여행 #전북여행",
+      "len": 289,
+      "images": [
+        "90.png",
+        "63.png",
+        "19.png"
+      ],
+      "post_id": "18073068920759046",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DelS-0unIBE",
       "views": null,
       "replies": null,
       "views_final": false
@@ -1037,6 +1039,6 @@
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-10-17 07:51"
+    "checked_at": "2026-10-17 13:53"
   }
 }
