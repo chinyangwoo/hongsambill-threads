@@ -1,22 +1,6 @@
 {
-  "count": 144,
+  "count": 145,
   "posts": [
-    {
-      "at": "2026-09-29 15:04",
-      "topic": "서울에서 3시간, 사람 없는 조용한 여행지를 찾는 사람들에게",
-      "hook": "number",
-      "cta": "다음에 뭐 할지 골라달라고 투표 붙이기",
-      "text": "주말에 사람 한 명 안 마주치고 3시간 걸은 적 있음\n\n솔직히 반신반의했음, 서울서 3시간이면 어디든 인파 있을 줄 알았는데 진안 와서 완전 깨짐. 평일 아침에 은수사 쪽 걸었는데 진짜 스쳐간 사람 세 명도 안 됨. 새소리랑 내 발소리만 들림ㅋㅋ 조용한 데 찾다가 지친 사람이면 여기 진짜 답임. 호텔 로비도 딱 그 정도 한적함이라 체크인할 때부터 이미 힐링 시작됨. 천둥이도 사람 없어서 그런가 이날따라 여유롭게 마당 어슬렁거림 🐾\n다음엔 진짜 조용한 새벽 산책 vs 늦은 밤 스파, 뭐가 더 좋을지 댓글로 골라줘\n#홍삼빌호텔 #진안여행 #마이산",
-      "len": 306,
-      "images": [
-        "59.png",
-        "88.png",
-        "running.png"
-      ],
-      "post_id": "18373127359243473",
-      "views": 34,
-      "views_final": true
-    },
     {
       "at": "2026-09-30 08:45",
       "topic": "호캉스 대신 별멍, 진안고원의 밤하늘",
@@ -840,7 +824,7 @@
       "post_id": "18145235515597868",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DegKgB2FX28",
       "views": 55,
-      "views_final": false,
+      "views_final": true,
       "replies": 0
     },
     {
@@ -858,7 +842,7 @@
       "post_id": "18459160846186567",
       "permalink": "https://www.threads.com/@hongsamhotel/post/Deg0-7DlVk8",
       "views": 9,
-      "views_final": false,
+      "views_final": true,
       "replies": 0
     },
     {
@@ -877,7 +861,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/Deg2cWuG9v2",
       "views": 14,
       "replies": 0,
-      "views_final": false
+      "views_final": true
     },
     {
       "at": "2026-10-15 21:40",
@@ -983,7 +967,7 @@
       ],
       "post_id": "18073068920759046",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DelS-0unIBE",
-      "views": 12,
+      "views": 13,
       "replies": 0,
       "views_final": false
     },
@@ -1001,7 +985,7 @@
       ],
       "post_id": "18117500656999327",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DemBC-oEXQz",
-      "views": 14,
+      "views": 16,
       "replies": 0,
       "views_final": false
     },
@@ -1037,6 +1021,24 @@
       ],
       "post_id": "18118262275799086",
       "permalink": "https://www.threads.com/@hongsamhotel/post/Den4k6QEax5",
+      "views": 11,
+      "replies": 0,
+      "views_final": false
+    },
+    {
+      "at": "2026-10-18 21:04",
+      "topic": "서울에서 3시간, 사람 없는 조용한 여행지를 찾는 사람들에게",
+      "hook": "provoke",
+      "cta": "number",
+      "text": "사람 없는 여행지 찾는다면서 결국 또 거기 감?\n\n서울서 3시간이면 진짜 딱 좋은 거리인데 다들 강릉 속초만 감. 진안은 평일에 가면 탑사 한 바퀴 도는 동안 스쳐간 사람 열 명도 안 됨, 혼자 사진 찍어도 뒤에 아무도 안 걸림. 홍삼빌서 자면 아침 일찍 숙소서 바로 걸어 나가서 사람 몰리기 전에 조용히 보고 올 수 있음. 로비서 체크인할 때도 줄 없이 천둥이가 먼저 반겨줘서 북적이는 느낌 자체가 없음🐾\n서울 기준으로 여행 몇 시간 거리까지 괜찮음? 숫자로\n#홍삼빌호텔 #진안여행 #전북여행",
+      "len": 276,
+      "images": [
+        "84.png",
+        "36.png",
+        "19.png"
+      ],
+      "post_id": "18127139650850277",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/Deoo551lKm2",
       "views": null,
       "replies": null,
       "views_final": false
@@ -1045,6 +1047,6 @@
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-10-18 14:00"
+    "checked_at": "2026-10-18 21:02"
   }
 }
