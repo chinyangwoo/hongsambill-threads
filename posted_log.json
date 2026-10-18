@@ -1,22 +1,6 @@
 {
-  "count": 143,
+  "count": 144,
   "posts": [
-    {
-      "at": "2026-09-29 09:23",
-      "topic": "마이산 처음 갈 때 모르면 손해 보는 것",
-      "hook": "question",
-      "cta": "밸런스 게임으로 둘 중 하나 고르게 하기",
-      "text": "마이산 처음 가는 사람이 꼭 놓치는 준비물 하나 있음\n\n나도 몰랐는데 탑사 입구랑 은수사 쪽 갈림길에서 헤매는 사람 진짜 많음. 표지판이 애매해서 반대로 갔다가 40분 날린 사람 봄ㅋㅋ 근데 호텔 프론트에서 나올 때 지도 한 장 딱 챙겨주는데 이게 진짜 꿀임, 코스별 시간까지 다 적혀 있음. 이거 안 받고 그냥 나가면 백 프로 헤맴. 천둥이도 손님 나갈 때마다 지도 챙겼나 확인하듯 문 앞에 앉아있음 🐾\n탑사 갈 때 지도 들고 가기 vs 그냥 발길 가는 대로 가보기, 뭐가 더 나을지 댓글로 골라줘\n#홍삼빌호텔 #마이산 #진안여행",
-      "len": 297,
-      "images": [
-        "83.png",
-        "50.png",
-        "53.png"
-      ],
-      "post_id": "17878220739631112",
-      "views": 16,
-      "views_final": true
-    },
     {
       "at": "2026-09-29 15:04",
       "topic": "서울에서 3시간, 사람 없는 조용한 여행지를 찾는 사람들에게",
@@ -838,7 +822,7 @@
       "post_id": "18120553318887346",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DefikhzgNI3",
       "views": 31,
-      "views_final": false,
+      "views_final": true,
       "replies": 0
     },
     {
@@ -981,7 +965,7 @@
       ],
       "post_id": "18414487441081195",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DekpkgHDsGy",
-      "views": 17,
+      "views": 18,
       "replies": 0,
       "views_final": false
     },
@@ -1035,6 +1019,24 @@
       ],
       "post_id": "17900389878607534",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DenKihdia3L",
+      "views": 5,
+      "replies": 0,
+      "views_final": false
+    },
+    {
+      "at": "2026-10-18 14:02",
+      "topic": "마이산 처음 갈 때 모르면 손해 보는 것",
+      "hook": "twist",
+      "cta": "debate",
+      "text": "주차장에서 탑사까지 거리만 보고 갔다가 입구에서 당황함\n네이버 지도에 찍히는 주차장이 탑사 코앞이 아니라 매표소 쪽 큰 주차장이라 거기서부터 걸으면 생각보다 거리 나옴. 근데 홍삼빌서 자면 그 거리 자체가 의미 없어짐, 호텔이 이미 탑사 도보권이라 주차장 찾고 걷고 할 거 없이 숙소 나오면 바로 입구임. 이거 모르고 차로 움직이다가 주차 자리 못 찾아서 20분 날린 사람 옆에서 봄. 로비 나올 때 천둥이가 쫄래쫄래 따라나와서 같이 걸어감🐾\n마이산 처음 가는 사람한테 해줄 팁 하나씩만 댓글로\n#홍삼빌호텔 #마이산 #진안여행",
+      "len": 294,
+      "images": [
+        "37.png",
+        "66.png",
+        "hotel_new_slide4.jpg"
+      ],
+      "post_id": "18118262275799086",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/Den4k6QEax5",
       "views": null,
       "replies": null,
       "views_final": false
@@ -1043,6 +1045,6 @@
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-10-18 07:18"
+    "checked_at": "2026-10-18 14:00"
   }
 }
