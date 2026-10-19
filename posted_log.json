@@ -1,22 +1,6 @@
 {
-  "count": 148,
+  "count": 149,
   "posts": [
-    {
-      "at": "2026-09-30 22:42",
-      "topic": "사람 몰리는 단풍 명소 대신 조용한 마이산 단풍",
-      "hook": "compare",
-      "cta": "같이 갈 사람 태그하라고 하기",
-      "text": "단풍 명소 검색하면 다 똑같은 사진, 똑같은 인파인데 거기 낄 이유 있나 싶었음\n\n내장산이니 설악산이니 알아보다가 그냥 마이산 감, 평일 오전이라 단풍 색은 진한데 사람은 진짜 없음. 은수사 올라가는 길 나무 한 그루 통째로 빨간데 그 밑에 나 혼자 서 있음ㅋㅋ 사진 찍는데 뒤에 아무도 안 걸림, 서울서 단풍놀이 가면 절대 못 건지는 컷임. 호텔서 걸어서 15분 거리라 아침 먹고 슬렁슬렁 걸어갔다 옴. 천둥이도 낙엽 밟는 거 좋아해서 같이 산책함 🐾\n혼자 보기 아까운 색이었음, 같이 갈 사람 태그해놓고 나중에 데려가셈\n#홍삼빌호텔 #마이산 #진안여행",
-      "len": 310,
-      "images": [
-        "80.png",
-        "19.png",
-        "48.png"
-      ],
-      "post_id": "18126105142861743",
-      "views": 26,
-      "views_final": true
-    },
     {
       "at": "2026-10-01 08:51",
       "topic": "고기만 사 오면 되는 항아리바베큐, 진안 흑돼지 구워 먹는 저녁",
@@ -903,7 +887,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/DekpkgHDsGy",
       "views": 20,
       "replies": 0,
-      "views_final": false
+      "views_final": true
     },
     {
       "at": "2026-10-17 13:55",
@@ -973,7 +957,7 @@
       ],
       "post_id": "18118262275799086",
       "permalink": "https://www.threads.com/@hongsamhotel/post/Den4k6QEax5",
-      "views": 17,
+      "views": 19,
       "replies": 0,
       "views_final": false
     },
@@ -1009,7 +993,7 @@
       ],
       "post_id": "18117668440996206",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DepwNXsjxHH",
-      "views": 14,
+      "views": 15,
       "replies": 0,
       "views_final": false
     },
@@ -1045,6 +1029,24 @@
       ],
       "post_id": "18153092863542669",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DerfqhplnMI",
+      "views": 9,
+      "replies": 0,
+      "views_final": false
+    },
+    {
+      "at": "2026-10-20 08:43",
+      "topic": "사람 몰리는 단풍 명소 대신 조용한 마이산 단풍",
+      "hook": "fail",
+      "cta": "recommend",
+      "text": "단풍 사진 찍는다고 유명한 데만 쫓아다니다 정작 제일 예쁜 건 못 봄\n유명하다는 단풍 명소 검색만 두 시간 하다가 그냥 반신반의로 마이산 감. 평일 오후 탑사 올라가는 길 단풍 절정인데 사람 띄엄띄엄이라 기다릴 필요가 없었음. 은수사 단풍나무 한 그루가 색이 미쳐서 5분을 혼자 독차지함. 홍삼빌서 자고 아침 일찍 나왔더니 관광버스 몰리기 전에 끝남, 체크아웃할 때 천둥이가 로비서 배웅해주는데 그것도 여유롭게 찍음🐾\n올해 단풍 절정 시기 언제로 예상함? 날짜로 하나만\n\n#홍삼빌호텔 #마이산 #진안여행",
+      "len": 281,
+      "images": [
+        "48.png",
+        "hotel_new_slide5.jpg",
+        "60.png"
+      ],
+      "post_id": "18134476219737338",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DesduOSiQDg",
       "views": null,
       "replies": null,
       "views_final": false
@@ -1053,6 +1055,6 @@
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-10-19 23:39"
+    "checked_at": "2026-10-20 08:42"
   }
 }
