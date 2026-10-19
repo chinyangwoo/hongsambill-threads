@@ -1,22 +1,6 @@
 {
-  "count": 146,
+  "count": 147,
   "posts": [
-    {
-      "at": "2026-09-30 14:53",
-      "topic": "진안 로컬 맛집과 숙소 주변 먹거리 이야기",
-      "hook": "provoke",
-      "cta": "더 좋은 정보 아는 사람 댓글로 부르기",
-      "text": "맛집 리뷰 믿고 갔다가 오히려 실망하는 경우 많지 않음?\n근데 여긴 반대임. 호텔서 걸어서 5분 거리에 있는 백반집인데 후기 하나도 없어서 그냥 찍먹으로 감. 근데 홍삼 넣은 된장찌개 나오는데 이 조합 처음 봄ㅋㅋ 8천원인데 반찬만 7가지 나옴. 프론트 직원이 여기 동네 사람들만 아는 데라고 귀띔해줌, 관광지 느낌 하나도 없어서 오히려 좋았음. 천둥이도 저녁마다 그 집 주인이 챙겨준다고 로비서 자랑함 🐾\n이거보다 로컬스러운 진안 맛집 아는 사람 댓글로 좀 불러줘\n#홍삼빌호텔 #진안여행 #진안가볼만한곳",
-      "len": 282,
-      "images": [
-        "39.png",
-        "29.png",
-        "hotel_slide3.png"
-      ],
-      "post_id": "18115720895515841",
-      "views": 46,
-      "views_final": true
-    },
     {
       "at": "2026-09-30 19:01",
       "topic": "총지배견 천둥이(허스키), 아이들이 체크인보다 먼저 찾는 이유",
@@ -881,7 +865,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeiGQL9le1R",
       "views": 13,
       "replies": 0,
-      "views_final": false
+      "views_final": true
     },
     {
       "at": "2026-10-16 13:53",
@@ -899,7 +883,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeiuDCIFkGF",
       "views": 10,
       "replies": 0,
-      "views_final": false
+      "views_final": true
     },
     {
       "at": "2026-10-16 21:25",
@@ -1005,7 +989,7 @@
       ],
       "post_id": "18118262275799086",
       "permalink": "https://www.threads.com/@hongsamhotel/post/Den4k6QEax5",
-      "views": 13,
+      "views": 15,
       "replies": 0,
       "views_final": false
     },
@@ -1041,6 +1025,24 @@
       ],
       "post_id": "18117668440996206",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DepwNXsjxHH",
+      "views": 13,
+      "replies": 0,
+      "views_final": false
+    },
+    {
+      "at": "2026-10-19 14:10",
+      "topic": "진안 로컬 맛집과 숙소 주변 먹거리 이야기",
+      "hook": "number",
+      "cta": "ab",
+      "text": "도보 5분 거리에 그런 국밥집이 있을 줄 몰랐음\n\n홍삼빌서 체크인하고 배고파서 직원한테 물어보니까 걸어서 5분이면 진안 토박이들 가는 국밥집 있다길래 바로 감. 한 그릇에 8천원인데 양 보고 놀람, 깍두기까지 집밥 느낌 제대로 남. 다음날 아침엔 호텔 바로 앞 빵집서 인절미빵 샀는데 이것도 로컬 아니면 모를 맛집이라 더 땡김. 숙소가 관광지 도보권인 것도 좋은데 밥집까지 다 걸어서 해결되니까 차 뺄 일이 없어서 편함. 로비 들어오니까 천둥이가 빵 봉지 냄새 맡으러 쫓아옴🐾\n국밥 먼저 먹고 빵 vs 빵 먼저 먹고 국밥, A/B로 골라줘\n#홍삼빌호텔 #진안여행 #진안가볼만한곳",
+      "len": 323,
+      "images": [
+        "58.png",
+        "18.png",
+        "50.png"
+      ],
+      "post_id": "17960564583239768",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DeqeV4PFChb",
       "views": null,
       "replies": null,
       "views_final": false
@@ -1049,6 +1051,6 @@
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-10-19 07:25"
+    "checked_at": "2026-10-19 14:09"
   }
 }
