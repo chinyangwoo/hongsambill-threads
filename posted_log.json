@@ -1,23 +1,6 @@
 {
-  "count": 149,
+  "count": 150,
   "posts": [
-    {
-      "at": "2026-10-01 08:51",
-      "topic": "고기만 사 오면 되는 항아리바베큐, 진안 흑돼지 구워 먹는 저녁",
-      "hook": "secret",
-      "cta": "다음에 뭐 할지 골라달라고 투표 붙이기",
-      "text": "이거 공개하면 저녁 메뉴 다 바뀔 것 같은데 아까움 진짜\n\n체크인하고 마트 들렀다가 고기만 사서 옴, 나머지는 호텔에 항아리바베큐 세팅 다 되어있음. 숯도 불도 다 준비돼서 고기만 얹으면 됨ㅋㅋ 진안 흑돼지 1인분 딱 시켜서 구웠는데 항아리 안에서 익어서 그런가 육즙이 장난 아님, 기름 튀는 것도 없고 냄새도 옷에 안 뱀. 7시부터 구워서 9시까지 앉아있었는데 시간 가는 줄 몰랐음. 천둥이는 고기 냄새 맡고 테라스 주변 계속 왔다갔다함 🐾\n내일 저녁은 항아리바베큐 한 번 더 vs 홍삼스파로 갈지, 댓글로 골라줘\n#홍삼빌호텔 #진안여행 #홍삼스파",
-      "len": 307,
-      "images": [
-        "31.png",
-        "57.png",
-        "hotel_new_slide2.jpg"
-      ],
-      "post_id": "18047456702818674",
-      "views": 24,
-      "views_final": true,
-      "permalink": "https://www.threads.com/@hongsamhotel/post/Dd7jfFzmY69"
-    },
     {
       "at": "2026-10-01 15:26",
       "topic": "2층 유리난간 테라스에서 마이산 보며 멍때리기",
@@ -905,7 +888,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/DelS-0unIBE",
       "views": 15,
       "replies": 0,
-      "views_final": false
+      "views_final": true
     },
     {
       "at": "2026-10-17 20:37",
@@ -957,7 +940,7 @@
       ],
       "post_id": "18118262275799086",
       "permalink": "https://www.threads.com/@hongsamhotel/post/Den4k6QEax5",
-      "views": 19,
+      "views": 21,
       "replies": 0,
       "views_final": false
     },
@@ -975,7 +958,7 @@
       ],
       "post_id": "18127139650850277",
       "permalink": "https://www.threads.com/@hongsamhotel/post/Deoo551lKm2",
-      "views": 20,
+      "views": 21,
       "replies": 0,
       "views_final": false
     },
@@ -1029,7 +1012,7 @@
       ],
       "post_id": "18153092863542669",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DerfqhplnMI",
-      "views": 9,
+      "views": 11,
       "replies": 0,
       "views_final": false
     },
@@ -1047,6 +1030,24 @@
       ],
       "post_id": "18134476219737338",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DesduOSiQDg",
+      "views": 11,
+      "replies": 0,
+      "views_final": false
+    },
+    {
+      "at": "2026-10-20 14:11",
+      "topic": "고기만 사 오면 되는 항아리바베큐, 진안 흑돼지 구워 먹는 저녁",
+      "hook": "compare",
+      "cta": "tag",
+      "text": "캠핑 가서 고기만 굽다 끝난 적 있는 사람 손\n\n항아리바베큐라길래 뭔가 했는데 숯이랑 불판 다 세팅해놓고 고기만 사 오면 되는 구조임. 진안이 흑돼지로도 유명한 동네라 근처 정육점서 딱 2인분 끊어왔는데 항아리 안에서 구워지니까 불맛이 확실히 다름, 15분 만에 겉바속촉 완성. 설거지도 뒷정리도 없이 고기만 굽고 먹고 끝이라 호캉스하면서 이런 게 되는 게 신기했음. 천둥이가 고기 냄새 맡고 멀찍이서 계속 앉아 구경함🐾\n캠핑은 가고 싶은데 세팅 귀찮아하는 친구 한 명 태그\n#홍삼빌호텔 #진안여행 #진안가볼만한곳",
+      "len": 287,
+      "images": [
+        "30.png",
+        "19.png",
+        "63.png"
+      ],
+      "post_id": "18118814713760143",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DetDN3AFMip",
       "views": null,
       "replies": null,
       "views_final": false
@@ -1055,6 +1056,6 @@
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-10-20 08:42"
+    "checked_at": "2026-10-20 14:09"
   }
 }
