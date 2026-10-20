@@ -1,23 +1,6 @@
 {
-  "count": 151,
+  "count": 152,
   "posts": [
-    {
-      "at": "2026-10-01 23:28",
-      "topic": "마이산 탑사 돌탑, 사진이랑 실물이 다른 이유",
-      "hook": "twist",
-      "cta": "내 판단이 맞는지 의견 물어보기",
-      "text": "",
-      "len": 0,
-      "images": [
-        "05_maisan_finland_sauna.png",
-        "51.png",
-        "todonoi_true_vertical.png"
-      ],
-      "post_id": "18115914524061528",
-      "views": 13,
-      "views_final": true,
-      "permalink": "https://www.threads.com/@hongsamhotel/post/Dd9H8djG4Yd"
-    },
     {
       "at": "2026-10-02 08:54",
       "topic": "제주·강원 대신 진안을 고른 이유",
@@ -907,7 +890,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/DenKihdia3L",
       "views": 8,
       "replies": 0,
-      "views_final": false
+      "views_final": true
     },
     {
       "at": "2026-10-18 14:02",
@@ -977,7 +960,7 @@
       ],
       "post_id": "17960564583239768",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeqeV4PFChb",
-      "views": 10,
+      "views": 11,
       "replies": 0,
       "views_final": false
     },
@@ -1013,7 +996,7 @@
       ],
       "post_id": "18134476219737338",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DesduOSiQDg",
-      "views": 12,
+      "views": 13,
       "replies": 0,
       "views_final": false
     },
@@ -1049,6 +1032,24 @@
       ],
       "post_id": "18108857360109833",
       "permalink": "https://www.threads.com/@hongsamhotel/post/Det3DMDlAuv",
+      "views": 9,
+      "replies": 0,
+      "views_final": false
+    },
+    {
+      "at": "2026-10-21 08:12",
+      "topic": "마이산 탑사 돌탑, 사진이랑 실물이 다른 이유",
+      "hook": "number",
+      "cta": "metoo",
+      "text": "사진으론 뾰족한데 실물은 왜 이렇게 다르지 싶었음\n\n탑사 가기 전에 사진 백날 봤는데 다 원뿔로 날렵하게 나와서 기대했거든. 근데 실제론 돌탑 80개가 전부 제각각에 이끼까지 껴서 사진보다 훨씬 투박함. 보는 각도 하나로 느낌이 완전 갈림, 아래서 올려다보면 하늘 찌를 듯한데 옆에서 보면 그냥 돌무더기 같음. 홍삼빌서 아침 일찍 나와서 20분 걸어 올라갔는데 사람 없을 때 천천히 도니까 이게 100년 넘게 안 무너진 이유가 보임🐾\n사진 보고 기대했다가 실물 보고 실망한 여행지 있음? ㅇㅇ로만 답해\n#홍삼빌호텔 #마이산 #진안여행",
+      "len": 298,
+      "images": [
+        "17.png",
+        "60.png",
+        "66.png"
+      ],
+      "post_id": "18091648013207231",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/Deu-9VnCV85",
       "views": null,
       "replies": null,
       "views_final": false
@@ -1057,6 +1058,6 @@
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-10-20 21:42"
+    "checked_at": "2026-10-21 08:11"
   }
 }
