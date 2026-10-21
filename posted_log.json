@@ -1,23 +1,6 @@
 {
-  "count": 153,
+  "count": 154,
   "posts": [
-    {
-      "at": "2026-10-02 15:05",
-      "topic": "아이랑 1박2일, 차 덜 타고 걸어서 되는 마이산 코스",
-      "hook": "question",
-      "cta": "더 좋은 정보 아는 사람 댓글로 부르기",
-      "text": "애 데리고 등산 가면 30분 만에 업어달라고 하는 사람\n\n마이산 탑사까지 차로 안 가고 호텔서 걸어서 가본 사람 있나 싶은데 진짜 됨, 편도 20분이고 중간에 벤치도 많아서 애 걸음으로도 쉬엄쉬엄 감. 7살 데리고 갔는데 업어달란 소리 한 번도 안 함, 길 자체가 평탄해서 그런 듯. 탑사 가서 돌탑 구경하고 은수사까지 더 걸어서 왕복 1시간 40분 걸림, 차 타고 주차장 찾아 헤매는 것보다 이게 훨씬 편함. 천둥이도 중간까지 따라오다가 애랑 같이 걸음 맞춰줌 🐾\n이것보다 더 애 걸음에 맞는 코스 아는 사람 있으면 댓글로 좀 불러줘\n#홍삼빌호텔 #마이산 #진안여행",
-      "len": 317,
-      "images": [
-        "88.png",
-        "73.png",
-        "40.png"
-      ],
-      "post_id": "18110193974336138",
-      "views": 16,
-      "views_final": true,
-      "permalink": "https://www.threads.com/@hongsamhotel/post/Dd-zE38FIs8"
-    },
     {
       "at": "2026-10-02 22:52",
       "topic": "마이산 한 바퀴 돌고 홍삼스파에서 다리 푸는 하루",
@@ -909,7 +892,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/Deoo551lKm2",
       "views": 21,
       "replies": 0,
-      "views_final": false
+      "views_final": true
     },
     {
       "at": "2026-10-19 07:27",
@@ -979,7 +962,7 @@
       ],
       "post_id": "18134476219737338",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DesduOSiQDg",
-      "views": 13,
+      "views": 15,
       "replies": 0,
       "views_final": false
     },
@@ -1051,6 +1034,24 @@
       ],
       "post_id": "18129745976506701",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DevoO9BkYyc",
+      "views": 6,
+      "replies": 0,
+      "views_final": false
+    },
+    {
+      "at": "2026-10-21 21:56",
+      "topic": "아이랑 1박2일, 차 덜 타고 걸어서 되는 마이산 코스",
+      "hook": "compare",
+      "cta": "tag",
+      "text": "유명 놀이공원 코스표 짜다가 애 짜증나서 결국 접었음\n작년 가족여행 때 동선 짠다고 차로 이동만 세 시간 쓰고 애는 차에서 잠들고 난리였거든. 이번엔 반대로 가보자 해서 홍삼빌 잡고 전부 도보로 끝냄. 탑사까지 20분 걸어가서 애 손 잡고 돌탑 세는 놀이 하다 보니 힘든 줄도 모르고 올라감. 은수사까지 더해서 왕복 1시간 반, 중간에 차 한 번을 안 탐. 애가 차멀미 안 하니까 떼도 안 씀, 숙소 돌아오자마자 천둥이한테 달려가서 그걸로 하루 마무리됨🐾\n차멀미 심한 애 키우는 친구 한 명 태그\n#홍삼빌호텔 #마이산 #진안여행",
+      "len": 295,
+      "images": [
+        "70.png",
+        "28.png",
+        "61.png"
+      ],
+      "post_id": "18045893924821877",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DewdSvDkQJn",
       "views": null,
       "replies": null,
       "views_final": false
@@ -1059,6 +1060,6 @@
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-10-21 14:11"
+    "checked_at": "2026-10-21 21:55"
   }
 }
