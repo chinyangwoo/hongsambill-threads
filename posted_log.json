@@ -1,23 +1,6 @@
 {
-  "count": 155,
+  "count": 156,
   "posts": [
-    {
-      "at": "2026-10-03 08:48",
-      "topic": "마이산 처음 갈 때 모르면 손해 보는 것",
-      "hook": "compare",
-      "cta": "같이 갈 사람 태그하라고 하기",
-      "text": "강원도 유명 등산코스 알아보다가 결국 포기한 이유가 있음\n\n마이산 처음 가는 사람들 대부분 주차장에서 바로 탑사 올라가는데, 그러면 입장 시간 놓쳐서 줄 서다가 1시간 날림. 나도 첫 방문 땐 몰라서 주차장 헤매다가 오전 다 씀. 근데 홍삼빌호텔 쪽에서 가면 탑사 입구가 바로 연결돼서 줄 설 필요도 없고 동선이 진짜 깔끔함. 체크인하면서 프론트에서 이거 미리 안 알려줬으면 또 똑같이 헤맬 뻔. 천둥이도 아침마다 그 입구 쪽 산책 코스라 마주칠 확률 높음 🐾\n이거 모르고 가면 너만 손해니까 같이 갈 사람 있으면 태그해놓고 봐\n#홍삼빌호텔 #마이산 #진안여행",
-      "len": 313,
-      "images": [
-        "61.png",
-        "67.png",
-        "89.png"
-      ],
-      "post_id": "18108490012908904",
-      "views": 47,
-      "views_final": true,
-      "permalink": "https://www.threads.com/@hongsamhotel/post/DeAsvD7lgnK"
-    },
     {
       "at": "2026-10-03 14:39",
       "topic": "서울에서 3시간, 사람 없는 조용한 여행지를 찾는 사람들에게",
@@ -911,7 +894,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeqeV4PFChb",
       "views": 14,
       "replies": 0,
-      "views_final": false
+      "views_final": true
     },
     {
       "at": "2026-10-19 23:41",
@@ -1053,6 +1036,24 @@
       ],
       "post_id": "18060479678547109",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DexkqoQj_Xf",
+      "views": 9,
+      "replies": 0,
+      "views_final": false
+    },
+    {
+      "at": "2026-10-22 14:16",
+      "topic": "마이산 처음 갈 때 모르면 손해 보는 것",
+      "hook": "twist",
+      "cta": "recommend",
+      "text": "주차장 도착하자마자 차 돌려서 그냥 나온 사람 봄\n\n탑사 입구 주차장이 생각보다 작아서 9시만 넘어도 꽉 참. 그 일행은 거기서 뺑뺑 돌다 결국 포기하고 딴 데로 감. 근데 홍삼빌은 거기서 도보 20분이라 애초에 주차 걱정이 없음, 체크인하고 바로 걸어 올라감. 길도 거의 평지라 등산화 따로 안 챙겨도 되고 아침 일찍 나서면 사람도 없어서 사진도 잘 나옴. 천둥이가 로비서 배웅하듯 쳐다보는데 그거 보고 나가는 게 루틴 됨🐾\n마이산 갈 때 주차 vs 도보 뭐가 나음, 하나만 찍어줘\n#홍삼빌호텔 #마이산 #진안여행",
+      "len": 288,
+      "images": [
+        "72.png",
+        "52.png",
+        "sauna.png"
+      ],
+      "post_id": "18098171180671678",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DeyNbSyDjlZ",
       "views": null,
       "replies": null,
       "views_final": false
@@ -1061,6 +1062,6 @@
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-10-22 08:18"
+    "checked_at": "2026-10-22 14:15"
   }
 }
