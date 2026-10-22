@@ -79,12 +79,14 @@ def main():
             data = json.load(f)
     today = datetime.now(KST).strftime("%Y-%m-%d")
     done = {(c["date"], c["question"]) for c in data["checks"]}
-    # 하루에 질문 1개만: 날짜에 따라 목록을 순서대로 돌아가며 고른다 (비용 절감)
-    qs = cfg["questions"]
-    pick = qs[datetime.now(KST).toordinal() % len(qs)] if qs else None
-    if any(c["date"] == today for c in data["checks"]):
-        pick = None   # 오늘은 이미 점검함
-    for q in ([pick] if pick else []):
+    # 하루에 업장별 질문 1개씩: 날짜에 따라 목록을 순서대로 돌아가며 고른다
+    picks = []
+    for biz in names:
+        qs = [q for q in cfg["questions"] if q.get("business") == biz]
+        if qs:
+            picks.append(qs[datetime.now(KST).toordinal() % len(qs)])
+    wrong = cfg.get("wrong_facts", {})
+    for q in picks:
         if (today, q["q"]) in done:
             continue
         try:
@@ -106,16 +108,18 @@ def main():
                 break
         our_cited = [u for u in cited if ours(u, domains)]
         our_found = [u for u in searched if ours(u, domains)]
+        bad = sorted({w for biz in mentioned for w in wrong.get(biz, []) if w in answer})
         rec = {
             "date": today, "question": q["q"], "business": q.get("business", ""), "engine": "Claude 웹검색",
             "mentioned": mentioned, "rank": rank,
             "cited": bool(our_cited), "cited_urls": our_cited,
             "found_in_search": bool(our_found), "found_urls": our_found,
+            "wrong": bad,
             "sources": sorted({urlparse(u).netloc.replace("www.", "") for u in cited})[:10],
             "answer": answer[:1500],
         }
         data["checks"].append(rec)
-        print(f"{'🟢' if mentioned else '⚪'} {q['q']} — 언급 {mentioned or '없음'} · 출처 인용 {len(our_cited)} · 검색 노출 {len(our_found)}")
+        print(f"{'🟢' if mentioned else '⚪'} {q['q']} — 언급 {mentioned or '없음'} · 틀린 정보 {bad or '없음'} · 출처 인용 {len(our_cited)} · 검색 노출 {len(our_found)}")
         time.sleep(2)
     cutoff = (datetime.now(KST) - timedelta(days=KEEP_DAYS)).strftime("%Y-%m-%d")
     data["checks"] = [c for c in data["checks"] if c["date"] >= cutoff]

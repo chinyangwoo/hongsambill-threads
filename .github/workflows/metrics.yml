@@ -1,15 +1,15 @@
-# 홍보 대시보드 — SNS 성과 수집 (하루 2회). AI 인용 점검은 대표 요청으로 중단 (2026-10-16)
-# 결과는 metrics/*.json 에 저장되고, Supabase 가 30분마다 읽어 대시보드에 반영합니다.
+# 홍보 성과판 — SNS·블로그 성과 매시간 수집, AI 검색 점검 하루 1회(업장별 질문 1개씩)
+# 결과는 metrics/*.json 에 저장되고, Supabase 가 30분마다 읽어 성과판에 반영합니다.
 name: 홍보 대시보드 수집
 
 on:
   schedule:
-    - cron: "53 23 * * *"   # KST 08:53 — SNS 성과
-    - cron: "53 11 * * *"   # KST 20:53 — SNS 성과
+    - cron: "7 * * * *"     # 매시간 7분 — SNS·블로그 성과
+    - cron: "37 0 * * *"    # KST 09:37 — AI 검색 점검
   workflow_dispatch: {}
   push:
     branches: [main]
-    paths: [metrics_collect.py, ai_citation_check.py, ai_questions.json, .github/workflows/metrics.yml]
+    paths: [metrics_collect.py, blog_collect.py, ai_citation_check.py, ai_questions.json, .github/workflows/metrics.yml]
 
 concurrency:
   group: auto-post-commit
@@ -28,6 +28,7 @@ jobs:
           python-version: "3.12"
 
       - name: SNS 성과 수집
+        if: github.event.schedule != '37 0 * * *'
         env:
           THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
           THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
@@ -38,6 +39,18 @@ jobs:
           SEONGSU_INSTAGRAM_ACCESS_TOKEN: ${{ secrets.SEONGSU_INSTAGRAM_ACCESS_TOKEN }}
           SEONGSU_INSTAGRAM_USER_ID: ${{ secrets.SEONGSU_INSTAGRAM_USER_ID }}
         run: python metrics_collect.py threads_hotel fb_hotel ig_hotel ig_seongsu
+
+      - name: 블로그 성과 수집
+        if: github.event.schedule != '37 0 * * *'
+        continue-on-error: true
+        run: python blog_collect.py
+
+      - name: AI 검색 점검
+        if: github.event.schedule == '37 0 * * *' || github.event_name == 'workflow_dispatch'
+        continue-on-error: true
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python ai_citation_check.py
 
       - name: 결과 저장
         if: always()

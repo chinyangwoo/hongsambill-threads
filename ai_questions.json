@@ -4,10 +4,15 @@
     "hongsamhotel.blogspot.com",
     "jinansauna.kr",
     "topbrewery.kr",
+    "blog.naver.com/halo_universe",
     "blog.naver.com/born_to_drink",
     "blog.naver.com/sungsu-brewery",
     "instagram.com/jbt_sulmacha",
-    "threads.net/@jinan.sauna"
+    "threads.net/@hongsamhotel",
+    "threads.com/@hongsamhotel",
+    "threads.net/@jinan.sauna",
+    "threads.com/@jinan.sauna",
+    "smartstore.naver.com/topbrewery"
   ],
   "our_names": {
     "hsb": [
@@ -19,6 +24,11 @@
     "ssb": [
       "성수주조장",
       "Seongsu Brewery"
+    ],
+    "spa": [
+      "진안사우나",
+      "홍삼스파",
+      "진안 사우나"
     ]
   },
   "questions": [
@@ -57,7 +67,34 @@
     {
       "q": "전북 전통주 양조장 추천",
       "business": "ssb"
+    },
+    {
+      "q": "진안 사우나 추천해줘",
+      "business": "spa"
+    },
+    {
+      "q": "마이산 근처 찜질방이나 사우나 있어?",
+      "business": "spa"
+    },
+    {
+      "q": "전북 핀란드식 사우나 어디가 좋아?",
+      "business": "spa"
     }
   ],
-  "note": "하루에 질문 1개만 순서대로 돌아가며 묻는다. 홍삼빌호텔·성수주조장 이름이 답에 나왔는지만 기록한다."
+  "note": "하루에 업장별 질문 1개씩(3개) 순서대로 돌아가며 묻는다. 이름 언급, 우리 글 출처 인용, 틀린 정보 여부를 기록한다.",
+  "wrong_facts": {
+    "hsb": [
+      "미쉐린 가이드",
+      "5성급"
+    ],
+    "ssb": [
+      "대한민국주류대상",
+      "500ml",
+      "청주"
+    ],
+    "spa": [
+      "99,000",
+      "9만9천"
+    ]
+  }
 }
