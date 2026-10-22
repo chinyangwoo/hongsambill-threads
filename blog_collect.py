@@ -24,7 +24,9 @@ KEEP_DAYS = 60
 UA = {"User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X)"}
 
 BLOGSPOT = {
-    "blog_hotel": {"label": "홍삼빌호텔 구글 블로그", "business": "hsb", "host": "hongsamhotel.blogspot.com"},
+    "blog_hotel":  {"label": "홍삼빌호텔 구글 블로그", "business": "hsb", "host": "hongsamhotel.blogspot.com"},
+    "blog_sauna":  {"label": "진안사우나 구글 블로그", "business": "spa", "host": "jinansauna.blogspot.com"},
+    "blog_sungsu": {"label": "성수주조장 구글 블로그", "business": "ssb", "host": "sungsubrewery.blogspot.com"},
 }
 NAVER = {
     "naver_halo":   {"label": "홍삼빌호텔 네이버 블로그", "business": "hsb", "id": "halo_universe"},
