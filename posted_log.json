@@ -1,23 +1,6 @@
 {
-  "count": 157,
+  "count": 158,
   "posts": [
-    {
-      "at": "2026-10-03 21:34",
-      "topic": "호캉스 대신 별멍, 진안고원의 밤하늘",
-      "hook": "fail",
-      "cta": "밸런스 게임으로 둘 중 하나 고르게 하기",
-      "text": "호캉스 패키지에 50만원 쓰고 정작 중요한 거 하나 놓침ㅋㅋ\n옥상 수영장 있는 호텔 알아보느라 돈 다 썼는데 정작 밤에 커튼 치고 폰만 봄. 근데 여기 와서 체크인하고 밖에 잠깐 나갔다가 하늘 보고 얼음 됨, 별이 그냥 뿌려놓은 수준임. 도시에서 별 세 개 보이면 많이 보이는 건 줄 알았는데 여기선 셀 수가 없어서 포기함. 로비 직원이 담요 빌려줘서 주차장 옆에 깔고 20분 누워있었는데 시간 가는 줄 모름. 천둥이도 옆에 와서 같이 하늘 보는 척 앉아있었음 🐾\n\n수영장 있는 비싼 호텔 vs 별 쏟아지는 조용한 호텔, 오늘 밤 뭐 고를 거임\n#홍삼빌호텔 #진안여행 #전북여행추천",
-      "len": 325,
-      "images": [
-        "hotel_new_slide9.jpg",
-        "85.png",
-        "55.png"
-      ],
-      "post_id": "18071811530769923",
-      "views": 25,
-      "views_final": true,
-      "permalink": "https://www.threads.com/@hongsamhotel/post/DeCEaY9m88e"
-    },
     {
       "at": "2026-10-04 08:05",
       "topic": "진안 로컬 맛집과 숙소 주변 먹거리 이야기",
@@ -895,7 +878,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/DerfqhplnMI",
       "views": 13,
       "replies": 0,
-      "views_final": false
+      "views_final": true
     },
     {
       "at": "2026-10-20 08:43",
@@ -965,7 +948,7 @@
       ],
       "post_id": "18091648013207231",
       "permalink": "https://www.threads.com/@hongsamhotel/post/Deu-9VnCV85",
-      "views": 5,
+      "views": 6,
       "replies": 0,
       "views_final": false
     },
@@ -1001,7 +984,7 @@
       ],
       "post_id": "18045893924821877",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DewdSvDkQJn",
-      "views": 5,
+      "views": 6,
       "replies": 0,
       "views_final": false
     },
@@ -1037,8 +1020,8 @@
       ],
       "post_id": "18098171180671678",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeyNbSyDjlZ",
-      "views": 16,
-      "replies": 0,
+      "views": 19,
+      "replies": 1,
       "views_final": false
     },
     {
@@ -1055,6 +1038,24 @@
       ],
       "post_id": "18137351086682017",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DezCWbjoNAc",
+      "views": 14,
+      "replies": 0,
+      "views_final": false
+    },
+    {
+      "at": "2026-10-23 08:24",
+      "topic": "호캉스 대신 별멍, 진안고원의 밤하늘",
+      "hook": "secret",
+      "cta": "metoo",
+      "text": "이거 진짜 호텔 어플에 안 나오는 거라 아까운데 말해줌\n\n체크인하고 저녁 먹고 나니까 할 거 없길래 그냥 밖에 나가봤거든. 근데 진안이 고원 지형이라 그런지 가로등 몇 개 빼면 그냥 깜깜함, 그래서 하늘 올려다봤는데 별이 그냥 뿌려놓은 수준으로 박혀있음. 서울서 별자리 앱 켜도 점 두세 개 겨우 보이는 거랑 차원이 다름. 돗자리 하나 없이 그냥 로비 앞 평상에 앉아서 30분을 하늘만 보고 있었는데 지루한 줄도 모름. 호캉스처럼 수영장 들어갈 필요가 없었음, 그냥 나가서 고개만 들면 끝남🐾\n별 보러 일부러 지방 내려가 본 적 있는 사람 ㅇㅇ\n#홍삼빌호텔 #진안여행 #마이산",
+      "len": 322,
+      "images": [
+        "27.png",
+        "70.png",
+        "sauna.png"
+      ],
+      "post_id": "17990276571114641",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/De0J5EpEebF",
       "views": null,
       "replies": null,
       "views_final": false
@@ -1063,6 +1064,6 @@
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-10-22 21:57"
+    "checked_at": "2026-10-23 08:22"
   }
 }
