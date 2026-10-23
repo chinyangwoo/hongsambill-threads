@@ -1,23 +1,6 @@
 {
-  "count": 158,
+  "count": 159,
   "posts": [
-    {
-      "at": "2026-10-04 08:05",
-      "topic": "진안 로컬 맛집과 숙소 주변 먹거리 이야기",
-      "hook": "question",
-      "cta": "다음에 뭐 할지 골라달라고 투표 붙이기",
-      "text": "여행 가서 맛집 검색하다가 결국 아무데나 들어가본 사람\n\n호텔 가기 전에 블로그 다섯 개 돌려봤는데 다 광고 같아서 그냥 포기하고 프론트에 물어봄, 직원이 걸어서 7분 거리 국밥집 하나 콕 찍어줌. 가보니까 로컬 사람들만 앉아있고 메뉴판도 손글씨, 국밥 한 그릇에 8천원인데 양이 미쳤음ㅋㅋ 다 먹고 나오는 길에 편의점 들러서 홍삼캔디 샀는데 이것도 동네 사람이 알려준 거라 신뢰감 급상승. 천둥이한테 자랑하듯 얘기했더니 꼬리만 흔듦 🐾\n다음 끼니는 국밥집 또 갈지 호텔 조식 먹을지 댓글로 골라줘\n#홍삼빌호텔 #진안여행 #진안가볼만한곳",
-      "len": 300,
-      "images": [
-        "hotel_new_slide4.jpg",
-        "77.png",
-        "34.jpg"
-      ],
-      "post_id": "17961428772231878",
-      "views": 20,
-      "views_final": true,
-      "permalink": "https://www.threads.com/@hongsamhotel/post/DeDMp7GlFLO"
-    },
     {
       "at": "2026-10-04 15:14",
       "topic": "총지배견 천둥이(허스키), 아이들이 체크인보다 먼저 찾는 이유",
@@ -896,7 +879,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/DesduOSiQDg",
       "views": 17,
       "replies": 0,
-      "views_final": false
+      "views_final": true
     },
     {
       "at": "2026-10-20 14:11",
@@ -914,7 +897,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/DetDN3AFMip",
       "views": 13,
       "replies": 0,
-      "views_final": false
+      "views_final": true
     },
     {
       "at": "2026-10-20 21:44",
@@ -966,7 +949,7 @@
       ],
       "post_id": "18129745976506701",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DevoO9BkYyc",
-      "views": 9,
+      "views": 10,
       "replies": 0,
       "views_final": false
     },
@@ -1002,7 +985,7 @@
       ],
       "post_id": "18060479678547109",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DexkqoQj_Xf",
-      "views": 11,
+      "views": 14,
       "replies": 0,
       "views_final": false
     },
@@ -1038,7 +1021,7 @@
       ],
       "post_id": "18137351086682017",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DezCWbjoNAc",
-      "views": 14,
+      "views": 15,
       "replies": 0,
       "views_final": false
     },
@@ -1056,6 +1039,24 @@
       ],
       "post_id": "17990276571114641",
       "permalink": "https://www.threads.com/@hongsamhotel/post/De0J5EpEebF",
+      "views": 4,
+      "replies": 0,
+      "views_final": false
+    },
+    {
+      "at": "2026-10-23 14:15",
+      "topic": "진안 로컬 맛집과 숙소 주변 먹거리 이야기",
+      "hook": "compare",
+      "cta": "handsup",
+      "text": "맛집 리스트 다섯 개 저장해놓고 결국 하나도 안 간 적 있음\n\n진안 오기 전에 맛집 블로그 뒤지느라 시간 꽤 썼는데 와보니까 다 필요 없었음. 홍삼빌 바로 앞 골목 두부집에서 순두부 한 그릇 15분 만에 비움, 콩 직접 갈아 만든다는 말이 거짓말이 아니었음. 저녁엔 도보 3분 흑돼지집서 해결, 둘 다 차 한 번 안 탐. 아침에 천둥이 보고 나가서 두부 먹고 들어오는 게 그냥 하루 루틴 됨🐾\n여행 가서 맛집 찾다 결국 숙소 근처 아무데나 들어가 본 사람 손\n#홍삼빌호텔 #진안여행 #마이산",
+      "len": 274,
+      "images": [
+        "hotel_slide3.png",
+        "breakfast.png",
+        "60.png"
+      ],
+      "post_id": "18109012154183217",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/De0yGMXEUDb",
       "views": null,
       "replies": null,
       "views_final": false
@@ -1064,6 +1065,6 @@
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-10-23 08:22"
+    "checked_at": "2026-10-23 14:14"
   }
 }
