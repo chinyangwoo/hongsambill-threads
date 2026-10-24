@@ -1,23 +1,6 @@
 {
-  "count": 161,
+  "count": 162,
   "posts": [
-    {
-      "at": "2026-10-05 08:11",
-      "topic": "고기만 사 오면 되는 항아리바베큐, 진안 흑돼지 구워 먹는 저녁",
-      "hook": "number",
-      "cta": "내 판단이 맞는지 의견 물어보기",
-      "text": "",
-      "len": 0,
-      "images": [
-        "81.png",
-        "sauna_true_vertical.png",
-        "12.png"
-      ],
-      "post_id": "18117455167991376",
-      "views": 12,
-      "views_final": true,
-      "permalink": "https://www.threads.com/@hongsamhotel/post/DeFyI_PGz-q"
-    },
     {
       "at": "2026-10-05 15:07",
       "topic": "2층 유리난간 테라스에서 마이산 보며 멍때리기",
@@ -899,7 +882,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/Deu-9VnCV85",
       "views": 6,
       "replies": 0,
-      "views_final": false
+      "views_final": true
     },
     {
       "at": "2026-10-21 14:13",
@@ -969,7 +952,7 @@
       ],
       "post_id": "18098171180671678",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DeyNbSyDjlZ",
-      "views": 21,
+      "views": 22,
       "replies": 1,
       "views_final": false
     },
@@ -1059,6 +1042,24 @@
       ],
       "post_id": "18134149132735880",
       "permalink": "https://www.threads.com/@hongsamhotel/post/De2tFcdlRCi",
+      "views": 10,
+      "replies": 0,
+      "views_final": false
+    },
+    {
+      "at": "2026-10-24 13:57",
+      "topic": "고기만 사 오면 되는 항아리바베큐, 진안 흑돼지 구워 먹는 저녁",
+      "hook": "number",
+      "cta": "ab",
+      "text": "고기만 사 오면 끝이라는 말을 이렇게 곧이곧대로 믿어도 되나 싶었음\n\n홍삼빌 와서 항아리바베큐 예약했는데 진짜 세팅 다 되어있고 숯도 이미 벌겋게 타있음. 진안 시장서 흑돼지 한 근 떠와서 올리기만 함, 10분도 안 돼서 기름 떨어지는 소리 요란하게 남. 항아리라 그런지 겉바속촉 그 자체, 불멍하듯 뒤집기만 했는데 한 근이 순삭됨. 먹는 중간에 천둥이가 냄새 맡고 슬쩍 와서 옆에 앉아있는데 안 쳐다보는 척하는 게 더 웃김🐾\n항아리바베큐 vs 그냥 불판구이, 고기 맛 뭐가 나음 A/B로만\n#홍삼빌호텔 #진안여행 #마이산",
+      "len": 292,
+      "images": [
+        "32.png",
+        "69.png",
+        "17.png"
+      ],
+      "post_id": "18160060897459225",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/De3U1d1kXg_",
       "views": null,
       "replies": null,
       "views_final": false
@@ -1067,6 +1068,6 @@
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-10-24 08:08"
+    "checked_at": "2026-10-24 13:56"
   }
 }
