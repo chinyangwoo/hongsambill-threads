@@ -1,23 +1,6 @@
 {
-  "count": 162,
+  "count": 163,
   "posts": [
-    {
-      "at": "2026-10-05 15:07",
-      "topic": "2층 유리난간 테라스에서 마이산 보며 멍때리기",
-      "hook": "twist",
-      "cta": "같이 갈 사람 태그하라고 하기",
-      "text": "",
-      "len": 0,
-      "images": [
-        "33.png",
-        "68.png",
-        "46.png"
-      ],
-      "post_id": "18097471391355744",
-      "views": 11,
-      "views_final": true,
-      "permalink": "https://www.threads.com/@hongsamhotel/post/DeGhv5wEVuT"
-    },
     {
       "at": "2026-10-06 01:00",
       "topic": "마이산 탑사 돌탑, 사진이랑 실물이 다른 이유",
@@ -900,7 +883,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/DevoO9BkYyc",
       "views": 10,
       "replies": 0,
-      "views_final": false
+      "views_final": true
     },
     {
       "at": "2026-10-21 21:56",
@@ -970,7 +953,7 @@
       ],
       "post_id": "18137351086682017",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DezCWbjoNAc",
-      "views": 15,
+      "views": 16,
       "replies": 0,
       "views_final": false
     },
@@ -1006,7 +989,7 @@
       ],
       "post_id": "18109012154183217",
       "permalink": "https://www.threads.com/@hongsamhotel/post/De0yGMXEUDb",
-      "views": 15,
+      "views": 16,
       "replies": 1,
       "views_final": false
     },
@@ -1060,6 +1043,24 @@
       ],
       "post_id": "18160060897459225",
       "permalink": "https://www.threads.com/@hongsamhotel/post/De3U1d1kXg_",
+      "views": 6,
+      "replies": 0,
+      "views_final": false
+    },
+    {
+      "at": "2026-10-24 21:00",
+      "topic": "객실 창으로 마이산 보며 멍때리기",
+      "hook": "secret",
+      "cta": "blank",
+      "text": "이거 체크인하자마자 커튼부터 열어보라고 알려주고 싶음\n\n짐도 안 풀고 그냥 창가에 앉았는데 마이산 봉우리 두 개가 창틀 안에 딱 들어와있음, 액자 걸어놓은 줄. 처음엔 사진 몇 장 찍고 끝낼 생각이었는데 어느새 1시간 넘게 그냥 보고만 있었음. 해질 때쯤엔 봉우리 색 변하는 게 보여서 더 못 일어남, 폰도 안 만짐. 침대서 몸만 돌리면 바로 그 뷰라 아침에 눈 뜨자마자도 똑같은 자리 또 봄, 나가지도 않았는데 하루가 참 알차게 감🐾\n숙소에서 제일 오래 머문 공간: ___ 침대인지 창가인지 욕조인지\n#홍삼빌호텔 #마이산 #진안여행",
+      "len": 298,
+      "images": [
+        "83.png",
+        "hotel_slide1.png",
+        "hotel_slide2.png"
+      ],
+      "post_id": "17955670605256975",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/De4FO9KG8pJ",
       "views": null,
       "replies": null,
       "views_final": false
@@ -1068,6 +1069,6 @@
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-10-24 13:56"
+    "checked_at": "2026-10-24 20:58"
   }
 }
