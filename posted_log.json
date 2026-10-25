@@ -1,23 +1,6 @@
 {
-  "count": 164,
+  "count": 165,
   "posts": [
-    {
-      "at": "2026-10-06 10:06",
-      "topic": "제주·강원 대신 진안을 고른 이유",
-      "hook": "question",
-      "cta": "빈칸 채우기식으로 한 단어 답하게 하기",
-      "text": "연휴만 되면 제주냐 강원이냐 그거 하나로 일주일 고민하는 사람\n\n비행기값 보다가 창 닫고, 강원도는 사람 몰려서 숙소값 두 배 되는 거 보고 결국 둘 다 포기함. 근데 서울서 딱 3시간이면 마이산 코앞이고 비행기 티켓값 반값으로 홍삼빌호텔 1박에 스파까지 끼워 넣을 수 있다는 거 알고 바로 결제함. 체크인하자마자 천둥이가 마중 나와서 꼬리 흔드는데 그 순간 제주 생각이 싹 사라짐ㅋㅋ 스파 1시간 하고 방 들어왔는데 몸이 녹아있음, 이걸 왜 이제 알았나 싶음 🐾\n빈칸 채워봐: 제주 강원 다 필요없고 그냥 ___ 가면 된다\n#홍삼빌호텔 #홍삼스파 #전북여행",
-      "len": 312,
-      "images": [
-        "40.png",
-        "42.png",
-        "hotel_slide3.png"
-      ],
-      "post_id": "18128218630840819",
-      "permalink": "https://www.threads.com/@hongsamhotel/post/DeIkIcPFDvy",
-      "views": 18,
-      "views_final": true
-    },
     {
       "at": "2026-10-06 10:20",
       "topic": "아이랑 1박2일, 차 덜 타고 걸어서 되는 마이산 코스",
@@ -902,7 +885,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/DexkqoQj_Xf",
       "views": 16,
       "replies": 0,
-      "views_final": false
+      "views_final": true
     },
     {
       "at": "2026-10-22 14:16",
@@ -1026,7 +1009,7 @@
       ],
       "post_id": "18160060897459225",
       "permalink": "https://www.threads.com/@hongsamhotel/post/De3U1d1kXg_",
-      "views": 8,
+      "views": 10,
       "replies": 0,
       "views_final": false
     },
@@ -1044,7 +1027,7 @@
       ],
       "post_id": "17955670605256975",
       "permalink": "https://www.threads.com/@hongsamhotel/post/De4FO9KG8pJ",
-      "views": 9,
+      "views": 10,
       "replies": 0,
       "views_final": false
     },
@@ -1062,6 +1045,24 @@
       ],
       "post_id": "17963141793210293",
       "permalink": "https://www.threads.com/@hongsamhotel/post/De5NQX2IEzx",
+      "views": 5,
+      "replies": 0,
+      "views_final": false
+    },
+    {
+      "at": "2026-10-25 14:10",
+      "topic": "제주·강원 대신 진안을 고른 이유",
+      "hook": "compare",
+      "cta": "number",
+      "text": "제주 비행기값 보고 강원도로 틀었다가 그것도 접었음\n\n성수기 제주 왕복 알아보다가 숙소값까지 더하니 배보다 배꼽이 커서 접음, 강원도는 다들 몰리는 시기라 고속도로 생각만 해도 숨 막힘. 그래서 전라도 쪽 지도 보다가 진안 찍었는데 서울서 세 시간이면 홍삼빌 도착함. 체크인하고 바로 마이산 탑사까지 걸어서 30분, 비행기도 안 타고 휴가 느낌 제대로 남. 돈 아낀 만큼 흑돼지에 더 씀, 이게 맞는 여행 같음🐾\n너네 여행지 고르는 1순위 뭐임? 가격/거리/사람많기 중 숫자로 골라줘\n#홍삼빌호텔 #진안여행 #전북여행",
+      "len": 289,
+      "images": [
+        "28.png",
+        "42.png",
+        "86.png"
+      ],
+      "post_id": "18116163424835224",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/De57G8iloS3",
       "views": null,
       "replies": null,
       "views_final": false
@@ -1070,6 +1071,6 @@
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-10-25 07:28"
+    "checked_at": "2026-10-25 14:09"
   }
 }
