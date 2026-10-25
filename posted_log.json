@@ -1,23 +1,6 @@
 {
-  "count": 166,
+  "count": 167,
   "posts": [
-    {
-      "at": "2026-10-06 15:48",
-      "topic": "마이산 한 바퀴 돌고 홍삼스파에서 다리 푸는 하루",
-      "hook": "fail",
-      "cta": "같은 경험 있는 사람 손들게 하기",
-      "text": "스파 순서를 거꾸로 할 줄은 진짜 몰랐음\n\n원래 계획은 스파 먼저 하고 마이산 가볍게 돌고 오는 거였는데 직원이 반대로 하라고 알려줌. 탑사까지 왕복 1시간 반 걷고 은수사까지 찍고 내려오니까 다리가 돌덩이였는데, 그 상태로 홍삼스파 들어가니까 차원이 다름. 40분 들어갔다 나왔는데 다리 풀린 느낌이 아니라 아예 새 다리 받은 느낌ㅋㅋ 순서 하나 바꿨다고 이렇게 다를 일인가 싶었음. 로비 들어오니까 천둥이가 또 마중 나와서 그대로 뻗을 뻔함 🐾\n먼저 걷고 나중에 풀어야 되는 거 모르고 거꾸로 했던 사람 손 들어봐\n#홍삼빌호텔 #홍삼스파 #마이산",
-      "len": 307,
-      "images": [
-        "64.png",
-        "hotel_slide2.png",
-        "87.png"
-      ],
-      "post_id": "18204698140329593",
-      "permalink": "https://www.threads.com/@hongsamhotel/post/DeJLKhAFlyK",
-      "views": 12,
-      "views_final": true
-    },
     {
       "at": "2026-10-06 23:12",
       "topic": "마이산 처음 갈 때 모르면 손해 보는 것",
@@ -904,7 +887,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/DezCWbjoNAc",
       "views": 17,
       "replies": 0,
-      "views_final": false
+      "views_final": true
     },
     {
       "at": "2026-10-23 08:24",
@@ -992,7 +975,7 @@
       ],
       "post_id": "18160060897459225",
       "permalink": "https://www.threads.com/@hongsamhotel/post/De3U1d1kXg_",
-      "views": 15,
+      "views": 18,
       "replies": 0,
       "views_final": false
     },
@@ -1010,7 +993,7 @@
       ],
       "post_id": "17955670605256975",
       "permalink": "https://www.threads.com/@hongsamhotel/post/De4FO9KG8pJ",
-      "views": 11,
+      "views": 12,
       "replies": 0,
       "views_final": false
     },
@@ -1028,7 +1011,7 @@
       ],
       "post_id": "17963141793210293",
       "permalink": "https://www.threads.com/@hongsamhotel/post/De5NQX2IEzx",
-      "views": 6,
+      "views": 7,
       "replies": 0,
       "views_final": false
     },
@@ -1064,6 +1047,24 @@
       ],
       "post_id": "17875140090636480",
       "permalink": "https://www.threads.com/@hongsamhotel/post/De6t_SsEez-",
+      "views": 3,
+      "replies": 0,
+      "views_final": false
+    },
+    {
+      "at": "2026-10-26 07:34",
+      "topic": "마이산 한 바퀴 돌고 바베큐장에서 저녁 먹는 하루",
+      "hook": "provoke",
+      "cta": "recommend",
+      "text": "등산 갔다 오면 저녁은 대충 때운다는 거 편견 아니냐\n\n마이산 한 바퀴 세 시간 돌면 다리 풀려서 요리할 힘 1도 안 남잖음. 근데 홍삼빌은 바베큐장이 숙소 바로 옆이라 등산화 벗자마자 바로 숯불 앞에 앉음, 씻지도 않고 고기부터 올림. 산 타면서 흘린 땀에 고기 냄새 더해지니까 평소보다 확실히 맛있게 느껴짐, 뇌가 착각하는 건지 진짜인지 모르겠음. 천둥이는 또 어떻게 알고 슬렁슬렁 걸어옴🐾\n등산 후에 제일 땡기는 음식 하나만 골라줘, 고기/라면/치킨\n#홍삼빌호텔 #진안여행 #마이산",
+      "len": 272,
+      "images": [
+        "coldplunge.png",
+        "hotel.png",
+        "32.png"
+      ],
+      "post_id": "18436376140179088",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/De7ym45mh5x",
       "views": null,
       "replies": null,
       "views_final": false
@@ -1072,6 +1073,6 @@
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-10-25 21:33"
+    "checked_at": "2026-10-26 07:33"
   }
 }
