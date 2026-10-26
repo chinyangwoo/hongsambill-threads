@@ -1,23 +1,6 @@
 {
-  "count": 169,
+  "count": 170,
   "posts": [
-    {
-      "at": "2026-10-07 15:23",
-      "topic": "호캉스 대신 별멍, 진안고원의 밤하늘",
-      "hook": "secret",
-      "cta": "다음에 뭐 할지 골라달라고 투표 붙이기",
-      "text": "이거 알려주면 사람 몰릴까봐 진짜 고민하다가 씀\n\n호캉스처럼 수영장 사진만 찍고 올까 했는데, 체크인하고 밖에 나가보니까 이 동네는 가로등도 몇 개 없어서 하늘이 완전 깜깜함. 눈 적응되는 데 10분쯤 걸리니까 그 다음부터 별이 못해도 200개는 넘게 보임, 서울서 다섯 개 겨우 세던 거랑 아예 차원이 다름. 담요 들고 나왔다가 천둥이도 옆에 와서 같이 누워버림ㅋㅋ 그 상태로 한 시간 꼼짝도 안 함🐾\n다음 글 뭐 올릴지 골라줘: 1) 별멍 명당 자리 찾은 썰 2) 홍삼스파 끝나고 보는 별 조합 후기\n#홍삼빌호텔 #진안여행 #마이산",
-      "len": 299,
-      "images": [
-        "69.png",
-        "25.png",
-        "hotel_new_slide2.jpg"
-      ],
-      "post_id": "18215135707352934",
-      "permalink": "https://www.threads.com/@hongsamhotel/post/DeLtKPBlnix",
-      "views": 16,
-      "views_final": true
-    },
     {
       "at": "2026-10-07 23:30",
       "topic": "진안 로컬 맛집과 숙소 주변 먹거리 이야기",
@@ -925,7 +908,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/De2tFcdlRCi",
       "views": 12,
       "replies": 0,
-      "views_final": false
+      "views_final": true
     },
     {
       "at": "2026-10-24 13:57",
@@ -1013,7 +996,7 @@
       ],
       "post_id": "17875140090636480",
       "permalink": "https://www.threads.com/@hongsamhotel/post/De6t_SsEez-",
-      "views": 4,
+      "views": 5,
       "replies": 0,
       "views_final": false
     },
@@ -1049,7 +1032,7 @@
       ],
       "post_id": "18126850879932258",
       "permalink": "https://www.threads.com/@hongsamhotel/post/De8gOjim0kY",
-      "views": 9,
+      "views": 10,
       "replies": 0,
       "views_final": false
     },
@@ -1067,6 +1050,24 @@
       ],
       "post_id": "18129205418489449",
       "permalink": "https://www.threads.com/@hongsamhotel/post/De9eXNgm77x",
+      "views": 13,
+      "replies": 0,
+      "views_final": false
+    },
+    {
+      "at": "2026-10-27 08:54",
+      "topic": "호캉스 대신 별멍, 진안고원의 밤하늘",
+      "hook": "question",
+      "cta": "handsup",
+      "text": "불멍은 많이 해봤는데 별멍은 처음이라 기대 1도 안 했던 사람 손\n\n홍삼빌 뒤쪽에 가로등이 별로 없어서 그냥 어둡다고만 생각했는데 저녁 먹고 나와보니까 이유가 있었음. 하늘에 별이 그냥 뿌려져 있음, 도시에서 보던 별 다섯 개랑 차원이 다름. 핸드폰으로 찍어봤는데 눈으로 본 거 반도 안 담겨서 그냥 누워서 봄. 20분 동안 목 아픈 줄도 모르고 봤다는 거에 일행 셋 다 동의함, 호캉스보다 이게 더 힐링인 거 인정🐾\n도시에서 별 거의 안 보이는 데 사는 사람 손\n#홍삼빌호텔 #진안여행 #마이산",
+      "len": 277,
+      "images": [
+        "hotel_new_slide5.jpg",
+        "hotel_new_slide2.jpg",
+        "72.png"
+      ],
+      "post_id": "18110464622245469",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/De-glYMmZ5N",
       "views": null,
       "replies": null,
       "views_final": false
@@ -1075,6 +1076,6 @@
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-10-26 23:14"
+    "checked_at": "2026-10-27 08:53"
   }
 }
