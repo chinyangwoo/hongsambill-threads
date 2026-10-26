@@ -49,7 +49,7 @@ jobs:
         run: |
           git config user.name "auto-post-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add -A gbp_reply_log.json 2>/dev/null || true
+          git add -A gbp_reply_log.json gbp_stats.json 2>/dev/null || true
           git diff --cached --quiet || git commit -m "구글 리뷰 답글 기록 $(date -u +'%Y-%m-%d %H:%M')"
           git pull --rebase origin ${{ github.ref_name }} || true
           git push || true

@@ -240,8 +240,13 @@ def fetch_unreplied():
     out = []
     since = datetime.now(timezone.utc) - timedelta(days=WINDOW_DAYS)
     for loc_path, title, _ in find_locations(h):
+        meta = {}
         rs = list_paged(GBP_REVIEWS.format(location=loc_path), h, "reviews",
-                        {"pageSize": 50, "orderBy": "updateTime desc"})
+                        {"pageSize": 50, "orderBy": "updateTime desc"}, first=meta)
+        try:
+            save_stats(rs, meta)
+        except Exception as e:             # 통계 기록 실패가 답글 작업을 막지 않게
+            print(f"⚠️ 평점 통계 기록 실패: {e}")
         for r in rs:
             if r.get("reviewReply"):
                 continue
@@ -270,6 +275,55 @@ def post_reply(review_name, comment, h):
             return json.loads(res.read().decode() or "{}")
     except urllib.error.HTTPError as e:
         raise RuntimeError(f"답글 등록 실패 HTTP {e.code}: {e.read().decode(errors='replace')}") from e
+
+
+# ─────────────────────────────────────────────
+# 평점 통계 — 4.7 / 4.8 까지 5점 리뷰가 몇 개 더 필요한지
+# ─────────────────────────────────────────────
+STATS_FILE = "gbp_stats.json"
+
+
+def needed_fives(total, s, target):
+    """구글 표시 평점이 target 이 되려면(반올림 기준 target-0.05 이상) 필요한 5점 리뷰 수"""
+    floor = target - 0.05
+    if total and s / total >= floor - 1e-9:
+        return 0
+    if floor >= 5:
+        return None
+    n = (floor * total - s) / (5 - floor)
+    k = max(0, int(n))
+    while (s + 5 * k) / (total + k) < floor - 1e-9:
+        k += 1
+    return k
+
+
+def save_stats(rs, meta):
+    dist = {str(i): 0 for i in range(1, 6)}
+    for r in rs:
+        st = STAR.get(r.get("starRating"), 0)
+        if st:
+            dist[str(st)] += 1
+    total = sum(dist.values())
+    s = sum(int(k) * v for k, v in dist.items())
+    avg = s / total if total else 0
+    today = datetime.now(KST).strftime("%Y-%m-%d")
+    row = {
+        "date": today, "at": datetime.now(KST).strftime("%Y-%m-%d %H:%M"),
+        "count": total, "sum": s, "avg": round(avg, 4), "display": round(avg + 1e-9, 1),
+        "api_count": meta.get("totalReviewCount"), "api_avg": meta.get("averageRating"),
+        "dist": dist,
+        "need_4_7": needed_fives(total, s, 4.7), "need_4_8": needed_fives(total, s, 4.8),
+    }
+    data = {"history": []}
+    if os.path.exists(STATS_FILE):
+        with open(STATS_FILE, encoding="utf-8") as f:
+            data = json.load(f)
+    data["history"] = [h for h in data.get("history", []) if h.get("date") != today] + [row]
+    data["latest"] = row
+    with open(STATS_FILE, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+    print(f"📈 평점 통계: 리뷰 {total}개 · 평균 {avg:.3f} (API {meta.get('averageRating')}/{meta.get('totalReviewCount')}) "
+          f"→ 4.7까지 5점 {row['need_4_7']}개, 4.8까지 {row['need_4_8']}개")
 
 
 # ─────────────────────────────────────────────
