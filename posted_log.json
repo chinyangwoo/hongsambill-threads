@@ -1,23 +1,6 @@
 {
-  "count": 167,
+  "count": 168,
   "posts": [
-    {
-      "at": "2026-10-06 23:12",
-      "topic": "마이산 처음 갈 때 모르면 손해 보는 것",
-      "hook": "provoke",
-      "cta": "밸런스 게임으로 둘 중 하나 고르게 하기",
-      "text": "마이산 아침 일찍 가면 안 되는 이유 아는 사람 몇 없음\n\n다들 사람 없을 때 사진 찍는다고 새벽같이 출발하는데, 탑사는 오전 9시 전엔 은수사 쪽 햇빛이 역광이라 사진이 다 뿌옇게 나옴. 홍삼빌호텔 직원이 10시쯤 가라고 알려줘서 반신반의했는데 진짜 빛이 탑 위에서 정면으로 떨어져서 색감부터 다름. 거기다 아침잠 더 자고 느긋하게 나가도 되니까 일석이조임. 체크아웃 전에 로비 들렀더니 천둥이가 산책 나갈 준비하고 있어서 같이 마당 한 바퀴 돌고 출발함🐾\n밸런스 게임: 새벽 인적 없는 탑사 vs 10시 황금빛 탑사, 뭐 고를래\n#홍삼빌호텔 #마이산 #진안여행",
-      "len": 315,
-      "images": [
-        "69.png",
-        "hotel_new_slide5.jpg",
-        "hotel_slide3.png"
-      ],
-      "post_id": "18108661982231370",
-      "permalink": "https://www.threads.com/@hongsamhotel/post/DeJ-BpoFe17",
-      "views": 18,
-      "views_final": true
-    },
     {
       "at": "2026-10-07 08:50",
       "topic": "서울에서 3시간, 사람 없는 조용한 여행지를 찾는 사람들에게",
@@ -905,7 +888,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/De0J5EpEebF",
       "views": 5,
       "replies": 0,
-      "views_final": false
+      "views_final": true
     },
     {
       "at": "2026-10-23 14:15",
@@ -1029,7 +1012,7 @@
       ],
       "post_id": "18116163424835224",
       "permalink": "https://www.threads.com/@hongsamhotel/post/De57G8iloS3",
-      "views": 10,
+      "views": 12,
       "replies": 0,
       "views_final": false
     },
@@ -1065,6 +1048,24 @@
       ],
       "post_id": "18436376140179088",
       "permalink": "https://www.threads.com/@hongsamhotel/post/De7ym45mh5x",
+      "views": 5,
+      "replies": 0,
+      "views_final": false
+    },
+    {
+      "at": "2026-10-26 14:13",
+      "topic": "마이산 처음 갈 때 모르면 손해 보는 것",
+      "hook": "insider",
+      "cta": "blank",
+      "text": "마이산 매표소 앞에서 멍하니 서있는 사람들 꼭 한 명씩 있음\n\n겨울엔 입장 시간이랑 요금이 계절마다 바뀌는 걸 모르고 그냥 가서 생기는 일임. 홍삼빌서 걸어서 30분이라 시간 맞춰 나가는 게 편한데, 아침 일찍 7시쯤 도착하니까 안개 껴서 봉우리 윗부분만 보이고 사람도 거의 없음. 늦게 가서 해 쨍할 때랑 완전 다른 장소 느낌 남, 돌탑 질감도 그때가 제일 잘 삼🐾\n아침형 여행 vs 저녁형 여행 너는 뭐임, 한 단어로\n#홍삼빌호텔 #마이산 #진안여행",
+      "len": 253,
+      "images": [
+        "12.png",
+        "81.png",
+        "80.png"
+      ],
+      "post_id": "18126850879932258",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/De8gOjim0kY",
       "views": null,
       "replies": null,
       "views_final": false
@@ -1073,6 +1074,6 @@
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-10-26 07:33"
+    "checked_at": "2026-10-26 14:11"
   }
 }
