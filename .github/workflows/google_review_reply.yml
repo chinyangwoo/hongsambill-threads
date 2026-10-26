@@ -1,0 +1,55 @@
+# 저장 위치: .github/workflows/google_review_reply.yml
+# 매일 아침 구글 리뷰 중 답글이 없는 것을 찾아, 총지배인 말투로 답글을 써서 등록
+# 4~5점만 자동 등록, 1~3점은 '수동 처리 필요'로만 기록
+name: 구글 리뷰 자동 답글
+
+on:
+  schedule:
+    - cron: "37 0 * * *"    # 매일 09:37 KST (정각 혼잡 회피)
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "preview=답글만 써서 보여주기(등록 안 함) / reply=작성+등록 / list=답글 없는 리뷰 목록"
+        required: false
+        default: "preview"
+        type: choice
+        options:
+          - preview
+          - reply
+          - list
+
+concurrency:
+  group: auto-post-commit
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  reply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 리뷰 답글 작성
+        env:
+          MODE: ${{ inputs.mode || 'reply' }}          # 예약 실행은 항상 reply
+          GBP_CLIENT_ID: ${{ secrets.GBP_CLIENT_ID }}
+          GBP_CLIENT_SECRET: ${{ secrets.GBP_CLIENT_SECRET }}
+          GBP_REFRESH_TOKEN: ${{ secrets.GBP_REFRESH_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python reply_google_reviews.py
+
+      - name: 기록 저장
+        if: always()
+        run: |
+          git config user.name "auto-post-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add -A gbp_reply_log.json 2>/dev/null || true
+          git diff --cached --quiet || git commit -m "구글 리뷰 답글 기록 $(date -u +'%Y-%m-%d %H:%M')"
+          git pull --rebase origin ${{ github.ref_name }} || true
+          git push || true
