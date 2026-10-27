@@ -1,23 +1,6 @@
 {
-  "count": 172,
+  "count": 173,
   "posts": [
-    {
-      "at": "2026-10-08 15:33",
-      "topic": "사람 몰리는 단풍 명소 대신 조용한 마이산 단풍",
-      "hook": "fail",
-      "cta": "빈칸 채우기식으로 한 단어 답하게 하기",
-      "text": "단풍 명소 검색하고 거기로 안 간 거 아직도 안 믿김\n\n원래 단풍철이면 다들 내장산 내장산 하길래 나도 그쪽 알아봤다가, 주차만 2시간 걸린다는 후기 보고 바로 접음. 근데 홍삼빌호텔 직원이 마이산도 10월 말이면 단풍 절정이라고 해서 반신반의로 탑사길 올라갔는데 진짜 사람 10명도 안 봄. 은수사 단풍나무 밑에서 사진 찍는데 뒤에 아무도 안 걸림, 이게 되네 싶었음. 내려오는 길에 천둥이 만나서 낙엽 밟으면서 같이 걸음🐾\n빈칸 채우기: 사람 없는 단풍길 걸으면서 든 생각은 ___ 한 단어로 답해줘\n#홍삼빌호텔 #마이산 #진안여행",
-      "len": 299,
-      "images": [
-        "42.png",
-        "75.png",
-        "17_running_maisan.png"
-      ],
-      "post_id": "17895118956612011",
-      "permalink": "https://www.threads.com/@hongsamhotel/post/DeOTIDDFv8z",
-      "views": 32,
-      "views_final": true
-    },
     {
       "at": "2026-10-08 23:35",
       "topic": "고기만 사 오면 되는 항아리바베큐, 진안 흑돼지 구워 먹는 저녁",
@@ -928,7 +911,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/De5NQX2IEzx",
       "views": 8,
       "replies": 0,
-      "views_final": false
+      "views_final": true
     },
     {
       "at": "2026-10-25 14:10",
@@ -1052,7 +1035,7 @@
       ],
       "post_id": "18130656710488756",
       "permalink": "https://www.threads.com/@hongsamhotel/post/De_G1jskUHl",
-      "views": 12,
+      "views": 13,
       "replies": 0,
       "views_final": false
     },
@@ -1070,6 +1053,24 @@
       ],
       "post_id": "18108098300254987",
       "permalink": "https://www.threads.com/@hongsamhotel/post/De_742olsqD",
+      "views": 7,
+      "replies": 0,
+      "views_final": false
+    },
+    {
+      "at": "2026-10-28 08:48",
+      "topic": "사람 몰리는 단풍 명소 대신 조용한 마이산 단풍",
+      "hook": "fail",
+      "cta": "ab",
+      "text": "단풍 명소 검색하다가 결국 아무 데도 안 가고 집에 갈 뻔함\n\n인터넷에 뜨는 단풍 맛집 다 사람 바글바글한 사진뿐이라 아예 포기할 뻔했는데, 마이산 쪽은 검색량이 적어서 반신반의로 갔음. 홍삼빌서 탑사까지 걸어가는 길에 단풍나무가 쫙 깔려있는데 평일 오전이라 사람이 진짜 서너 명밖에 없음, 사진 찍는데 뒤에 아무도 안 걸림. 색도 생각보다 진해서 주황이랑 빨강이 거의 반반, 발밑에 낙엽 밟는 소리까지 선명하게 들림🐾\n사람 많아도 유명한 단풍 vs 조용하지만 덜 알려진 단풍, A/B로 찍어줘\n#홍삼빌호텔 #진안여행 #마이산",
+      "len": 294,
+      "images": [
+        "17_running_maisan.png",
+        "21.png",
+        "11_digital_detox.png"
+      ],
+      "post_id": "18139072210727639",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DfBEmBuDgKi",
       "views": null,
       "replies": null,
       "views_final": false
@@ -1078,6 +1079,6 @@
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-10-27 22:11"
+    "checked_at": "2026-10-28 08:46"
   }
 }
