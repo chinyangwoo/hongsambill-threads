@@ -1,23 +1,6 @@
 {
-  "count": 171,
+  "count": 172,
   "posts": [
-    {
-      "at": "2026-10-08 09:13",
-      "topic": "총지배견 천둥이(허스키), 아이들이 체크인보다 먼저 찾는 이유",
-      "hook": "twist",
-      "cta": "같은 경험 있는 사람 손들게 하기",
-      "text": "애들이 프런트 직원 얼굴도 안 보고 그쪽으로 돌진함\n\n체크인하려고 줄 서있는데 7살짜리 조카가 내 손 놓고 로비 구석으로 전력질주함, 알고 보니 거기 천둥이가 엎드려있었던 거임. 직원분이 웃으면서 \"애들이 항상 저래요, 체크인은 다음 순서예요\" 하는데 진짜 매번 그런다고 함. 결국 조카는 천둥이 옆에 딱 붙어서 10분 동안 안 떨어졌고 나 혼자 체크인 끝냄ㅋㅋ 방 들어가서도 천둥이 얘기만 함🐾\n애들이 체크인보다 먼저 강아지부터 찾는 거 본 적 있는 사람 손 들어봐\n#홍삼빌호텔 #마이산 #진안가볼만한곳",
-      "len": 282,
-      "images": [
-        "81.png",
-        "hotel_new_slide9.jpg",
-        "13.png"
-      ],
-      "post_id": "18136688161630305",
-      "permalink": "https://www.threads.com/@hongsamhotel/post/DeNnpOODSvp",
-      "views": 17,
-      "views_final": true
-    },
     {
       "at": "2026-10-08 15:33",
       "topic": "사람 몰리는 단풍 명소 대신 조용한 마이산 단풍",
@@ -927,7 +910,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/De4FO9KG8pJ",
       "views": 12,
       "replies": 0,
-      "views_final": false
+      "views_final": true
     },
     {
       "at": "2026-10-25 07:29",
@@ -1015,7 +998,7 @@
       ],
       "post_id": "18126850879932258",
       "permalink": "https://www.threads.com/@hongsamhotel/post/De8gOjim0kY",
-      "views": 11,
+      "views": 12,
       "replies": 0,
       "views_final": false
     },
@@ -1069,6 +1052,24 @@
       ],
       "post_id": "18130656710488756",
       "permalink": "https://www.threads.com/@hongsamhotel/post/De_G1jskUHl",
+      "views": 12,
+      "replies": 0,
+      "views_final": false
+    },
+    {
+      "at": "2026-10-27 22:12",
+      "topic": "총지배견 천둥이(허스키), 아이들이 체크인보다 먼저 찾는 이유",
+      "hook": "twist",
+      "cta": "number",
+      "text": "체크인 데스크 갔는데 애가 직원은 쳐다도 안 봄\n\n시선이 바닥에 꽂혀있길래 봤더니 천둥이가 먼저 와서 앉아있었음. 애는 여권이고 뭐고 천둥이한테 직진, 손 내밀고 냄새 맡고 난리남. 알고 보니 체크인 시간대에 로비에 자주 나와있다고 함, 그날은 한 15분 정도 애 옆에 가만히 앉아있어 줌. 결국 방 키는 엄마가 받고 애는 천둥이랑 인사만 하다 하루 시작함, 순서가 완전히 뒤바뀐 체크인🐾\n강아지 좋아함 1, 고양이파 2 숫자로 찍어줘\n#홍삼빌호텔 #마이산 #진안여행",
+      "len": 261,
+      "images": [
+        "54.png",
+        "sauna_true_vertical.png",
+        "41.png"
+      ],
+      "post_id": "18108098300254987",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/De_742olsqD",
       "views": null,
       "replies": null,
       "views_final": false
@@ -1077,6 +1078,6 @@
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-10-27 14:27"
+    "checked_at": "2026-10-27 22:11"
   }
 }
