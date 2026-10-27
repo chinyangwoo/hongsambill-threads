@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "preview=답글만 써서 보여주기(등록 안 함) / reply=작성+등록 / list=답글 없는 리뷰 목록"
+        description: "preview=답글만 써서 보여주기(등록 안 함) / reply=작성+등록 / list=답글 없는 리뷰 목록 / recent=최근 리뷰와 달린 답글 보기"
         required: false
         default: "preview"
         type: choice
@@ -17,6 +17,7 @@ on:
           - preview
           - reply
           - list
+          - recent
 
 concurrency:
   group: auto-post-commit

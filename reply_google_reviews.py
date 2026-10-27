@@ -351,7 +351,24 @@ def recent_replies(log, n=8):
 # ─────────────────────────────────────────────
 # 실행
 # ─────────────────────────────────────────────
+def show_recent(n=12):
+    """최근 리뷰와 거기 달린 답글(사람이 고친 것 포함)을 그대로 출력 — 말투 점검용"""
+    h = {"Authorization": f"Bearer {access_token()}"}
+    for loc_path, title, _ in find_locations(h):
+        rs = list_paged(GBP_REVIEWS.format(location=loc_path), h, "reviews",
+                        {"pageSize": 50, "orderBy": "updateTime desc"})
+        for r in rs[:n]:
+            rep = r.get("reviewReply") or {}
+            print(f"\n★{STAR.get(r.get('starRating'), 0)} {r.get('createTime', '')[:10]} "
+                  f"{(r.get('reviewer') or {}).get('displayName', '')}\n"
+                  f"리뷰: {original_comment(r.get('comment'))!r}\n"
+                  f"답글({rep.get('updateTime', '')[:16]}): {rep.get('comment', '(없음)')!r}")
+
+
 def main():
+    if MODE == "recent":
+        show_recent()
+        return
     print(f"▶️ 모드: {MODE} / 최근 {WINDOW_DAYS}일 / 1회 최대 {MAX_PER_RUN}건 / 모델 {REPLY_MODEL}")
     reviews, h = fetch_unreplied()
     log = load_log()
@@ -404,7 +421,7 @@ def main():
 
 if __name__ == "__main__":
     try:
-        if MODE not in ("reply", "preview", "list"):
+        if MODE not in ("reply", "preview", "list", "recent"):
             raise RuntimeError(f"mode 값이 잘못됨: {MODE} (reply / preview / list)")
         main()
     except Exception as e:
