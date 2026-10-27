@@ -100,7 +100,8 @@ AI 나 홍보팀이 쓴 티가 조금이라도 나면 실패다.
 - 마지막 문장은 다음 방문을 정중히 청하는 말이면 자연스럽다 ("다음에도 편히 모시겠습니다", "또 뵙기를 바랍니다" 등, 매번 다르게).
 - 아쉬운 점을 말한 리뷰는 변명하지 말고, 무엇이 불편했는지 짚고 정중히 사과한 뒤 할 수 있는 만큼만 말한다.
   ("바로 고치겠다", "전 객실 교체" 같은 약속은 하지 않는다. "직원들과 확인해 보겠습니다" 정도.)
-- 리뷰가 외국어면 본문은 그 언어로 쓴다(일본어 리뷰는 일본어, 영어 리뷰는 영어).
+- 리뷰가 외국어면 본문은 그 언어로 쓴다(일본어 리뷰는 일본어, 영어 리뷰는 영어, 중국어 리뷰는 중국어).
+  이때도 호칭·끝인사(Thank you 등)·서명은 시스템이 붙이니 본문만 쓴다.
 
 # 절대 하지 말 것
 - "소중한 리뷰", "진심으로 감사", "따뜻한 말씀", "여정", "선물 같은", "힐링", "감동", "추억", "행복한 시간",
@@ -179,9 +180,12 @@ def clean(text):
     t = re.sub(r"^(답글|Reply)\s*[:：]\s*", "", text.strip())
     # 모델이 서명·끝인사·호칭을 붙였으면 떼어 낸다 (시스템이 정해진 형식으로 붙임)
     t = re.sub(r"\n+\s*[-—–]*\s*홍삼빌.*$", "", t, flags=re.S).strip()
+    t = re.sub(r"\n+\s*Master\..*$", "", t, flags=re.S).strip()
     t = t.strip('"“”\'').strip()
     t = re.sub(r"^\S{1,20}\s*\*?\s*고객님\s*,?\s*\n?", "", t).strip()
     t = re.sub(r"\s*감사합니다[.!]?\s*$", "", t).strip()
+    t = re.sub(r"\s*(Thank you( very much)?|ありがとうございました|谢谢)[.!。！]?\s*$", "", t, flags=re.I).strip()
+    t = re.sub(r"^(Dear [^\n,]{1,40},|[^\n]{1,20}様|尊敬的[^\n，]{1,20}，)\s*\n?", "", t).strip()
     return t
 
 
@@ -248,11 +252,34 @@ def masked_name(name):
     return name[:-1] + "*" if len(name) >= 2 else name + "*"
 
 
+FOREIGN_SIGNATURE = os.environ.get("REPLY_SIGNATURE_FOREIGN", "Master. Haward Jeoung").strip()
+
+
+def review_lang(text):
+    """리뷰 언어: ko / ja / zh / en(그 밖의 외국어 포함)"""
+    if not text or is_korean(text):
+        return "ko"
+    if re.search(r"[\u3040-\u30ff]", text):
+        return "ja"
+    if len(re.findall(r"[\u4e00-\u9fff]", text)) >= 3:
+        return "zh"
+    return "en"
+
+
 def with_signature(reply, rv):
-    """호칭 + 본문 + '감사합니다.' + 빈 줄 + '홍삼빌호텔 총지배인 배상'"""
+    """한국어: '홍길* 고객님,' + 본문 + '감사합니다.' + 빈 줄 + '홍삼빌호텔 총지배인 배상'
+    외국어: 그 언어의 호칭 + 본문 + 그 언어의 감사 인사 + 빈 줄 + 'Master. Haward Jeoung'"""
     who = masked_name(rv.get("reviewer"))
-    head = f"{who} 고객님," if who else "고객님,"
-    return f"{head}\n{reply}\n감사합니다.\n\n{SIGNATURE}"
+    lang = review_lang(rv.get("text"))
+    if lang == "ja":
+        head, thanks = (f"{who}様" if who else "お客様"), "ありがとうございました。"
+    elif lang == "zh":
+        head, thanks = (f"尊敬的{who}，" if who else "尊敬的客人，"), "谢谢。"
+    elif lang == "en":
+        head, thanks = (f"Dear {who}," if who else "Dear Guest,"), "Thank you."
+    else:
+        return f"{who + ' 고객님,' if who else '고객님,'}\n{reply}\n감사합니다.\n\n{SIGNATURE}"
+    return f"{head}\n{reply}\n{thanks}\n\n{FOREIGN_SIGNATURE}"
 
 
 # ─────────────────────────────────────────────
