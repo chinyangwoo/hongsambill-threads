@@ -1,23 +1,6 @@
 {
-  "count": 173,
+  "count": 174,
   "posts": [
-    {
-      "at": "2026-10-08 23:35",
-      "topic": "고기만 사 오면 되는 항아리바베큐, 진안 흑돼지 구워 먹는 저녁",
-      "hook": "compare",
-      "cta": "밸런스 게임으로 둘 중 하나 고르게 하기",
-      "text": "캠핑장 불멍 vs 호텔방에서 숯불 피우기 고민하는 거 자체가 웃긴 상황이었음\n\n밖에서 바베큐하면 설거지에 정리에 피곤한데 여기는 객실에 항아리 통째로 준비돼있어서 고기만 사 오면 끝남. 근처 정육점에서 진안 흑돼지 한 근 떠왔는데 가격도 서울 삼겹살값이랑 비슷함. 항아리 안에서 숯 타는 소리 들으면서 7시부터 9시까지 두 시간을 방에서 안 나감, 냄새도 생각보다 안 배고 환기 잘 됨. 중간에 천둥이가 복도 지나가다 냄새 맡고 문 앞에서 한참 서성이는 거 창문으로 목격함🐾\n밸런스 게임: 밖에서 불멍하며 고기 vs 방에서 항아리로 고기, 뭐 고를래\n#홍삼빌호텔 #진안여행 #홍삼스파",
-      "len": 326,
-      "images": [
-        "78.png",
-        "running.png",
-        "hotel_new_slide1.jpg"
-      ],
-      "post_id": "18119764753949021",
-      "permalink": "https://www.threads.com/@hongsamhotel/post/DePKRNulZkf",
-      "views": 16,
-      "views_final": true
-    },
     {
       "at": "2026-10-09 09:24",
       "topic": "2층 유리난간 테라스에서 마이산 보며 멍때리기",
@@ -929,7 +912,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/De57G8iloS3",
       "views": 12,
       "replies": 0,
-      "views_final": false
+      "views_final": true
     },
     {
       "at": "2026-10-25 21:35",
@@ -981,7 +964,7 @@
       ],
       "post_id": "18126850879932258",
       "permalink": "https://www.threads.com/@hongsamhotel/post/De8gOjim0kY",
-      "views": 12,
+      "views": 13,
       "replies": 0,
       "views_final": false
     },
@@ -999,7 +982,7 @@
       ],
       "post_id": "18129205418489449",
       "permalink": "https://www.threads.com/@hongsamhotel/post/De9eXNgm77x",
-      "views": 16,
+      "views": 17,
       "replies": 0,
       "views_final": false
     },
@@ -1071,6 +1054,24 @@
       ],
       "post_id": "18139072210727639",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfBEmBuDgKi",
+      "views": 2,
+      "replies": 0,
+      "views_final": false
+    },
+    {
+      "at": "2026-10-28 15:10",
+      "topic": "고기만 사 오면 되는 항아리바베큐, 진안 흑돼지 구워 먹는 저녁",
+      "hook": "number",
+      "cta": "blank",
+      "text": "고기만 들고 오면 끝난다는 말이 진짜인지 반신반의했음\n\n홍삼빌에 항아리바베큐 있길래 숯이랑 불판 다 챙겨야 되나 싶었는데 그냥 몸만 가면 됨. 읍내 정육점서 진안 흑돼지 2인분 사다 주니까 항아리에 바로 올려줌, 뚜껑 닫고 10분도 안 돼서 기름 떨어지는 소리부터 남. 불멍 대신 고기멍 20분 하고 나니까 겉바속촉 그 자체, 숯불향 제대로 뱄음. 설거지도 없이 빈 접시만 들고 방으로 들어가는 게 이렇게 편할 일인가 싶었음🐾\n캠핑 vs 항아리바베큐, 둘 중 안 귀찮은 거 숫자로 찍어줘\n#홍삼빌호텔 #진안여행 #진안가볼만한곳",
+      "len": 294,
+      "images": [
+        "65.png",
+        "58.png",
+        "69.png"
+      ],
+      "post_id": "18131743831837860",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DfBwZz2G-In",
       "views": null,
       "replies": null,
       "views_final": false
@@ -1079,6 +1080,6 @@
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-10-28 08:46"
+    "checked_at": "2026-10-28 15:09"
   }
 }
