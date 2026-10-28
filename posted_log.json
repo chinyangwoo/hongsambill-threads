@@ -1,23 +1,6 @@
 {
-  "count": 174,
+  "count": 175,
   "posts": [
-    {
-      "at": "2026-10-09 09:24",
-      "topic": "2층 유리난간 테라스에서 마이산 보며 멍때리기",
-      "hook": "secret",
-      "cta": "다음에 뭐 할지 골라달라고 투표 붙이기",
-      "text": "이거 체크인할 때 아무도 안 알려주는 자리 하나 있는데 진짜 아까움\n\n2층 복도 끝에 유리난간 테라스 있음, 아는 사람 별로 없음. 의자 두 개 딱 놔뒀는데 정면으로 마이산 봉우리 두 개가 걸림. 아침 8시쯤 나갔다가 안개 걷히는 거 보면서 40분을 핸드폰도 안 만지고 앉아만 있었음. 유리라서 바람도 안 들어와서 춥지도 않음. 내려가는데 천둥이가 계단에서 마주쳐서 거기 같이 앉혀놓고 사진 건짐🐾\n투표: 1) 그 테라스 야경 버전 2) 1층 마당 천둥이 아침산책, 뭐 먼저 올림?\n#홍삼빌호텔 #마이산 #진안여행",
-      "len": 287,
-      "images": [
-        "46.png",
-        "49.png",
-        "48.png"
-      ],
-      "post_id": "18118273526051299",
-      "permalink": "https://www.threads.com/@hongsamhotel/post/DeQNrCbDfl3",
-      "views": 25,
-      "views_final": true
-    },
     {
       "at": "2026-10-09 15:35",
       "topic": "마이산 탑사 돌탑, 사진이랑 실물이 다른 이유",
@@ -930,7 +913,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/De6t_SsEez-",
       "views": 5,
       "replies": 0,
-      "views_final": false
+      "views_final": true
     },
     {
       "at": "2026-10-26 07:34",
@@ -1072,6 +1055,24 @@
       ],
       "post_id": "18131743831837860",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfBwZz2G-In",
+      "views": 5,
+      "replies": 0,
+      "views_final": false
+    },
+    {
+      "at": "2026-10-28 23:01",
+      "topic": "객실 창으로 마이산 보며 멍때리기",
+      "hook": "question",
+      "cta": "recommend",
+      "text": "커튼 열자마자 눈 마주친 게 사람이 아니라 산이었던 적 있음\n\n체크인하고 그냥 커튼만 열었는데 마이산 두 봉우리가 창문 가득 들어와 있음. 뭐 하려고 켠 것도 아닌데 그대로 10분 서서 봄, 구름 지나가니까 봉우리 색까지 바뀌는 거 보고 핸드폰도 안 들었음. 침대에 걸터앉아서 커피 한 잔 다 마실 동안 시선 한 번도 안 뗐다는 거에 놀람, 창문 하나가 액자보다 나을 수도 있다는 거 이번에 처음 앎🐾\n창밖 풍경 중에 평생 안 질릴 것 같은 거 하나만 찍어줘\n#홍삼빌호텔 #마이산 #진안여행",
+      "len": 274,
+      "images": [
+        "hotel_slide2.png",
+        "hotel_new_slide3.jpg",
+        "47.png"
+      ],
+      "post_id": "17916073974524848",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DfCmO6hlWGW",
       "views": null,
       "replies": null,
       "views_final": false
@@ -1080,6 +1081,6 @@
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-10-28 15:09"
+    "checked_at": "2026-10-28 22:59"
   }
 }
