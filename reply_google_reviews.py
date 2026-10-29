@@ -253,6 +253,9 @@ def masked_name(name):
     if not name:
         return ""
     if re.search(r"[가-힣]", name):
+        hangul = "".join(re.findall(r"[가-힣]+", name))
+        if re.search(r"[A-Za-z]", name) and len(hangul) >= 2:
+            name = hangul                      # 'woongni웅니' → '웅니' → '웅*'
         name = name.replace(" ", "")
         return name[:-1] + "*" if len(name) >= 2 else name + "*"
     parts = name.split()
