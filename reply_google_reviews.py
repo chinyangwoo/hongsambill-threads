@@ -46,7 +46,7 @@ SIGNATURE = os.environ.get("REPLY_SIGNATURE", "홍삼빌호텔 총지배인 배�
 AUTO_MIN_STARS = 4                 # 이 점수 이상만 자동 등록
 WINDOW_DAYS = int(os.environ.get("REPLY_WINDOW_DAYS", "60"))   # 이 기간 안에 작성된 리뷰만 대상
 MAX_PER_RUN = int(os.environ.get("REPLY_MAX_PER_RUN", "10"))
-MAX_TRIES = 3                      # 검사 불합격 시 다시 쓰기 횟수
+MAX_TRIES = 4                      # 검사 불합격 시 다시 쓰기 횟수
 LOG_FILE = "gbp_reply_log.json"
 
 # 호텔 사실 목록 — 답글에는 이 범위 안의 사실만 쓴다 (바뀌면 여기만 고치면 됨)
@@ -223,8 +223,8 @@ def check(reply, rv):
     if re.search(r"\bAI\b|인공지능|ChatGPT|Claude", reply, re.I):
         probs.append("AI 언급 금지")
     # 길이: 리뷰보다 길면 안 됨 (짧은 리뷰도 최소 한두 문장은 허용)
-    limit = max(140, int(len(rv["text"]) * 1.2)) if rv["text"] else 110
-    limit = min(limit, 450)
+    limit = max(200, int(len(rv["text"]) * 1.5)) if rv["text"] else 130
+    limit = min(limit, 480)
     if len(reply) > limit:
         probs.append(f"너무 김 ({len(reply)}자) → {limit}자 이내로 줄일 것")
     if rv["text"] and is_korean(rv["text"]) and not is_korean(reply):
