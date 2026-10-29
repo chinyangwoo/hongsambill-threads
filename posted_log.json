@@ -1,23 +1,6 @@
 {
-  "count": 176,
+  "count": 177,
   "posts": [
-    {
-      "at": "2026-10-09 23:23",
-      "topic": "제주·강원 대신 진안을 고른 이유",
-      "hook": "insider",
-      "cta": "같은 경험 있는 사람 손들게 하기",
-      "text": "친구들 다 제주 강원 갈 때 왜 혼자 전북 가냐고 물어봄ㅋㅋ\n\n이유 간단함, 거기는 숙소 잡으려면 몇 주 전부터 알림 걸어놓고 클릭전쟁 해야 하는데 여기는 평일 기준 하루 전에 전화해도 방 있었음. 가격도 성수기 제주 반값 수준인데 조식 포함에 바로 옆에 홍삼스파까지 껴있음. 스파에서 1시간 몸 지지고 나와서 마이산 탑사까지 걸어서 20분, 이게 되는 동선이 다른 데는 없음. 체크아웃하는데 천둥이가 또 마당에서 배웅해줘서 괜히 더 안 가고 싶었음🐾\n제주 강원 가려다 숙소 전쟁 지치고 경로 바꿔본 사람 손 들어봐\n#홍삼빌호텔 #진안여행 #전북여행",
-      "len": 307,
-      "images": [
-        "11_digital_detox.png",
-        "55.png",
-        "82.jpg"
-      ],
-      "post_id": "18138798910545002",
-      "permalink": "https://www.threads.com/@hongsamhotel/post/DeRtoKqkdK4",
-      "views": 20,
-      "views_final": true
-    },
     {
       "at": "2026-10-10 09:04",
       "topic": "아이랑 1박2일, 차 덜 타고 걸어서 되는 마이산 코스",
@@ -968,7 +951,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/De-glYMmZ5N",
       "views": 10,
       "replies": 0,
-      "views_final": false
+      "views_final": true
     },
     {
       "at": "2026-10-27 14:29",
@@ -1074,6 +1057,24 @@
       ],
       "post_id": "18079509932430035",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfGI3DZj4gO",
+      "views": 2,
+      "replies": 0,
+      "views_final": false
+    },
+    {
+      "at": "2026-10-30 08:58",
+      "topic": "제주·강원 대신 진안을 고른 이유",
+      "hook": "secret",
+      "cta": "handsup",
+      "text": "이거 올리면 사람 몰릴까 봐 끝까지 고민했음\n\n제주 갈까 강원 갈까 하다가 주말 숙소값 보고 창 닫고 지도 뒤지다 진안을 찍었음. 마이산 걸어서 갈 수 있는 홍삼빌호텔 잡았는데 구글 평점 4.6이라 믿고 가봄. 평일 아침에 탑사 앞에 갔더니 나 포함 다섯 명이라 전세 낸 줄 알았음 ㅋㅋ 근데 진짜 제일 좋았던 건 따로 있는데 그건 아직 안 풀래 😮‍💨\n성수기 제주 숙소값 보고 조용히 창 닫아본 사람 손\n#홍삼빌호텔 #진안여행 #마이산",
+      "len": 244,
+      "images": [
+        "sauna.png",
+        "72.png",
+        "32.png"
+      ],
+      "post_id": "17989683984096708",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DfGPVj2Ds3C",
       "views": null,
       "replies": null,
       "views_final": false
@@ -1082,6 +1083,6 @@
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-10-30 07:59"
+    "checked_at": "2026-10-30 08:56"
   }
 }
