@@ -170,6 +170,13 @@ def call_claude(system, user):
                 data = json.loads(res.read().decode())
             return "".join(b.get("text", "") for b in data.get("content", [])
                            if b.get("type") == "text").strip()
+        except urllib.error.HTTPError as e:
+            detail = e.read().decode(errors="replace")[:300]
+            print(f"⚠️ Claude 호출 실패({attempt}/3): HTTP {e.code} {detail}")
+            if "usage limits" in detail or "credit balance" in detail:
+                print("⛔ Anthropic API 사용 한도 초과 — 콘솔에서 한도를 올리기 전까지 답글을 쓸 수 없습니다.")
+                return ""
+            time.sleep(5 * attempt)
         except Exception as e:
             print(f"⚠️ Claude 호출 실패({attempt}/3): {e}")
             time.sleep(5 * attempt)
