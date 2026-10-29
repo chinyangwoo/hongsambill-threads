@@ -47,7 +47,7 @@ IMAGE_COUNT = 3
 MAX_SIDE = 1600
 MIN_RATIO, MAX_RATIO = 0.6, 2.0
 KST = timezone(timedelta(hours=9))
-CLAUDE_MODEL = os.environ.get("CLAUDE_MODEL", "claude-sonnet-5")
+CLAUDE_MODEL = os.environ.get("CLAUDE_MODEL", "claude-sonnet-5-5")
 MAX_TOKENS = int(os.environ.get("CLAUDE_MAX_TOKENS", "4000"))  # ★ 1200 → 4000
 
 ANTHROPIC_API_KEY = os.environ["ANTHROPIC_API_KEY"]
