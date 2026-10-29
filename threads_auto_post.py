@@ -407,7 +407,7 @@ def call_claude(system, user):
     # 본문이 비는 문제 → ① 생각 기능을 끄고 ② 토큰 한도를 넉넉히 올림.
     # 만약 API가 '생각 끄기' 옵션을 거부하면(400 오류) 그 옵션만 빼고 자동 재시도.
     payload = {
-        "model": "claude-sonnet-5-5-5",
+        "model": "claude-sonnet-5-5",
         "max_tokens": 8000,
         "temperature": 1.0,
         "thinking": {"type": "disabled"},
