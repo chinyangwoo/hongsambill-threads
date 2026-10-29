@@ -105,7 +105,8 @@ AI 나 홍보팀이 쓴 티가 조금이라도 나면 실패다.
 
 # 절대 하지 말 것
 - "소중한 리뷰", "진심으로 감사", "따뜻한 말씀", "여정", "선물 같은", "힐링", "감동", "추억", "행복한 시간",
-  "최선을 다하겠습니다", "앞으로도 더욱", "다시 한번 감사" 같은 상투어, 감성 비유, 시적인 표현
+  "뜻깊은", "영광", "기쁨", "기억에 남", "최선을 다하겠습니다", "앞으로도 더욱", "다시 한번 감사" 같은 상투어, 감성 비유, 시적인 표현
+- 생일·환갑·기념일 리뷰라도 "뜻깊은 날", "영광" 같은 말 대신 "어머님 환갑을 축하드립니다"처럼 짧고 담백하게 축하한다.
 - 리뷰 내용을 줄줄이 요약하거나 칭찬을 하나하나 되풀이하기
 - 이모지, 해시태그, 느낌표 2개 이상, 줄표(—), 따옴표로 단어 강조
 - 리뷰에 없는 손님 사정 지어내기, 아래 사실 목록에 없는 호텔 정보·날짜·가격·약속
@@ -233,14 +234,15 @@ def check(reply, rv):
 
 
 def write_reply(rv, recent):
-    feedback, reply = None, ""
+    seen_probs, reply = [], ""
     for n in range(1, MAX_TRIES + 1):
+        feedback = "\n".join(f"- {p}" for p in seen_probs) or None
         reply = clean(call_claude(SYSTEM, build_user_prompt(rv, recent, feedback)))
         probs = check(reply, rv)
         if not probs:
             return reply, n
-        feedback = "\n".join(f"- {p}" for p in probs)
-        print(f"   ↺ {n}회차 불합격: {'; '.join(probs)}")
+        seen_probs += [p for p in probs if p not in seen_probs]   # 앞에서 지적된 문제도 계속 알려 줌
+        print(f"   ↺ {n}회차 불합격: {'; '.join(probs)}\n      초안: {reply[:160]!r}")
     return None, MAX_TRIES
 
 
