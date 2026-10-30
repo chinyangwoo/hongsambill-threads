@@ -1,23 +1,6 @@
 {
-  "count": 178,
+  "count": 179,
   "posts": [
-    {
-      "at": "2026-10-10 15:18",
-      "topic": "마이산 한 바퀴 돌고 홍삼스파에서 다리 푸는 하루",
-      "hook": "number",
-      "cta": "밸런스 게임으로 둘 중 하나 고르게 하기",
-      "text": "다리 풀린 거 느끼는데 걸린 시간 딱 10분\n\n아침에 탑사까지 왕복 1시간 걸으면서 은수사까지 다 돌고 나니까 종아리가 돌덩이였음. 근데 체크인하자마자 홍삼스파 가서 뜨거운 탕에 10분 담궜는데 다리가 그냥 녹음, 이게 뭔 일인가 싶었음. 스파랑 호텔이 붙어있어서 걸어서 3분, 산 타고 바로 지지러 가는 동선이 말이 됨. 나와서 로비 지나가는데 천둥이가 또 늘어져있어서 똑같이 다리 뻗고 누워있었음🐾\n밸런스 게임: 산타기 전에 스파 몸풀기 vs 산타고 나서 스파 다리풀기, 뭐가 나음\n#홍삼빌호텔 #홍삼스파 #마이산",
-      "len": 289,
-      "images": [
-        "68.png",
-        "hotel_new_slide6.jpg",
-        "11.png"
-      ],
-      "post_id": "18087137825287728",
-      "permalink": "https://www.threads.com/@hongsamhotel/post/DeTa84yHCr2",
-      "views": 11,
-      "views_final": true
-    },
     {
       "at": "2026-10-10 22:41",
       "topic": "마이산 처음 갈 때 모르면 손해 보는 것",
@@ -970,7 +953,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/De_742olsqD",
       "views": 11,
       "replies": 0,
-      "views_final": false
+      "views_final": true
     },
     {
       "at": "2026-10-28 08:48",
@@ -1058,7 +1041,7 @@
       ],
       "post_id": "17989683984096708",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfGPVj2Ds3C",
-      "views": 3,
+      "views": 4,
       "replies": 0,
       "views_final": false
     },
@@ -1076,6 +1059,24 @@
       ],
       "post_id": "17950793541338351",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfG7ACuldf-",
+      "views": 4,
+      "replies": 0,
+      "views_final": false
+    },
+    {
+      "at": "2026-10-30 23:07",
+      "topic": "마이산 한 바퀴 돌고 바베큐장에서 저녁 먹는 하루",
+      "hook": "number",
+      "cta": "debate",
+      "text": "2만 보 걸은 날 저녁이 이렇게 될 줄은 몰랐음\n\n마이산 한 바퀴 돌고 내려오니까 4시간이 지나 있었고 다리는 이미 내 거가 아니었음. 근데 숙소 바베큐장에서 고기 구우니까 피곤이 진짜 녹음. 숯불 앞에 앉아서 한 점 먹는데 마이산 봉우리가 점점 어두워지는 게 보임. 아까까지 저 밑을 걸었다는 게 괜히 뿌듯해서 한참 멍하니 있었음 😌\n걷고 나면 외식보다 숙소에서 구워 먹는 게 이긴다고 봄, 아니면 반박해\n#홍삼빌호텔 #마이산 #진안여행",
+      "len": 245,
+      "images": [
+        "hotel_new_slide9.jpg",
+        "66.png",
+        "71.png"
+      ],
+      "post_id": "17976084468150373",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DfHwhRwlnrE",
       "views": null,
       "replies": null,
       "views_final": false
@@ -1084,6 +1085,6 @@
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-10-30 15:18"
+    "checked_at": "2026-10-30 23:05"
   }
 }
