@@ -1,23 +1,6 @@
 {
-  "count": 177,
+  "count": 178,
   "posts": [
-    {
-      "at": "2026-10-10 09:04",
-      "topic": "아이랑 1박2일, 차 덜 타고 걸어서 되는 마이산 코스",
-      "hook": "compare",
-      "cta": "더 좋은 정보 아는 사람 댓글로 부르기",
-      "text": "키즈카페 대신 산 데려가면 큰일 날 줄 알았음\n\n근데 7살 조카랑 1박2일로 갔다가 진짜 차 한 번도 안 탐. 호텔 정문에서 탑사 입구까지 걸어서 15분, 경사도 거의 없어서 중간에 업어준 거 딱 한 번. 은수사까지도 평지라 유모차 끄는 애기 엄마들도 꽤 보임. 왕복 1시간 코스로 탑 구경하고 내려와서 바로 체크인하고 스파 가서 애 체력 방전시킴. 숙소 들어가는 길에 천둥이 만나서 조카가 또 한참 붙어있었음🐾\n애들 데리고 차 안 타고 되는 코스 더 아는 사람 있으면 댓글로 알려줘\n#홍삼빌호텔 #마이산 #진안가볼만한곳",
-      "len": 291,
-      "images": [
-        "37.png",
-        "34.jpg",
-        "87.png"
-      ],
-      "post_id": "18105658727526350",
-      "permalink": "https://www.threads.com/@hongsamhotel/post/DeSwJUfGPre",
-      "views": 16,
-      "views_final": true
-    },
     {
       "at": "2026-10-10 15:18",
       "topic": "마이산 한 바퀴 돌고 홍삼스파에서 다리 푸는 하루",
@@ -969,7 +952,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/De_G1jskUHl",
       "views": 14,
       "replies": 0,
-      "views_final": false
+      "views_final": true
     },
     {
       "at": "2026-10-27 22:12",
@@ -1057,7 +1040,7 @@
       ],
       "post_id": "18079509932430035",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfGI3DZj4gO",
-      "views": 2,
+      "views": 5,
       "replies": 0,
       "views_final": false
     },
@@ -1075,6 +1058,24 @@
       ],
       "post_id": "17989683984096708",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfGPVj2Ds3C",
+      "views": 3,
+      "replies": 0,
+      "views_final": false
+    },
+    {
+      "at": "2026-10-30 15:19",
+      "topic": "아이랑 1박2일, 차 덜 타고 걸어서 되는 마이산 코스",
+      "hook": "fail",
+      "cta": "metoo",
+      "text": "애랑 1박2일 일정 꽉 채운 게 제일 큰 실수였음\n\n첫날 명소 4곳 찍겠다고 차에 탔다 내렸다만 반복했더니 애가 세 번째 이동에서 카시트 폭발함. 다음 날은 홍삼빌에서 탑사까지 그냥 걸어갔는데 애가 돌멩이 줍고 개미 구경하느라 알아서 신나게 걸음. 차 한 번 안 타고 오전이 끝났는데 오히려 본 게 더 많았음 😅 아이랑은 마이산 하나만 느리게 도는 게 정답이라고 봄.\n애 데리고 일정 욕심부린 적 나만 있는 거 아니지? 있으면 ㅇㅇ\n#홍삼빌호텔 #마이산 #진안여행",
+      "len": 259,
+      "images": [
+        "62.png",
+        "12.png",
+        "40.png"
+      ],
+      "post_id": "17950793541338351",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DfG7ACuldf-",
       "views": null,
       "replies": null,
       "views_final": false
@@ -1083,6 +1084,6 @@
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-10-30 08:56"
+    "checked_at": "2026-10-30 15:18"
   }
 }
