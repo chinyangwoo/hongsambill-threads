@@ -3,118 +3,165 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>홍삼빌호텔 B.O.M — 마이산을 봄</title>
-<meta name="description" content="홍삼빌호텔(B.O.M · Breath Of Maisan) — 전북 진안 마이산 앞 호텔. 인스타그램·스레드·진안사우나·예약 1661-3889 를 한곳에서.">
+<title>B.O.M 홍삼빌호텔 — 마이산을 봄.</title>
+<meta name="description" content="Breath Of Maisan. 전북 진안 마이산 바로 앞, 홍삼빌호텔. 인스타그램, 스레드, 진안사우나, 전화 예약 1661-3889.">
 <link rel="canonical" href="https://www.hongsamhotel.kr/">
-<meta property="og:title" content="홍삼빌호텔 B.O.M — 마이산을 봄.">
-<meta property="og:description" content="전북 진안 마이산 앞 호텔 · 겨울 사우나 운영 중 · 예약 1661-3889">
-<meta property="og:image" content="maisan_hero.jpg">
-<meta name="theme-color" content="#0F2740">
+<meta property="og:title" content="B.O.M 홍삼빌호텔 — 마이산을 봄.">
+<meta property="og:description" content="마이산 바로 앞 호텔. 겨울 장작 사우나 운영 중. 예약 1661-3889">
+<meta property="og:image" content="https://bom-maisan.netlify.app/maisan_hero.jpg">
+<meta name="theme-color" content="#E7ECEA">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
 <style>
+  /* 안개 낀 마이산에서 가져온 색 — 안개, 바위, 이끼, 소나무 */
   :root {
-    --navy: #0F2740;
-    --navy-2: #173556;
-    --ink: #13202E;
-    --muted: #5B6878;
-    --card: #FFFFFF;
-    --line: #E3E8EE;
-    --accent: #C9A86A;
+    --mist: #E7ECEA;
+    --mist-deep: #D5DDDA;
+    --rock: #26302F;
+    --rock-soft: #5E6B69;
+    --moss: #3F5E4F;
+    --pine: #22392F;
+    --serif: "Gowun Batang", "Nanum Myeongjo", serif;
+    --sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
   }
   * { box-sizing: border-box; }
-  html, body { margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; }
   body {
-    background: var(--navy);
-    color: var(--ink);
-    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
+    margin: 0;
+    background: var(--mist);
+    color: var(--rock);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.55;
+    word-break: keep-all;
     -webkit-font-smoothing: antialiased;
-    line-height: 1.45;
   }
-  .wrap { max-width: 480px; margin: 0 auto; padding-bottom: 32px; }
-  .hero {
-    position: relative; height: 240px; overflow: hidden;
-    background: var(--navy-2) url("maisan_hero.jpg") center 60% / cover no-repeat;
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--moss); outline-offset: 3px; }
+
+  /* ── 산: 사진이 화면을 채우고, 아래쪽이 안개색으로 녹아 페이지와 이어진다 ── */
+  .peak {
+    position: relative;
+    min-height: 60svh;
+    background: var(--mist-deep) url("maisan_hero.jpg") 47.5% 60% / cover no-repeat;
+    display: flex; flex-direction: column; justify-content: space-between;
+    padding: max(20px, env(safe-area-inset-top)) 24px 28px;
+    color: #fff;
   }
-  .hero::after {
-    content: ""; position: absolute; inset: 0;
-    background: linear-gradient(180deg, rgba(15,39,64,0.05) 0%, rgba(15,39,64,0.25) 55%, rgba(15,39,64,0.95) 100%);
+  .peak::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background:
+      linear-gradient(180deg, rgba(38,48,47,0.28) 0%, rgba(38,48,47,0) 22%),
+      linear-gradient(180deg, rgba(231,236,234,0) 52%, rgba(231,236,234,0.72) 80%, var(--mist) 100%);
   }
-  .hero-text { position: absolute; left: 20px; right: 20px; bottom: 18px; z-index: 1; color: #fff; }
-  .bom { font-size: 44px; font-weight: 800; letter-spacing: 0.06em; margin: 0; line-height: 1; }
-  .bom-full { font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.85; margin: 6px 0 0; }
-  .slogan { font-size: 20px; font-weight: 700; margin: 10px 0 0; }
-  .sub { color: #D5DEE8; font-size: 15px; padding: 14px 20px 4px; margin: 0; }
-  .banner {
-    display: none; margin: 12px 16px 0; padding: 14px 16px; border-radius: 14px;
-    background: var(--accent); color: var(--navy); text-decoration: none;
+  .mark, .title { position: relative; z-index: 1; }
+  .mark { display: flex; align-items: baseline; gap: 10px; font-size: 13px; letter-spacing: 0.02em; }
+  .mark b { font-family: var(--serif); font-size: 19px; font-weight: 700; letter-spacing: 0.08em; }
+  .mark span { opacity: 0.85; }
+  .title { color: var(--rock); }
+  .title h1 {
+    font-family: var(--serif); font-weight: 700;
+    font-size: clamp(52px, 16vw, 84px); line-height: 1.02; letter-spacing: -0.03em;
+    margin: 0;
   }
-  .banner .k { font-size: 12px; font-weight: 700; letter-spacing: 0.08em; }
-  .banner .t { font-size: 17px; font-weight: 800; margin-top: 2px; }
-  .banner .w { font-size: 14px; margin-top: 2px; }
-  .cards { list-style: none; margin: 14px 16px 0; padding: 0; display: grid; gap: 10px; }
-  .card a {
-    display: flex; align-items: center; gap: 14px; padding: 15px 16px; min-height: 64px;
-    background: var(--card); border-radius: 14px; text-decoration: none; color: var(--ink);
-    border: 1px solid var(--line);
+  .title p { margin: 12px 0 0; font-size: 15px; color: var(--rock-soft); }
+
+  /* ── 아래: 조용한 목록. 카드 대신 가는 선으로 나눈 줄 ── */
+  main { padding: 4px 24px 40px; max-width: 520px; }
+
+  .week {
+    display: none; text-decoration: none;
+    margin: 0 0 28px; padding: 2px 0 2px 16px;
+    border-left: 2px solid var(--moss);
+    font-family: var(--serif);
   }
-  .card a:active { transform: scale(0.99); }
-  .ico {
-    flex: 0 0 40px; width: 40px; height: 40px; border-radius: 10px;
-    display: grid; place-items: center; font-weight: 800; font-size: 15px; color: #fff; background: var(--navy);
+  .week small { display: block; font-family: var(--sans); font-size: 13px; color: var(--moss); margin-bottom: 2px; }
+  .week strong { display: block; font-size: 20px; line-height: 1.35; font-weight: 700; }
+  .week em { display: block; font-style: normal; font-size: 14px; color: var(--rock-soft); margin-top: 4px; }
+
+  .call {
+    display: flex; justify-content: space-between; align-items: center;
+    text-decoration: none; color: var(--mist);
+    background: var(--pine);
+    border-radius: 999px;
+    padding: 17px 24px;
+    font-size: 17px; font-weight: 600;
   }
-  .ico.sa { background: #8A4B2A; }
-  .ico.call { background: #1F7A4D; }
-  .ico.site { background: #3D5A80; }
-  .ico.fb { background: #4A5A70; }
-  .txt { flex: 1; min-width: 0; }
-  .txt b { display: block; font-size: 17px; }
-  .txt span { display: block; font-size: 14px; color: var(--muted); margin-top: 1px; word-break: keep-all; }
-  body { word-break: keep-all; }
-  .go { color: var(--muted); font-size: 20px; }
-  .card.small a { min-height: 52px; padding: 11px 16px; }
-  .card.small .txt b { font-size: 15px; }
-  .card.small .ico { width: 32px; height: 32px; flex-basis: 32px; font-size: 13px; }
-  footer { color: #9FB0C2; font-size: 12.5px; text-align: center; padding: 22px 20px 0; }
-  footer a { color: #C9D5E1; }
+  .call span:last-child { font-family: var(--serif); font-size: 19px; letter-spacing: 0.02em; }
+  .call:active { background: var(--rock); }
+
+  .ways { list-style: none; margin: 28px 0 0; padding: 0; border-top: 1px solid var(--mist-deep); }
+  .ways li { border-bottom: 1px solid var(--mist-deep); }
+  .ways a {
+    display: grid; grid-template-columns: 1fr auto; align-items: center; column-gap: 16px;
+    padding: 18px 2px; text-decoration: none; min-height: 72px;
+  }
+  .ways .name { font-size: 18px; font-weight: 600; letter-spacing: -0.01em; }
+  .ways .what { grid-column: 1; font-size: 14px; color: var(--rock-soft); margin-top: 2px; }
+  .ways .at { grid-row: 1 / span 2; grid-column: 2; font-family: var(--serif); font-size: 14px; color: var(--moss); }
+  .ways a:active .name { color: var(--moss); }
+  .ways .quiet .name { font-size: 16px; font-weight: 500; color: var(--rock-soft); }
+  .ways .quiet a { min-height: 60px; }
+
+  footer { margin-top: 36px; font-size: 13px; color: var(--rock-soft); line-height: 1.7; }
+  footer a { text-decoration-color: var(--mist-deep); text-underline-offset: 3px; }
+
+  /* 한 번만 움직인다: 처음 열릴 때 제목이 안개 속에서 떠오른다 */
+  @media (prefers-reduced-motion: no-preference) {
+    .title { animation: rise 1.4s cubic-bezier(.2,.7,.2,1) both; }
+    @keyframes rise { from { opacity: 0; transform: translateY(14px); filter: blur(6px); } to { opacity: 1; transform: none; filter: none; } }
+  }
+
+  /* 넓은 화면: 산은 왼쪽에 고정, 오른쪽에서 길을 고른다 */
+  @media (min-width: 900px) {
+    body { display: grid; grid-template-columns: 1.15fr 1fr; min-height: 100vh; }
+    .peak { position: sticky; top: 0; height: 100vh; min-height: 0; padding: 40px 48px 48px; }
+    .peak::after { background: linear-gradient(180deg, rgba(38,48,47,0.28) 0%, rgba(38,48,47,0) 22%), linear-gradient(90deg, rgba(231,236,234,0) 60%, rgba(231,236,234,0.55) 100%), linear-gradient(180deg, rgba(231,236,234,0) 55%, rgba(231,236,234,0.8) 100%); }
+    main { padding: 18vh 56px 56px; align-self: start; }
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header class="hero" role="img" aria-label="구름 낀 마이산 암마이봉과 수마이봉">
-    <div class="hero-text">
-      <p class="bom">B.O.M</p>
-      <p class="bom-full">Breath Of Maisan</p>
-      <p class="slogan">마이산을 봄.</p>
+  <header class="peak" role="img" aria-label="구름에 반쯤 잠긴 마이산 암마이봉과 수마이봉">
+    <div class="mark"><b>B.O.M</b><span>Breath Of Maisan</span></div>
+    <div class="title">
+      <h1>마이산을<br>봄.</h1>
+      <p>홍삼빌호텔, 전북 진안 마이산 바로 앞</p>
     </div>
   </header>
-  <p class="sub">홍삼빌호텔 · 전북 진안 마이산 앞</p>
 
-  <a class="banner" id="banner" href="#" data-target="banner">
-    <div class="k">이번 주</div>
-    <div class="t" id="banner-title"></div>
-    <div class="w" id="banner-where"></div>
-  </a>
+  <main>
+    <a class="week" id="week" href="#" data-target="banner">
+      <small>이번 주</small>
+      <strong id="week-title"></strong>
+      <em id="week-where"></em>
+    </a>
 
-  <ul class="cards">
-    <li class="card" data-src="ig"><a href="https://www.instagram.com/hongsamhotel/" data-target="ig" rel="noopener">
-      <span class="ico">IG</span><span class="txt"><b>인스타그램</b><span>마이산 뷰 · 객실 · 사우나 사진</span></span><span class="go">›</span></a></li>
-    <li class="card" data-src="th"><a href="https://www.threads.com/@hongsamhotel" data-target="th" rel="noopener">
-      <span class="ico">@</span><span class="txt"><b>홍삼빌 스레드</b><span>천둥이 일상 · 호텔 뒷이야기</span></span><span class="go">›</span></a></li>
-    <li class="card" data-src="sa"><a href="https://www.threads.com/@jinan.sauna" data-target="sa" rel="noopener">
-      <span class="ico sa">♨</span><span class="txt"><b>진안사우나 스레드</b><span>장작 배럴 사우나 · 1박 패키지 99,000원</span></span><span class="go">›</span></a></li>
-    <li class="card"><a href="tel:16613889" data-target="call">
-      <span class="ico call">☎</span><span class="txt"><b>전화 예약 1661-3889</b><span>누르면 바로 연결됩니다</span></span><span class="go">›</span></a></li>
-    <li class="card"><a href="https://www.hongsamhotel.kr/" data-target="site" rel="noopener">
-      <span class="ico site">H</span><span class="txt"><b>홈페이지 · 채팅 상담</b><span>카카오톡 · 네이버톡톡 · 위챗</span></span><span class="go">›</span></a></li>
-    <li class="card small" data-src="fb"><a href="https://www.facebook.com/1370592286129185" data-target="fb" rel="noopener">
-      <span class="ico fb">f</span><span class="txt"><b>페이스북</b></span><span class="go">›</span></a></li>
-  </ul>
+    <a class="call" href="tel:16613889" data-target="call">
+      <span>전화로 예약</span><span>1661-3889</span>
+    </a>
 
-  <footer>
-    홍삼빌호텔 · 전북 진안군 진안읍 외사양길 16-14<br>
-    예약 <a href="tel:16613889">1661-3889</a> · <a href="https://www.hongsamhotel.kr/">www.hongsamhotel.kr</a>
-  </footer>
-</div>
+    <ul class="ways">
+      <li data-src="ig"><a href="https://www.instagram.com/hongsamhotel/" data-target="ig" rel="noopener">
+        <span class="name">인스타그램</span><span class="what">마이산이 보이는 객실과 사계절</span><span class="at">@hongsamhotel</span></a></li>
+      <li data-src="th"><a href="https://www.threads.com/@hongsamhotel" data-target="th" rel="noopener">
+        <span class="name">스레드</span><span class="what">총지배견 천둥이와 호텔 뒷이야기</span><span class="at">@hongsamhotel</span></a></li>
+      <li data-src="sa"><a href="https://www.threads.com/@jinan.sauna" data-target="sa" rel="noopener">
+        <span class="name">진안사우나</span><span class="what">잔디밭 장작 배럴 사우나, 1박 패키지 99,000원</span><span class="at">@jinan.sauna</span></a></li>
+      <li><a href="https://www.hongsamhotel.kr/" data-target="site" rel="noopener">
+        <span class="name">채팅으로 문의</span><span class="what">카카오톡, 네이버톡톡, 위챗 상담</span><span class="at">홈페이지</span></a></li>
+      <li class="quiet" data-src="fb"><a href="https://www.facebook.com/1370592286129185" data-target="fb" rel="noopener">
+        <span class="name">페이스북</span><span class="at">홍삼빌호텔</span></a></li>
+    </ul>
+
+    <footer>
+      전북 진안군 진안읍 외사양길 16-14<br>
+      <a href="https://www.hongsamhotel.kr/">www.hongsamhotel.kr</a>
+    </footer>
+  </main>
 
 <script>
 (function () {
@@ -122,7 +169,7 @@
   var KEY = "sb_publishable_2Txh41lZBqgt7V0GShux7Q_cQJTUaDM";
   var SOURCES = ["ig", "th", "sa", "fb"];
   var CH_TO_SRC = { ig_hotel: "ig", threads_hotel: "th", threads_sauna: "sa" };
-  var NAME = { ig: "인스타그램", th: "홍삼빌 스레드", sa: "진안사우나 스레드" };
+  var NAME = { ig: "인스타그램", th: "스레드 @hongsamhotel", sa: "진안사우나" };
   var URL_OF = {
     ig: "https://www.instagram.com/hongsamhotel/",
     th: "https://www.threads.com/@hongsamhotel",
@@ -137,9 +184,9 @@
     else { var s = sessionStorage.getItem("bom_from"); if (s && SOURCES.indexOf(s) >= 0) source = s; }
   } catch (e) {}
 
-  // 출발 계정과 같은 카드는 숨긴다 (인스타에서 온 사람에게 인스타 카드는 의미 없음)
+  // 출발 계정과 같은 줄은 숨긴다
   if (source !== "direct") {
-    var same = document.querySelector('.card[data-src="' + source + '"]');
+    var same = document.querySelector('.ways li[data-src="' + source + '"]');
     if (same) same.style.display = "none";
   }
 
@@ -158,7 +205,7 @@
     try { rpc("sns_hub_click", { p_source: source, p_target: a.getAttribute("data-target") }, true); } catch (e) {}
   });
 
-  // 이번 주 배너: 창고의 주간 캘린더를 읽어 표시. 없거나 실패하면 숨긴 채로 둔다.
+  // 이번 주: 창고의 주간 캘린더를 읽어 표시. 없거나 실패하면 숨긴 채로 둔다.
   try {
     rpc("sns_context", { p_channel: "hub" })
       .then(function (r) { return r.ok ? r.json() : null; })
@@ -167,9 +214,9 @@
         if (!w || !w.theme_title) return;
         var src = CH_TO_SRC[w.special_channel];
         if (!src || src === source) return;
-        document.getElementById("banner-title").textContent = w.theme_title;
-        document.getElementById("banner-where").textContent = NAME[src] + "에서 먼저 공개 ›";
-        var b = document.getElementById("banner");
+        document.getElementById("week-title").textContent = w.theme_title;
+        document.getElementById("week-where").textContent = NAME[src] + "에서 먼저 공개합니다";
+        var b = document.getElementById("week");
         b.href = URL_OF[src];
         b.style.display = "block";
       })
