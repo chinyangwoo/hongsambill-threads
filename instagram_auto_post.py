@@ -40,6 +40,8 @@ from datetime import datetime, timezone, timedelta
 
 from PIL import Image, ImageOps
 
+import sns_calendar  # SNS 창고 공통 모듈 — 창고에 못 닿으면 예전처럼 동작
+
 # ─────────────────────────────────────────────
 # 설정
 # ─────────────────────────────────────────────
@@ -112,7 +114,7 @@ def clean_caption(text):
     return out.strip()
 
 
-def generate_caption(topic, cfg, log):
+def generate_caption(topic, cfg, log, ctx=None):
     recent = [p["text"] for p in log["posts"][-9:]]
     recent_block = "\n---\n".join(recent) if recent else "(없음)"
 
@@ -147,6 +149,8 @@ def generate_caption(topic, cfg, log):
 - 과장 광고, 노골적 예약 유도, 가격 언급
 - 캡션 외의 설명·따옴표·머리말 출력
 - '빈 줄', '한 줄 띄움', '[1]', '훅', '본문', '마무리' 같은 구조 안내 단어를 캡션에 글자로 적는 것"""
+    if ctx:
+        system += "\n\n" + sns_calendar.prompt_block(ctx, position_hint="[3] 마무리 한 줄 바로 앞 문단")
 
     user = f"""오늘의 주제: {topic}
 
@@ -155,27 +159,37 @@ def generate_caption(topic, cfg, log):
 
 위 주제로 인스타그램 캡션 본문만 출력해 주세요."""
 
-    body = json.dumps({
-        "model": "claude-sonnet-5",
-        "max_tokens": 1200,
-        "system": system,
-        "messages": [{"role": "user", "content": user}],
-    }).encode()
+    def ask(user_text):
+        body = json.dumps({
+            "model": "claude-sonnet-5",
+            "max_tokens": 1200,
+            "system": system,
+            "messages": [{"role": "user", "content": user_text}],
+        }).encode()
+        req = urllib.request.Request(
+            "https://api.anthropic.com/v1/messages",
+            data=body,
+            headers={
+                "Content-Type": "application/json",
+                "x-api-key": ANTHROPIC_API_KEY,
+                "anthropic-version": "2023-06-01",
+            },
+        )
+        with urllib.request.urlopen(req, timeout=120) as res:
+            data = json.loads(res.read().decode())
+        text = "".join(b["text"] for b in data["content"] if b["type"] == "text").strip()
+        return clean_caption(text)[:2190]
 
-    req = urllib.request.Request(
-        "https://api.anthropic.com/v1/messages",
-        data=body,
-        headers={
-            "Content-Type": "application/json",
-            "x-api-key": ANTHROPIC_API_KEY,
-            "anthropic-version": "2023-06-01",
-        },
-    )
-    with urllib.request.urlopen(req, timeout=120) as res:
-        data = json.loads(res.read().decode())
-
-    text = "".join(b["text"] for b in data["content"] if b["type"] == "text").strip()
-    return clean_caption(text)[:2190]
+    # 교차 유도·시간 표현·옛 정보 검사 → 문제가 있으면 최대 2회 다시 쓰게 한다 (창고 없으면 검사는 핸들·시간만)
+    caption = ask(user)
+    for attempt in range(2):
+        problems = sns_calendar.check_cross(caption, ctx)
+        if not problems:
+            break
+        print(f"⚠️ 캡션 검사 {attempt + 1}회차 실패: {problems}")
+        caption = ask(user + "\n\n[재작성 요청] 다음 문제를 고쳐서 캡션만 다시 출력: " + "; ".join(problems))
+        time.sleep(2)
+    return caption
 
 
 # ─────────────────────────────────────────────
@@ -429,7 +443,9 @@ def main():
     topic, cfg = pick_topic(log)
     print(f"📌 이번 회차 주제: {topic}")
 
-    caption = generate_caption(topic, cfg, log)
+    slot = sns_calendar.resolve_slot()
+    ctx = sns_calendar.load_context("ig_hotel", slot)
+    caption = generate_caption(topic, cfg, log, ctx)
     print(f"✍️ 생성된 캡션 ({len(caption)}자):\n{caption}\n")
 
     print("🖼️ Drive 에서 이미지 추출·변환 중...")
@@ -440,6 +456,7 @@ def main():
     print(f"🚀 게시 완료! media id = {post_id}")
     time.sleep(5)
     post_fixed_comment(post_id, cfg.get("fixed_comment", ""))
+    sns_calendar.log_cross("ig_hotel", post_id, None, slot, ctx, caption)
 
     log["count"] += 1
     log["posts"].append({
@@ -448,6 +465,8 @@ def main():
         "text": caption,
         "images": chosen,
         "post_id": post_id,
+        "slot": slot,
+        "cross": ctx["cross"]["target"] if (ctx and ctx.get("cross")) else None,
     })
     log["posts"] = log["posts"][-30:]
     with open(LOG_FILE, "w", encoding="utf-8") as f:

@@ -7,7 +7,13 @@ on:
     - cron: "17 21 * * *"   # KST 06:17
     - cron: "23 1 * * *"   # KST 10:23
     - cron: "47 7 * * *"  # KST 16:47
-  workflow_dispatch:       # Actions 탭에서 수동 실행 버튼
+  workflow_dispatch:        # 수동 실행 또는 SNS 창고(pg_cron)의 정시 신호
+    inputs:
+      slot:
+        description: "회차 1~3 (0 = 한국시간으로 자동 판단)"
+        required: false
+        default: "0"
+        type: string
 
 # 스레드 워크플로와 동시에 커밋 충돌 방지
 concurrency:
@@ -36,6 +42,8 @@ jobs:
           INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
           GDRIVE_API_KEY: ${{ secrets.GDRIVE_API_KEY }}
           GH_PAT: ${{ secrets.GH_PAT }}
+          SLOT: ${{ inputs.slot }}
+          SNS_WRITE_SECRET: ${{ secrets.SNS_WRITE_SECRET }}
         run: python instagram_auto_post.py
 
       - name: 게시 기록 저장

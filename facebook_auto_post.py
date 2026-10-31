@@ -34,6 +34,8 @@ from datetime import datetime, timezone, timedelta
 
 from PIL import Image, ImageOps
 
+import sns_calendar  # SNS 창고 공통 모듈 — 페이스북은 교차 유도 없이 발행 기록만 남긴다
+
 # ─────────────────────────────────────────────
 # 설정
 # ─────────────────────────────────────────────
@@ -625,6 +627,7 @@ def main():
     print(f"🚀 게시 완료! post id = {post_id}")
     time.sleep(5)
     post_fixed_comment(post_id, cfg.get("fixed_comment", ""))
+    sns_calendar.log_cross("fb_hotel", post_id, None, sns_calendar.resolve_slot(), None, text)
 
     cta = next((l for l in reversed(text.splitlines()) if RESERVATION_NO in l and not l.startswith("#")), "")
     log["count"] += 1

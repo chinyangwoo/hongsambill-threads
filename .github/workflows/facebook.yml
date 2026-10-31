@@ -7,7 +7,13 @@ on:
     # 정각·30분은 GitHub 예약 지연이 심해 애매한 분으로 배치
     - cron: "23 22 * * *"   # KST 07:23
     - cron: "23 8 * * *"  # KST 17:23
-  workflow_dispatch:
+  workflow_dispatch:        # 수동 실행 또는 SNS 창고(pg_cron)의 정시 신호
+    inputs:
+      slot:
+        description: "회차 1~3 (0 = 한국시간으로 자동 판단)"
+        required: false
+        default: "0"
+        type: string
 
 concurrency:
   group: auto-post-commit
@@ -36,6 +42,8 @@ jobs:
           FB_APP_SECRET: ${{ secrets.FB_APP_SECRET }}
           GDRIVE_API_KEY: ${{ secrets.GDRIVE_API_KEY }}
           GH_PAT: ${{ secrets.GH_PAT }}
+          SLOT: ${{ inputs.slot }}
+          SNS_WRITE_SECRET: ${{ secrets.SNS_WRITE_SECRET }}
         run: python facebook_auto_post.py
 
       - name: 게시 기록 저장

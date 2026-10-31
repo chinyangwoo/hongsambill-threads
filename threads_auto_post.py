@@ -56,6 +56,8 @@ import urllib.parse
 import urllib.request
 from datetime import datetime, timezone, timedelta
 
+import sns_calendar  # SNS 창고(캘린더·사실 원장·교차 유도) 공통 모듈 — 창고에 못 닿으면 예전처럼 동작
+
 # ─────────────────────────────────────────────
 # 설정
 # ─────────────────────────────────────────────
@@ -349,7 +351,7 @@ def pick_cta(log, cfg):
 # ─────────────────────────────────────────────
 # 3. 글 생성 + 품질 검증
 # ─────────────────────────────────────────────
-def build_system_prompt(cfg, hook, cta):
+def build_system_prompt(cfg, hook, cta, ctx=None):
     cta_samples = " / ".join(cta.get("samples", []))
     L = cfg["length"]
     hashtags = " ".join(cfg["hashtags"])
@@ -399,6 +401,7 @@ def build_system_prompt(cfg, hook, cta):
         "- 과장 광고, 노골적인 예약 유도, 존댓말 공지 톤\n"
         "- 최근 게시글과 비슷한 소재·문장·훅·마무리 반복\n"
         "- 본문 외의 설명, 따옴표, 머리말 출력 금지. 게시글 본문만 출력한다."
+        + ("\n\n" + sns_calendar.prompt_block(ctx) if ctx else "")
     )
 
 
@@ -490,7 +493,7 @@ def cta_problems(chunks):
     return probs
 
 
-def validate(text, cfg):
+def validate(text, cfg, ctx=None):
     """글이 규칙을 지켰는지 검사. 통과하면 빈 리스트, 아니면 문제 목록을 돌려준다."""
     L = cfg["length"]
     problems = []
@@ -533,15 +536,16 @@ def validate(text, cfg):
     if text.startswith('"') or text.startswith("'"):
         problems.append("따옴표로 시작")
 
+    problems += sns_calendar.check_cross(text, ctx)   # 교차 유도·시간 표현·옛 사우나 정보·없는 가격
     return problems
 
 
-def generate_post(topic, cfg, log, hook, cta):
+def generate_post(topic, cfg, log, hook, cta, ctx=None):
     # 과거에 빈 글로 기록된 회차는 참고 목록에서 뺀다
     recent = [p["text"] for p in log["posts"][-8:] if p.get("text")][-6:]
     recent_block = "\n---\n".join(recent) if recent else "(없음)"
 
-    system = build_system_prompt(cfg, hook, cta)
+    system = build_system_prompt(cfg, hook, cta, ctx)
     base_user = (
         "오늘의 소재: " + topic + "\n\n"
         "최근 게시글 (이것과 겹치지 않게):\n" + recent_block + "\n\n"
@@ -569,7 +573,7 @@ def generate_post(topic, cfg, log, hook, cta):
             continue
 
         attempt += 1
-        problems = validate(text, cfg)
+        problems = validate(text, cfg, ctx)
         print("생성 " + str(attempt) + "회차: " + str(len(text)) + "자, 문제 " + str(len(problems)) + "건")
         if not problems:
             return text
@@ -738,6 +742,10 @@ def main():
     # 1) 지난 글들의 조회수부터 수집 (훅 성과 학습 재료)
     log = update_views(log)
 
+    # 1-1) SNS 창고에서 이번 주 테마·사실 원장·교차 유도 대상 읽기 (못 읽으면 None → 예전처럼)
+    slot = sns_calendar.resolve_slot()
+    ctx = sns_calendar.load_context("threads_hotel", slot)
+
     # 2) 이번 회차 재료 선택
     topic = pick_topic(log, cfg)
     hook, reason, stats = pick_hook(log, cfg)
@@ -756,7 +764,7 @@ def main():
         print("  - " + c["id"].ljust(9) + " n=" + str(s["n"]) + " avg=" + str(round(s["avg"], 2)))
 
     # 3) 글 생성
-    text = generate_post(topic, cfg, log, hook, cta)
+    text = generate_post(topic, cfg, log, hook, cta, ctx)
     print("\n최종 글 (" + str(len(text)) + "자):\n" + text + "\n")
 
     # 4) 이미지 + 게시
@@ -789,10 +797,15 @@ def main():
         "views": None,
         "replies": None,
         "views_final": False,
+        "slot": slot,
+        "cross": ctx["cross"]["target"] if (ctx and ctx.get("cross")) else None,
     })
     log["posts"] = log["posts"][-60:]
     with open(LOG_FILE, "w", encoding="utf-8") as f:
         json.dump(log, f, ensure_ascii=False, indent=2)
+
+    # 5-1) 교차 유도 기록 (창고) — 실패해도 발행은 유지
+    sns_calendar.log_cross("threads_hotel", post_id, permalink, slot, ctx, text)
 
     # 6) 토큰 갱신 체크
     new_token = refresh_token_if_needed()
