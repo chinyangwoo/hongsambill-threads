@@ -1,24 +1,6 @@
 {
-  "count": 182,
+  "count": 183,
   "posts": [
-    {
-      "at": "2026-10-11 23:03",
-      "topic": "진안 로컬 맛집과 숙소 주변 먹거리 이야기",
-      "hook": "number",
-      "cta": "내 판단이 맞는지 의견 물어보기",
-      "text": "걸어서 3분 거리에 국밥집 있는데 양이 미쳤음\n\n체크인하고 배고파서 직원분한테 물어보니까 호텔에서 3분 거리에 시래기국밥집 있다고 알려줌. 가격 8천원인데 양이 두 그릇 합친 수준, 혼자 가서 반도 못 먹고 나왔음. 다음날 아침엔 재래시장 들러서 홍삼 넣은 어묵 사먹었는데 이것도 로컬 아니면 모르는 맛이었음. 숙소 가서 짐 풀고 나오는데 천둥이가 또 마당에 앉아있어서 국밥 냄새 맡고 쳐다보길래 괜히 미안했음🐾\n숙소 주변 로컬 맛집 찾아다니는 거 vs 호텔 조식만 먹고 끝내는 거, 내 선택 맞는지 댓글로 알려줘\n#홍삼빌호텔 #진안여행 #진안가볼만한곳",
-      "len": 309,
-      "images": [
-        "sauna_true_vertical.png",
-        "42.png",
-        "87.png"
-      ],
-      "post_id": "18198980152377566",
-      "permalink": "https://www.threads.com/@hongsamhotel/post/DeW1ATZlTmE",
-      "views": 27,
-      "views_final": true,
-      "replies": 0
-    },
     {
       "at": "2026-10-12 08:41",
       "topic": "총지배견 천둥이(허스키), 아이들이 체크인보다 먼저 찾는 이유",
@@ -953,7 +935,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfCmO6hlWGW",
       "views": 6,
       "replies": 0,
-      "views_final": false
+      "views_final": true
     },
     {
       "at": "2026-10-30 08:01",
@@ -987,7 +969,7 @@
       ],
       "post_id": "17989683984096708",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfGPVj2Ds3C",
-      "views": 6,
+      "views": 7,
       "replies": 0,
       "views_final": false
     },
@@ -1079,16 +1061,36 @@
       ],
       "post_id": "18118129918811482",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfKSLGKEWjy",
+      "views": 10,
+      "replies": 0,
+      "views_final": false,
+      "slot": 3,
+      "cross": null
+    },
+    {
+      "at": "2026-11-01 08:25",
+      "topic": "진안 로컬 맛집과 숙소 주변 먹거리 이야기",
+      "hook": "fail",
+      "cta": "recommend",
+      "text": "저녁 메뉴 안 정하고 간 게 제일 큰 실수였음\n\n체크인하고 바베큐장 가려는데 그제야 고기를 안 사 온 걸 깨달음 ㅋㅋ 바베큐장은 무료인데 자리랑 직화구이기만 있고 고기는 직접 챙겨야 하는 거였음. 부랴부랴 근처 정육점 찾아 다녀오느라 30분을 날림. 그래도 숯 4인분 2만원 사서 구운 고기는 진짜 맛있었음 😌 진안 가면 고기는 도착 전에 사 가는 게 맞다고 봄\n고기 구울 때 곁들이는 거 너만의 원픽 하나만 알려줘\n#홍삼빌호텔 #진안여행 #진안가볼만한곳",
+      "len": 254,
+      "images": [
+        "coldplunge.png",
+        "hotel_slide1.png",
+        "46.png"
+      ],
+      "post_id": "18145759033606094",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DfLVNlPGlSa",
       "views": null,
       "replies": null,
       "views_final": false,
-      "slot": 3,
+      "slot": 1,
       "cross": null
     }
   ],
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-10-31 22:38"
+    "checked_at": "2026-11-01 08:24"
   }
 }
