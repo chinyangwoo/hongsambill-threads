@@ -1,0 +1,12 @@
+# 링크 허브 (B.O.M) — 이 폴더(hub)만 배포한다.
+# 저장소에 자동 발행 기록 커밋이 하루 수십 번 들어오므로, hub 폴더가 바뀐 경우에만 다시 배포한다.
+[build]
+  publish = "."
+  command = ""
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- ."
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

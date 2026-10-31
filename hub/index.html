@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>홍삼빌호텔 B.O.M — 마이산을 봄</title>
+<meta name="description" content="홍삼빌호텔(B.O.M · Breath Of Maisan) — 전북 진안 마이산 앞 호텔. 인스타그램·스레드·진안사우나·예약 1661-3889 를 한곳에서.">
+<link rel="canonical" href="https://www.hongsamhotel.kr/">
+<meta property="og:title" content="홍삼빌호텔 B.O.M — 마이산을 봄.">
+<meta property="og:description" content="전북 진안 마이산 앞 호텔 · 겨울 사우나 운영 중 · 예약 1661-3889">
+<meta property="og:image" content="maisan_hero.jpg">
+<meta name="theme-color" content="#0F2740">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+  :root {
+    --navy: #0F2740;
+    --navy-2: #173556;
+    --ink: #13202E;
+    --muted: #5B6878;
+    --card: #FFFFFF;
+    --line: #E3E8EE;
+    --accent: #C9A86A;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--navy);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.45;
+  }
+  .wrap { max-width: 480px; margin: 0 auto; padding-bottom: 32px; }
+  .hero {
+    position: relative; height: 240px; overflow: hidden;
+    background: var(--navy-2) url("maisan_hero.jpg") center 60% / cover no-repeat;
+  }
+  .hero::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(15,39,64,0.05) 0%, rgba(15,39,64,0.25) 55%, rgba(15,39,64,0.95) 100%);
+  }
+  .hero-text { position: absolute; left: 20px; right: 20px; bottom: 18px; z-index: 1; color: #fff; }
+  .bom { font-size: 44px; font-weight: 800; letter-spacing: 0.06em; margin: 0; line-height: 1; }
+  .bom-full { font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.85; margin: 6px 0 0; }
+  .slogan { font-size: 20px; font-weight: 700; margin: 10px 0 0; }
+  .sub { color: #D5DEE8; font-size: 15px; padding: 14px 20px 4px; margin: 0; }
+  .banner {
+    display: none; margin: 12px 16px 0; padding: 14px 16px; border-radius: 14px;
+    background: var(--accent); color: var(--navy); text-decoration: none;
+  }
+  .banner .k { font-size: 12px; font-weight: 700; letter-spacing: 0.08em; }
+  .banner .t { font-size: 17px; font-weight: 800; margin-top: 2px; }
+  .banner .w { font-size: 14px; margin-top: 2px; }
+  .cards { list-style: none; margin: 14px 16px 0; padding: 0; display: grid; gap: 10px; }
+  .card a {
+    display: flex; align-items: center; gap: 14px; padding: 15px 16px; min-height: 64px;
+    background: var(--card); border-radius: 14px; text-decoration: none; color: var(--ink);
+    border: 1px solid var(--line);
+  }
+  .card a:active { transform: scale(0.99); }
+  .ico {
+    flex: 0 0 40px; width: 40px; height: 40px; border-radius: 10px;
+    display: grid; place-items: center; font-weight: 800; font-size: 15px; color: #fff; background: var(--navy);
+  }
+  .ico.sa { background: #8A4B2A; }
+  .ico.call { background: #1F7A4D; }
+  .ico.site { background: #3D5A80; }
+  .ico.fb { background: #4A5A70; }
+  .txt { flex: 1; min-width: 0; }
+  .txt b { display: block; font-size: 17px; }
+  .txt span { display: block; font-size: 14px; color: var(--muted); margin-top: 1px; word-break: keep-all; }
+  body { word-break: keep-all; }
+  .go { color: var(--muted); font-size: 20px; }
+  .card.small a { min-height: 52px; padding: 11px 16px; }
+  .card.small .txt b { font-size: 15px; }
+  .card.small .ico { width: 32px; height: 32px; flex-basis: 32px; font-size: 13px; }
+  footer { color: #9FB0C2; font-size: 12.5px; text-align: center; padding: 22px 20px 0; }
+  footer a { color: #C9D5E1; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero" role="img" aria-label="구름 낀 마이산 암마이봉과 수마이봉">
+    <div class="hero-text">
+      <p class="bom">B.O.M</p>
+      <p class="bom-full">Breath Of Maisan</p>
+      <p class="slogan">마이산을 봄.</p>
+    </div>
+  </header>
+  <p class="sub">홍삼빌호텔 · 전북 진안 마이산 앞</p>
+
+  <a class="banner" id="banner" href="#" data-target="banner">
+    <div class="k">이번 주</div>
+    <div class="t" id="banner-title"></div>
+    <div class="w" id="banner-where"></div>
+  </a>
+
+  <ul class="cards">
+    <li class="card" data-src="ig"><a href="https://www.instagram.com/hongsamhotel/" data-target="ig" rel="noopener">
+      <span class="ico">IG</span><span class="txt"><b>인스타그램</b><span>마이산 뷰 · 객실 · 사우나 사진</span></span><span class="go">›</span></a></li>
+    <li class="card" data-src="th"><a href="https://www.threads.com/@hongsamhotel" data-target="th" rel="noopener">
+      <span class="ico">@</span><span class="txt"><b>홍삼빌 스레드</b><span>천둥이 일상 · 호텔 뒷이야기</span></span><span class="go">›</span></a></li>
+    <li class="card" data-src="sa"><a href="https://www.threads.com/@jinan.sauna" data-target="sa" rel="noopener">
+      <span class="ico sa">♨</span><span class="txt"><b>진안사우나 스레드</b><span>장작 배럴 사우나 · 1박 패키지 99,000원</span></span><span class="go">›</span></a></li>
+    <li class="card"><a href="tel:16613889" data-target="call">
+      <span class="ico call">☎</span><span class="txt"><b>전화 예약 1661-3889</b><span>누르면 바로 연결됩니다</span></span><span class="go">›</span></a></li>
+    <li class="card"><a href="https://www.hongsamhotel.kr/" data-target="site" rel="noopener">
+      <span class="ico site">H</span><span class="txt"><b>홈페이지 · 채팅 상담</b><span>카카오톡 · 네이버톡톡 · 위챗</span></span><span class="go">›</span></a></li>
+    <li class="card small" data-src="fb"><a href="https://www.facebook.com/1370592286129185" data-target="fb" rel="noopener">
+      <span class="ico fb">f</span><span class="txt"><b>페이스북</b></span><span class="go">›</span></a></li>
+  </ul>
+
+  <footer>
+    홍삼빌호텔 · 전북 진안군 진안읍 외사양길 16-14<br>
+    예약 <a href="tel:16613889">1661-3889</a> · <a href="https://www.hongsamhotel.kr/">www.hongsamhotel.kr</a>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var API = "https://keudubzdzechqommscxq.supabase.co/rest/v1/rpc/";
+  var KEY = "sb_publishable_2Txh41lZBqgt7V0GShux7Q_cQJTUaDM";
+  var SOURCES = ["ig", "th", "sa", "fb"];
+  var CH_TO_SRC = { ig_hotel: "ig", threads_hotel: "th", threads_sauna: "sa" };
+  var NAME = { ig: "인스타그램", th: "홍삼빌 스레드", sa: "진안사우나 스레드" };
+  var URL_OF = {
+    ig: "https://www.instagram.com/hongsamhotel/",
+    th: "https://www.threads.com/@hongsamhotel",
+    sa: "https://www.threads.com/@jinan.sauna"
+  };
+
+  // 어느 계정에서 왔는지 (?from=ig|th|sa|fb). 같은 방문 동안은 유지.
+  var source = "direct";
+  try {
+    var q = new URLSearchParams(location.search).get("from");
+    if (q && SOURCES.indexOf(q) >= 0) { source = q; sessionStorage.setItem("bom_from", q); }
+    else { var s = sessionStorage.getItem("bom_from"); if (s && SOURCES.indexOf(s) >= 0) source = s; }
+  } catch (e) {}
+
+  // 출발 계정과 같은 카드는 숨긴다 (인스타에서 온 사람에게 인스타 카드는 의미 없음)
+  if (source !== "direct") {
+    var same = document.querySelector('.card[data-src="' + source + '"]');
+    if (same) same.style.display = "none";
+  }
+
+  function rpc(name, body, keepalive) {
+    return fetch(API + name, {
+      method: "POST", keepalive: !!keepalive,
+      headers: { "apikey": KEY, "Authorization": "Bearer " + KEY, "Content-Type": "application/json" },
+      body: JSON.stringify(body)
+    });
+  }
+
+  // 누르면 기록만 보내고 바로 이동 (기록 실패해도 이동은 된다). 이름·기기·IP는 저장하지 않는다.
+  document.addEventListener("click", function (ev) {
+    var a = ev.target.closest && ev.target.closest("a[data-target]");
+    if (!a) return;
+    try { rpc("sns_hub_click", { p_source: source, p_target: a.getAttribute("data-target") }, true); } catch (e) {}
+  });
+
+  // 이번 주 배너: 창고의 주간 캘린더를 읽어 표시. 없거나 실패하면 숨긴 채로 둔다.
+  try {
+    rpc("sns_context", { p_channel: "hub" })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        var w = d && d.week;
+        if (!w || !w.theme_title) return;
+        var src = CH_TO_SRC[w.special_channel];
+        if (!src || src === source) return;
+        document.getElementById("banner-title").textContent = w.theme_title;
+        document.getElementById("banner-where").textContent = NAME[src] + "에서 먼저 공개 ›";
+        var b = document.getElementById("banner");
+        b.href = URL_OF[src];
+        b.style.display = "block";
+      })
+      .catch(function () {});
+  } catch (e) {}
+})();
+</script>
+</body>
+</html>
