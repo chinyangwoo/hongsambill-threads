@@ -50,21 +50,22 @@
   :focus-visible { outline: 2px solid var(--moss); outline-offset: 3px; }
 
   /* ── 산: 사진이 화면을 채우고, 아래쪽이 안개색으로 녹아 페이지와 이어진다 ── */
+  /* 휴대폰: 사진은 위쪽 띠(--ph 높이)에만 두고, 제목은 그 아래 안개 속에 둔다 → 봉우리를 가리지 않음 */
   .peak {
+    --ph: 118vw;
     position: relative;
-    min-height: 60svh;
-    background: var(--mist-deep) url("maisan_hero.jpg") 47.5% 60% / cover no-repeat;
-    display: flex; flex-direction: column; justify-content: space-between;
-    padding: max(20px, env(safe-area-inset-top)) 24px 28px;
+    background: var(--mist) url("maisan_hero.jpg") 47.5% 0 / auto var(--ph) no-repeat;
+    padding: calc(var(--ph) - 56px) 24px 28px;
     color: #fff;
   }
   .peak::after {
     content: ""; position: absolute; inset: 0; pointer-events: none;
     background:
-      linear-gradient(180deg, rgba(38,48,47,0.28) 0%, rgba(38,48,47,0) 22%),
-      linear-gradient(180deg, rgba(231,236,234,0) 52%, rgba(231,236,234,0.72) 80%, var(--mist) 100%);
+      linear-gradient(180deg, rgba(38,48,47,0.28) 0, rgba(38,48,47,0) 120px),
+      linear-gradient(180deg, rgba(231,236,234,0) calc(var(--ph) - 150px), var(--mist) calc(var(--ph) - 8px));
   }
-  .mark, .title { position: relative; z-index: 1; }
+  .mark { position: absolute; z-index: 1; top: max(20px, env(safe-area-inset-top)); left: 24px; }
+  .title { position: relative; z-index: 1; }
   .mark { display: flex; align-items: baseline; gap: 10px; font-size: 13px; letter-spacing: 0.02em; }
   .mark b { font-family: var(--serif); font-size: 19px; font-weight: 700; letter-spacing: 0.08em; }
   .mark span { opacity: 0.85; }
@@ -123,7 +124,12 @@
   /* 넓은 화면: 산은 왼쪽에 고정, 오른쪽에서 길을 고른다 */
   @media (min-width: 900px) {
     body { display: grid; grid-template-columns: 1.15fr 1fr; min-height: 100vh; }
-    .peak { position: sticky; top: 0; height: 100vh; min-height: 0; padding: 40px 48px 48px; }
+    .peak {
+      position: sticky; top: 0; height: 100vh; padding: 40px 48px 48px;
+      background: var(--mist-deep) url("maisan_hero.jpg") 47.5% 60% / cover no-repeat;
+      display: flex; flex-direction: column; justify-content: flex-end;
+    }
+    .mark { top: 40px; left: 48px; }
     .peak::after { background: linear-gradient(180deg, rgba(38,48,47,0.28) 0%, rgba(38,48,47,0) 22%), linear-gradient(90deg, rgba(231,236,234,0) 60%, rgba(231,236,234,0.55) 100%), linear-gradient(180deg, rgba(231,236,234,0) 55%, rgba(231,236,234,0.8) 100%); }
     main { padding: 18vh 56px 56px; align-self: start; }
   }
