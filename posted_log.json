@@ -1,24 +1,6 @@
 {
-  "count": 184,
+  "count": 185,
   "posts": [
-    {
-      "at": "2026-10-12 15:24",
-      "topic": "사람 몰리는 단풍 명소 대신 조용한 마이산 단풍",
-      "hook": "provoke",
-      "cta": "다음에 뭐 할지 골라달라고 투표 붙이기",
-      "text": "단풍놀이 가서 사람 구경만 하다 온 적 없음?\n\n나도 그런 줄 알고 포기하다시피 마이산 왔는데 입구부터 느낌 다름. 탑사 올라가는 길 단풍 절정인데 사진 찍으려고 기다릴 필요가 없음, 그냥 서서 10분을 찍어도 아무도 안 지나감. 유명 단풍 명소에서 인증샷 하나 건지려고 사람 머리 피해가며 찍던 거 생각하면 허무할 정도. 숙소 돌아오는 길도 똑같이 고요해서 낙엽 밟는 소리만 들림. 로비 들어가니까 천둥이가 단풍잎 하나 머리에 얹고 나와있어서 혼자 웃었음🐾\n다음날 코스 투표: 1) 은수사까지 더 걷기 2) 홍삼스파에서 쉬기, 뭐가 나음\n#홍삼빌호텔 #마이산 #진안여행",
-      "len": 319,
-      "images": [
-        "11.png",
-        "maisan_hero.png",
-        "27.png"
-      ],
-      "post_id": "17875524357582608",
-      "permalink": "https://www.threads.com/@hongsamhotel/post/DeYlPJKERoO",
-      "views": 13,
-      "views_final": true,
-      "replies": 0
-    },
     {
       "at": "2026-10-13 01:44",
       "topic": "고기만 사 오면 되는 항아리바베큐, 진안 흑돼지 구워 먹는 저녁",
@@ -951,7 +933,7 @@
       ],
       "post_id": "17989683984096708",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfGPVj2Ds3C",
-      "views": 9,
+      "views": 11,
       "replies": 0,
       "views_final": false
     },
@@ -1043,7 +1025,7 @@
       ],
       "post_id": "18118129918811482",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfKSLGKEWjy",
-      "views": 12,
+      "views": 13,
       "replies": 0,
       "views_final": false,
       "slot": 3,
@@ -1063,7 +1045,7 @@
       ],
       "post_id": "18145759033606094",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfLVNlPGlSa",
-      "views": 7,
+      "views": 8,
       "replies": 0,
       "views_final": false,
       "slot": 1,
@@ -1083,16 +1065,36 @@
       ],
       "post_id": "18078163259725736",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfL4QPQlDHB",
-      "views": null,
-      "replies": null,
+      "views": 13,
+      "replies": 0,
       "views_final": false,
       "slot": 2,
       "cross": "threads_sauna"
+    },
+    {
+      "at": "2026-11-01 20:31",
+      "topic": "사람 몰리는 단풍 명소 대신 조용한 마이산 단풍",
+      "hook": "twist",
+      "cta": "number",
+      "text": "단풍 보러 갔다가 산에서 나 혼자 된 줄 알았음\n\n유명 단풍 명소는 줄이 엄청 길다길래 일부러 피하고 마이산으로 갔음. 숙소에 차 세워두고 걸어 올라가는 40분 동안 마주친 사람이 딱 세 명이었음 ㅋㅋ 탑사 돌탑 뒤로 붉은 단풍이 깔려 있는데 낙엽 밟는 소리만 들려서 괜히 말도 안 하고 걷게 됨 🍁 사진 찍다 보니 벌써 1시간이 지나 있었음 😌 단풍은 유명한 데보다 사람 없는 데가 이긴다고 봄\n1년에 단풍 보러 몇 번 나감? 숫자로만\n#홍삼빌호텔 #마이산 #진안여행",
+      "len": 262,
+      "images": [
+        "hotel_new_slide1.jpg",
+        "hotel_new_slide6.jpg",
+        "17_running_maisan.png"
+      ],
+      "post_id": "17884805415528044",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DfMoT5KkU47",
+      "views": null,
+      "replies": null,
+      "views_final": false,
+      "slot": 3,
+      "cross": null
     }
   ],
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-11-01 13:30"
+    "checked_at": "2026-11-01 20:30"
   }
 }
