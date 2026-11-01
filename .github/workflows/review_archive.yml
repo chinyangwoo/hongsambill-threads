@@ -1,0 +1,43 @@
+# 저장 위치: .github/workflows/review_archive.yml
+# 리뷰 분석·팀장 고지 시스템의 '수집' 단계.
+# 매주 월요일 아침 구글 리뷰 전체를 reviews_archive.json 으로 저장 (작성자 이름 제외).
+# 분석·팀별 고지는 공개 저장소가 아닌 비공개 대시보드에서 Claude가 처리한다.
+name: 구글 리뷰 원문 보관 (주간 분석용)
+
+on:
+  schedule:
+    - cron: "47 22 * * 0"    # 매주 월요일 07:47 KST
+  workflow_dispatch:
+
+concurrency:
+  group: auto-post-commit
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 리뷰 수집
+        env:
+          GBP_CLIENT_ID: ${{ secrets.GBP_CLIENT_ID }}
+          GBP_CLIENT_SECRET: ${{ secrets.GBP_CLIENT_SECRET }}
+          GBP_REFRESH_TOKEN: ${{ secrets.GBP_REFRESH_TOKEN }}
+        run: python export_reviews_archive.py
+
+      - name: 저장
+        run: |
+          git config user.name "auto-post-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add reviews_archive.json
+          git diff --cached --quiet || git commit -m "구글 리뷰 원문 보관 $(date -u +'%Y-%m-%d')"
+          git pull --rebase origin ${{ github.ref_name }} || true
+          git push
