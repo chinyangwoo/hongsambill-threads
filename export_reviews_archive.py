@@ -33,7 +33,7 @@ def main():
         })
     rows.sort(key=lambda x: x["created"], reverse=True)
     data = {
-        "updated": F.now_kst().strftime("%Y-%m-%d %H:%M"),
+        "updated": str(F.now_kst()),
         "average_rating": F.PROFILE.get("GBP_AVG_RATING"),
         "total_review_count": F.PROFILE.get("GBP_REVIEW_COUNT"),
         "count": len(rows),
