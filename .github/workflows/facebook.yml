@@ -3,10 +3,8 @@
 name: 페이스북 자동 포스팅
 
 on:
-  schedule:
-    # 정각·30분은 GitHub 예약 지연이 심해 애매한 분으로 배치
-    - cron: "23 22 * * *"   # KST 07:23
-    - cron: "23 8 * * *"  # KST 17:23
+  # 정해진 시각 발행은 SNS 창고(Supabase pg_cron)가 workflow_dispatch 로 신호를 보낸다 (2026-11-01 전환).
+  # 되돌리려면 이 자리에 예전 schedule: 블록을 되살리면 된다.
   workflow_dispatch:        # 수동 실행 또는 SNS 창고(pg_cron)의 정시 신호
     inputs:
       slot:
