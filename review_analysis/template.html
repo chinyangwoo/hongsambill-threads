@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>홍삼빌 리뷰 고지판</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f6f9;--card:#fff;--ink:#18202f;--sub:#5d6678;--line:#e2e5ec;--navy:#1F3864;--chip:#eef1f7;
+--good:#16794a;--good-bg:#e7f5ee;--warn:#a5520a;--warn-bg:#fdf1e4;--bad:#b42318;--bad-bg:#fdecea;--info:#1F3864;--info-bg:#e9eef8}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1218;--card:#181d26;--ink:#e7eaf0;--sub:#9aa3b4;--line:#283040;--navy:#9db8ff;--chip:#212836;
+--good:#5ccf95;--good-bg:#173226;--warn:#f2a65a;--warn-bg:#35261a;--bad:#f7837a;--bad-bg:#3a1d1c;--info:#9db8ff;--info-bg:#1c2640}}
+:root[data-theme="dark"]{--bg:#0f1218;--card:#181d26;--ink:#e7eaf0;--sub:#9aa3b4;--line:#283040;--navy:#9db8ff;--chip:#212836;
+--good:#5ccf95;--good-bg:#173226;--warn:#f2a65a;--warn-bg:#35261a;--bad:#f7837a;--bad-bg:#3a1d1c;--info:#9db8ff;--info-bg:#1c2640}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 "Noto Sans KR",system-ui,sans-serif}
+.wrap{max-width:980px;margin:0 auto;padding:22px 16px 56px}
+header h1{margin:0;font-size:22px;color:var(--navy);letter-spacing:-.3px}
+header .sub{color:var(--sub);font-size:13px;margin-top:2px}
+.lead{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--navy);border-radius:10px;padding:14px 16px;margin:16px 0 12px;font-weight:500}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+@media (max-width:640px){.kpis{grid-template-columns:repeat(2,1fr)}}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.kpi .l{font-size:12px;color:var(--sub)}.kpi .v{font-size:24px;font-weight:700;line-height:1.3}.kpi .s{font-size:12px;color:var(--sub)}
+section{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin-top:14px}
+section h2{margin:0 0 4px;font-size:17px}
+section .note{color:var(--sub);font-size:13px;margin:0 0 12px}
+.seg{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 12px}
+.seg button{border:1px solid var(--line);background:var(--chip);color:var(--ink);border-radius:999px;padding:6px 13px;font:inherit;font-size:13px;cursor:pointer}
+.seg button.on{background:var(--navy);border-color:var(--navy);color:var(--card);font-weight:700}
+.n{display:flex;gap:10px;align-items:flex-start;border-radius:10px;padding:11px 13px;margin:8px 0}
+.n b.t{flex:0 0 auto;font-size:12px;padding:1px 9px;border-radius:999px;color:var(--card);font-weight:700;margin-top:2px}
+.n.경고{background:var(--bad-bg)}.n.경고 b.t{background:var(--bad)}
+.n.제안{background:var(--info-bg)}.n.제안 b.t{background:var(--info)}
+.n.칭찬{background:var(--good-bg)}.n.칭찬 b.t{background:var(--good)}
+.n.제언{background:var(--warn-bg)}.n.제언 b.t{background:var(--warn)}
+.cnt{display:flex;gap:8px;flex-wrap:wrap;margin:-2px 0 6px;font-size:12px;color:var(--sub)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{padding:8px 6px;border-bottom:1px solid var(--line);text-align:left;vertical-align:middle}
+th{color:var(--sub);font-size:12px;font-weight:500}
+td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.bar{position:relative;height:10px;border-radius:5px;background:var(--bad-bg);overflow:hidden;min-width:70px}
+.bar i{position:absolute;left:0;top:0;bottom:0;background:var(--good)}
+.team{font-size:12px;color:var(--sub);white-space:nowrap}
+.ev{font-size:12px;color:var(--sub)}
+@media (max-width:560px){.hide-s{display:none}}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:720px){.two{grid-template-columns:1fr}}
+ul.plain{list-style:none;margin:0;padding:0}
+ul.plain li{padding:7px 0;border-bottom:1px solid var(--line);font-size:14px}
+ul.plain li:last-child{border-bottom:0}
+.x{color:var(--sub);font-size:12px;margin-left:6px}
+.stars{color:#c98a00;letter-spacing:-1px}
+footer{color:var(--sub);font-size:12px;margin-top:18px;text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>홍삼빌호텔 구글 리뷰 고지판</h1>
+  <div class="sub" id="asof"></div>
+</header>
+<div class="lead" id="lead"></div>
+<div class="kpis" id="kpis"></div>
+
+<section id="notices">
+  <h2>팀별 고지</h2>
+  <p class="note">경고 → 제안 → 칭찬 → 제언 순. 팀장 아침 조회 때 그대로 읽어 주셔도 됩니다.</p>
+  <div class="seg" id="teamtabs"></div>
+  <div class="cnt" id="teamcnt"></div>
+  <div id="teambody"></div>
+</section>
+
+<section>
+  <h2>항목별 고객 평가</h2>
+  <p class="note">언급된 리뷰 수와 만족도(긍정 비율, 혼합은 절반). 막대의 초록이 만족, 붉은 부분이 불만입니다.</p>
+  <div class="seg" id="pertabs"></div>
+  <table id="asp"><thead><tr><th>항목</th><th class="hide-s">담당</th><th class="num">언급</th><th class="num">만족도</th><th style="width:28%"></th><th class="num">불만</th></tr></thead><tbody></tbody></table>
+</section>
+
+<div class="two">
+  <section><h2>고객이 실망한 점</h2><p class="note" id="dis-note"></p><ul class="plain" id="dis"></ul></section>
+  <section><h2>고객이 바라는 개선</h2><p class="note" id="req-note"></p><ul class="plain" id="req"></ul></section>
+</div>
+
+<section>
+  <h2>3점 이하 리뷰</h2>
+  <p class="note" id="low-note"></p>
+  <ul class="plain" id="low"></ul>
+</section>
+
+<footer id="foot"></footer>
+</div>
+<!--__CACHE__-->
+<script>
+const D=/*__DATA__*/null;
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+if(!D){document.querySelector(".wrap").innerHTML='<p>데이터가 없습니다.</p>';}else{
+const S=D.stats, R=D.report;
+$("#asof").textContent=`기준 ${D.date} · 리뷰 수집 ${D.archive_updated} · 매주 월요일 갱신`;
+$("#lead").textContent=R.headline||"";
+const pct=(a)=>a.n_text?Math.round((a.revisit.yes||0)/a.n_text*100):0;
+const K=[
+ ["구글 표시 평점",D.google_avg,`리뷰 ${D.google_count}개`],
+ ["재개장 이후 평균",S.reopen.avg,`2025-11-01 이후 ${S.reopen.n}건`],
+ ["최근 30일 평균",S.d30.avg||"-",`${S.d30.n}건`],
+ ["재방문 의사 표현",pct(S.reopen)+"%",`재개장 이후 본문 리뷰 중`],
+];
+$("#kpis").innerHTML=K.map(([l,v,s])=>`<div class="kpi"><div class="l">${l}</div><div class="v">${esc(v)}</div><div class="s">${esc(s)}</div></div>`).join("");
+
+const TEAMS=["프런트팀","객실팀","식음팀","시설팀","경영진"], ORDER=["경고","제안","칭찬","제언"];
+let team=TEAMS.includes(store.get("rv_team"))?store.get("rv_team"):"프런트팀";
+function drawTeam(){
+ $("#teamtabs").innerHTML=TEAMS.map(t=>{const c=(R.teams[t]?.경고||[]).length;return `<button class="${t===team?"on":""}" data-t="${t}">${t}${c?` · 경고 ${c}`:""}</button>`}).join("");
+ const T=R.teams[team]||{};
+ $("#teamcnt").innerHTML=ORDER.filter(g=>(T[g]||[]).length).map(g=>`${g} ${(T[g]||[]).length}`).join(" · ");
+ $("#teambody").innerHTML=ORDER.flatMap(g=>(T[g]||[]).map(x=>`<div class="n ${g}"><b class="t">${g}</b><div>${esc(x)}</div></div>`)).join("")||'<p class="note">이번 주 고지 사항이 없습니다.</p>';
+}
+$("#teamtabs").onclick=e=>{const b=e.target.closest("button");if(!b)return;team=b.dataset.t;store.set("rv_team",team);drawTeam();};
+drawTeam();
+
+const PER=[["reopen","재개장 이후"],["d90","최근 90일"],["d30","최근 30일"]];
+let per=PER.some(p=>p[0]===store.get("rv_per"))?store.get("rv_per"):"reopen";
+function drawPer(){
+ $("#pertabs").innerHTML=PER.map(([k,l])=>`<button class="${k===per?"on":""}" data-p="${k}">${l} (${S[k].n}건)</button>`).join("");
+ const A=S[per].aspects;
+ const rows=Object.entries(A).filter(([,v])=>v.n).sort((a,b)=>b[1].n-a[1].n);
+ $("#asp tbody").innerHTML=rows.map(([k,v])=>{const bad=v.neg+v.mix;
+  return `<tr><td>${esc(v.ko)}${v.ne.length?`<div class="ev">“${esc(v.ne.slice(0,2).join("”, “"))}”</div>`:""}</td><td class="team hide-s">${v.team}</td>
+  <td class="num">${v.n}</td><td class="num">${v.sat}%</td><td><div class="bar"><i style="width:${v.sat}%"></i></div></td><td class="num">${bad}</td></tr>`}).join("")||'<tr><td colspan="6">해당 기간 언급 없음</td></tr>';
+ const top=(arr)=>{const c={};arr.forEach(x=>{c[x]=(c[x]||0)+1});return Object.entries(c).sort((a,b)=>b[1]-a[1]).slice(0,10)};
+ const lst=(id,arr,note,label)=>{const t=top(arr);$(id).innerHTML=t.map(([x,n])=>`<li>${esc(x)}${n>1?`<span class="x">${n}건</span>`:""}</li>`).join("")||'<li class="note">없음</li>';$(note).textContent=`${PER.find(p=>p[0]===per)[1]} · ${arr.length}건 · 많이 나온 순`;};
+ lst("#dis",S[per].dis,"#dis-note");lst("#req",S[per].req,"#req-note");
+ const L=S[per].low;
+ $("#low-note").textContent=`${PER.find(p=>p[0]===per)[1]} ${L.length}건`;
+ $("#low").innerHTML=L.map(r=>`<li><span class="stars">${"★".repeat(r.stars)}</span> <span class="x">${r.date}</span><br>${esc(r.sum)}${r.dis.length?`<div class="ev">실망: ${esc(r.dis.join(" / "))}</div>`:""}</li>`).join("")||'<li class="note">없음</li>';
+}
+$("#pertabs").onclick=e=>{const b=e.target.closest("button");if(!b)return;per=b.dataset.p;store.set("rv_per",per);drawPer();};
+drawPer();
+$("#foot").textContent="구글 리뷰 원문을 Claude가 항목별로 분류해 집계 · 작성자 정보는 수집하지 않음 · 대표·경영진 전용";
+}
+</script>
+</body>
+</html>
