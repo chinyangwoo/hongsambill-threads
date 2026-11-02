@@ -1,24 +1,6 @@
 {
-  "count": 187,
+  "count": 188,
   "posts": [
-    {
-      "at": "2026-10-13 16:03",
-      "topic": "마이산 탑사 돌탑, 사진이랑 실물이 다른 이유",
-      "hook": "question",
-      "cta": "밸런스 게임으로 둘 중 하나 고르게 하기",
-      "text": "사진으로만 보고 가면 딱 실망하는 타이밍 있는 거 알아?\n\n나도 사진에서 본 탑 몇 개 서있는 느낌으로 갔다가 입구에서 그대로 멈췄음. 실제론 80개 넘는 돌탑이 숲처럼 빽빽하게 서있어서 카메라 프레임 안에 다 안 담김, 그래서 사진은 항상 한두 개만 클로즈업으로 찍혀서 작아 보이는 거였음. 가장 큰 탑은 13m라는데 고개 완전히 젖혀야 끝이 보임. 바람 엄청 부는 자리인데 100년 넘게 안 무너졌다는 안내판 보고 소름 돋",
-      "len": 238,
-      "images": [
-        "85.png",
-        "63.png",
-        "78.png"
-      ],
-      "post_id": "17877739839565963",
-      "permalink": "https://www.threads.com/@hongsamhotel/post/DebOiV9G3XU",
-      "views": 14,
-      "views_final": true,
-      "replies": 0
-    },
     {
       "at": "2026-10-14 00:03",
       "topic": "제주·강원 대신 진안을 고른 이유",
@@ -917,7 +899,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfG7ACuldf-",
       "views": 6,
       "replies": 0,
-      "views_final": false
+      "views_final": true
     },
     {
       "at": "2026-10-30 23:07",
@@ -989,7 +971,7 @@
       ],
       "post_id": "18118129918811482",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfKSLGKEWjy",
-      "views": 15,
+      "views": 16,
       "replies": 0,
       "views_final": false,
       "slot": 3,
@@ -1089,16 +1071,36 @@
       ],
       "post_id": "18150532996561019",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfOdDCElaJF",
+      "views": 3,
+      "replies": 0,
+      "views_final": false,
+      "slot": 2,
+      "cross": "ig_hotel"
+    },
+    {
+      "at": "2026-11-02 20:31",
+      "topic": "마이산 탑사 돌탑, 사진이랑 실물이 다른 이유",
+      "hook": "question",
+      "cta": "blank",
+      "text": "사진만 보고 별거 없겠다 싶어 넘긴 사람?\n\n나도 탑사 돌탑은 사진으로만 보고 그냥 돌 쌓아 놓은 거네 했음. 근데 막상 앞에 서니까 사진엔 안 담기는 크기랑 돌 틈 이끼 결이 보여서 목 꺾고 10분을 서 있었음 ㅋㅋ 11월 첫 주라 단풍은 끝물이었는데 오히려 색 빠진 나무 뒤로 돌탑이 더 또렷했음 🍁 이건 사진으로 판단하면 손해라고 봄. 그날 찍은 건 인스타 @hongsamhotel 에 있는데 실물 반도 안 담김\n사진이랑 실물 제일 다른 여행지: ___ 지역명만\n#홍삼빌호텔 #마이산 #진안여행",
+      "len": 279,
+      "images": [
+        "hotel.png",
+        "23.png",
+        "39.png"
+      ],
+      "post_id": "18122666257985226",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DfPNGs_FK6q",
       "views": null,
       "replies": null,
       "views_final": false,
-      "slot": 2,
+      "slot": 3,
       "cross": "ig_hotel"
     }
   ],
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-11-02 13:30"
+    "checked_at": "2026-11-02 20:30"
   }
 }
