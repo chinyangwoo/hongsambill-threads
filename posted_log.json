@@ -1,24 +1,6 @@
 {
-  "count": 186,
+  "count": 187,
   "posts": [
-    {
-      "at": "2026-10-13 11:02",
-      "topic": "2층 유리난간 테라스에서 마이산 보며 멍때리기",
-      "hook": "compare",
-      "cta": "더 좋은 정보 아는 사람 댓글로 부르기",
-      "text": "호캉스 가서 액티비티 짜다가 결국 아무것도 안 한 날 있음?\n\n나도 2층 테라스 나가기 전까진 그럴 생각이었음. 근데 유리난간이라 앉은 채로 마이산이 그대로 눈높이에 걸림, 시야 가리는 게 하나도 없어서 그냥 의자에 앉아서 40분을 멍때림. 커피 식는 줄도 몰랐음. 밑에 마당 보니까 천둥이도 테라스 쪽 올려다보면서 한참 앉아있길래 같이 멍때리는 기분 들었음🐾\n이 근처에 테라스 뷰로 더 좋은 데 아는 사람 있으면 댓글로 소환함\n#홍삼빌호텔 #마이산 #진안여행",
-      "len": 257,
-      "images": [
-        "59.png",
-        "23.png",
-        "41.png"
-      ],
-      "post_id": "17911752999515047",
-      "permalink": "https://www.threads.com/@hongsamhotel/post/DeasBN7jLiU",
-      "views": 21,
-      "views_final": true,
-      "replies": 0
-    },
     {
       "at": "2026-10-13 16:03",
       "topic": "마이산 탑사 돌탑, 사진이랑 실물이 다른 이유",
@@ -915,9 +897,9 @@
       ],
       "post_id": "17989683984096708",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfGPVj2Ds3C",
-      "views": 13,
+      "views": 14,
       "replies": 0,
-      "views_final": false
+      "views_final": true
     },
     {
       "at": "2026-10-30 15:19",
@@ -1027,7 +1009,7 @@
       ],
       "post_id": "18145759033606094",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfLVNlPGlSa",
-      "views": 10,
+      "views": 13,
       "replies": 0,
       "views_final": false,
       "slot": 1,
@@ -1047,7 +1029,7 @@
       ],
       "post_id": "18078163259725736",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfL4QPQlDHB",
-      "views": 15,
+      "views": 18,
       "replies": 0,
       "views_final": false,
       "slot": 2,
@@ -1067,7 +1049,7 @@
       ],
       "post_id": "17884805415528044",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfMoT5KkU47",
-      "views": 10,
+      "views": 13,
       "replies": 0,
       "views_final": false,
       "slot": 3,
@@ -1087,16 +1069,36 @@
       ],
       "post_id": "18025379387866329",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfN6tONCc80",
-      "views": null,
-      "replies": null,
+      "views": 11,
+      "replies": 0,
       "views_final": false,
       "slot": 1,
       "cross": null
+    },
+    {
+      "at": "2026-11-02 13:31",
+      "topic": "객실 창으로 마이산 보며 멍때리기",
+      "hook": "number",
+      "cta": "tag",
+      "text": "창 하나 보면서 2시간을 아무것도 안 했는데\n\n11월 첫 주라 마이산 단풍은 끝물이었는데, 마이산 뷰 객실 창가에 의자 끌어다 앉아서 커피만 마셨음 ☕ 구름 지나갈 때마다 산 색이 바뀌는 걸 보다가 폰 한 번 안 보고 2시간이 지나 있었음 ㅋㅋ 해 지고 나서 잔디밭 장작 사우나로 몸도 데웠는데, 그래도 멍때리기는 창가가 이겼다고 봄. 객실 창 사진은 인스타 @hongsamhotel 가면 있음\n맨날 아무것도 안 하고 싶다는 친구 딱 한 명 태그해\n#홍삼빌호텔 #마이산 #진안여행",
+      "len": 268,
+      "images": [
+        "55.png",
+        "13.png",
+        "18.png"
+      ],
+      "post_id": "18150532996561019",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DfOdDCElaJF",
+      "views": null,
+      "replies": null,
+      "views_final": false,
+      "slot": 2,
+      "cross": "ig_hotel"
     }
   ],
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-11-02 08:30"
+    "checked_at": "2026-11-02 13:30"
   }
 }
