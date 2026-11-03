@@ -1,24 +1,6 @@
 {
-  "count": 190,
+  "count": 191,
   "posts": [
-    {
-      "at": "2026-10-14 14:18",
-      "topic": "마이산 한 바퀴 돌고 홍삼스파에서 다리 푸는 하루",
-      "hook": "insider",
-      "cta": "다음에 뭐 할지 골라달라고 투표 붙이기",
-      "text": "다리 아픈 거 참고 코스 끝까지 도는 사람들 진짜 이해 안 갔는데\n\n이번에 마이산 한 바퀴 돌고 나서 이해함. 탑사부터 은수사까지 왕복 두 시간 걸었더니 종아리가 돌덩이 됨, 근데 숙소 들어오자마자 홍삼스파 직행하니까 상황 종료. 온탕에 10분 담갔는데 다리 풀리는 게 느껴짐, 걷기만 하고 스파 안 갔으면 다음날 아예 못 걸었을 듯. 탈의실 나오는데 천둥이가 로비에서 기다리고 있어서 다리 풀린 채로 또 쪼그려 앉아 놀아줌🐾\n\n내일 아침 코스 투표: 1) 탑사 한 번 더 2) 그냥 스파에서 하루종일 눌러앉기\n#홍삼빌호텔 #홍삼스파 #마이산",
-      "len": 303,
-      "images": [
-        "49.png",
-        "18.png",
-        "51.png"
-      ],
-      "post_id": "18043072763828332",
-      "permalink": "https://www.threads.com/@hongsamhotel/post/DednM5hFcD_",
-      "views": 19,
-      "views_final": true,
-      "replies": 0
-    },
     {
       "at": "2026-10-15 08:15",
       "topic": "마이산 처음 갈 때 모르면 손해 보는 것",
@@ -917,7 +899,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfJe5psAKv1",
       "views": 14,
       "replies": 0,
-      "views_final": false,
+      "views_final": true,
       "slot": 2,
       "cross": "ig_hotel"
     },
@@ -1095,16 +1077,36 @@
       ],
       "post_id": "17956949058027709",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfRB35PjQTj",
+      "views": 4,
+      "replies": 0,
+      "views_final": false,
+      "slot": 2,
+      "cross": "ig_hotel"
+    },
+    {
+      "at": "2026-11-03 20:32",
+      "topic": "마이산 한 바퀴 돌고 바베큐장에서 저녁 먹는 하루",
+      "hook": "fail",
+      "cta": "debate",
+      "text": "걷고 나면 입맛 없을 줄 알았던 내가 바보였음\n\n마이산 한 바퀴 돌고 내려와서 셋이 고기 1kg만 사 들고 바베큐장 감 ㅋㅋ 숯 4인분 2만원 사서 구웠는데 20분 만에 접시가 비었음 😭 집게는 빌려주고 바베큐장도 무료인데, 고기 양은 전부 내가 책임져야 하는 거였음. 해 져서 다시 사러 나가기도 귀찮아 쌈채소만 먹다 끝남 🥩 인스타 @hongsamhotel 가면 그날 찍은 마이산 사진 있음\n고기는 1인 500g 아래면 무조건 후회함, 아니라는 사람?\n#홍삼빌호텔 #진안여행 #마이산",
+      "len": 272,
+      "images": [
+        "47.png",
+        "sauna.png",
+        "82.jpg"
+      ],
+      "post_id": "18138204490710706",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DfRx72JEUvI",
       "views": null,
       "replies": null,
       "views_final": false,
-      "slot": 2,
+      "slot": 3,
       "cross": "ig_hotel"
     }
   ],
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-11-03 13:30"
+    "checked_at": "2026-11-03 20:30"
   }
 }
