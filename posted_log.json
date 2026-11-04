@@ -1,24 +1,6 @@
 {
-  "count": 193,
+  "count": 194,
   "posts": [
-    {
-      "at": "2026-10-15 20:15",
-      "topic": "호캉스 대신 별멍, 진안고원의 밤하늘",
-      "hook": "compare",
-      "cta": "빈칸 채우기식으로 한 단어 답하게 하기",
-      "text": "불멍 유행이라길래 따라하다가 결국 하늘 보고 끝났음\n\n캠핑장 가서 불멍 한다고 앉아있었는데 옆에 있던 사람이 고개 들어보라길래 봤다가 그걸로 끝, 불은 한 번도 안 봄. 진안 와서 이것도 비슷했음. 홍삼스파 끝나고 마당 나왔는데 별이 그냥 꽉 차있어서 10분 넘게 목 아픈 줄도 모르고 서있었음. 여기 해발이 높아서 별이 더 가깝게 보인다던데 체감상 진짜 그럼, 폰 카메라로 찍어도 20개 넘게 찍힘. 천둥이도 같이 하늘 보는 건지 옆에 앉아서 안 움직이고 있었음🐾\n오늘 별 보면서 떠오른 단어 딱 한 단어만 댓글로\n#홍삼빌호텔 #진안여행 #홍삼스파",
-      "len": 307,
-      "images": [
-        "35.png",
-        "36.png",
-        "55.png"
-      ],
-      "post_id": "18459160846186567",
-      "permalink": "https://www.threads.com/@hongsamhotel/post/Deg0-7DlVk8",
-      "views": 9,
-      "views_final": true,
-      "replies": 0
-    },
     {
       "at": "2026-10-15 20:28",
       "topic": "진안 로컬 맛집과 숙소 주변 먹거리 이야기",
@@ -923,7 +905,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfL4QPQlDHB",
       "views": 22,
       "replies": 0,
-      "views_final": false,
+      "views_final": true,
       "slot": 2,
       "cross": "threads_sauna"
     },
@@ -1081,7 +1063,7 @@
       ],
       "post_id": "18083448275358327",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfTEUSVj62L",
-      "views": 14,
+      "views": 15,
       "replies": 0,
       "views_final": false,
       "slot": 1,
@@ -1101,16 +1083,36 @@
       ],
       "post_id": "18127555706486610",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfTmpN0EWY0",
+      "views": 2,
+      "replies": 0,
+      "views_final": false,
+      "slot": 2,
+      "cross": "ig_hotel"
+    },
+    {
+      "at": "2026-11-04 20:32",
+      "topic": "호캉스 대신 별멍, 진안고원의 밤하늘",
+      "hook": "question",
+      "cta": "blank",
+      "text": "호캉스 가서 방에서 폰만 보다 오는 사람?\n\n11월 첫 주에 단풍 끝물 보고 내려와서 호텔 앞 잔디밭 장작 사우나에 들어갔음 ㅋㅋ 땀 쭉 빼고 나오니까 찬 공기에 몸에서 김이 폴폴 나는데, 고개를 드니 별이 꽤 많았음 ✨ 불빛 적은 고원이라 그런지 목 아프게 20분을 서 있었음. 난 수영장 있는 호캉스보다 이쪽이 훨씬 오래 남았다고 봄 🔥 잔디밭 사우나 사진은 인스타 @hongsamhotel 가면 있음\n호캉스 가면 결국 제일 오래 있는 곳: ___ 한 단어로\n#홍삼빌호텔 #진안여행 #마이산",
+      "len": 276,
+      "images": [
+        "73.png",
+        "hotel_new_slide6.jpg",
+        "70.png"
+      ],
+      "post_id": "18182709007442028",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DfUWtzxEY81",
       "views": null,
       "replies": null,
       "views_final": false,
-      "slot": 2,
+      "slot": 3,
       "cross": "ig_hotel"
     }
   ],
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-11-04 13:30"
+    "checked_at": "2026-11-04 20:30"
   }
 }
