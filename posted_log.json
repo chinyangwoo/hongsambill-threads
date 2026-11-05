@@ -1,24 +1,6 @@
 {
-  "count": 194,
+  "count": 195,
   "posts": [
-    {
-      "at": "2026-10-15 20:28",
-      "topic": "진안 로컬 맛집과 숙소 주변 먹거리 이야기",
-      "hook": "insider",
-      "cta": "metoo",
-      "text": "직원이 아니라 사장님이 몰래 알려준 식당이 있다는데\n\n체크인할 때 지나가는 말로 여쭤봤다가 건진 정보임. 호텔서 차로 5분 거리에 시래기정식 하는 집 있는데 동네 사람들만 간다고, 간판도 작아서 지나치기 딱 좋음. 가격 9천원인데 반찬이 열 가지 넘게 나와서 다 못 먹고 나옴. 밥 먹고 숙소 오는 길에 편의점서 홍삼캔디 샀는데 그것도 동네 사람 추천이라 신뢰도 올라감. 로비 들어서니까 천둥이가 마중 나와있어서 배부른 채로 쪼그려 앉아 인사함🐾\n밥 먹고 바로 숙소 들어가서 눕는 사람 나 말고 또 있냐, 맞으면 ㅇㅇ\n#홍삼빌호텔 #진안여행 #진안가볼만한곳",
-      "len": 311,
-      "images": [
-        "47.png",
-        "80.png",
-        "83.png"
-      ],
-      "post_id": "18152065885547337",
-      "permalink": "https://www.threads.com/@hongsamhotel/post/Deg2cWuG9v2",
-      "views": 14,
-      "replies": 0,
-      "views_final": true
-    },
     {
       "at": "2026-10-15 21:40",
       "topic": "총지배견 천둥이(허스키), 아이들이 체크인보다 먼저 찾는 이유",
@@ -925,7 +907,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfMoT5KkU47",
       "views": 18,
       "replies": 0,
-      "views_final": false,
+      "views_final": true,
       "slot": 3,
       "cross": null
     },
@@ -945,7 +927,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfN6tONCc80",
       "views": 16,
       "replies": 0,
-      "views_final": false,
+      "views_final": true,
       "slot": 1,
       "cross": null
     },
@@ -1103,16 +1085,36 @@
       ],
       "post_id": "18182709007442028",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfUWtzxEY81",
+      "views": 4,
+      "replies": 0,
+      "views_final": false,
+      "slot": 3,
+      "cross": "ig_hotel"
+    },
+    {
+      "at": "2026-11-05 13:32",
+      "topic": "진안 로컬 맛집과 숙소 주변 먹거리 이야기",
+      "hook": "twist",
+      "cta": "debate",
+      "text": "정육점 사장님이 내 숙소를 먼저 맞혀버림\n\n11월 첫 주에 마이산 단풍 끝물 보고 내려오다 정육점에 들러 삼겹살 600g 달라고 했더니, 사장님이 \"마이산 밑에 호텔 바베큐장 가시죠?\" 하고 웃으심 ㅋㅋ 그런 손님이 한두 명이 아닌가 봄. 호텔은 자리랑 숯만 있고 고기는 직접 챙겨야 해서 정육점 들르는 게 거의 코스임 🥩 근데 사장님이 찍어준 부위는 비밀로 함. 마이산 사진은 인스타 @hongsamhotel 가면 있음\n여행지 고기는 무조건 현지 정육점이 이득임, 반박 받음 🍁\n#홍삼빌호텔 #진안여행 #마이산",
+      "len": 286,
+      "images": [
+        "26.png",
+        "17_running_maisan.png",
+        "18.png"
+      ],
+      "post_id": "17965322325233248",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DfWLcRMkUwK",
       "views": null,
       "replies": null,
       "views_final": false,
-      "slot": 3,
+      "slot": 2,
       "cross": "ig_hotel"
     }
   ],
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-11-04 20:30"
+    "checked_at": "2026-11-05 13:30"
   }
 }
