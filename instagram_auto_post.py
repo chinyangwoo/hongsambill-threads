@@ -268,8 +268,17 @@ def git_push_cache(names):
     git("add", "-A", CACHE_DIR)
     if subprocess.run(["git", "diff", "--cached", "--quiet"]).returncode != 0:
         git("commit", "-m", f"ig_cache: {', '.join(names)}")
-        git("pull", "--rebase", "origin", BRANCH)
-        git("push", "origin", f"HEAD:{BRANCH}")
+        # 다른 작업이 같은 순간에 푸시하면 밀릴 수 있어 최대 5번 다시 시도한다
+        for attempt in range(1, 6):
+            try:
+                git("pull", "--rebase", "origin", BRANCH)
+                git("push", "origin", f"HEAD:{BRANCH}")
+                break
+            except subprocess.CalledProcessError:
+                if attempt == 5:
+                    raise
+                print(f"사진 푸시 실패 ({attempt}/5) — 10초 후 재시도")
+                time.sleep(10)
     time.sleep(10)   # raw URL 반영 대기
 
 

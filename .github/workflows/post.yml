@@ -17,12 +17,15 @@ permissions:
 # 인스타·페이스북·성수주조장 워크플로와 같은 그룹으로 묶어
 # 저장소에 기록을 저장하는 작업이 한 번에 하나씩만 돌도록 줄 세우기
 concurrency:
-  group: auto-post-commit
+  # 발행 3개(스레드·인스타·페북)만 쓰는 전용 줄. 예전에는 11개 작업이 한 줄을 같이 써서,
+  # 다른 작업이 오래 걸리면 기다리던 발행이 뒤에 온 작업에 밀려 취소됐다 (2026-11-05 08:30 스레드 누락).
+  group: sns-publish-hotel
   cancel-in-progress: false
 
 jobs:
   post:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - name: 저장소 체크아웃
         uses: actions/checkout@v4

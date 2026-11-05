@@ -15,7 +15,9 @@ on:
 
 # 스레드 워크플로와 동시에 커밋 충돌 방지
 concurrency:
-  group: auto-post-commit
+  # 발행 3개(스레드·인스타·페북)만 쓰는 전용 줄. 예전에는 11개 작업이 한 줄을 같이 써서,
+  # 다른 작업이 오래 걸리면 기다리던 발행이 뒤에 온 작업에 밀려 취소됐다 (2026-11-05 08:30 스레드 누락).
+  group: sns-publish-hotel
   cancel-in-progress: false
 
 permissions:
@@ -24,6 +26,7 @@ permissions:
 jobs:
   post:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
 
@@ -51,5 +54,7 @@ jobs:
           git config user.email "bot@users.noreply.github.com"
           git add -A ig_cache instagram_posted_log.json .ig_token_meta.json 2>/dev/null || true
           git diff --cached --quiet || git commit -m "인스타 게시 기록 $(date -u +'%Y-%m-%d %H:%M')"
-          git pull --rebase origin ${{ github.ref_name }} || true
-          git push || true
+          for i in 1 2 3 4 5; do
+            git pull --rebase origin ${{ github.ref_name }} && git push && break
+            echo "푸시 실패 ($i/5) — 10초 후 재시도"; sleep 10
+          done

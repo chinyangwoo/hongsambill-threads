@@ -24,6 +24,7 @@ concurrency:
 jobs:
   reply:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - name: 저장소 체크아웃
         uses: actions/checkout@v4
