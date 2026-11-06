@@ -1,24 +1,6 @@
 {
-  "count": 197,
+  "count": 198,
   "posts": [
-    {
-      "at": "2026-10-16 13:53",
-      "topic": "고기만 사 오면 되는 항아리바베큐, 진안 흑돼지 구워 먹는 저녁",
-      "hook": "compare",
-      "cta": "handsup",
-      "text": "캠핑 가서 고기 굽다가 설거지만 세 번 한 날 있었음\n이번엔 그냥 고기만 사 들고 감. 홍삼빌 항아리바베큐가 불이랑 그릴 세팅 다 해주는 거라 할 일이 흑돼지 올려서 뒤집는 거밖에 없음. 항아리 안에서 구워지니까 연기도 안 나고 냄새도 안 뱀, 숯불 갈아 끼우는 것도 직원이 와서 해줌. 고기 2인분 20분 만에 다 익어서 집게만 들었다 놨다 하다 끝남. 마당 나오니까 천둥이가 냄새 맡고 다가와서 한 점도 안 줬는데 끝까지 옆에 앉아있었음🐾\n캠핑이나 바베큐 갔다가 뒷정리 때문에 고기 맛 못 느낀 사람 손\n#홍삼빌호텔 #진안여행 #전북여행",
-      "len": 302,
-      "images": [
-        "78.png",
-        "hotel_new_slide2.jpg",
-        "coldplunge.png"
-      ],
-      "post_id": "18095235833392513",
-      "permalink": "https://www.threads.com/@hongsamhotel/post/DeiuDCIFkGF",
-      "views": 10,
-      "replies": 0,
-      "views_final": true
-    },
     {
       "at": "2026-10-16 21:25",
       "topic": "객실 창으로 마이산 보며 멍때리기",
@@ -951,7 +933,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfQfg1Ulrn9",
       "views": 6,
       "replies": 0,
-      "views_final": false,
+      "views_final": true,
       "slot": 1,
       "cross": null
     },
@@ -1109,16 +1091,36 @@
       ],
       "post_id": "18037294772891241",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfYN5lFDnTU",
-      "views": null,
-      "replies": null,
+      "views": 3,
+      "replies": 0,
       "views_final": false,
       "slot": 1,
       "cross": null
+    },
+    {
+      "at": "2026-11-06 13:31",
+      "topic": "고기만 사 오면 되는 항아리바베큐, 진안 흑돼지 구워 먹는 저녁",
+      "hook": "question",
+      "cta": "tag",
+      "text": "바베큐는 준비물 때문에 매번 포기하는 사람?\n\n단풍 끝물 보러 간 11월 첫 주에 진안 흑돼지 800g만 사 들고 갔는데, 진짜 그게 준비의 끝이었음 ㅋㅋ 바베큐장은 이용 무료고 숯은 4인분 2만원, 집게 같은 도구는 그냥 빌려줘서 내 손에 든 건 고기뿐이었음 🔥 항아리바베큐에서 꺼낸 흑돼지 껍질이 바삭해서 난 직화보다 항아리가 낫다고 봄. 비바람 심하면 운영을 안 하니까 날씨는 확인하고 가야 함 🍁 마이산이랑 바베큐장 사진은 인스타 @hongsamhotel 가면 있음\n고기 굽는 건 맨날 나한테 시키는 친구 한 명 태그\n#홍삼빌호텔 #진안여행 #마이산",
+      "len": 311,
+      "images": [
+        "49.png",
+        "55.png",
+        "44.png"
+      ],
+      "post_id": "18437931796198659",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DfYwOq5kZM3",
+      "views": null,
+      "replies": null,
+      "views_final": false,
+      "slot": 2,
+      "cross": "ig_hotel"
     }
   ],
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-11-06 08:30"
+    "checked_at": "2026-11-06 13:30"
   }
 }
