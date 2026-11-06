@@ -1,24 +1,6 @@
 {
-  "count": 198,
+  "count": 199,
   "posts": [
-    {
-      "at": "2026-10-16 21:25",
-      "topic": "객실 창으로 마이산 보며 멍때리기",
-      "hook": "provoke",
-      "cta": "debate",
-      "text": "호텔방 가면 TV부터 켜는 사람이었는데 이번엔 리모컨 손도 안 댐\n\n체크인하고 캐리어도 안 풀고 창가로 직행함, 마이산 봉우리 두 개가 창틀에 딱 맞게 들어와서 그림 걸어놓은 줄 앎. 침대에 걸터앉아서 멍때리다 정신 차려보니 40분 지나있음, 폰도 TV도 안 건드림. 날 흐려서 봉우리 위에 구름 낮게 깔려있었는데 그게 더 분위기 있었음. 천둥이도 창가 쪽 바닥에 와서 같이 늘어져 있어서 둘이 같은 방향 보고 있었음🐾\n호텔 가면 TV부터 켜는 사람 ㅇ, 창밖부터 보는 사람 ㄴ, 골라봐\n#홍삼빌호텔 #마이산 #진안여행",
-      "len": 290,
-      "images": [
-        "hotel_new_slide7.jpg",
-        "54.png",
-        "23.png"
-      ],
-      "post_id": "18097242356450476",
-      "permalink": "https://www.threads.com/@hongsamhotel/post/Dejhto7oIKa",
-      "views": 13,
-      "replies": 0,
-      "views_final": true
-    },
     {
       "at": "2026-10-17 07:53",
       "topic": "마이산 탑사 돌탑, 사진이랑 실물이 다른 이유",
@@ -953,7 +935,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfRB35PjQTj",
       "views": 10,
       "replies": 0,
-      "views_final": false,
+      "views_final": true,
       "slot": 2,
       "cross": "ig_hotel"
     },
@@ -1091,7 +1073,7 @@
       ],
       "post_id": "18037294772891241",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfYN5lFDnTU",
-      "views": 3,
+      "views": 4,
       "replies": 0,
       "views_final": false,
       "slot": 1,
@@ -1111,16 +1093,36 @@
       ],
       "post_id": "18437931796198659",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfYwOq5kZM3",
+      "views": 6,
+      "replies": 0,
+      "views_final": false,
+      "slot": 2,
+      "cross": "ig_hotel"
+    },
+    {
+      "at": "2026-11-06 20:31",
+      "topic": "객실 창으로 마이산 보며 멍때리기",
+      "hook": "fail",
+      "cta": "blank",
+      "text": "여행 일정 빡빡하게 짠 걸 체크인하고서야 후회함\n\n11월 첫 주에 단풍 끝물 본다고 첫날 오후에만 코스를 4개 넣었는데, 마이산 뷰 객실에 들어가 창을 여니까 봉우리 두 개가 딱 보여서 그대로 침대에 앉아버림 ㅋㅋ 멍하니 있다가 1시간 40분이 사라졌고 코스 두 개는 그냥 취소함 ☁️ 근데 하나도 안 아까웠음. 난 여행은 많이 도는 것보다 창 앞에 앉아 있던 시간이 더 남는다고 봄 🍁 창밖 사진은 인스타 @hongsamhotel 가면 있음\n일정 반만 채운 여행은 ___ 좋다/싫다로만\n#홍삼빌호텔 #진안여행 #마이산",
+      "len": 290,
+      "images": [
+        "28.png",
+        "36.png",
+        "hotel_slide3.png"
+      ],
+      "post_id": "17973532128188104",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DfZgTPfmzbs",
       "views": null,
       "replies": null,
       "views_final": false,
-      "slot": 2,
+      "slot": 3,
       "cross": "ig_hotel"
     }
   ],
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-11-06 13:30"
+    "checked_at": "2026-11-06 20:30"
   }
 }
