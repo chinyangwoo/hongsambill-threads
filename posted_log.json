@@ -1,24 +1,6 @@
 {
-  "count": 200,
+  "count": 201,
   "posts": [
-    {
-      "at": "2026-10-17 13:55",
-      "topic": "제주·강원 대신 진안을 고른 이유",
-      "hook": "secret",
-      "cta": "number",
-      "text": "이번 연휴 제주 강원 다 제끼고 진안 간 이유 하나 있음\n\n비행기값 숙소값 합치면 20만원 훌쩍인데 거기 가봤자 인파 틈에서 사진 찍고 끝남. 진안은 차로 가고 그 돈 반도 안 드는데 마이산까지 호텔서 도보라 이동에 에너지 하나도 안 씀. 리뷰 4.6짜리 숙소인데 사람 안 치여서 방에서도 밖에서도 여유로움. 홍삼스파는 내년 1월 오픈 예정이라길래 그거 보고 또 와야지 싶었음. 체크아웃할 때 천둥이가 마중나와서 발걸음 느려짐🐾\n제주 강원 진안 중에 담에 가고 싶은 곳 하나만 찍어줘\n#홍삼빌호텔 #진안여행 #전북여행",
-      "len": 289,
-      "images": [
-        "90.png",
-        "63.png",
-        "19.png"
-      ],
-      "post_id": "18073068920759046",
-      "permalink": "https://www.threads.com/@hongsamhotel/post/DelS-0unIBE",
-      "views": 15,
-      "replies": 0,
-      "views_final": true
-    },
     {
       "at": "2026-10-17 20:37",
       "topic": "아이랑 1박2일, 차 덜 타고 걸어서 되는 마이산 코스",
@@ -957,7 +939,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfTEUSVj62L",
       "views": 16,
       "replies": 0,
-      "views_final": false,
+      "views_final": true,
       "slot": 1,
       "cross": null
     },
@@ -1055,7 +1037,7 @@
       ],
       "post_id": "18037294772891241",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfYN5lFDnTU",
-      "views": 4,
+      "views": 5,
       "replies": 0,
       "views_final": false,
       "slot": 1,
@@ -1075,7 +1057,7 @@
       ],
       "post_id": "18437931796198659",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfYwOq5kZM3",
-      "views": 6,
+      "views": 8,
       "replies": 0,
       "views_final": false,
       "slot": 2,
@@ -1095,7 +1077,7 @@
       ],
       "post_id": "17973532128188104",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfZgTPfmzbs",
-      "views": 8,
+      "views": 10,
       "replies": 0,
       "views_final": false,
       "slot": 3,
@@ -1115,16 +1097,36 @@
       ],
       "post_id": "18164750215490744",
       "permalink": "https://www.threads.com/@hongsamhotel/post/Dfays_ijxgT",
-      "views": null,
-      "replies": null,
+      "views": 12,
+      "replies": 0,
       "views_final": false,
       "slot": 1,
       "cross": null
+    },
+    {
+      "at": "2026-11-07 13:31",
+      "topic": "제주·강원 대신 진안을 고른 이유",
+      "hook": "insider",
+      "cta": "handsup",
+      "text": "여행 좀 다녀본 사람들만 아는 선택 이유 하나 푼다\n\n11월 첫 주에 비행기표 알아보다 접고 서울에서 차로 3시간 걸리는 진안으로 틀었음 ㅋㅋ 마이산 단풍 끝물 보고 내려와서 호텔 앞 잔디밭 장작 사우나에 몸 담갔는데, 사우나+조식+막걸리 2병 패키지가 1인 99,000원이었음 🔥 이동에 쓸 시간이랑 돈을 아끼니까 그만큼 쉬는 데 다 쓰게 됨. 난 단풍 끝물은 멀리 가는 것보다 가까운 데가 낫다고 봄 🍁 마이산이랑 사우나 사진은 인스타 @hongsamhotel 가면 있음\n비행기표 검색만 하다 창 닫아본 사람 손\n#홍삼빌호텔 #진안여행 #마이산",
+      "len": 306,
+      "images": [
+        "05_maisan_finland_sauna.png",
+        "89.png",
+        "21.png"
+      ],
+      "post_id": "18498673774108561",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DfbVBeDjTuN",
+      "views": null,
+      "replies": null,
+      "views_final": false,
+      "slot": 2,
+      "cross": "ig_hotel"
     }
   ],
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-11-07 08:30"
+    "checked_at": "2026-11-07 13:30"
   }
 }
