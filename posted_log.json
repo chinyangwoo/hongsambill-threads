@@ -1,24 +1,6 @@
 {
-  "count": 210,
+  "count": 211,
   "posts": [
-    {
-      "at": "2026-10-20 21:44",
-      "topic": "객실 창으로 마이산 보며 멍때리기",
-      "hook": "insider",
-      "cta": "ab",
-      "text": "체크인할 때 창 방향 물어보는 사람 따로 있다는 거 알아?\n\n직원이 \"마이산 뷰로 드릴까요\" 묻길래 별생각 없이 네 했는데 커튼 열자마자 말문 막힘. 암마이봉 수마이봉 두 개가 창틀에 딱 들어와서 그림처럼 걸려있음. 아침에 눈 뜨자마자 이불 속에서 5분 동안 그냥 봄, 알람도 안 맞췄는데 저절로 눈 떠짐. 노트북도 안 켜고 침대에 기대서 산만 보고 있었는데 그게 제일 쉬는 느낌이었음. 체크아웃하고 로비 내려가니까 천둥이가 또 산책 가자는 눈빛으로 쳐다봄🐾\n창밖 풍경 vs 조용한 적막, 멍때리기엔 뭐가 더 중요함 A/B\n#홍삼빌호텔 #마이산 #진안여행",
-      "len": 310,
-      "images": [
-        "17.png",
-        "52.png",
-        "hotel_new_slide8.jpg"
-      ],
-      "post_id": "18108857360109833",
-      "permalink": "https://www.threads.com/@hongsamhotel/post/Det3DMDlAuv",
-      "views": 10,
-      "replies": 0,
-      "views_final": true
-    },
     {
       "at": "2026-10-21 08:12",
       "topic": "마이산 탑사 돌탑, 사진이랑 실물이 다른 이유",
@@ -975,9 +957,9 @@
       ],
       "post_id": "18009461421006978",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfcFFn5EYpo",
-      "views": 43,
+      "views": 44,
       "replies": 0,
-      "views_final": false,
+      "views_final": true,
       "slot": 3,
       "cross": "ig_hotel"
     },
@@ -995,7 +977,7 @@
       ],
       "post_id": "18119396755819014",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfdXeZsmskW",
-      "views": 58,
+      "views": 59,
       "replies": 0,
       "views_final": false,
       "slot": 1,
@@ -1015,7 +997,7 @@
       ],
       "post_id": "17891481612479936",
       "permalink": "https://www.threads.com/@hongsamhotel/post/Dfd5z9xFiyp",
-      "views": 28,
+      "views": 29,
       "replies": 0,
       "views_final": false,
       "slot": 2,
@@ -1035,7 +1017,7 @@
       ],
       "post_id": "18156924685578369",
       "permalink": "https://www.threads.com/@hongsamhotel/post/Dfep6O3EU8X",
-      "views": 17,
+      "views": 18,
       "replies": 0,
       "views_final": false,
       "slot": 3,
@@ -1055,7 +1037,7 @@
       ],
       "post_id": "18121723477949698",
       "permalink": "https://www.threads.com/@hongsamhotel/post/Dff8R_JlVi6",
-      "views": 23,
+      "views": 24,
       "replies": 0,
       "views_final": false,
       "slot": 1,
@@ -1115,7 +1097,7 @@
       ],
       "post_id": "17993401428097777",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfjDZn1jbhe",
-      "views": 13,
+      "views": 14,
       "replies": 0,
       "views_final": false,
       "slot": 2,
@@ -1135,16 +1117,36 @@
       ],
       "post_id": "17992303896110976",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfjzgCTEU_B",
+      "views": 5,
+      "replies": 0,
+      "views_final": false,
+      "slot": 3,
+      "cross": null
+    },
+    {
+      "at": "2026-11-11 08:31",
+      "topic": "객실 창으로 마이산 보며 멍때리기",
+      "hook": "compare",
+      "cta": "recommend",
+      "text": "바다멍만 알던 내가 산멍에 진 이유\n\n11월 둘째 주 평일에 마이산 뷰 객실에서 1박 했는데, 창가에 의자 당겨 앉아서 40분을 아무것도 안 하고 봄 ㅋㅋ 말 귀처럼 솟은 봉우리가 해 질 때 색이 계속 바뀌어서 폰 볼 틈이 없었음 🌄 뷰 객실은 43실 중 14실뿐이라 예약할 때 그것만 확인하면 됨. 난 바다멍은 10분이면 질리는데 산멍은 오래 간다고 봄 ☕\n멍때리기 좋은 풍경 바다 산 도시 중 하나만\n#홍삼빌호텔 #진안여행 #마이산",
+      "len": 243,
+      "images": [
+        "18.png",
+        "26.png",
+        "12.png"
+      ],
+      "post_id": "18102654320382618",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DflF3-kDq_U",
       "views": null,
       "replies": null,
       "views_final": false,
-      "slot": 3,
+      "slot": 1,
       "cross": null
     }
   ],
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-11-10 20:30"
+    "checked_at": "2026-11-11 08:30"
   }
 }
