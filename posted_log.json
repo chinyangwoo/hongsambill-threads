@@ -1,24 +1,6 @@
 {
-  "count": 213,
+  "count": 214,
   "posts": [
-    {
-      "at": "2026-10-21 21:56",
-      "topic": "아이랑 1박2일, 차 덜 타고 걸어서 되는 마이산 코스",
-      "hook": "compare",
-      "cta": "tag",
-      "text": "유명 놀이공원 코스표 짜다가 애 짜증나서 결국 접었음\n작년 가족여행 때 동선 짠다고 차로 이동만 세 시간 쓰고 애는 차에서 잠들고 난리였거든. 이번엔 반대로 가보자 해서 홍삼빌 잡고 전부 도보로 끝냄. 탑사까지 20분 걸어가서 애 손 잡고 돌탑 세는 놀이 하다 보니 힘든 줄도 모르고 올라감. 은수사까지 더해서 왕복 1시간 반, 중간에 차 한 번을 안 탐. 애가 차멀미 안 하니까 떼도 안 씀, 숙소 돌아오자마자 천둥이한테 달려가서 그걸로 하루 마무리됨🐾\n차멀미 심한 애 키우는 친구 한 명 태그\n#홍삼빌호텔 #마이산 #진안여행",
-      "len": 295,
-      "images": [
-        "70.png",
-        "28.png",
-        "61.png"
-      ],
-      "post_id": "18045893924821877",
-      "permalink": "https://www.threads.com/@hongsamhotel/post/DewdSvDkQJn",
-      "views": 8,
-      "replies": 0,
-      "views_final": true
-    },
     {
       "at": "2026-10-22 08:20",
       "topic": "마이산 한 바퀴 돌고 바베큐장에서 저녁 먹는 하루",
@@ -983,7 +965,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/Dfep6O3EU8X",
       "views": 18,
       "replies": 0,
-      "views_final": false,
+      "views_final": true,
       "slot": 3,
       "cross": "ig_hotel"
     },
@@ -1101,7 +1083,7 @@
       ],
       "post_id": "18102654320382618",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DflF3-kDq_U",
-      "views": 7,
+      "views": 9,
       "replies": 0,
       "views_final": false,
       "slot": 1,
@@ -1121,7 +1103,7 @@
       ],
       "post_id": "17929417914432321",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfloMVIFOs4",
-      "views": 4,
+      "views": 6,
       "replies": 0,
       "views_final": false,
       "slot": 2,
@@ -1141,16 +1123,36 @@
       ],
       "post_id": "17996201124054385",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfmYRlWHPD_",
+      "views": 3,
+      "replies": 0,
+      "views_final": false,
+      "slot": 3,
+      "cross": null
+    },
+    {
+      "at": "2026-11-12 08:31",
+      "topic": "아이랑 1박2일, 차 덜 타고 걸어서 되는 마이산 코스",
+      "hook": "number",
+      "cta": "tag",
+      "text": "아이랑 1박 2일인데 차는 딱 한 번만 탔음\n\n11월 둘째 주 평일에 조카랑 전주역 KTX 내려서 차로 45분 와 주차하고 나선 키를 안 꺼냄 ㅋㅋ 호텔이 마이산 도보권이라 아침에 탑사 쪽으로 걸어 올라갔고, 조카가 힘들다 하면 바로 숙소 들어와서 쉬면 됐음 🍁 난 아이랑 하는 여행은 볼 곳 개수보다 카시트에 앉아 있는 시간이 더 중요하다고 봄\n카시트만 앉으면 10분 만에 칭얼대는 아이 둔 친구 한 명 태그 🚗\n#홍삼빌호텔 #진안여행 #마이산",
+      "len": 249,
+      "images": [
+        "86.png",
+        "hotel_new_slide4.jpg",
+        "13_burnout_recovery.png"
+      ],
+      "post_id": "18120062318006600",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DfnqqoMj7ac",
       "views": null,
       "replies": null,
       "views_final": false,
-      "slot": 3,
+      "slot": 1,
       "cross": null
     }
   ],
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-11-11 20:30"
+    "checked_at": "2026-11-12 08:30"
   }
 }
