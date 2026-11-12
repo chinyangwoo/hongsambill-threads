@@ -1,24 +1,6 @@
 {
-  "count": 215,
+  "count": 216,
   "posts": [
-    {
-      "at": "2026-10-22 14:16",
-      "topic": "마이산 처음 갈 때 모르면 손해 보는 것",
-      "hook": "twist",
-      "cta": "recommend",
-      "text": "주차장 도착하자마자 차 돌려서 그냥 나온 사람 봄\n\n탑사 입구 주차장이 생각보다 작아서 9시만 넘어도 꽉 참. 그 일행은 거기서 뺑뺑 돌다 결국 포기하고 딴 데로 감. 근데 홍삼빌은 거기서 도보 20분이라 애초에 주차 걱정이 없음, 체크인하고 바로 걸어 올라감. 길도 거의 평지라 등산화 따로 안 챙겨도 되고 아침 일찍 나서면 사람도 없어서 사진도 잘 나옴. 천둥이가 로비서 배웅하듯 쳐다보는데 그거 보고 나가는 게 루틴 됨🐾\n마이산 갈 때 주차 vs 도보 뭐가 나음, 하나만 찍어줘\n#홍삼빌호텔 #마이산 #진안여행",
-      "len": 288,
-      "images": [
-        "72.png",
-        "52.png",
-        "sauna.png"
-      ],
-      "post_id": "18098171180671678",
-      "permalink": "https://www.threads.com/@hongsamhotel/post/DeyNbSyDjlZ",
-      "views": 23,
-      "replies": 1,
-      "views_final": true
-    },
     {
       "at": "2026-10-22 21:59",
       "topic": "서울에서 3시간, 사람 없는 조용한 여행지를 찾는 사람들에게",
@@ -987,7 +969,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/Dfgepf-Dnxf",
       "views": 7,
       "replies": 0,
-      "views_final": false,
+      "views_final": true,
       "slot": 2,
       "cross": null
     },
@@ -1085,7 +1067,7 @@
       ],
       "post_id": "17929417914432321",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfloMVIFOs4",
-      "views": 6,
+      "views": 7,
       "replies": 0,
       "views_final": false,
       "slot": 2,
@@ -1105,7 +1087,7 @@
       ],
       "post_id": "17996201124054385",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfmYRlWHPD_",
-      "views": 3,
+      "views": 4,
       "replies": 0,
       "views_final": false,
       "slot": 3,
@@ -1145,16 +1127,36 @@
       ],
       "post_id": "18018760415953938",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfoNAIvFoQP",
+      "views": 6,
+      "replies": 0,
+      "views_final": false,
+      "slot": 2,
+      "cross": null
+    },
+    {
+      "at": "2026-11-12 20:31",
+      "topic": "마이산 처음 갈 때 모르면 손해 보는 것",
+      "hook": "twist",
+      "cta": "debate",
+      "text": "산 간다고 해놓고 나만 구두 신고 있었음\n\n11월 둘째 주 평일에 체크인하고 가볍게 걷자 싶어서 그대로 탑사 쪽으로 올라갔는데 ㅋㅋ 오르막이 생각보다 길어서 20분 만에 뒤꿈치 까짐 🥲 호텔이 마이산 도보권이라 다행히 숙소 가서 운동화로 갈아 신고 다시 나옴. 처음 가는 사람은 신발부터 챙겨야 손해 안 봄 🥾 난 마이산을 산책 코스로 얕보면 안 된다고 봄\n여행 신발은 무조건 운동화 하나면 끝이라고 봄, 반박?\n#홍삼빌호텔 #진안여행 #마이산",
+      "len": 248,
+      "images": [
+        "32.png",
+        "maisan_hero.png",
+        "12.png"
+      ],
+      "post_id": "18100449134535790",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/Dfo9EMaIIQ2",
       "views": null,
       "replies": null,
       "views_final": false,
-      "slot": 2,
+      "slot": 3,
       "cross": null
     }
   ],
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-11-12 13:30"
+    "checked_at": "2026-11-12 20:30"
   }
 }
