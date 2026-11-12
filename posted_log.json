@@ -1,24 +1,6 @@
 {
-  "count": 214,
+  "count": 215,
   "posts": [
-    {
-      "at": "2026-10-22 08:20",
-      "topic": "마이산 한 바퀴 돌고 바베큐장에서 저녁 먹는 하루",
-      "hook": "question",
-      "cta": "handsup",
-      "text": "하루 종일 걷고 나서 고기 냄새 맡으면 그냥 이성 끊기는 사람\n\n탑사까지 왕복 1시간 반 걷고 숙소 와서 바로 항아리바베큐장 직행함. 배는 고픈데 다리는 풀려서 의자에 반쯤 눕다시피 앉았는데 숯불 올라오는 냄새 맡자마자 정신 차려짐. 흑돼지 2인분 굽는데 15분 만에 끝, 산 돌고 온 보람이 거기서 다 느껴짐. 낮엔 마이산 보고 저녁엔 불멍하는 게 하루 동선으로 이렇게 완벽해도 되나 싶었음. 천둥이는 고기 익는 내내 옆자리 지키고 앉아있음🐾\n운동 후 식욕 못 이겨서 폭식한 적 있는 사람 손\n#홍삼빌호텔 #마이산 #진안여행",
-      "len": 294,
-      "images": [
-        "14.png",
-        "13.png",
-        "55.png"
-      ],
-      "post_id": "18060479678547109",
-      "permalink": "https://www.threads.com/@hongsamhotel/post/DexkqoQj_Xf",
-      "views": 16,
-      "replies": 0,
-      "views_final": true
-    },
     {
       "at": "2026-10-22 14:16",
       "topic": "마이산 처음 갈 때 모르면 손해 보는 것",
@@ -985,7 +967,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/Dff8R_JlVi6",
       "views": 25,
       "replies": 0,
-      "views_final": false,
+      "views_final": true,
       "slot": 1,
       "cross": null
     },
@@ -1063,7 +1045,7 @@
       ],
       "post_id": "17992303896110976",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfjzgCTEU_B",
-      "views": 6,
+      "views": 7,
       "replies": 0,
       "views_final": false,
       "slot": 3,
@@ -1143,16 +1125,36 @@
       ],
       "post_id": "18120062318006600",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfnqqoMj7ac",
+      "views": 3,
+      "replies": 0,
+      "views_final": false,
+      "slot": 1,
+      "cross": null
+    },
+    {
+      "at": "2026-11-12 13:31",
+      "topic": "마이산 한 바퀴 돌고 바베큐장에서 저녁 먹는 하루",
+      "hook": "insider",
+      "cta": "ab",
+      "text": "아는 사람만 아는 하산 후 저녁 타이밍 푼다\n마이산 한 바퀴 도는 데 2시간 반 걸렸는데, 내려오는 길에 정육점부터 들러서 고기 사 놓고 16시 맞춰 바베큐장에 들어감 ㅋㅋ 호텔은 자리랑 설비만 줘서 고기는 직접 챙겨야 하고, 숯 4인분 2만원만 내면 됨 🔥 해 지기 전에 부스 잡아야 초겨울 찬바람을 덜 맞고 불멍까지 챙김. 난 산 타고 난 날은 씻기 전에 고기부터 먹어야 한다고 봄\n산 내려와서 A 바로 고기 B 숙소서 한숨 자고 고기, A/B로만\n#홍삼빌호텔 #진안여행 #마이산",
+      "len": 270,
+      "images": [
+        "62.png",
+        "44.png",
+        "85.png"
+      ],
+      "post_id": "18018760415953938",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DfoNAIvFoQP",
       "views": null,
       "replies": null,
       "views_final": false,
-      "slot": 1,
+      "slot": 2,
       "cross": null
     }
   ],
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-11-12 08:30"
+    "checked_at": "2026-11-12 13:30"
   }
 }
