@@ -1,24 +1,6 @@
 {
-  "count": 216,
+  "count": 217,
   "posts": [
-    {
-      "at": "2026-10-22 21:59",
-      "topic": "서울에서 3시간, 사람 없는 조용한 여행지를 찾는 사람들에게",
-      "hook": "provoke",
-      "cta": "ab",
-      "text": "사람 많은 데서 힐링했다는 말 솔직히 좀 이해 안 갔음\n\n서울서 세 시간 거리로 그냥 찍은 게 진안이었는데 도착하자마자 왜 여태 몰랐지 싶었음. 홍삼빌 로비부터 적막함, 사람 소리보다 천둥이 발소리가 더 크게 들림. 탑사 가는 길도 평일 아침이라 나 혼자 걷는 줄, 은수사까지 가는 동안 마주친 사람 세 명도 안 됨. 숙소 돌아와서도 로비에 사람 없어서 천둥이랑 눈싸움하다 하루 끝남🐾 혼자 조용히 있는 거랑 아예 아무도 없는 거랑 다르다는 걸 여기서 알았음\n여행지 고를 때 사람 없는 거 vs 볼거리 많은 거, A/B로만\n#홍삼빌호텔 #진안여행 #전북여행",
-      "len": 311,
-      "images": [
-        "75.png",
-        "27.png",
-        "60.png"
-      ],
-      "post_id": "18137351086682017",
-      "permalink": "https://www.threads.com/@hongsamhotel/post/DezCWbjoNAc",
-      "views": 17,
-      "replies": 0,
-      "views_final": true
-    },
     {
       "at": "2026-10-23 08:24",
       "topic": "호캉스 대신 별멍, 진안고원의 밤하늘",
@@ -989,7 +971,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfhOrcRG4dJ",
       "views": 14,
       "replies": 0,
-      "views_final": false,
+      "views_final": true,
       "slot": 3,
       "cross": null
     },
@@ -1087,7 +1069,7 @@
       ],
       "post_id": "17996201124054385",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfmYRlWHPD_",
-      "views": 4,
+      "views": 6,
       "replies": 0,
       "views_final": false,
       "slot": 3,
@@ -1147,16 +1129,36 @@
       ],
       "post_id": "18100449134535790",
       "permalink": "https://www.threads.com/@hongsamhotel/post/Dfo9EMaIIQ2",
+      "views": 1,
+      "replies": 0,
+      "views_final": false,
+      "slot": 3,
+      "cross": null
+    },
+    {
+      "at": "2026-11-13 08:31",
+      "topic": "서울에서 3시간, 사람 없는 조용한 여행지를 찾는 사람들에게",
+      "hook": "compare",
+      "cta": "blank",
+      "text": "강릉 갈 타이밍에 다른 데 갔다가 루틴이 바뀜\n\n서울에서 차로 3시간 걸려 진안 갔는데 11월 둘째 주 평일이라 마이산 탑사 올라가는 동안 마주친 사람이 열 명도 안 됐음 ㅋㅋ 바다는 없는데 말 귀처럼 솟은 봉우리 밑을 조용히 걸으니까 오히려 더 쉬는 느낌이었음 🍂 난 조용함은 운전 3시간쯤은 내고 사는 거라고 봄\n사람 많은 여행지에서 내가 제일 먼저 하는 거: ___ 한 단어로\n#홍삼빌호텔 #진안여행 #마이산",
+      "len": 231,
+      "images": [
+        "73.png",
+        "hotel.png",
+        "34.jpg"
+      ],
+      "post_id": "18191793916411000",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DfqPdduHeA3",
       "views": null,
       "replies": null,
       "views_final": false,
-      "slot": 3,
+      "slot": 1,
       "cross": null
     }
   ],
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-11-12 20:30"
+    "checked_at": "2026-11-13 08:30"
   }
 }
