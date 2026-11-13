@@ -564,12 +564,17 @@
       "at": "2026-11-12 03:08"
     },
     "AbFvOqnyrfR0EJm0rdHZTJug58v1IjBLvxhs2Zjhr1ruad_Jc6gx_LGQNawvpAbNNjocVk4ckfucsw": {
-      "status": "pending",
-      "attempts": 1,
+      "status": "done",
+      "attempts": 2,
       "stars": 5,
-      "posted": [],
-      "at": "2026-11-13 03:37"
+      "posted": [
+        "blogger",
+        "facebook",
+        "instagram",
+        "threads"
+      ],
+      "at": "2026-11-14 03:10"
     }
   },
-  "updated": "2026-11-13 03:37"
+  "updated": "2026-11-14 03:10"
 }
