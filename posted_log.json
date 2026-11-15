@@ -1,24 +1,6 @@
 {
-  "count": 225,
+  "count": 226,
   "posts": [
-    {
-      "at": "2026-10-25 21:35",
-      "topic": "아이랑 1박2일, 차 덜 타고 걸어서 되는 마이산 코스",
-      "hook": "question",
-      "cta": "tag",
-      "text": "애 데리고 여행 가면 차 타는 순간부터 전쟁 아님?\n\n이번엔 홍삼빌 잡고 걸어서만 다녀봤는데 진짜 카시트 한 번도 안 태움. 체크인하고 은수사까지 20분, 애 걸음으로도 그 정도면 감. 올라가는 길 완만해서 업고 갈 일도 없었고 중간에 돌탑 구경하느라 애가 알아서 멈춰 섬. 숙소로 돌아와서 낮잠 한 숨 재우고 저녁엔 로비서 천둥이랑 놀다가 하루 끝, 이동 스트레스 자체가 없으니까 애도 덜 칭얼대고 나도 덜 지침🐾\n애 있는 집 1박2일 여행지 고민인 사람 한 명 태그해줘\n#홍삼빌호텔 #마이산 #진안여행",
-      "len": 282,
-      "images": [
-        "32.png",
-        "82.jpg",
-        "54.png"
-      ],
-      "post_id": "17875140090636480",
-      "permalink": "https://www.threads.com/@hongsamhotel/post/De6t_SsEez-",
-      "views": 5,
-      "replies": 0,
-      "views_final": true
-    },
     {
       "at": "2026-10-26 07:34",
       "topic": "마이산 한 바퀴 돌고 바베큐장에서 저녁 먹는 하루",
@@ -987,7 +969,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/Dfo9EMaIIQ2",
       "views": 20,
       "replies": 0,
-      "views_final": false,
+      "views_final": true,
       "slot": 3,
       "cross": null
     },
@@ -1145,7 +1127,7 @@
       ],
       "post_id": "18582474454079301",
       "permalink": "https://www.threads.com/@hongsamhotel/post/Dfv7Y50jcZD",
-      "views": 7,
+      "views": 11,
       "replies": 0,
       "views_final": false,
       "slot": 2,
@@ -1165,16 +1147,36 @@
       ],
       "post_id": "18171409807430759",
       "permalink": "https://www.threads.com/@hongsamhotel/post/Dfwrc7mG1la",
+      "views": 9,
+      "replies": 0,
+      "views_final": false,
+      "slot": 3,
+      "cross": null
+    },
+    {
+      "at": "2026-11-16 08:32",
+      "topic": "아이랑 1박2일, 차 덜 타고 걸어서 되는 마이산 코스",
+      "hook": "number",
+      "cta": "blank",
+      "text": "7살 조카랑 1박 2일인데 차는 주차장에서 안 나옴\n\n11월 셋째 주에 도착하자마자 호텔 무료 주차장에 차를 대고, 체크아웃 때까지 걸어서 마이산 탑사 쪽까지 올라갔다 옴. 카시트에 묶인 애가 \"아직 멀었어?\" 하는 소리를 안 들으니까 어른이 훨씬 덜 지침 ㅋㅋ 조카는 낙엽 밟는 데 빠져서 혼자 앞서 걸어감 🍂 난 애랑 가는 여행은 코스 늘리는 것보다 차 타는 횟수 줄이는 게 먼저라고 봄\n여행 짐 쌀 때 제일 먼저 넣는 거: ___ 한 단어로\n#홍삼빌호텔 #진안여행 #마이산",
+      "len": 267,
+      "images": [
+        "51.png",
+        "86.png",
+        "40.png"
+      ],
+      "post_id": "17968189830215225",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/Dfx93sFD0OU",
       "views": null,
       "replies": null,
       "views_final": false,
-      "slot": 3,
+      "slot": 1,
       "cross": null
     }
   ],
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-11-15 20:30"
+    "checked_at": "2026-11-16 08:30"
   }
 }
