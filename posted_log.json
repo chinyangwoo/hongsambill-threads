@@ -1,24 +1,6 @@
 {
-  "count": 224,
+  "count": 225,
   "posts": [
-    {
-      "at": "2026-10-25 14:10",
-      "topic": "제주·강원 대신 진안을 고른 이유",
-      "hook": "compare",
-      "cta": "number",
-      "text": "제주 비행기값 보고 강원도로 틀었다가 그것도 접었음\n\n성수기 제주 왕복 알아보다가 숙소값까지 더하니 배보다 배꼽이 커서 접음, 강원도는 다들 몰리는 시기라 고속도로 생각만 해도 숨 막힘. 그래서 전라도 쪽 지도 보다가 진안 찍었는데 서울서 세 시간이면 홍삼빌 도착함. 체크인하고 바로 마이산 탑사까지 걸어서 30분, 비행기도 안 타고 휴가 느낌 제대로 남. 돈 아낀 만큼 흑돼지에 더 씀, 이게 맞는 여행 같음🐾\n너네 여행지 고르는 1순위 뭐임? 가격/거리/사람많기 중 숫자로 골라줘\n#홍삼빌호텔 #진안여행 #전북여행",
-      "len": 289,
-      "images": [
-        "28.png",
-        "42.png",
-        "86.png"
-      ],
-      "post_id": "18116163424835224",
-      "permalink": "https://www.threads.com/@hongsamhotel/post/De57G8iloS3",
-      "views": 12,
-      "replies": 0,
-      "views_final": true
-    },
     {
       "at": "2026-10-25 21:35",
       "topic": "아이랑 1박2일, 차 덜 타고 걸어서 되는 마이산 코스",
@@ -985,7 +967,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfoNAIvFoQP",
       "views": 22,
       "replies": 0,
-      "views_final": false,
+      "views_final": true,
       "slot": 2,
       "cross": null
     },
@@ -1163,16 +1145,36 @@
       ],
       "post_id": "18582474454079301",
       "permalink": "https://www.threads.com/@hongsamhotel/post/Dfv7Y50jcZD",
+      "views": 7,
+      "replies": 0,
+      "views_final": false,
+      "slot": 2,
+      "cross": null
+    },
+    {
+      "at": "2026-11-15 20:31",
+      "topic": "제주·강원 대신 진안을 고른 이유",
+      "hook": "fail",
+      "cta": "number",
+      "text": "여행지 고르다 이틀을 통으로 날린 거 고백함\n\n제주랑 강원 숙소 비교하다 새벽 1시까지 탭 20개를 열어놨는데, 이동 시간 계산해보니 11월 평일 1박에 길에서만 반나절이 사라지더라 😅 그래서 전주역 KTX에서 차로 45분인 진안으로 틀었음. 바베큐장 저녁에 장작 사우나, 마이산 뷰 객실에서 자는 것까지 하루에 다 들어감. 난 첫눈 기다리는 초겨울엔 멀리 가는 것보다 이동 짧은 쪽이 이득이라고 봄 ❄️\n여행 갈 때 편도 몇 시간까지 참음? 숫자만\n#홍삼빌호텔 #진안여행 #전북여행",
+      "len": 270,
+      "images": [
+        "21.png",
+        "86.png",
+        "14.png"
+      ],
+      "post_id": "18171409807430759",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/Dfwrc7mG1la",
       "views": null,
       "replies": null,
       "views_final": false,
-      "slot": 2,
+      "slot": 3,
       "cross": null
     }
   ],
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-11-15 13:30"
+    "checked_at": "2026-11-15 20:30"
   }
 }
