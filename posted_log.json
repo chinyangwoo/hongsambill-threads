@@ -1,24 +1,6 @@
 {
-  "count": 227,
+  "count": 228,
   "posts": [
-    {
-      "at": "2026-10-26 14:13",
-      "topic": "마이산 처음 갈 때 모르면 손해 보는 것",
-      "hook": "insider",
-      "cta": "blank",
-      "text": "마이산 매표소 앞에서 멍하니 서있는 사람들 꼭 한 명씩 있음\n\n겨울엔 입장 시간이랑 요금이 계절마다 바뀌는 걸 모르고 그냥 가서 생기는 일임. 홍삼빌서 걸어서 30분이라 시간 맞춰 나가는 게 편한데, 아침 일찍 7시쯤 도착하니까 안개 껴서 봉우리 윗부분만 보이고 사람도 거의 없음. 늦게 가서 해 쨍할 때랑 완전 다른 장소 느낌 남, 돌탑 질감도 그때가 제일 잘 삼🐾\n아침형 여행 vs 저녁형 여행 너는 뭐임, 한 단어로\n#홍삼빌호텔 #마이산 #진안여행",
-      "len": 253,
-      "images": [
-        "12.png",
-        "81.png",
-        "80.png"
-      ],
-      "post_id": "18126850879932258",
-      "permalink": "https://www.threads.com/@hongsamhotel/post/De8gOjim0kY",
-      "views": 13,
-      "replies": 0,
-      "views_final": true
-    },
     {
       "at": "2026-10-26 23:16",
       "topic": "서울에서 3시간, 사람 없는 조용한 여행지를 찾는 사람들에게",
@@ -991,7 +973,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfqxzeSjUum",
       "views": 33,
       "replies": 0,
-      "views_final": false,
+      "views_final": true,
       "slot": 2,
       "cross": null
     },
@@ -1109,7 +1091,7 @@
       ],
       "post_id": "18582474454079301",
       "permalink": "https://www.threads.com/@hongsamhotel/post/Dfv7Y50jcZD",
-      "views": 12,
+      "views": 13,
       "replies": 0,
       "views_final": false,
       "slot": 2,
@@ -1129,7 +1111,7 @@
       ],
       "post_id": "18171409807430759",
       "permalink": "https://www.threads.com/@hongsamhotel/post/Dfwrc7mG1la",
-      "views": 10,
+      "views": 11,
       "replies": 0,
       "views_final": false,
       "slot": 3,
@@ -1149,7 +1131,7 @@
       ],
       "post_id": "17968189830215225",
       "permalink": "https://www.threads.com/@hongsamhotel/post/Dfx93sFD0OU",
-      "views": 7,
+      "views": 8,
       "replies": 0,
       "views_final": false,
       "slot": 1,
@@ -1169,16 +1151,36 @@
       ],
       "post_id": "18066086363530695",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfygLgaFf40",
+      "views": 9,
+      "replies": 1,
+      "views_final": false,
+      "slot": 2,
+      "cross": "threads_sauna"
+    },
+    {
+      "at": "2026-11-16 20:31",
+      "topic": "마이산 처음 갈 때 모르면 손해 보는 것",
+      "hook": "twist",
+      "cta": "metoo",
+      "text": "다녀왔다고 했더니 친구가 갑자기 정색함\n11월 셋째 주 평일에 탑사만 보고 1시간 만에 내려와서 뿌듯해하고 있었는데, 은수사는 봤냐는 말에 할 말을 잃음 ㅋㅋ 처음 가면 탑사에서 끝인 줄 알기 쉬운데 난 은수사까지 한 번에 묶는 게 맞다고 봄 🍂 숙소가 도보권이라 다시 올라갈 수도 있었는데 그걸 몰랐음. 내려와서 언 몸 녹인 장작 사우나 패키지 가격이랑 구성은 스레드 @jinan.sauna 가면 있음\n하나만 보고 다 본 줄 아는 거 나만 그럼? 맞으면 ㅇㅇ\n#마이산 #진안여행 #국내여행추천",
+      "len": 276,
+      "images": [
+        "hotel_slide3.png",
+        "68.png",
+        "69.png"
+      ],
+      "post_id": "18099617105652777",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DfzQPuTlhfc",
       "views": null,
       "replies": null,
       "views_final": false,
-      "slot": 2,
+      "slot": 3,
       "cross": "threads_sauna"
     }
   ],
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-11-16 13:30"
+    "checked_at": "2026-11-16 20:30"
   }
 }
