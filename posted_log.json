@@ -1,24 +1,6 @@
 {
-  "count": 228,
+  "count": 229,
   "posts": [
-    {
-      "at": "2026-10-26 23:16",
-      "topic": "서울에서 3시간, 사람 없는 조용한 여행지를 찾는 사람들에게",
-      "hook": "fail",
-      "cta": "ab",
-      "text": "사람 없는 데 찾다가 결국 인터넷도 안 터지는 곳 걸릴까봐 겁먹었던 적 있음\n\n조용한 여행지 검색하면 죄다 오지 아니면 폐가 느낌이라 반신반의로 진안 찍었는데, 완전 다름. 홍삼빌 로비 와이파이 빵빵하고 읍내 15분이면 편의점 다 있음. 근데 마이산 쪽으로 넘어가면 진짜 사람 자체가 없어서 탑사 입구서 셔터 소리만 들림, 평일 오전엔 거의 전세 낸 느낌. 인프라는 있는데 인파는 없는 애매한 포지션이 이렇게 귀한 줄 몰랐음🐾\n편의시설 있는 조용한 곳 vs 아예 아무것도 없는 오지, A/B로 골라줘\n#홍삼빌호텔 #진안여행 #국내여행추천",
-      "len": 300,
-      "images": [
-        "60.png",
-        "hotel_new_slide9.jpg",
-        "28.png"
-      ],
-      "post_id": "18129205418489449",
-      "permalink": "https://www.threads.com/@hongsamhotel/post/De9eXNgm77x",
-      "views": 17,
-      "replies": 0,
-      "views_final": true
-    },
     {
       "at": "2026-10-27 08:54",
       "topic": "호캉스 대신 별멍, 진안고원의 밤하늘",
@@ -993,7 +975,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/Dfrh4Mum59d",
       "views": 32,
       "replies": 0,
-      "views_final": false,
+      "views_final": true,
       "slot": 3,
       "cross": null
     },
@@ -1031,7 +1013,7 @@
       ],
       "post_id": "18120588335047842",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DftWl62DYM5",
-      "views": 20,
+      "views": 21,
       "replies": 0,
       "views_final": false,
       "slot": 2,
@@ -1071,7 +1053,7 @@
       ],
       "post_id": "18644780137009549",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfvZC0vmyuB",
-      "views": 5,
+      "views": 7,
       "replies": 0,
       "views_final": false,
       "slot": 1,
@@ -1091,7 +1073,7 @@
       ],
       "post_id": "18582474454079301",
       "permalink": "https://www.threads.com/@hongsamhotel/post/Dfv7Y50jcZD",
-      "views": 13,
+      "views": 20,
       "replies": 0,
       "views_final": false,
       "slot": 2,
@@ -1111,7 +1093,7 @@
       ],
       "post_id": "18171409807430759",
       "permalink": "https://www.threads.com/@hongsamhotel/post/Dfwrc7mG1la",
-      "views": 11,
+      "views": 15,
       "replies": 0,
       "views_final": false,
       "slot": 3,
@@ -1131,7 +1113,7 @@
       ],
       "post_id": "17968189830215225",
       "permalink": "https://www.threads.com/@hongsamhotel/post/Dfx93sFD0OU",
-      "views": 8,
+      "views": 14,
       "replies": 0,
       "views_final": false,
       "slot": 1,
@@ -1151,7 +1133,7 @@
       ],
       "post_id": "18066086363530695",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfygLgaFf40",
-      "views": 9,
+      "views": 10,
       "replies": 1,
       "views_final": false,
       "slot": 2,
@@ -1171,16 +1153,36 @@
       ],
       "post_id": "18099617105652777",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfzQPuTlhfc",
-      "views": null,
-      "replies": null,
+      "views": 9,
+      "replies": 0,
       "views_final": false,
       "slot": 3,
       "cross": "threads_sauna"
+    },
+    {
+      "at": "2026-11-17 08:31",
+      "topic": "서울에서 3시간, 사람 없는 조용한 여행지를 찾는 사람들에게",
+      "hook": "provoke",
+      "cta": "ab",
+      "text": "사람 없는 여행지는 비행기 타야 나온다는 거 거짓말임\n11월 셋째 주 평일에 서울에서 3시간 운전해서 갔는데, 마이산 보이는 잔디밭 텐트 사우나에 나랑 일행 둘뿐이었음 ㅋㅋ 2인용 텐트에서 땀 빼고 나와 찬바람 맞는데 첫눈 오기 직전 공기가 ㄹㅇ 달았음 🔥 22시 마감인데 8시 넘어서 갔더니 기다림 0분이었고, 수건이랑 사우나복, 생수는 다 무료라 진짜 몸만 가면 됨. 난 조용함이 목적이면 성수기 제주보다 11월 진안이 낫다고 봄 ❄️\n조용한 여행 가면 A 땀 쫙 빼기 vs B 하염없이 걷기, A/B로만\n#홍삼빌호텔 #진안여행 #국내여행추천",
+      "len": 305,
+      "images": [
+        "75.png",
+        "90.png",
+        "16.png"
+      ],
+      "post_id": "18103787084342415",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/Df0io15kZFF",
+      "views": null,
+      "replies": null,
+      "views_final": false,
+      "slot": 1,
+      "cross": null
     }
   ],
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-11-16 20:30"
+    "checked_at": "2026-11-17 08:30"
   }
 }
