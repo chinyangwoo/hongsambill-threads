@@ -1,24 +1,6 @@
 {
-  "count": 226,
+  "count": 227,
   "posts": [
-    {
-      "at": "2026-10-26 07:34",
-      "topic": "마이산 한 바퀴 돌고 바베큐장에서 저녁 먹는 하루",
-      "hook": "provoke",
-      "cta": "recommend",
-      "text": "등산 갔다 오면 저녁은 대충 때운다는 거 편견 아니냐\n\n마이산 한 바퀴 세 시간 돌면 다리 풀려서 요리할 힘 1도 안 남잖음. 근데 홍삼빌은 바베큐장이 숙소 바로 옆이라 등산화 벗자마자 바로 숯불 앞에 앉음, 씻지도 않고 고기부터 올림. 산 타면서 흘린 땀에 고기 냄새 더해지니까 평소보다 확실히 맛있게 느껴짐, 뇌가 착각하는 건지 진짜인지 모르겠음. 천둥이는 또 어떻게 알고 슬렁슬렁 걸어옴🐾\n등산 후에 제일 땡기는 음식 하나만 골라줘, 고기/라면/치킨\n#홍삼빌호텔 #진안여행 #마이산",
-      "len": 272,
-      "images": [
-        "coldplunge.png",
-        "hotel.png",
-        "32.png"
-      ],
-      "post_id": "18436376140179088",
-      "permalink": "https://www.threads.com/@hongsamhotel/post/De7ym45mh5x",
-      "views": 6,
-      "replies": 0,
-      "views_final": true
-    },
     {
       "at": "2026-10-26 14:13",
       "topic": "마이산 처음 갈 때 모르면 손해 보는 것",
@@ -989,7 +971,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfqPdduHeA3",
       "views": 22,
       "replies": 0,
-      "views_final": false,
+      "views_final": true,
       "slot": 1,
       "cross": null
     },
@@ -1087,7 +1069,7 @@
       ],
       "post_id": "18140685355746498",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfuGq6GEVU6",
-      "views": 13,
+      "views": 14,
       "replies": 0,
       "views_final": false,
       "slot": 3,
@@ -1127,7 +1109,7 @@
       ],
       "post_id": "18582474454079301",
       "permalink": "https://www.threads.com/@hongsamhotel/post/Dfv7Y50jcZD",
-      "views": 11,
+      "views": 12,
       "replies": 0,
       "views_final": false,
       "slot": 2,
@@ -1147,7 +1129,7 @@
       ],
       "post_id": "18171409807430759",
       "permalink": "https://www.threads.com/@hongsamhotel/post/Dfwrc7mG1la",
-      "views": 9,
+      "views": 10,
       "replies": 0,
       "views_final": false,
       "slot": 3,
@@ -1167,16 +1149,36 @@
       ],
       "post_id": "17968189830215225",
       "permalink": "https://www.threads.com/@hongsamhotel/post/Dfx93sFD0OU",
-      "views": null,
-      "replies": null,
+      "views": 7,
+      "replies": 0,
       "views_final": false,
       "slot": 1,
       "cross": null
+    },
+    {
+      "at": "2026-11-16 13:31",
+      "topic": "마이산 한 바퀴 돌고 바베큐장에서 저녁 먹는 하루",
+      "hook": "secret",
+      "cta": "recommend",
+      "text": "아 이거 올리면 사람 몰릴 텐데 너무 아까움\n\n11월 셋째 주에 마이산 한 바퀴 돌고 내려오니 4시 반인데 벌써 해가 넘어가서 바로 바베큐장으로 직행함. 숯 4인분 2만원 사서 직화구이기에 올리는데 손 시려서 장갑 낀 채로 집게 잡음 ㅋㅋ 첫눈 오기 직전 찬 공기에 고기 냄새 퍼지는 게 ㄹㅇ 반칙이었음 🔥 난 겨울 고기는 추워야 맛있다고 봄. 이 하루에 장작 사우나까지 붙인 패키지 가격이랑 구성은 스레드 @jinan.sauna 가면 있음\n초겨울 밖에서 먹으면 제일 맛있는 거 하나만 적어줘\n#홍삼빌호텔 #진안여행 #마이산",
+      "len": 293,
+      "images": [
+        "26.png",
+        "coldplunge.png",
+        "67.png"
+      ],
+      "post_id": "18066086363530695",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DfygLgaFf40",
+      "views": null,
+      "replies": null,
+      "views_final": false,
+      "slot": 2,
+      "cross": "threads_sauna"
     }
   ],
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-11-16 08:30"
+    "checked_at": "2026-11-16 13:30"
   }
 }
