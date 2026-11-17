@@ -1,24 +1,6 @@
 {
-  "count": 229,
+  "count": 230,
   "posts": [
-    {
-      "at": "2026-10-27 08:54",
-      "topic": "호캉스 대신 별멍, 진안고원의 밤하늘",
-      "hook": "question",
-      "cta": "handsup",
-      "text": "불멍은 많이 해봤는데 별멍은 처음이라 기대 1도 안 했던 사람 손\n\n홍삼빌 뒤쪽에 가로등이 별로 없어서 그냥 어둡다고만 생각했는데 저녁 먹고 나와보니까 이유가 있었음. 하늘에 별이 그냥 뿌려져 있음, 도시에서 보던 별 다섯 개랑 차원이 다름. 핸드폰으로 찍어봤는데 눈으로 본 거 반도 안 담겨서 그냥 누워서 봄. 20분 동안 목 아픈 줄도 모르고 봤다는 거에 일행 셋 다 동의함, 호캉스보다 이게 더 힐링인 거 인정🐾\n도시에서 별 거의 안 보이는 데 사는 사람 손\n#홍삼빌호텔 #진안여행 #마이산",
-      "len": 277,
-      "images": [
-        "hotel_new_slide5.jpg",
-        "hotel_new_slide2.jpg",
-        "72.png"
-      ],
-      "post_id": "18110464622245469",
-      "permalink": "https://www.threads.com/@hongsamhotel/post/De-glYMmZ5N",
-      "views": 10,
-      "replies": 0,
-      "views_final": true
-    },
     {
       "at": "2026-10-27 14:29",
       "topic": "진안 로컬 맛집과 숙소 주변 먹거리 이야기",
@@ -995,7 +977,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/Dfs0Qj-muHg",
       "views": 51,
       "replies": 0,
-      "views_final": false,
+      "views_final": true,
       "slot": 1,
       "cross": null
     },
@@ -1173,16 +1155,36 @@
       ],
       "post_id": "18103787084342415",
       "permalink": "https://www.threads.com/@hongsamhotel/post/Df0io15kZFF",
-      "views": null,
-      "replies": null,
+      "views": 4,
+      "replies": 0,
       "views_final": false,
       "slot": 1,
       "cross": null
+    },
+    {
+      "at": "2026-11-17 13:31",
+      "topic": "호캉스 대신 별멍, 진안고원의 밤하늘",
+      "hook": "number",
+      "cta": "blank",
+      "text": "밤 9시에 폰 끄고 7분만 서 있어 봤음\n\n11월 셋째 주 평일 밤에 텐트 사우나에서 땀 빼고 나와 마이산 보이는 잔디밭에 섰는데, 처음엔 별이 몇 개 없다가 눈이 적응한 7분쯤부터 갑자기 하늘이 꽉 참 ✨ 숨 쉴 때마다 하얀 김이 나오고 아무 소리도 안 났음. 난 겨울엔 호캉스보다 밤하늘 멍 때리는 게 낫다고 봄 ❄️ 이 밤에 붙인 패키지 가격이랑 구성은 스레드 @jinan.sauna 가면 있음\n밤하늘 보면 제일 먼저 떠오르는 거: ___ 한 단어로\n#홍삼빌호텔 #진안여행 #마이산",
+      "len": 272,
+      "images": [
+        "11.png",
+        "todonoi_true_vertical.png",
+        "11_digital_detox.png"
+      ],
+      "post_id": "17883091659543580",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/Df1E-iYEQgy",
+      "views": null,
+      "replies": null,
+      "views_final": false,
+      "slot": 2,
+      "cross": "threads_sauna"
     }
   ],
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-11-17 08:30"
+    "checked_at": "2026-11-17 13:30"
   }
 }
