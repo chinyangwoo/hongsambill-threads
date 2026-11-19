@@ -1,24 +1,6 @@
 {
-  "count": 236,
+  "count": 237,
   "posts": [
-    {
-      "at": "2026-10-30 08:58",
-      "topic": "제주·강원 대신 진안을 고른 이유",
-      "hook": "secret",
-      "cta": "handsup",
-      "text": "이거 올리면 사람 몰릴까 봐 끝까지 고민했음\n\n제주 갈까 강원 갈까 하다가 주말 숙소값 보고 창 닫고 지도 뒤지다 진안을 찍었음. 마이산 걸어서 갈 수 있는 홍삼빌호텔 잡았는데 구글 평점 4.6이라 믿고 가봄. 평일 아침에 탑사 앞에 갔더니 나 포함 다섯 명이라 전세 낸 줄 알았음 ㅋㅋ 근데 진짜 제일 좋았던 건 따로 있는데 그건 아직 안 풀래 😮‍💨\n성수기 제주 숙소값 보고 조용히 창 닫아본 사람 손\n#홍삼빌호텔 #진안여행 #마이산",
-      "len": 244,
-      "images": [
-        "sauna.png",
-        "72.png",
-        "32.png"
-      ],
-      "post_id": "17989683984096708",
-      "permalink": "https://www.threads.com/@hongsamhotel/post/DfGPVj2Ds3C",
-      "views": 14,
-      "replies": 0,
-      "views_final": true
-    },
     {
       "at": "2026-10-30 15:19",
       "topic": "아이랑 1박2일, 차 덜 타고 걸어서 되는 마이산 코스",
@@ -1009,7 +991,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfygLgaFf40",
       "views": 13,
       "replies": 1,
-      "views_final": false,
+      "views_final": true,
       "slot": 2,
       "cross": "threads_sauna"
     },
@@ -1167,7 +1149,7 @@
       ],
       "post_id": "18120307394007109",
       "permalink": "https://www.threads.com/@hongsamhotel/post/Df5sO6dmt2Q",
-      "views": 7,
+      "views": 9,
       "replies": 0,
       "views_final": false,
       "slot": 1,
@@ -1187,16 +1169,36 @@
       ],
       "post_id": "18201859894395625",
       "permalink": "https://www.threads.com/@hongsamhotel/post/Df6Ok6vDeIz",
+      "views": 7,
+      "replies": 0,
+      "views_final": false,
+      "slot": 2,
+      "cross": "threads_sauna"
+    },
+    {
+      "at": "2026-11-19 20:32",
+      "topic": "제주·강원 대신 진안을 고른 이유",
+      "hook": "number",
+      "cta": "tag",
+      "text": "제주 항공권 창 닫고 차로 3시간 달린 이유\n\n11월 셋째 주에 제주랑 강원 사이에서 고민하다가 비행기에 렌트까지 생각하니 벌써 귀찮아서 서울서 차로 3시간이면 되는 진안으로 틀었음 ㅋㅋ 호텔 앞 잔디밭 텐트 사우나(2인용)에서 땀 빼고 나와 마이산 보는데 주변에 사람이 거의 없어서 엄청 조용했음 🏔️ 난 초겨울엔 바다보다 산 보면서 땀 빼는 게 더 낫다고 봄. 사우나 패키지 가격이랑 구성은 스레드 @jinan.sauna 가면 있음\n겨울바다보다 산멍이 더 맞는 친구 한 명 태그\n#홍삼빌호텔 #진안여행 #마이산",
+      "len": 287,
+      "images": [
+        "49.png",
+        "70.png",
+        "73.png"
+      ],
+      "post_id": "17979038816938705",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/Df6-ofLkVkX",
       "views": null,
       "replies": null,
       "views_final": false,
-      "slot": 2,
+      "slot": 3,
       "cross": "threads_sauna"
     }
   ],
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-11-19 13:30"
+    "checked_at": "2026-11-19 20:30"
   }
 }
