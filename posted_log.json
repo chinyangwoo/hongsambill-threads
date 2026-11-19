@@ -1,24 +1,6 @@
 {
-  "count": 235,
+  "count": 236,
   "posts": [
-    {
-      "at": "2026-10-30 08:01",
-      "topic": "마이산 탑사 돌탑, 사진이랑 실물이 다른 이유",
-      "hook": "insider",
-      "cta": "number",
-      "text": "현지 사람들은 이 순서로 본다는데 나만 몰랐음\n\n체크인할 때 직원분이 탑사 가면 카메라 켜기 전에 탑 앞에서 고개부터 끝까지 젖혀보라고 했음. 반신반의로 갔는데 사진에선 그냥 돌 쌓은 것처럼 납작하게 나오던 게 실물은 뒤 절벽이랑 같이 위로 쑥 올라가서 목이 꺾임. 80개쯤 되는 탑이 접착제 없이 버틴다는 것도 눈앞에서 보면 느낌이 완전 다름🐾 직원분이 알려준 두 번째 팁은 안 푼다 ㅋㅋ\n사진이랑 실물 차이 컸던 여행지 몇 곳? 숫자로\n#홍삼빌호텔 #마이산 #진안여행",
-      "len": 263,
-      "images": [
-        "83.png",
-        "maisan_hero.png",
-        "41.png"
-      ],
-      "post_id": "18079509932430035",
-      "permalink": "https://www.threads.com/@hongsamhotel/post/DfGI3DZj4gO",
-      "views": 8,
-      "replies": 0,
-      "views_final": true
-    },
     {
       "at": "2026-10-30 08:58",
       "topic": "제주·강원 대신 진안을 고른 이유",
@@ -1007,7 +989,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/Dfx93sFD0OU",
       "views": 15,
       "replies": 0,
-      "views_final": false,
+      "views_final": true,
       "slot": 1,
       "cross": null
     },
@@ -1025,7 +1007,7 @@
       ],
       "post_id": "18066086363530695",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DfygLgaFf40",
-      "views": 12,
+      "views": 13,
       "replies": 1,
       "views_final": false,
       "slot": 2,
@@ -1185,16 +1167,36 @@
       ],
       "post_id": "18120307394007109",
       "permalink": "https://www.threads.com/@hongsamhotel/post/Df5sO6dmt2Q",
-      "views": null,
-      "replies": null,
+      "views": 7,
+      "replies": 0,
       "views_final": false,
       "slot": 1,
       "cross": null
+    },
+    {
+      "at": "2026-11-19 13:32",
+      "topic": "마이산 탑사 돌탑, 사진이랑 실물이 다른 이유",
+      "hook": "twist",
+      "cta": "blank",
+      "text": "인스타 사진 믿고 갔다가 사기당한 줄 알았음\n\n사진으로 볼 땐 돌탑이 작은 장식 같았는데, 실제로 가니까 뒤에 암벽이 확 솟아 있고 탑이 그 밑에 박혀 있어서 고개를 한참 들어야 했음 ㅋㅋ 11월 셋째 주라 사람도 없어서 5분 동안 말없이 쳐다만 봤음 🪨 사진엔 높이감이 하나도 안 담김. 난 탑사는 폰부터 꺼내지 말고 눈으로 먼저 봐야 한다고 봄. 숙소에서 걸어 올라갔다 내려와 몸 녹인 사우나 패키지 가격이랑 구성은 스레드 @jinan.sauna 가면 있음\n사진이랑 실물 제일 다른 여행지: ___ 한 단어로\n#홍삼빌호텔 #진안여행 #마이산",
+      "len": 304,
+      "images": [
+        "14.png",
+        "18.png",
+        "breakfast.png"
+      ],
+      "post_id": "18201859894395625",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/Df6Ok6vDeIz",
+      "views": null,
+      "replies": null,
+      "views_final": false,
+      "slot": 2,
+      "cross": "threads_sauna"
     }
   ],
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-11-19 08:30"
+    "checked_at": "2026-11-19 13:30"
   }
 }
