@@ -1,24 +1,6 @@
 {
-  "count": 239,
+  "count": 240,
   "posts": [
-    {
-      "at": "2026-10-31 08:47",
-      "topic": "마이산 처음 갈 때 모르면 손해 보는 것",
-      "hook": "provoke",
-      "cta": "number",
-      "text": "산 보러 갈 때 차부터 끌고 가면 반은 손해인데\n\n마이산 처음이면 다들 주차부터 걱정하잖아. 나는 홍삼빌에 차 세워두고 그냥 걸어갔는데, 주차장 들어가려고 줄 선 차를 걸어가면서 10대쯤 추월함 ㅋㅋ 걷는 내내 봉우리가 점점 커지는 걸 보고 가니까 입장 전부터 이미 반은 본 느낌이었음 😌 처음 가는 산일수록 차는 두고 가는 게 맞다고 봄\n주차장 줄 서본 최대 시간 몇 분임? 숫자만\n#홍삼빌호텔 #마이산 #진안여행",
-      "len": 232,
-      "images": [
-        "51.png",
-        "hotel_new_slide1.jpg",
-        "65.png"
-      ],
-      "post_id": "18135544477682756",
-      "permalink": "https://www.threads.com/@hongsamhotel/post/DfIy8ZojcgA",
-      "views": 12,
-      "replies": 0,
-      "views_final": true
-    },
     {
       "at": "2026-10-31 15:11",
       "topic": "서울에서 3시간, 사람 없는 조용한 여행지를 찾는 사람들에게",
@@ -1015,7 +997,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/Df1E-iYEQgy",
       "views": 13,
       "replies": 0,
-      "views_final": false,
+      "views_final": true,
       "slot": 2,
       "cross": "threads_sauna"
     },
@@ -1153,7 +1135,7 @@
       ],
       "post_id": "17979038816938705",
       "permalink": "https://www.threads.com/@hongsamhotel/post/Df6-ofLkVkX",
-      "views": 123,
+      "views": 124,
       "replies": 0,
       "views_final": false,
       "slot": 3,
@@ -1173,7 +1155,7 @@
       ],
       "post_id": "17912032533569980",
       "permalink": "https://www.threads.com/@hongsamhotel/post/Df8RB8IIFPc",
-      "views": 245,
+      "views": 249,
       "replies": 1,
       "views_final": false,
       "slot": 1,
@@ -1193,16 +1175,36 @@
       ],
       "post_id": "17902656753612354",
       "permalink": "https://www.threads.com/@hongsamhotel/post/Df8zW7XFhDu",
+      "views": 88,
+      "replies": 0,
+      "views_final": false,
+      "slot": 2,
+      "cross": "threads_sauna"
+    },
+    {
+      "at": "2026-11-20 20:32",
+      "topic": "마이산 처음 갈 때 모르면 손해 보는 것",
+      "hook": "secret",
+      "cta": "metoo",
+      "text": "이거 올리면 사람 몰릴까 봐 진짜 아까운데 푼다\n\n11월 셋째 주 평일에 마이산을 처음 갔는데, 올라가기 전에 사우나부터 잡았음. 잔디밭 텐트 사우나(2인용)가 2개뿐이고 예약순이라 늦게 가면 자리가 없을 수도 있음 ㅋㅋ 그래서 마이산 한 바퀴 걷고 내려와 22시 마감 전에 땀 빼는데 추운 줄도 몰랐음 ♨️ 난 처음 가면 관광보다 예약 먼저 잡는 게 순서라고 봄. 이 사우나 패키지 가격이랑 구성은 스레드 @jinan.sauna 가면 있음\n여행 가면 관광보다 예약부터 잡는 사람 나만 아니지? ㅇㅇ\n#홍삼빌호텔 #진안여행 #마이산",
+      "len": 297,
+      "images": [
+        "todonoi_true_vertical.png",
+        "59.png",
+        "55.png"
+      ],
+      "post_id": "17891995644477877",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/Df9jbZdm6ru",
       "views": null,
       "replies": null,
       "views_final": false,
-      "slot": 2,
+      "slot": 3,
       "cross": "threads_sauna"
     }
   ],
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-11-20 13:30"
+    "checked_at": "2026-11-20 20:30"
   }
 }
