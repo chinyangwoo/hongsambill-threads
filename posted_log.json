@@ -1,26 +1,6 @@
 {
-  "count": 241,
+  "count": 242,
   "posts": [
-    {
-      "at": "2026-10-31 22:39",
-      "topic": "호캉스 대신 별멍, 진안고원의 밤하늘",
-      "hook": "compare",
-      "cta": "blank",
-      "text": "호캉스 말고 별멍 골랐는데 내가 이럴 줄 몰랐음\n\n겨울에 호텔 앞 잔디밭에서 사우나로 땀 빼고 나왔는데, 주변에 불빛이 거의 없어서 하늘이 확 달라 보였음. 찬 공기 맞으면서 목 젖히고 20분을 서 있었음 ㅋㅋ 방에서 TV 켜고 누워 있었으면 이걸 놓쳤겠다 싶더라 ✨ 솔직히 호캉스보다 이쪽이 내 취향이었음 😌 근데 그날 제일 웃겼던 건 안 풀래\n여행 가서 밤에 제일 하고 싶은 거: ___ 한 단어로\n#홍삼빌호텔 #진안여행 #국내여행추천",
-      "len": 245,
-      "images": [
-        "52.png",
-        "36.png",
-        "24.png"
-      ],
-      "post_id": "18118129918811482",
-      "permalink": "https://www.threads.com/@hongsamhotel/post/DfKSLGKEWjy",
-      "views": 17,
-      "replies": 0,
-      "views_final": true,
-      "slot": 3,
-      "cross": null
-    },
     {
       "at": "2026-11-01 08:25",
       "topic": "진안 로컬 맛집과 숙소 주변 먹거리 이야기",
@@ -1017,7 +997,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/Df3HcFPG4BZ",
       "views": 15,
       "replies": 0,
-      "views_final": false,
+      "views_final": true,
       "slot": 1,
       "cross": null
     },
@@ -1055,7 +1035,7 @@
       ],
       "post_id": "18131842915879532",
       "permalink": "https://www.threads.com/@hongsamhotel/post/Df4Z1fGG4vH",
-      "views": 13,
+      "views": 14,
       "replies": 0,
       "views_final": false,
       "slot": 3,
@@ -1075,7 +1055,7 @@
       ],
       "post_id": "18120307394007109",
       "permalink": "https://www.threads.com/@hongsamhotel/post/Df5sO6dmt2Q",
-      "views": 11,
+      "views": 13,
       "replies": 0,
       "views_final": false,
       "slot": 1,
@@ -1095,7 +1075,7 @@
       ],
       "post_id": "18201859894395625",
       "permalink": "https://www.threads.com/@hongsamhotel/post/Df6Ok6vDeIz",
-      "views": 11,
+      "views": 13,
       "replies": 0,
       "views_final": false,
       "slot": 2,
@@ -1115,7 +1095,7 @@
       ],
       "post_id": "17979038816938705",
       "permalink": "https://www.threads.com/@hongsamhotel/post/Df6-ofLkVkX",
-      "views": 129,
+      "views": 131,
       "replies": 0,
       "views_final": false,
       "slot": 3,
@@ -1135,7 +1115,7 @@
       ],
       "post_id": "17912032533569980",
       "permalink": "https://www.threads.com/@hongsamhotel/post/Df8RB8IIFPc",
-      "views": 260,
+      "views": 263,
       "replies": 1,
       "views_final": false,
       "slot": 1,
@@ -1155,7 +1135,7 @@
       ],
       "post_id": "17902656753612354",
       "permalink": "https://www.threads.com/@hongsamhotel/post/Df8zW7XFhDu",
-      "views": 96,
+      "views": 99,
       "replies": 0,
       "views_final": false,
       "slot": 2,
@@ -1175,7 +1155,7 @@
       ],
       "post_id": "17891995644477877",
       "permalink": "https://www.threads.com/@hongsamhotel/post/Df9jbZdm6ru",
-      "views": 191,
+      "views": 200,
       "replies": 0,
       "views_final": false,
       "slot": 3,
@@ -1195,16 +1175,36 @@
       ],
       "post_id": "17888948544625785",
       "permalink": "https://www.threads.com/@hongsamhotel/post/Df-10gEmOOF",
-      "views": null,
-      "replies": null,
+      "views": 70,
+      "replies": 0,
       "views_final": false,
       "slot": 1,
       "cross": null
+    },
+    {
+      "at": "2026-11-21 13:31",
+      "topic": "호캉스 대신 별멍, 진안고원의 밤하늘",
+      "hook": "question",
+      "cta": "debate",
+      "text": "호캉스 가서 방에만 누워 있다 오는 사람?\n\n초겨울 평일에 진안 가서 저녁에 호텔 앞 잔디밭 텐트 사우나(2인용)에서 땀 빼고 나왔는데, 하늘이 생각보다 훨씬 어두워서 별이 꽤 보였음 ㅋㅋ 땀 식히면서 10분 동안 고개 들고 서서 별만 셌음 ✨ 방에서 넷플릭스 틀었으면 절대 못 봤을 장면이었음. 진안고원 밤공기가 차긴 한데 사우나 직후라 딱 좋았음 ♨️ 사우나 패키지 가격이랑 구성은 스레드 @jinan.sauna 가면 있음\n별멍은 호캉스보다 윗급이라고 봄, 반박 받음\n#홍삼빌호텔 #진안여행 #진안호텔",
+      "len": 282,
+      "images": [
+        "24.png",
+        "maisan_portrait_real.png",
+        "50.png"
+      ],
+      "post_id": "18223688641346658",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/Df_YJ4RDqW3",
+      "views": null,
+      "replies": null,
+      "views_final": false,
+      "slot": 2,
+      "cross": "threads_sauna"
     }
   ],
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-11-21 08:30"
+    "checked_at": "2026-11-21 13:30"
   }
 }
