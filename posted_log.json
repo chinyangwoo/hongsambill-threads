@@ -1,26 +1,6 @@
 {
-  "count": 248,
+  "count": 249,
   "posts": [
-    {
-      "at": "2026-11-03 08:31",
-      "topic": "제주·강원 대신 진안을 고른 이유",
-      "hook": "compare",
-      "cta": "recommend",
-      "text": "섬 말고 바다 말고 굳이 산골로 간 이유가 있음\n\n11월 첫 주에 비행기 표 보다가 접고 서울에서 차로 3시간 달려 진안 감 ㅋㅋ 마이산 단풍은 끝물이었는데, 해 진 뒤 잔디밭 장작 배럴 사우나에서 땀 빼고 나오니까 찬 공기에 몸에서 김이 폴폴 나고 그 너머로 마이산 실루엣이 보였음 🔥 공항 수속 줄 서는 시간에 이미 도착해 있는 게 제일 컸음. 바다 뷰는 없지만 늦가을엔 이쪽이 나한테 맞았음 🍁\n겨울에 몸 데우는 너만의 방법 하나만 알려줘\n#홍삼빌호텔 #진안여행 #마이산",
-      "len": 266,
-      "images": [
-        "16.png",
-        "hotel_new_slide8.jpg",
-        "05_maisan_finland_sauna.png"
-      ],
-      "post_id": "17956072224039823",
-      "permalink": "https://www.threads.com/@hongsamhotel/post/DfQfg1Ulrn9",
-      "views": 6,
-      "replies": 0,
-      "views_final": true,
-      "slot": 1,
-      "cross": null
-    },
     {
       "at": "2026-11-03 13:32",
       "topic": "아이랑 1박2일, 차 덜 타고 걸어서 되는 마이산 코스",
@@ -1017,7 +997,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/Df8zW7XFhDu",
       "views": 101,
       "replies": 0,
-      "views_final": false,
+      "views_final": true,
       "slot": 2,
       "cross": "threads_sauna"
     },
@@ -1055,7 +1035,7 @@
       ],
       "post_id": "17888948544625785",
       "permalink": "https://www.threads.com/@hongsamhotel/post/Df-10gEmOOF",
-      "views": 84,
+      "views": 85,
       "replies": 0,
       "views_final": false,
       "slot": 1,
@@ -1135,7 +1115,7 @@
       ],
       "post_id": "18128543864316950",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DgB881SDddB",
-      "views": 140,
+      "views": 141,
       "replies": 0,
       "views_final": false,
       "slot": 2,
@@ -1175,7 +1155,7 @@
       ],
       "post_id": "17925925920447298",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DgD_ZShlG6y",
-      "views": 164,
+      "views": 168,
       "replies": 0,
       "views_final": false,
       "slot": 1,
@@ -1195,16 +1175,36 @@
       ],
       "post_id": "18185611270428197",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DgEhwwfjb9I",
+      "views": 45,
+      "replies": 0,
+      "views_final": false,
+      "slot": 2,
+      "cross": "ig_hotel"
+    },
+    {
+      "at": "2026-11-23 20:31",
+      "topic": "제주·강원 대신 진안을 고른 이유",
+      "hook": "twist",
+      "cta": "number",
+      "text": "제주행 결제 직전에 손이 멋대로 KTX 앱을 열었음\n\n11월 마지막 주에 혼자 쉬려는데 제주는 비행기값, 강원은 눈 오기 전 운전이 걸려서 전주역에서 차로 45분인 진안으로 틀었음 ㅋㅋ 해 지기 전에 도착해서 호텔 앞 잔디밭 장작 사우나에서 마이산 보며 땀 뺐는데, 비행기 타고 온 것보다 몸이 훨씬 덜 지쳤음 ♨️ 난 혼자 쉬는 여행은 멀리 가는 순간 반은 망한다고 봄. 그날 사진은 인스타 @hongsamhotel 가면 있음\n너 혼자 여행 갈 때 이동시간 최대 몇 시간까지 참음? 숫자만\n#홍삼빌호텔 #진안여행 #국내여행추천",
+      "len": 295,
+      "images": [
+        "65.png",
+        "70.png",
+        "75.png"
+      ],
+      "post_id": "18097121756690119",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DgFRz7rFjT0",
       "views": null,
       "replies": null,
       "views_final": false,
-      "slot": 2,
+      "slot": 3,
       "cross": "ig_hotel"
     }
   ],
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-11-23 13:30"
+    "checked_at": "2026-11-23 20:30"
   }
 }
