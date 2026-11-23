@@ -1,26 +1,6 @@
 {
-  "count": 247,
+  "count": 248,
   "posts": [
-    {
-      "at": "2026-11-02 20:31",
-      "topic": "마이산 탑사 돌탑, 사진이랑 실물이 다른 이유",
-      "hook": "question",
-      "cta": "blank",
-      "text": "사진만 보고 별거 없겠다 싶어 넘긴 사람?\n\n나도 탑사 돌탑은 사진으로만 보고 그냥 돌 쌓아 놓은 거네 했음. 근데 막상 앞에 서니까 사진엔 안 담기는 크기랑 돌 틈 이끼 결이 보여서 목 꺾고 10분을 서 있었음 ㅋㅋ 11월 첫 주라 단풍은 끝물이었는데 오히려 색 빠진 나무 뒤로 돌탑이 더 또렷했음 🍁 이건 사진으로 판단하면 손해라고 봄. 그날 찍은 건 인스타 @hongsamhotel 에 있는데 실물 반도 안 담김\n사진이랑 실물 제일 다른 여행지: ___ 지역명만\n#홍삼빌호텔 #마이산 #진안여행",
-      "len": 279,
-      "images": [
-        "hotel.png",
-        "23.png",
-        "39.png"
-      ],
-      "post_id": "18122666257985226",
-      "permalink": "https://www.threads.com/@hongsamhotel/post/DfPNGs_FK6q",
-      "views": 11,
-      "replies": 0,
-      "views_final": true,
-      "slot": 3,
-      "cross": "ig_hotel"
-    },
     {
       "at": "2026-11-03 08:31",
       "topic": "제주·강원 대신 진안을 고른 이유",
@@ -1017,7 +997,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/Df8RB8IIFPc",
       "views": 266,
       "replies": 1,
-      "views_final": false,
+      "views_final": true,
       "slot": 1,
       "cross": null
     },
@@ -1135,7 +1115,7 @@
       ],
       "post_id": "18358422733269566",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DgBam0jGx6t",
-      "views": 328,
+      "views": 329,
       "replies": 0,
       "views_final": false,
       "slot": 1,
@@ -1155,7 +1135,7 @@
       ],
       "post_id": "18128543864316950",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DgB881SDddB",
-      "views": 138,
+      "views": 140,
       "replies": 0,
       "views_final": false,
       "slot": 2,
@@ -1175,7 +1155,7 @@
       ],
       "post_id": "18646905646029289",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DgCtAyEoBRO",
-      "views": 226,
+      "views": 229,
       "replies": 1,
       "views_final": false,
       "slot": 3,
@@ -1195,16 +1175,36 @@
       ],
       "post_id": "17925925920447298",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DgD_ZShlG6y",
-      "views": null,
-      "replies": null,
+      "views": 164,
+      "replies": 0,
       "views_final": false,
       "slot": 1,
       "cross": null
+    },
+    {
+      "at": "2026-11-23 13:32",
+      "topic": "마이산 탑사 돌탑, 사진이랑 실물이 다른 이유",
+      "hook": "secret",
+      "cta": "metoo",
+      "text": "혼자만 가던 시간대가 있는데 공개하려니 너무 아까움\n\n11월 마지막 주 평일 아침에 혼자 마이산 탑사까지 20분 걸어 올라갔는데, 사진으로 보던 돌탑이랑 실물이 완전 달랐음. 사진엔 그냥 쌓은 돌인데 바로 밑에 서면 뒤 암벽이 병풍처럼 덮고 있어서 고개가 꺾임 ㅋㅋ 나 포함 세 명뿐이라 10분 넘게 서 있었음 🍂 난 탑사는 사진 찍으러 가는 데가 아니라 그냥 서 있으러 가는 데라고 봄. 마이산 사진은 인스타 @hongsamhotel 가면 있음\n사진 찍느라 정작 실물은 대충 보는 사람 나만 아니지? ㅇㅇ\n#홍삼빌호텔 #진안여행 #마이산",
+      "len": 301,
+      "images": [
+        "70.png",
+        "hotel_slide3.png",
+        "41.png"
+      ],
+      "post_id": "18185611270428197",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DgEhwwfjb9I",
+      "views": null,
+      "replies": null,
+      "views_final": false,
+      "slot": 2,
+      "cross": "ig_hotel"
     }
   ],
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-11-23 08:30"
+    "checked_at": "2026-11-23 13:30"
   }
 }
