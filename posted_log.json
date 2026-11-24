@@ -1,26 +1,6 @@
 {
-  "count": 251,
+  "count": 252,
   "posts": [
-    {
-      "at": "2026-11-04 08:32",
-      "topic": "마이산 처음 갈 때 모르면 손해 보는 것",
-      "hook": "insider",
-      "cta": "handsup",
-      "text": "처음 가는 사람한테 아무도 안 알려주는 거 하나 푼다\n\n11월 첫 주에 마이산 단풍 끝물 보러 갔다가 알게 됐는데, 낮에 탑사 보고 내려오면 끝인 줄 알았음. 근데 호텔 앞 잔디밭 장작 사우나가 예약순에 22시 마감이라 내려오자마자 자리부터 잡았음 ㅋㅋ 수건, 사우나복, 생수는 무료라 짐도 따로 필요 없었고 🔥 땀 빼고 나와서 본 어두운 마이산이 낮 단풍보다 오래 남음. 탑사는 낮에, 사우나는 밤에 순서 지키는 게 정답이라고 봄\n여행 가서 시간 못 맞춰 놓쳐본 거 있는 사람 손\n#홍삼빌호텔 #진안여행 #마이산",
-      "len": 287,
-      "images": [
-        "11.png",
-        "sauna_true_vertical.png",
-        "34.jpg"
-      ],
-      "post_id": "18083448275358327",
-      "permalink": "https://www.threads.com/@hongsamhotel/post/DfTEUSVj62L",
-      "views": 16,
-      "replies": 0,
-      "views_final": true,
-      "slot": 1,
-      "cross": null
-    },
     {
       "at": "2026-11-04 13:31",
       "topic": "서울에서 3시간, 사람 없는 조용한 여행지를 찾는 사람들에게",
@@ -1017,7 +997,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/Df_YJ4RDqW3",
       "views": 190,
       "replies": 0,
-      "views_final": false,
+      "views_final": true,
       "slot": 2,
       "cross": "threads_sauna"
     },
@@ -1155,7 +1135,7 @@
       ],
       "post_id": "18097121756690119",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DgFRz7rFjT0",
-      "views": 180,
+      "views": 181,
       "replies": 0,
       "views_final": false,
       "slot": 3,
@@ -1175,7 +1155,7 @@
       ],
       "post_id": "17920746150533228",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DgGkOiAmvoD",
-      "views": 351,
+      "views": 374,
       "replies": 0,
       "views_final": false,
       "slot": 1,
@@ -1195,16 +1175,36 @@
       ],
       "post_id": "18099694577540865",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DgHGlK5G3ZI",
+      "views": 166,
+      "replies": 0,
+      "views_final": false,
+      "slot": 2,
+      "cross": "ig_hotel"
+    },
+    {
+      "at": "2026-11-24 20:32",
+      "topic": "마이산 처음 갈 때 모르면 손해 보는 것",
+      "hook": "fail",
+      "cta": "metoo",
+      "text": "숙소 하나 잘못 잡아서 반나절을 길에 버렸음\n\n처음엔 전주에 숙소 잡고 마이산만 찍고 오면 되겠지 했는데, 전주역에서 진안까지 차로 45분이라 왕복 1시간 반을 하루에 두 번 뛰니까 차에서만 3시간 날림 ㅋㅋ 다음엔 마이산 도보권 호텔로 잡고 아침에 걸어서 올라갔다 와서 조식 먹었는데 하루가 두 배로 길었음 ⛰️ 난 마이산은 뭘 보냐보다 어디서 자냐가 손익을 가른다고 봄. 마이산 뷰 객실 사진은 인스타 @hongsamhotel 가면 있음\n숙소 멀리 잡았다가 이동시간에 후회한 적 있으면 ㅇㅇ\n#홍삼빌호텔 #진안여행 #마이산",
+      "len": 294,
+      "images": [
+        "38.png",
+        "23.png",
+        "80.png"
+      ],
+      "post_id": "18109344065341696",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DgH2nMtILqn",
       "views": null,
       "replies": null,
       "views_final": false,
-      "slot": 2,
+      "slot": 3,
       "cross": "ig_hotel"
     }
   ],
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-11-24 13:30"
+    "checked_at": "2026-11-24 20:30"
   }
 }
