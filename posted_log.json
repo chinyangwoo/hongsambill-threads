@@ -1,26 +1,6 @@
 {
-  "count": 252,
+  "count": 253,
   "posts": [
-    {
-      "at": "2026-11-04 13:31",
-      "topic": "서울에서 3시간, 사람 없는 조용한 여행지를 찾는 사람들에게",
-      "hook": "secret",
-      "cta": "number",
-      "text": "이거 풀면 사람 몰릴 텐데 진짜 아깝다 ㅋㅋ\n\n서울에서 차로 3시간 걸려 진안 갔는데 11월 첫 주라 마이산 단풍은 끝물이었고, 탑사 올라가는 길에 마주친 사람이 열 명도 안 됐음. 해 지고 호텔 앞 잔디밭 장작 사우나에서 땀 빼고 나오니까 찬 공기에 몸에서 김이 나고, 들리는 건 장작 타는 소리뿐이었음 🔥 붐비는 데 질린 사람한테는 여기가 답이라고 봄 🍁 잔디밭이랑 마이산 사진은 인스타 @hongsamhotel 가면 있음\n너네 여행 이동시간 몇 시간까지 참음? 숫자만\n#홍삼빌호텔 #진안여행 #마이산",
-      "len": 282,
-      "images": [
-        "28.png",
-        "67.png",
-        "55.png"
-      ],
-      "post_id": "18127555706486610",
-      "permalink": "https://www.threads.com/@hongsamhotel/post/DfTmpN0EWY0",
-      "views": 3,
-      "replies": 0,
-      "views_final": true,
-      "slot": 2,
-      "cross": "ig_hotel"
-    },
     {
       "at": "2026-11-04 20:32",
       "topic": "호캉스 대신 별멍, 진안고원의 밤하늘",
@@ -1017,7 +997,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/DgAIOI4Fcv_",
       "views": 171,
       "replies": 0,
-      "views_final": false,
+      "views_final": true,
       "slot": 3,
       "cross": "threads_sauna"
     },
@@ -1095,7 +1075,7 @@
       ],
       "post_id": "17925925920447298",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DgD_ZShlG6y",
-      "views": 175,
+      "views": 176,
       "replies": 0,
       "views_final": false,
       "slot": 1,
@@ -1135,7 +1115,7 @@
       ],
       "post_id": "18097121756690119",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DgFRz7rFjT0",
-      "views": 181,
+      "views": 182,
       "replies": 0,
       "views_final": false,
       "slot": 3,
@@ -1155,7 +1135,7 @@
       ],
       "post_id": "17920746150533228",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DgGkOiAmvoD",
-      "views": 374,
+      "views": 379,
       "replies": 0,
       "views_final": false,
       "slot": 1,
@@ -1175,7 +1155,7 @@
       ],
       "post_id": "18099694577540865",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DgHGlK5G3ZI",
-      "views": 166,
+      "views": 172,
       "replies": 0,
       "views_final": false,
       "slot": 2,
@@ -1195,16 +1175,36 @@
       ],
       "post_id": "18109344065341696",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DgH2nMtILqn",
-      "views": null,
-      "replies": null,
+      "views": 291,
+      "replies": 0,
       "views_final": false,
       "slot": 3,
       "cross": "ig_hotel"
+    },
+    {
+      "at": "2026-11-25 08:31",
+      "topic": "서울에서 3시간, 사람 없는 조용한 여행지를 찾는 사람들에게",
+      "hook": "number",
+      "cta": "debate",
+      "text": "서울에서 3시간 달렸는데 주차장에 차가 딱 4대였음\n\n11월 마지막 주 평일에 혼자 내려갔는데 무료 주차 50대 자리에 거의 나 혼자였음 ㅋㅋ 체크인하고 나와서 소나무 아래 견사 앞을 지나는데 허스키 천둥이가 짖지도 않고 꼬리만 흔들면서 쳐다봄 🐺 3시간이면 주말 고속도로 막히는 시간이랑 비슷한데 끝에 이런 고요가 있었음. 난 조용한 여행은 이동시간 3시간 넘으면 손해라고 봄\n조용한 여행은 3시간 넘으면 손해임, 반박 받음\n#홍삼빌호텔 #진안여행 #전북여행",
+      "len": 257,
+      "images": [
+        "17.png",
+        "87.png",
+        "35.png"
+      ],
+      "post_id": "18081583322451546",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DgJJAX8mt8g",
+      "views": null,
+      "replies": null,
+      "views_final": false,
+      "slot": 1,
+      "cross": null
     }
   ],
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-11-24 20:30"
+    "checked_at": "2026-11-25 08:30"
   }
 }
