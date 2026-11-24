@@ -1,26 +1,6 @@
 {
-  "count": 250,
+  "count": 251,
   "posts": [
-    {
-      "at": "2026-11-03 20:32",
-      "topic": "마이산 한 바퀴 돌고 바베큐장에서 저녁 먹는 하루",
-      "hook": "fail",
-      "cta": "debate",
-      "text": "걷고 나면 입맛 없을 줄 알았던 내가 바보였음\n\n마이산 한 바퀴 돌고 내려와서 셋이 고기 1kg만 사 들고 바베큐장 감 ㅋㅋ 숯 4인분 2만원 사서 구웠는데 20분 만에 접시가 비었음 😭 집게는 빌려주고 바베큐장도 무료인데, 고기 양은 전부 내가 책임져야 하는 거였음. 해 져서 다시 사러 나가기도 귀찮아 쌈채소만 먹다 끝남 🥩 인스타 @hongsamhotel 가면 그날 찍은 마이산 사진 있음\n고기는 1인 500g 아래면 무조건 후회함, 아니라는 사람?\n#홍삼빌호텔 #진안여행 #마이산",
-      "len": 272,
-      "images": [
-        "47.png",
-        "sauna.png",
-        "82.jpg"
-      ],
-      "post_id": "18138204490710706",
-      "permalink": "https://www.threads.com/@hongsamhotel/post/DfRx72JEUvI",
-      "views": 15,
-      "replies": 0,
-      "views_final": true,
-      "slot": 3,
-      "cross": "ig_hotel"
-    },
     {
       "at": "2026-11-04 08:32",
       "topic": "마이산 처음 갈 때 모르면 손해 보는 것",
@@ -1015,9 +995,9 @@
       ],
       "post_id": "17888948544625785",
       "permalink": "https://www.threads.com/@hongsamhotel/post/Df-10gEmOOF",
-      "views": 85,
+      "views": 86,
       "replies": 0,
-      "views_final": false,
+      "views_final": true,
       "slot": 1,
       "cross": null
     },
@@ -1135,7 +1115,7 @@
       ],
       "post_id": "17925925920447298",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DgD_ZShlG6y",
-      "views": 174,
+      "views": 175,
       "replies": 0,
       "views_final": false,
       "slot": 1,
@@ -1195,16 +1175,36 @@
       ],
       "post_id": "17920746150533228",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DgGkOiAmvoD",
-      "views": null,
-      "replies": null,
+      "views": 351,
+      "replies": 0,
       "views_final": false,
       "slot": 1,
       "cross": null
+    },
+    {
+      "at": "2026-11-24 13:32",
+      "topic": "마이산 한 바퀴 돌고 바베큐장에서 저녁 먹는 하루",
+      "hook": "compare",
+      "cta": "recommend",
+      "text": "하산 후 맛집 웨이팅 대신 이쪽을 골라봤는데\n\n마이산 한 바퀴 돌고 내려오는 길에 정육점에서 목살 600g 사서 호텔 바베큐장으로 갔음. 16시부터 열어서 해 지기 전에 직화구이기에 불을 붙였는데, 산 보면서 굽는 첫 점이 진짜 달았음 🔥 바베큐장은 무료고 숯만 4인분 2만원이었음. 난 등산 뒤 저녁은 웨이팅 1시간보다 내가 굽는 게 낫다고 봄 ⛰️ 마이산 사진은 인스타 @hongsamhotel 가면 있음\n고기 다음 마무리는 냉면·라면·볶음밥 중 하나만 골라줘\n#홍삼빌호텔 #진안여행 #마이산",
+      "len": 277,
+      "images": [
+        "12.png",
+        "hotel_new_slide7.jpg",
+        "87.png"
+      ],
+      "post_id": "18099694577540865",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DgHGlK5G3ZI",
+      "views": null,
+      "replies": null,
+      "views_final": false,
+      "slot": 2,
+      "cross": "ig_hotel"
     }
   ],
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-11-24 08:30"
+    "checked_at": "2026-11-24 13:30"
   }
 }
