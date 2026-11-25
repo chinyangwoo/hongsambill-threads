@@ -1,26 +1,6 @@
 {
-  "count": 253,
+  "count": 254,
   "posts": [
-    {
-      "at": "2026-11-04 20:32",
-      "topic": "호캉스 대신 별멍, 진안고원의 밤하늘",
-      "hook": "question",
-      "cta": "blank",
-      "text": "호캉스 가서 방에서 폰만 보다 오는 사람?\n\n11월 첫 주에 단풍 끝물 보고 내려와서 호텔 앞 잔디밭 장작 사우나에 들어갔음 ㅋㅋ 땀 쭉 빼고 나오니까 찬 공기에 몸에서 김이 폴폴 나는데, 고개를 드니 별이 꽤 많았음 ✨ 불빛 적은 고원이라 그런지 목 아프게 20분을 서 있었음. 난 수영장 있는 호캉스보다 이쪽이 훨씬 오래 남았다고 봄 🔥 잔디밭 사우나 사진은 인스타 @hongsamhotel 가면 있음\n호캉스 가면 결국 제일 오래 있는 곳: ___ 한 단어로\n#홍삼빌호텔 #진안여행 #마이산",
-      "len": 276,
-      "images": [
-        "73.png",
-        "hotel_new_slide6.jpg",
-        "70.png"
-      ],
-      "post_id": "18182709007442028",
-      "permalink": "https://www.threads.com/@hongsamhotel/post/DfUWtzxEY81",
-      "views": 6,
-      "replies": 0,
-      "views_final": true,
-      "slot": 3,
-      "cross": "ig_hotel"
-    },
     {
       "at": "2026-11-05 13:32",
       "topic": "진안 로컬 맛집과 숙소 주변 먹거리 이야기",
@@ -1017,7 +997,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/DgBam0jGx6t",
       "views": 329,
       "replies": 0,
-      "views_final": false,
+      "views_final": true,
       "slot": 1,
       "cross": null
     },
@@ -1175,7 +1155,7 @@
       ],
       "post_id": "18109344065341696",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DgH2nMtILqn",
-      "views": 291,
+      "views": 296,
       "replies": 0,
       "views_final": false,
       "slot": 3,
@@ -1195,16 +1175,36 @@
       ],
       "post_id": "18081583322451546",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DgJJAX8mt8g",
-      "views": null,
-      "replies": null,
+      "views": 320,
+      "replies": 0,
       "views_final": false,
       "slot": 1,
       "cross": null
+    },
+    {
+      "at": "2026-11-25 13:32",
+      "topic": "호캉스 대신 별멍, 진안고원의 밤하늘",
+      "hook": "insider",
+      "cta": "blank",
+      "text": "밤에 슬쩍 나가본 사람만 아는 게 있음\n\n사우나 마감 22시 직전 타임에 땀 빼고 나와서 호텔 앞 잔디밭에 서 있었는데, 주변에 불빛이 거의 없어서 하늘이 확 내려앉아 있었음 ㅋㅋ 서울에선 별 대여섯 개 보이면 많이 본 건데 여긴 목 아파서 10분 넘게 서 있었음 ✨ 호캉스는 수영장보다 밤하늘이 이긴다는 게 내 의견임. 마이산 사진은 인스타 @hongsamhotel 가면 있음\n별 보면 같이 보고 싶은 사람 1순위: ___ 한 단어로\n#홍삼빌호텔 #진안여행 #마이산",
+      "len": 261,
+      "images": [
+        "82.jpg",
+        "25.png",
+        "27.png"
+      ],
+      "post_id": "18139452829660362",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DgJrYvvlYtP",
+      "views": null,
+      "replies": null,
+      "views_final": false,
+      "slot": 2,
+      "cross": "ig_hotel"
     }
   ],
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-11-25 08:30"
+    "checked_at": "2026-11-25 13:30"
   }
 }
