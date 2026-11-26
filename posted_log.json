@@ -1,26 +1,6 @@
 {
-  "count": 256,
+  "count": 257,
   "posts": [
-    {
-      "at": "2026-11-06 08:31",
-      "topic": "사람 몰리는 단풍 명소 대신 조용한 마이산 단풍",
-      "hook": "insider",
-      "cta": "handsup",
-      "text": "단풍철에 사람 없이 걷는 시간대 하나 푼다\n\n11월 첫 주에 단풍 끝물이라 반쯤 포기하고 갔는데, 아침 8시 전에 은수사 쪽부터 올라가니까 마주친 사람이 딱 네 명이었음 ㅋㅋ 낙엽 밟는 소리만 들려서 진짜 조용했음 🍁 대신 몸은 밤에 호텔 앞 잔디밭 장작 사우나로 데움. 예약순이고 22시 마감이라 늦게 내려와도 괜찮았음 🔥 단풍은 낮보다 이른 아침이 훨씬 낫다고 봄\n인파에 밀려 단풍 사진만 찍고 내려와 본 사람 손\n#홍삼빌호텔 #진안여행 #마이산",
-      "len": 251,
-      "images": [
-        "54.png",
-        "todonoi_true_vertical.png",
-        "35.png"
-      ],
-      "post_id": "18037294772891241",
-      "permalink": "https://www.threads.com/@hongsamhotel/post/DfYN5lFDnTU",
-      "views": 24,
-      "replies": 0,
-      "views_final": true,
-      "slot": 1,
-      "cross": null
-    },
     {
       "at": "2026-11-06 13:31",
       "topic": "고기만 사 오면 되는 항아리바베큐, 진안 흑돼지 구워 먹는 저녁",
@@ -1017,7 +997,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/DgD_ZShlG6y",
       "views": 177,
       "replies": 0,
-      "views_final": false,
+      "views_final": true,
       "slot": 1,
       "cross": null
     },
@@ -1195,16 +1175,36 @@
       ],
       "post_id": "18183969211442656",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DgLtz4rHBIC",
-      "views": null,
-      "replies": null,
+      "views": 145,
+      "replies": 0,
       "views_final": false,
       "slot": 1,
       "cross": null
+    },
+    {
+      "at": "2026-11-26 13:31",
+      "topic": "사람 몰리는 단풍 명소 대신 조용한 마이산 단풍",
+      "hook": "number",
+      "cta": "metoo",
+      "text": "단풍 명소 주차 대기만 2시간 하고 알게 된 것\n\n작년엔 유명한 단풍 명소 가서 줄만 서다가 정작 단풍은 10분 보고 왔음 ㅋㅋ 올해는 11월 마지막 주에 혼자 마이산 쪽으로 내려갔는데, 올라가는 길에 마주친 사람이 딱 세 명이었음. 반쯤 진 붉은 잎이 바닥에 깔려서 내 발소리만 들렸음 🍁 내려와서 호텔 앞 잔디밭 장작 사우나에서 몸 데우니까 하루가 그냥 완성됨. 난 단풍은 절정보다 끝물이 낫다고 봄. 그날 찍은 마이산 사진은 인스타 @hongsamhotel 가면 있음\n단풍 명소 가서 사람 구경만 하고 온 적 있으면 ㅇㅇ\n#홍삼빌호텔 #진안여행 #마이산",
+      "len": 312,
+      "images": [
+        "38.png",
+        "31.png",
+        "67.png"
+      ],
+      "post_id": "18233508682331617",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DgMQH3hANHq",
+      "views": null,
+      "replies": null,
+      "views_final": false,
+      "slot": 2,
+      "cross": "ig_hotel"
     }
   ],
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-11-26 08:30"
+    "checked_at": "2026-11-26 13:30"
   }
 }
