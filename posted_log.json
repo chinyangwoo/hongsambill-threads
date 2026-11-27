@@ -1,26 +1,6 @@
 {
-  "count": 259,
+  "count": 260,
   "posts": [
-    {
-      "at": "2026-11-07 08:32",
-      "topic": "마이산 탑사 돌탑, 사진이랑 실물이 다른 이유",
-      "hook": "compare",
-      "cta": "number",
-      "text": "불국사 대신 골랐는데 사진이랑 너무 달라서 말문 막힘\n\n11월 첫 주에 단풍 끝물 보러 마이산 탑사 갔는데, 사진에선 돌탑이 그냥 작은 돌무더기 같았거든 ㅋㅋ 근데 실물은 뒤에 바위 봉우리가 통째로 서 있어서 탑이 장난감처럼 보임 😮 나도 모르게 15분을 멍하니 서 있었음. 내려와서는 호텔 앞 잔디밭 장작 사우나로 몸 데웠는데 22시 마감이라 여유로웠음 🔥 난 사진으로 보지 말고 무조건 직접 봐야 한다고 봄\n여행지 사진 믿고 갔다가 실망한 횟수? 숫자만\n#홍삼빌호텔 #진안여행 #마이산",
-      "len": 273,
-      "images": [
-        "79.jpg",
-        "hotel_slide2.png",
-        "72.png"
-      ],
-      "post_id": "18164750215490744",
-      "permalink": "https://www.threads.com/@hongsamhotel/post/Dfays_ijxgT",
-      "views": 44,
-      "replies": 0,
-      "views_final": true,
-      "slot": 1,
-      "cross": null
-    },
     {
       "at": "2026-11-07 13:31",
       "topic": "제주·강원 대신 진안을 고른 이유",
@@ -1017,7 +997,7 @@
       "permalink": "https://www.threads.com/@hongsamhotel/post/DgGkOiAmvoD",
       "views": 389,
       "replies": 0,
-      "views_final": false,
+      "views_final": true,
       "slot": 1,
       "cross": null
     },
@@ -1155,7 +1135,7 @@
       ],
       "post_id": "18233508682331617",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DgMQH3hANHq",
-      "views": 140,
+      "views": 143,
       "replies": 0,
       "views_final": false,
       "slot": 2,
@@ -1195,16 +1175,36 @@
       ],
       "post_id": "17908666416600574",
       "permalink": "https://www.threads.com/@hongsamhotel/post/DgOSlr3oEl4",
-      "views": null,
-      "replies": null,
+      "views": 169,
+      "replies": 0,
       "views_final": false,
       "slot": 1,
       "cross": null
+    },
+    {
+      "at": "2026-11-27 13:32",
+      "topic": "마이산 탑사 돌탑, 사진이랑 실물이 다른 이유",
+      "hook": "twist",
+      "cta": "debate",
+      "text": "사진 보고 갔다가 돌탑한테 뒤통수 맞음\n\n11월 마지막 주에 혼자 내려가서 탑사 갔는데, 폰으로 볼 땐 그냥 돌 쌓아놓은 건 줄 알았음 ㅋㅋ 근데 실물은 뒤에 마이산 바위가 통째로 솟아 있어서 탑이 아니라 산한테 압도당함. 사람도 나 포함 네 명뿐이라 20분 넘게 멍하니 서 있었음 🍂 내려와서 호텔 앞 잔디밭 장작 사우나에서 몸 데우니까 다리가 풀림. 난 사진은 절대 실물 못 이긴다고 봄. 마이산 사진은 인스타 @hongsamhotel 가면 있음\n돌탑은 사진이 더 낫다는 사람 반박해봐\n#홍삼빌호텔 #진안여행 #마이산",
+      "len": 291,
+      "images": [
+        "87.png",
+        "hotel_new_slide2.jpg",
+        "57.png"
+      ],
+      "post_id": "18225486778343255",
+      "permalink": "https://www.threads.com/@hongsamhotel/post/DgO08LWgI3S",
+      "views": null,
+      "replies": null,
+      "views_final": false,
+      "slot": 2,
+      "cross": "ig_hotel"
     }
   ],
   "account": {
     "username": "hongsamhotel",
     "id_match": true,
-    "checked_at": "2026-11-27 08:30"
+    "checked_at": "2026-11-27 13:30"
   }
 }
